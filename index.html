@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Demos Web - Soluciones Digitales Frontend</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur py-5 px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-600/20">
+          S
+        </div>
+        <span class="text-lg font-bold text-white tracking-tight">Shokun <span class="text-indigo-400">Dev Showcase</span></span>
+      </div>
+      <div class="text-xs text-slate-400 font-medium">Prototipos en Vivo para Clientes</div>
+    </div>
+  </header>
+
+  <!-- Hero & Grid de Demos -->
+  <main class="max-w-5xl mx-auto px-6 py-16 flex-1">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Demostraciones Interactivas en Tiempo Real
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+        Soluciones Web de Alta Conversión
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+        Arquitectura limpia, carga ultrarrápida sin dependencias pesadas y maquetación responsive orientada a maximizar resultados comerciales.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Demo 1: Comparador de Alarmas Chile -->
+      <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-amber-500/60 transition flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
+              Aplicación Web / Cuestionario
+            </span>
+            <span class="text-xs text-slate-400 font-semibold">Chile</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-3">Comparador de Alarmas Chile</h2>
+          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+            Plataforma interactiva con cuestionario dinámico en 4 pasos y motor de decisión ponderado que clasifica a Verisure, Movistar Prosegur y ADT en tiempo real, integrando captura de prospectos.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-slate-300 font-medium mb-8">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">JavaScript Puro</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Tailwind CSS</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Scoring Algorítmico</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Mobile-First</span>
+          </div>
+        </div>
+        <a href="alarmas/" class="w-full text-center py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-amber-500/20">
+          Probar Comparador en Vivo →
+        </a>
+      </div>
+
+      <!-- Demo 2: Landing Page Express -->
+      <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-indigo-500/60 transition flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider border border-indigo-500/30">
+              Landing Page de Conversión
+            </span>
+            <span class="text-xs text-slate-400 font-semibold">Global</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-3">Landing Page Express</h2>
+          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+            Página de aterrizaje optimizada para servicios y software, con métricas de carga sub-segundo, acordeón de preguntas frecuentes interactivo y formulario de cotización instantáneo.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-slate-300 font-medium mb-8">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">HTML5 Semántico</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">PageSpeed 99+</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">FAQ Acordeón</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Hitos 50/50</span>
+          </div>
+        </div>
+        <a href="landing/" class="w-full text-center py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition shadow-lg shadow-indigo-600/20">
+          Probar Landing Page en Vivo →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 py-8 px-6 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto">
+      Desarrollado con estándares profesionales de ingeniería frontend. Cero dependencias lentas, máxima velocidad.
+    </div>
+  </footer>
+
+</body>
+</html>

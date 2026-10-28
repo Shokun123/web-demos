@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solución Digital Web - Landing Page de Alta Conversión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navegación Superior -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/25">
+          V
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">Vanguard<span class="text-indigo-400">Web</span></span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#solucion" class="hover:text-white transition">Solución</a>
+        <a href="#caracteristicas" class="hover:text-white transition">Características</a>
+        <a href="#precios" class="hover:text-white transition">Planes</a>
+        <a href="#faq" class="hover:text-white transition">Preguntas Frecuentes</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contacto" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/30">
+          Comenzar Proyecto
+        </a>
+      </div>
+
+      <!-- Botón Menú Móvil -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Abrir menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 py-4 bg-slate-900 border-b border-slate-800 space-y-3">
+      <a href="#solucion" class="block text-slate-300 hover:text-white py-1">Solución</a>
+      <a href="#caracteristicas" class="block text-slate-300 hover:text-white py-1">Características</a>
+      <a href="#precios" class="block text-slate-300 hover:text-white py-1">Planes</a>
+      <a href="#faq" class="block text-slate-300 hover:text-white py-1">Preguntas Frecuentes</a>
+      <a href="#contacto" class="block w-full text-center px-4 py-2.5 rounded-lg bg-indigo-600 text-white font-medium text-sm mt-2">Comenzar Proyecto</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-36 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Entrega Express en 24 a 48 Horas
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
+        Transforma Visitas en Clientes con una <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-300 to-sky-400">Web de Alta Conversión</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+        Diseño limpio, arquitectura responsive impecable y velocidad de carga sub-segundo optimizada para maximizar tu retorno publicitario y retener cada lead calificado.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-base transition shadow-xl shadow-indigo-600/30">
+          Solicitar Cotización Inmediata
+        </a>
+        <a href="#caracteristicas" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-base transition">
+          Ver Especificaciones Técnicas
+        </a>
+      </div>
+
+      <!-- Métricas de Impacto -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-slate-800/80">
+        <div>
+          <div class="text-3xl font-extrabold text-white">< 0.9s</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Velocidad de Carga</div>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-indigo-400">100%</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Responsive Mobile</div>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-white">99+</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Google PageSpeed</div>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-emerald-400">+42%</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Conversión Media</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características Técnicas -->
+  <section id="caracteristicas" class="py-24 bg-slate-900/50 border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Estándar de Ingeniería</h2>
+        <p class="text-3xl md:text-4xl font-bold text-white tracking-tight">Diseñado para la Velocidad y el Cierre de Ventas</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6">
+            ⚡
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Cero Código Inflado</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Eliminamos dependencias pesadas y plugins lentos. Construido en HTML5 semántico puro y Tailwind optimizado para puntuaciones récord de rendimiento.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center font-bold text-xl mb-6">
+            📱
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Mobile-First Adaptativo</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Más del 75% del tráfico proviene de smartphones. Ajustamos cada botón, tipografía y espacio para una navegación con pulgar sin fricción.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xl mb-6">
+            🛡️
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Formularios Blindados</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Validación de entradas en tiempo real con integración instantánea por Webhook hacia tu correo, CRM, Google Sheets o WhatsApp Business.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes y Presupuestos Transparentes -->
+  <section id="precios" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Inversión y Modalidad</h2>
+        <p class="text-3xl md:text-4xl font-bold text-white tracking-tight">Estructura por Hitos Protegidos (50/50)</p>
+        <p class="text-slate-400 mt-4 text-sm">Pagas el 50% para iniciar la maqueta y el 50% restante únicamente al validar la web en vivo.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Plan Landing Express -->
+        <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 relative flex flex-col justify-between">
+          <div>
+            <div class="text-sm font-semibold text-slate-400 mb-2">Proyecto Puntual</div>
+            <h3 class="text-2xl font-bold text-white mb-4">Landing Page Express</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-5xl font-black text-white">$90</span>
+              <span class="text-slate-400 text-sm">USD netos</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-6">Ideal para lanzar campañas publicitarias, ofertas de servicios o validación rápida de productos.</p>
+            <ul class="space-y-3 text-sm text-slate-300 mb-8">
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Hasta 5 secciones optimizadas</li>
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Formulario de contacto con alertas directas</li>
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Integración de botón WhatsApp flotante</li>
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Entrega en 24 a 48 horas</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="w-full text-center py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition">
+            Elegir Landing Express
+          </a>
+        </div>
+
+        <!-- Plan Web Corporativa Completa -->
+        <div class="p-8 rounded-3xl bg-slate-900 border-2 border-indigo-500 relative flex flex-col justify-between shadow-2xl shadow-indigo-500/10">
+          <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold uppercase tracking-wider">
+            Recomendado
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-indigo-400 mb-2">Desarrollo Integral</div>
+            <h3 class="text-2xl font-bold text-white mb-4">Sitio Web Completo</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-5xl font-black text-white">$190</span>
+              <span class="text-slate-400 text-sm">USD netos</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-6">Para empresas y marcas que requieren presencia sólida, catálogo de servicios y captura avanzada.</p>
+            <ul class="space-y-3 text-sm text-slate-300 mb-8">
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Hasta 4 páginas internas enrutadas</li>
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Cuestionarios interactivos o comparadores</li>
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Configuración de Google Analytics 4 y Pixel</li>
+              <li class="flex items-center gap-3"><span class="text-indigo-400 font-bold">✓</span> Soporte técnico durante 15 días tras entrega</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="w-full text-center py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition shadow-lg shadow-indigo-600/30">
+            Elegir Sitio Completo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes (Accordion) -->
+  <section id="faq" class="py-24 bg-slate-900/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Dudas Comunes</h2>
+        <p class="text-3xl font-bold text-white">Preguntas Frecuentes</p>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        <div class="border border-slate-800 rounded-2xl bg-slate-900 overflow-hidden">
+          <button class="w-full p-6 text-left flex items-center justify-between font-semibold text-white focus:outline-none faq-btn">
+            <span>¿Cómo funciona el pago por hitos 50/50?</span>
+            <span class="text-xl text-slate-400 transition transform faq-icon">+</span>
+          </button>
+          <div class="px-6 pb-6 text-sm text-slate-400 hidden faq-content">
+            El 50% inicial se custodia en garantía al arrancar el proyecto para asegurar el inicio de la arquitectura. El 50% final se libera exclusivamente cuando revises la maqueta en vivo, confirmes que todo funciona a la perfección y esté desplegada en tu servidor.
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-2xl bg-slate-900 overflow-hidden">
+          <button class="w-full p-6 text-left flex items-center justify-between font-semibold text-white focus:outline-none faq-btn">
+            <span>¿En cuánto tiempo estará lista la web?</span>
+            <span class="text-xl text-slate-400 transition transform faq-icon">+</span>
+          </button>
+          <div class="px-6 pb-6 text-sm text-slate-400 hidden faq-content">
+            Para Landing Pages Express el tiempo estándar de entrega es de 24 a 48 horas tras acordar el contenido. Para sitios web corporativos completos, el tiempo es de 3 a 5 días hábiles.
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-2xl bg-slate-900 overflow-hidden">
+          <button class="w-full p-6 text-left flex items-center justify-between font-semibold text-white focus:outline-none faq-btn">
+            <span>¿Qué hosting o servidor necesito?</span>
+            <span class="text-xl text-slate-400 transition transform faq-icon">+</span>
+          </button>
+          <div class="px-6 pb-6 text-sm text-slate-400 hidden faq-content">
+            Al estar construida en código limpio sin bases de datos pesadas obligatorias, puede alojarse en servidores gratuitos de alta velocidad como Cloudflare Pages, Vercel, Netlify o en tu hosting cPanel existente sin coste adicional.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto / Conversión -->
+  <section id="contacto" class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Iniciemos tu Desarrollo Web Hoy</h2>
+          <p class="text-slate-400 text-sm">Completa los datos y te responderemos con la propuesta técnica detallada en menos de 2 horas.</p>
+        </div>
+
+        <form id="contact-form" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-2">Nombre o Empresa</label>
+              <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition" placeholder="Tu nombre">
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-2">Correo Electrónico</label>
+              <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition" placeholder="nombre@empresa.com">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-2">Tipo de Proyecto</label>
+            <select class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 text-slate-300 text-sm outline-none">
+              <option value="landing">Landing Page Express ($90 USD)</option>
+              <option value="corporate">Sitio Web Corporativo Completo ($190 USD)</option>
+              <option value="custom">Aplicación Web Interactiva a Medida</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-2">Detalles del Proyecto</label>
+            <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition" placeholder="Describe brevemente el objetivo y las secciones principales..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-base transition shadow-xl shadow-indigo-600/30">
+            Enviar Solicitud de Proyecto
+          </button>
+        </form>
+
+        <div id="form-feedback" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-center text-sm font-semibold">
+          Solicitud recibida correctamente. Nos pondremos en contacto contigo en breve.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-900 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>© 2026 VanguardWeb. Todos los derechos reservados.</div>
+      <div class="flex items-center gap-6">
+        <a href="#solucion" class="hover:text-slate-300 transition">Términos</a>
+        <a href="#contacto" class="hover:text-slate-300 transition">Garantía de Satisfacción</a>
+        <a href="#faq" class="hover:text-slate-300 transition">Soporte</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Acordeón FAQ interactivo
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+        
+        // Cerrar todos los demás
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.textContent = '−';
+        }
+      });
+    });
+
+    // Manejo de envío de formulario de contacto
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('form-feedback').classList.remove('hidden');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
