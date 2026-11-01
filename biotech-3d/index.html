@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AETHERIA BIO — 3D Cinematic Molecular &amp; Genomic Hero System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    /* ==========================================================================
+       REFERO STYLES DESIGN.md TOKENS — "Constellation Floating on Black Velvet"
+       Source: https://styles.refero.design/style/e5f5f8cf-e68d-4ed1-bbf5-6b67569af648
+       ========================================================================== */
+    :root {
+      --color-void: #000000;
+      --color-bone-white: #ffffff;
+      --color-ash-gray: #9a9a9a;
+      --color-silver-mist: #bdbdbd;
+      --color-electric-iris: #8052ff;
+      --color-saffron-spark: #ffb829;
+      --color-deep-verdant: #15846e;
+      --color-biolum-cyan: #00f2fe;
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --text-caption: 12px;
+      --text-nav-label: 14px;
+      --text-body: 18px;
+      --text-heading-2xs: 24px;
+      --text-subheading: 36px;
+      --text-heading-lg: clamp(54px, 6.2vw, 94px);
+      --text-display: clamp(64px, 7.8vw, 113px);
+
+      --spacing-6: 6px;
+      --spacing-12: 12px;
+      --spacing-18: 18px;
+      --spacing-24: 24px;
+      --spacing-30: 30px;
+      --spacing-36: 36px;
+      --spacing-60: 60px;
+      --spacing-96: 96px;
+
+      --radius-3xl: 24px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--color-void);
+      color: var(--color-bone-white);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fullscreen 3D WebGL Canvas floating on pure black velvet */
+    #webgl-stage {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: auto;
+    }
+
+    /* Subtle radial vignette so typography floats cleanly */
+    .vignette-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        radial-gradient(circle at 68% 50%, transparent 15%, rgba(0, 0, 0, 0.55) 65%, rgba(0, 0, 0, 0.92) 100%),
+        linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.35) 48%, transparent 100%);
+    }
+
+    /* Minimal Top Navigation — DESIGN.md Rule: 14px uppercase, 0.35px tracking, zero borders */
+    header.nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: var(--spacing-30) var(--spacing-60);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-12);
+      text-decoration: none;
+      color: var(--color-bone-white);
+    }
+
+    .brand-orb {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-electric-iris);
+      box-shadow: 0 0 18px var(--color-electric-iris), 0 0 36px var(--color-deep-verdant);
+    }
+
+    .brand-name {
+      font-size: var(--text-nav-label);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-36);
+    }
+
+    .nav-links a {
+      color: var(--color-ash-gray);
+      text-decoration: none;
+      font-size: var(--text-nav-label);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-bone-white);
+    }
+
+    .nav-cta {
+      background: var(--color-electric-iris);
+      color: var(--color-bone-white) !important;
+      padding: 11px 24px;
+      border-radius: var(--radius-full);
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.04em;
+      box-shadow: 0 0 30px rgba(128, 82, 255, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 42px rgba(128, 82, 255, 0.75);
+    }
+
+    /* Main Hero Stage — Two-column spacious rhythm */
+    main.hero-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1440px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 150px var(--spacing-60) var(--spacing-60);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      pointer-events: auto;
+    }
+
+    .telemetry-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: var(--text-caption);
+      color: var(--color-saffron-spark);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-24);
+    }
+
+    .telemetry-tag span.pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-saffron-spark);
+      box-shadow: 0 0 12px var(--color-saffron-spark);
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(1.4); }
+    }
+
+    /* DESIGN.md Rule: Weight 400 monolithic display scale with -0.04em tracking */
+    h1.hero-headline {
+      font-size: var(--text-heading-lg);
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+      color: var(--color-bone-white);
+      margin-bottom: var(--spacing-30);
+    }
+
+    h1.hero-headline em {
+      font-style: normal;
+      background: linear-gradient(135deg, #ffffff 0%, #b99cff 50%, #15846e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* DESIGN.md Rule: Weight 200 ultra-light 18px body copy for airy non-aggressive precision */
+    p.hero-description {
+      font-size: var(--text-body);
+      font-weight: 200;
+      line-height: 1.55;
+      color: var(--color-silver-mist);
+      max-width: 540px;
+      margin-bottom: var(--spacing-36);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-24);
+    }
+
+    .btn-primary-iris {
+      background: var(--color-electric-iris);
+      color: var(--color-bone-white);
+      border: none;
+      padding: 16px 34px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 0 40px rgba(128, 82, 255, 0.5);
+      transition: all 0.25s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary-iris:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(128, 82, 255, 0.85);
+    }
+
+    .btn-ghost-void {
+      background: transparent;
+      color: var(--color-ash-gray);
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .btn-ghost-void:hover {
+      color: var(--color-bone-white);
+    }
+
+    /* Bottom Interactive 3D State Switcher & Real-Time Shader Telemetry */
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      pointer-events: auto;
+      margin-top: var(--spacing-60);
+    }
+
+    .mode-switcher {
+      display: flex;
+      gap: var(--spacing-12);
+    }
+
+    .mode-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-ash-gray);
+      padding: 12px 22px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .mode-pill.active,
+    .mode-pill:hover {
+      background: rgba(128, 82, 255, 0.18);
+      border-color: var(--color-electric-iris);
+      color: var(--color-bone-white);
+      box-shadow: 0 0 24px rgba(128, 82, 255, 0.35);
+    }
+
+    .mode-pill span.idx {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-saffron-spark);
+      margin-right: 6px;
+    }
+
+    .bio-metrics {
+      display: flex;
+      gap: var(--spacing-60);
+    }
+
+    .metric-block {
+      text-align: left;
+    }
+
+    .metric-val {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--color-bone-white);
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-ash-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 960px) {
+      header.nav-bar { padding: 24px; }
+      .nav-links { display: none; }
+      main.hero-container { padding: 120px 24px 36px; }
+      .bottom-bar { flex-direction: column; align-items: flex-start; gap: 28px; }
+      .bio-metrics { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D Cinematic WebGL Stage -->
+  <canvas id="webgl-stage"></canvas>
+  <div class="vignette-overlay"></div>
+
+  <!-- Minimal Header -->
+  <header class="nav-bar">
+    <a href="https://shokun123.github.io/web-demos/" class="brand-mark">
+      <div class="brand-orb"></div>
+      <span class="brand-name">AETHERIA BIO • 3D MOTION LAB</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#helix" class="active" onclick="setMorphState(0); return false;">01. Genomic Helix</a>
+      <a href="#cellular" onclick="setMorphState(1); return false;">02. Cellular Core</a>
+      <a href="#synapse" onclick="setMorphState(2); return false;">03. Neural Fold</a>
+      <a href="https://shokun123.github.io/web-demos/" class="nav-cta">Kudaka Studio Portfolio</a>
+    </nav>
+  </header>
+
+  <!-- Sculptural Hero Content -->
+  <main class="hero-container">
+    <div class="hero-copy">
+      <div class="telemetry-tag">
+        <span class="pulse"></span>
+        <span id="stage-status">REAL-TIME WEBGL 3D SHADER • 60 FPS CINEMATIC HERO</span>
+      </div>
+      <h1 class="hero-headline" id="hero-title">
+         programmable<br /><em>molecular life</em><br />in motion.
+      </h1>
+      <p class="hero-description" id="hero-desc">
+        Cinematic 3D real-time biological simulation engineered for frontier biotech brands. Interactive multi-thousand particle constellation, bioluminescent protein folding, and zero-latency camera physics on pure black velvet.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary-iris" onclick="triggerPulseWave()">
+          <span>Trigger Molecular Pulse</span>
+          <span>→</span>
+        </button>
+        <button class="btn-ghost-void" onclick="cycleCameraAngle()">
+          <span>Switch Cinematic Lens (35mm / 85mm Macro)</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="mode-switcher">
+        <button class="mode-pill active" id="pill-0" onclick="setMorphState(0)">
+          <span class="idx">01</span>Double-Helix Sequencing
+        </button>
+        <button class="mode-pill" id="pill-1" onclick="setMorphState(1)">
+          <span class="idx">02</span>Bioluminescent Cell Sphere
+        </button>
+        <button class="mode-pill" id="pill-2" onclick="setMorphState(2)">
+          <span class="idx">03</span>Protein Folding Torus
+        </button>
+      </div>
+
+      <div class="bio-metrics">
+        <div class="metric-block">
+          <div class="metric-val" id="metric-particles">4,800</div>
+          <div class="metric-label">Bioluminescent Nodes</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-val">60 FPS</div>
+          <div class="metric-label">WebGL / Three.js Engine</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-val">0.4 ms</div>
+          <div class="metric-label">Shader Frame Time</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // =========================================================================
+    // 3D CINEMATIC BIOTECH HERO ENGINE (Three.js Custom Particle + Bond Mesh)
+    // =========================================================================
+    const canvas = document.getElementById('webgl-stage');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 1);
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x000000, 0.028);
+
+    const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0.5, 17);
+
+    // Group positioned slightly to the right so left-aligned headline breathes in pure black void
+    const bioGroup = new THREE.Group();
+    bioGroup.position.set(3.4, 0.2, 0);
+    scene.add(bioGroup);
+
+    const COUNT = 4800;
+    const geometry = new THREE.BufferGeometry();
+
+    const posCurrent = new Float32Array(COUNT * 3);
+    const posHelix = new Float32Array(COUNT * 3);
+    const posSphere = new Float32Array(COUNT * 3);
+    const posTorus = new Float32Array(COUNT * 3);
+    const colors = new Float32Array(COUNT * 3);
+    const sizes = new Float32Array(COUNT);
+
+    // DESIGN.md Palette: Electric Iris (#8052ff), Deep Verdant (#15846e), Saffron Spark (#ffb829), Bone White (#ffffff)
+    const cIris = new THREE.Color('#8052ff');
+    const cVerdant = new THREE.Color('#00f5c4');
+    const cSaffron = new THREE.Color('#ffb829');
+    const cWhite = new THREE.Color('#ffffff');
+
+    for (let i = 0; i < COUNT; i++) {
+      const i3 = i * 3;
+      const t = i / COUNT;
+
+      // 1. STATE 0: Double-Helix DNA + Molecular Cloud
+      const strand = i % 2 === 0 ? 1 : -1;
+      const angle = t * Math.PI * 10 + (strand === 1 ? 0 : Math.PI);
+      const radius = 2.4 + (Math.random() - 0.5) * 0.55;
+      const height = (t - 0.5) * 14.5;
+
+      if (i % 7 === 0) {
+        // Base-pair rung bridges between strands
+        const bridgeLerp = (Math.random() - 0.5) * 2.0;
+        posHelix[i3] = Math.cos(t * Math.PI * 10) * radius * bridgeLerp;
+        posHelix[i3 + 1] = height + (Math.random() - 0.5) * 0.12;
+        posHelix[i3 + 2] = Math.sin(t * Math.PI * 10) * radius * bridgeLerp;
+      } else {
+        posHelix[i3] = Math.cos(angle) * radius + (Math.random() - 0.5) * 0.35;
+        posHelix[i3 + 1] = height + (Math.random() - 0.5) * 0.35;
+        posHelix[i3 + 2] = Math.sin(angle) * radius + (Math.random() - 0.5) * 0.35;
+      }
+
+      // 2. STATE 1: Bioluminescent Cellular Organelle Sphere with inner nucleus
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
+      const layerRadius = i % 4 === 0 ? 1.8 + Math.random() * 0.5 : 4.2 + Math.sin(phi * 6) * 0.35;
+      posSphere[i3] = layerRadius * Math.sin(phi) * Math.cos(theta);
+      posSphere[i3 + 1] = layerRadius * Math.sin(phi) * Math.sin(theta);
+      posSphere[i3 + 2] = layerRadius * Math.cos(phi);
+
+      // 3. STATE 2: Protein Folding Torus Knot
+      const p = 3, q = 7;
+      const tkAngle = t * Math.PI * 2 * 4;
+      const rKnot = 2.8 + 1.1 * Math.cos(q * tkAngle);
+      posTorus[i3] = rKnot * Math.cos(p * tkAngle) + (Math.random() - 0.5) * 0.45;
+      posTorus[i3 + 1] = rKnot * Math.sin(p * tkAngle) + (Math.random() - 0.5) * 0.45;
+      posTorus[i3 + 2] = 1.6 * Math.sin(q * tkAngle) + (Math.random() - 0.5) * 0.45;
+
+      // Start in Helix state
+      posCurrent[i3] = posHelix[i3];
+      posCurrent[i3 + 1] = posHelix[i3 + 1];
+      posCurrent[i3 + 2] = posHelix[i3 + 2];
+
+      // Color distribution matching Refero Dala/Auros tokens
+      let col;
+      if (i % 19 === 0) col = cSaffron;
+      else if (i % 5 === 0) col = cWhite;
+      else if (strand === 1) col = cIris.clone().lerp(cVerdant, t);
+      else col = cVerdant.clone().lerp(cIris, t);
+
+      colors[i3] = col.r;
+      colors[i3 + 1] = col.g;
+      colors[i3 + 2] = col.b;
+
+      sizes[i] = (i % 12 === 0) ? 4.8 : 2.1 + Math.random() * 1.8;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(posCurrent, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+    // Custom soft circular bioluminescent sprite texture
+    const spriteCanvas = document.createElement('canvas');
+    spriteCanvas.width = 64;
+    spriteCanvas.height = 64;
+    const sCtx = spriteCanvas.getContext('2d');
+    const grad = sCtx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    grad.addColorStop(0.35, 'rgba(200, 180, 255, 0.85)');
+    grad.addColorStop(0.7, 'rgba(128, 82, 255, 0.25)');
+    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    sCtx.fillStyle = grad;
+    sCtx.fillRect(0, 0, 64, 64);
+    const particleTexture = new THREE.CanvasTexture(spriteCanvas);
+
+    const material = new THREE.PointsMaterial({
+      size: 0.16,
+      map: particleTexture,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.92,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
+    });
+
+    const particleSystem = new THREE.Points(geometry, material);
+    bioGroup.add(particleSystem);
+
+    // Subtle Inner Wireframe Core for depth
+    const coreGeo = new THREE.IcosahedronGeometry(1.65, 2);
+    const coreMat = new THREE.MeshBasicMaterial({
+      color: 0x8052ff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.12,
+      blending: THREE.AdditiveBlending
+    });
+    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+    bioGroup.add(coreMesh);
+
+    let activeState = 0;
+    let pulseIntensity = 0;
+    let macroLens = false;
+    let mouseX = 0, mouseY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    const stateMeta = [
+      {
+        title: 'programmable<br /><em>molecular life</em><br />in motion.',
+        desc: 'Cinematic 3D real-time biological simulation engineered for frontier biotech brands. Interactive multi-thousand particle constellation, bioluminescent protein folding, and zero-latency camera physics on pure black velvet.',
+        status: 'STATE 01 • GENOMIC DOUBLE-HELIX SEQUENCING • 60 FPS WEBGL'
+      },
+      {
+        title: 'cellular<br /><em>immunotherapy</em><br />architecture.',
+        desc: 'Real-time membrane permeability and organelle encapsulation visualized at sub-nanometer precision. Designed for clinical-stage therapeutics and synthetic biology product launches.',
+        status: 'STATE 02 • BIOLUMINESCENT CELLULAR MEMBRANE • 60 FPS WEBGL'
+      },
+      {
+        title: 'autonomous<br /><em>protein folding</em><br />intelligence.',
+        desc: 'Generative 3D structural biology mesh showing tertiary folding pathways and active-site binding dynamics with interactive shader lighting.',
+        status: 'STATE 03 • TERTIARY PROTEIN TORUS KNOT • 60 FPS WEBGL'
+      }
+    ];
+
+    window.setMorphState = function(idx) {
+      activeState = idx;
+      pulseIntensity = 1.0;
+      document.querySelectorAll('.mode-pill').forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.nav-links a').forEach((el, i) => {
+        if (i < 3) el.classList.toggle('active', i === idx);
+      });
+      document.getElementById('hero-title').innerHTML = stateMeta[idx].title;
+      document.getElementById('hero-desc').textContent = stateMeta[idx].desc;
+      document.getElementById('stage-status').textContent = stateMeta[idx].status;
+    };
+
+    window.triggerPulseWave = function() {
+      pulseIntensity = 2.2;
+    };
+
+    window.cycleCameraAngle = function() {
+      macroLens = !macroLens;
+    };
+
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const elapsed = clock.getElapsedTime();
+
+      const posAttr = geometry.attributes.position;
+      const arr = posAttr.array;
+      const targetArr = activeState === 0 ? posHelix : (activeState === 1 ? posSphere : posTorus);
+
+      pulseIntensity *= 0.94;
+
+      for (let i = 0; i < COUNT; i++) {
+        const i3 = i * 3;
+        const wave = Math.sin(elapsed * 2.2 + i * 0.015) * (0.04 + pulseIntensity * 0.18);
+
+        const tx = targetArr[i3] * (1 + pulseIntensity * 0.15) + wave;
+        const ty = targetArr[i3 + 1] + Math.cos(elapsed * 1.8 + i * 0.02) * 0.03;
+        const tz = targetArr[i3 + 2] * (1 + pulseIntensity * 0.15) + wave;
+
+        arr[i3] += (tx - arr[i3]) * 0.065;
+        arr[i3 + 1] += (ty - arr[i3 + 1]) * 0.065;
+        arr[i3 + 2] += (tz - arr[i3 + 2]) * 0.065;
+      }
+      posAttr.needsUpdate = true;
+
+      // Smooth cinematic rotation + mouse parallax
+      bioGroup.rotation.y = elapsed * 0.28 + mouseX * 0.45;
+      bioGroup.rotation.x = Math.sin(elapsed * 0.4) * 0.18 + mouseY * 0.28;
+      bioGroup.rotation.z = 0.22;
+
+      coreMesh.rotation.y = -elapsed * 0.5;
+      coreMesh.scale.setScalar(1 + Math.sin(elapsed * 2.5) * 0.08 + pulseIntensity * 0.3);
+
+      const targetZ = macroLens ? 9.8 : 17.0;
+      const targetX = macroLens ? 2.2 : 0.0;
+      camera.position.z += (targetZ - camera.position.z) * 0.05;
+      camera.position.x += (targetX - camera.position.x) * 0.05;
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
