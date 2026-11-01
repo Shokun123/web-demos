@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <style>
     /* ==========================================================================
        EDITORIAL LONGEVITY & REGENERATIVE MEDICINE — REFERO DESIGN.md TOKENS
@@ -384,7 +385,7 @@
           <button class="phase-pill" id="pbtn-2" onclick="scrollToFraction(0.70)">03. Stem Cell</button>
           <button class="phase-pill" id="pbtn-3" onclick="scrollToFraction(0.98)">04. Bio-Vascular</button>
         </div>
-        <div>SCROLL-CONTROLLED 3D WEBGL • 5,400 ORGANIC NODES • 60 FPS</div>
+        <div>SCROLL-CONTROLLED 3D WEBGL • 9,279 HIGH-RES ANATOMICAL NODES • 60 FPS</div>
       </div>
     </div>
   </div>
@@ -392,7 +393,9 @@
   <script>
     // =========================================================================
     // SCROLL-CONTROLLED REVERSIBLE 3D BIOTECH & HUMAN LONGEVITY ENGINE
-    // Smoothly interpolates across 4 organic 3D states based on window.scrollY
+    // Uses a Real 3D Photogrammetric Human Portrait Scan (9,279 vertices +
+    // Sculptural Mesh + Bioluminescent Cellular Nodes) that seamlessly dissolves
+    // into DNA Telomere Helix -> Stem Cell -> Bio-Vascular Equilibrium on scroll.
     // =========================================================================
     const canvas = document.getElementById('webgl-stage');
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
@@ -401,20 +404,36 @@
     renderer.setClearColor(0x050507, 1);
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x050507, 0.025);
+    scene.fog = new THREE.FogExp2(0x050507, 0.022);
 
-    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.set(0, 0.3, 16.5);
+    const camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0.2, 16.2);
+
+    // Cinematic Studio Rim & Key Lighting for the 3D Human Portrait Bust
+    const ambientLight = new THREE.AmbientLight(0x1e1b24, 1.4);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0xf5ece0, 2.2);
+    keyLight.position.set(5.5, 4.0, 7.5);
+    scene.add(keyLight);
+
+    const goldRimLight = new THREE.DirectionalLight(0xe5b869, 2.8);
+    goldRimLight.position.set(-6.0, 3.0, -4.0);
+    scene.add(goldRimLight);
+
+    const bioCyanLight = new THREE.PointLight(0x2dd4bf, 1.9, 18);
+    bioCyanLight.position.set(2.5, -2.5, 4.5);
+    scene.add(bioCyanLight);
 
     const bioGroup = new THREE.Group();
-    bioGroup.position.set(3.2, 0.1, 0);
+    bioGroup.position.set(3.1, -0.1, 0);
     scene.add(bioGroup);
 
-    const COUNT = 5400;
+    const COUNT = 9279; // Exact vertex count of the high-res 3D human head scan
     const geometry = new THREE.BufferGeometry();
 
     const posCurrent = new Float32Array(COUNT * 3);
-    // State 0: Human Portrait / Anatomical Head-and-Shoulders Bust emerging from cellular aura
+    // State 0: Real 3D Photogrammetric Human Head Scan (Eyes, Nose, Lips, Jawline, Ears)
     const posBust = new Float32Array(COUNT * 3);
     // State 1: Regenerative Double-Helix DNA & Telomere Caps
     const posHelix = new Float32Array(COUNT * 3);
@@ -434,65 +453,26 @@
       const i3 = i * 3;
       const t = i / COUNT;
 
-      // -----------------------------------------------------------------------
-      // STATE 0: Sculptural Human Anatomical Portrait / Bust + Cellular Halo
-      // -----------------------------------------------------------------------
-      if (i < COUNT * 0.42) {
-        // Cranium & Facial Sculptural Contour (y: +0.6 to +3.6)
-        const u = (i / (COUNT * 0.42));
-        const phi = Math.acos(1 - 2 * u);
-        const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-        let rx = 1.65 * Math.sin(phi) * Math.cos(theta);
-        let ry = 2.15 * Math.cos(phi) + 1.55;
-        let rz = 1.85 * Math.sin(phi) * Math.sin(theta);
-        // Jawline & cheekbone sculptural taper
-        if (ry < 1.3) {
-          const jawTaper = 0.68 + 0.32 * ((ry - 0.1) / 1.2);
-          rx *= jawTaper;
-          rz *= jawTaper * 0.92;
-        }
-        posBust[i3] = rx + (Math.random() - 0.5) * 0.08;
-        posBust[i3 + 1] = ry + (Math.random() - 0.5) * 0.08;
-        posBust[i3 + 2] = rz + (Math.random() - 0.5) * 0.08;
-      } else if (i < COUNT * 0.58) {
-        // Neck & Cervical Spine column (y: -0.9 to +0.5)
-        const nt = (i - COUNT * 0.42) / (COUNT * 0.16);
-        const ang = nt * Math.PI * 28;
-        const rNeck = 0.88 + 0.18 * Math.pow(1 - nt, 2);
-        posBust[i3] = Math.cos(ang) * rNeck;
-        posBust[i3 + 1] = -0.85 + nt * 1.35;
-        posBust[i3 + 2] = Math.sin(ang) * rNeck * 0.85;
-      } else if (i < COUNT * 0.85) {
-        // Clavicle & Shoulders Anatomical Drape (y: -3.2 to -0.8)
-        const st = (i - COUNT * 0.58) / (COUNT * 0.27);
-        const sx = (Math.random() - 0.5) * 6.8;
-        const arch = -0.95 - 0.18 * (sx * sx) * 0.35 - Math.random() * 1.6;
-        const sz = (Math.random() - 0.5) * (2.1 - Math.abs(sx) * 0.22);
-        posBust[i3] = sx;
-        posBust[i3 + 1] = arch;
-        posBust[i3 + 2] = sz;
-      } else {
-        // Bioluminescent Cellular Aura orbiting the portrait
-        const at = (i - COUNT * 0.85) / (COUNT * 0.15);
-        const aAng = at * Math.PI * 16;
-        const aRad = 3.2 + Math.sin(at * Math.PI * 6) * 0.8;
-        posBust[i3] = Math.cos(aAng) * aRad;
-        posBust[i3 + 1] = (at - 0.5) * 7.2;
-        posBust[i3 + 2] = Math.sin(aAng) * aRad;
-      }
+      // Initial fallback before GLB finishes loading (~50ms local)
+      const u = i / COUNT;
+      const phi = Math.acos(1 - 2 * u);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+      posBust[i3] = 2.2 * Math.sin(phi) * Math.cos(theta);
+      posBust[i3 + 1] = 2.8 * Math.cos(phi);
+      posBust[i3 + 2] = 2.4 * Math.sin(phi) * Math.sin(theta);
 
       // -----------------------------------------------------------------------
       // STATE 1: Regenerative Double-Helix DNA & Telomere Caps
       // -----------------------------------------------------------------------
       const strand = i % 2 === 0 ? 1 : -1;
-      const hAngle = t * Math.PI * 9 + (strand === 1 ? 0 : Math.PI);
-      const hRad = 2.35 + (Math.random() - 0.5) * 0.38;
+      const hAngle = t * Math.PI * 10 + (strand === 1 ? 0 : Math.PI);
+      const hRad = 2.35 + (Math.random() - 0.5) * 0.34;
       const hY = (t - 0.5) * 13.5;
       if (i % 6 === 0) {
         const bridge = (Math.random() - 0.5) * 2.0;
-        posHelix[i3] = Math.cos(t * Math.PI * 9) * hRad * bridge;
+        posHelix[i3] = Math.cos(t * Math.PI * 10) * hRad * bridge;
         posHelix[i3 + 1] = hY;
-        posHelix[i3 + 2] = Math.sin(t * Math.PI * 9) * hRad * bridge;
+        posHelix[i3 + 2] = Math.sin(t * Math.PI * 10) * hRad * bridge;
       } else {
         posHelix[i3] = Math.cos(hAngle) * hRad;
         posHelix[i3 + 1] = hY;
@@ -518,21 +498,20 @@
       const p = 2, q = 5;
       const tk = t * Math.PI * 2 * 3;
       const rV = 3.0 + 1.15 * Math.cos(q * tk);
-      posVascular[i3] = rV * Math.cos(p * tk) + (Math.random() - 0.5) * 0.32;
-      posVascular[i3 + 1] = rV * Math.sin(p * tk) + (Math.random() - 0.5) * 0.32;
-      posVascular[i3 + 2] = 1.75 * Math.sin(q * tk) + (Math.random() - 0.5) * 0.32;
+      posVascular[i3] = rV * Math.cos(p * tk) + (Math.random() - 0.5) * 0.28;
+      posVascular[i3 + 1] = rV * Math.sin(p * tk) + (Math.random() - 0.5) * 0.28;
+      posVascular[i3 + 2] = 1.75 * Math.sin(q * tk) + (Math.random() - 0.5) * 0.28;
 
-      // Initialize at State 0 (Bust)
       posCurrent[i3] = posBust[i3];
       posCurrent[i3 + 1] = posBust[i3 + 1];
       posCurrent[i3 + 2] = posBust[i3 + 2];
 
       // Editorial Warm Gold, Cream, Bio-Emerald & Cellular Iris Palette
       let col;
-      if (i % 9 === 0) col = cGold;
-      else if (i % 4 === 0) col = cCream;
-      else if (i % 2 === 0) col = cGold.clone().lerp(cEmerald, t);
-      else col = cCream.clone().lerp(cIris, t * 0.75);
+      if (i % 7 === 0) col = cGold;
+      else if (i % 3 === 0) col = cCream;
+      else if (i % 2 === 0) col = cGold.clone().lerp(cEmerald, t * 0.85);
+      else col = cCream.clone().lerp(cIris, t * 0.65);
 
       colors[i3] = col.r;
       colors[i3 + 1] = col.g;
@@ -542,25 +521,25 @@
     geometry.setAttribute('position', new THREE.BufferAttribute(posCurrent, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Soft Glowing Organic Particle Texture
+    // Crisp Bioluminescent Cellular Node Texture
     const spCanvas = document.createElement('canvas');
     spCanvas.width = 64;
     spCanvas.height = 64;
     const sCtx = spCanvas.getContext('2d');
     const g = sCtx.createRadialGradient(32, 32, 0, 32, 32, 32);
     g.addColorStop(0, 'rgba(255, 252, 245, 1)');
-    g.addColorStop(0.35, 'rgba(229, 184, 105, 0.85)');
-    g.addColorStop(0.75, 'rgba(45, 212, 191, 0.22)');
+    g.addColorStop(0.35, 'rgba(229, 184, 105, 0.9)');
+    g.addColorStop(0.75, 'rgba(45, 212, 191, 0.25)');
     g.addColorStop(1, 'rgba(0, 0, 0, 0)');
     sCtx.fillStyle = g;
     sCtx.fillRect(0, 0, 64, 64);
 
     const material = new THREE.PointsMaterial({
-      size: 0.145,
+      size: 0.095,
       map: new THREE.CanvasTexture(spCanvas),
       vertexColors: true,
       transparent: true,
-      opacity: 0.92,
+      opacity: 0.94,
       depthWrite: false,
       blending: THREE.AdditiveBlending
     });
@@ -568,8 +547,59 @@
     const points = new THREE.Points(geometry, material);
     bioGroup.add(points);
 
+    // Sculptural 3D Human Portrait Mesh + Cellular Wireframe Overlay (Fades cleanly into particles as user scrolls)
+    let portraitSolidMesh = null;
+    let portraitWireMesh = null;
+    const gltfLoader = new THREE.GLTFLoader();
+    gltfLoader.load('./LeePerrySmith.glb', (gltf) => {
+      const headMesh = gltf.scene.children[0];
+      const headGeo = headMesh.geometry;
+      const srcPos = headGeo.attributes.position.array;
+      const scale = 1.18;
+
+      // Copy exact 9,279 anatomical facial scan vertices into State 0 (posBust)
+      const numVerts = Math.min(COUNT, srcPos.length / 3);
+      for (let i = 0; i < numVerts; i++) {
+        const i3 = i * 3;
+        posBust[i3] = srcPos[i3] * scale;
+        posBust[i3 + 1] = srcPos[i3 + 1] * scale + 0.15;
+        posBust[i3 + 2] = srcPos[i3 + 2] * scale;
+      }
+
+      // Compute smooth vertex normals so studio lighting glides across nose, eyes, lips & cheekbones without harsh facet hotspots
+      headGeo.deleteAttribute('normal');
+      headGeo.computeVertexNormals();
+
+      // Add smooth matte-velvet sculptural anatomical bust surface for unmistakable human facial definition at 0.0s
+      const solidMat = new THREE.MeshStandardMaterial({
+        color: 0x1e1915,
+        emissive: 0x120d06,
+        emissiveIntensity: 0.25,
+        roughness: 0.72,
+        metalness: 0.18,
+        transparent: true,
+        opacity: 0.88
+      });
+      portraitSolidMesh = new THREE.Mesh(headGeo, solidMat);
+      portraitSolidMesh.scale.setScalar(scale * 0.992);
+      portraitSolidMesh.position.y = 0.15;
+      bioGroup.add(portraitSolidMesh);
+
+      // Add delicate golden cellular wireframe over the human face
+      const wireMat = new THREE.MeshBasicMaterial({
+        color: 0xe5b869,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.19
+      });
+      portraitWireMesh = new THREE.Mesh(headGeo, wireMat);
+      portraitWireMesh.scale.setScalar(scale * 1.001);
+      portraitWireMesh.position.y = 0.15;
+      bioGroup.add(portraitWireMesh);
+    });
+
     // Subtle Organic Wireframe Ring
-    const ringGeo = new THREE.TorusGeometry(3.6, 0.012, 16, 120);
+    const ringGeo = new THREE.TorusGeometry(3.8, 0.012, 16, 120);
     const ringMat = new THREE.MeshBasicMaterial({
       color: 0xe5b869,
       transparent: true,
@@ -687,17 +717,31 @@
           z = z * (1 - w3) + posVascular[i3 + 2] * w3;
         }
 
-        // Subtle organic cellular breathing
-        const breath = Math.sin(elapsed * 1.6 + i * 0.012) * 0.035;
+        // Subtle organic cellular breathing (gentle on the portrait face, fuller in cellular phases)
+        const breathAmp = 0.008 + w1 * 0.028;
+        const breath = Math.sin(elapsed * 1.6 + i * 0.012) * breathAmp;
         arr[i3] = x + breath;
-        arr[i3 + 1] = y + Math.cos(elapsed * 1.4 + i * 0.015) * 0.03;
+        arr[i3 + 1] = y + Math.cos(elapsed * 1.4 + i * 0.015) * breathAmp;
         arr[i3 + 2] = z + breath;
       }
       posAttr.needsUpdate = true;
 
+      // Fade sculptural 3D portrait bust surface & wireframe smoothly as particles separate into DNA
+      const bustFade = Math.max(0, 1 - smoothstep(0.02, 0.22, smoothProgress));
+      if (portraitSolidMesh) {
+        portraitSolidMesh.material.opacity = 0.85 * bustFade;
+        portraitSolidMesh.visible = bustFade > 0.01;
+      }
+      if (portraitWireMesh) {
+        portraitWireMesh.material.opacity = 0.18 * bustFade;
+        portraitWireMesh.visible = bustFade > 0.01;
+      }
+
       // Scroll-driven reversible camera & rotation choreography
-      bioGroup.rotation.y = smoothProgress * Math.PI * 2.4 + elapsed * 0.12 + mouseX * 0.25;
-      bioGroup.rotation.x = Math.sin(smoothProgress * Math.PI * 2) * 0.28 + mouseY * 0.18;
+      // At 0.0s keep the human face in a noble 3/4 portrait angle with gentle breathing sway; rotate 360° during scroll
+      const idleFaceTurn = -0.24 + Math.sin(elapsed * 0.55) * 0.16;
+      bioGroup.rotation.y = idleFaceTurn * (1 - w1) + (smoothProgress * Math.PI * 2.2 + elapsed * 0.14) * w1 + mouseX * 0.22;
+      bioGroup.rotation.x = Math.sin(smoothProgress * Math.PI * 2) * 0.24 + mouseY * 0.14;
 
       orbitalRing.rotation.z = elapsed * 0.25 + smoothProgress * 3.0;
       orbitalRing.scale.setScalar(1.0 + Math.sin(smoothProgress * Math.PI) * 0.25);
