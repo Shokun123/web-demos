@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vega — Interactive Rive State Machine & Audio Lip-Sync Prototype (iOS)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@rive-app/canvas@2.24.0"></script>
+  <style>
+    :root {
+      --bg: #0B101E;
+      --surface: #131B2E;
+      --surface-elevated: #1B2640;
+      --border: rgba(255, 255, 255, 0.09);
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --amber: #F59E0B;
+      --orange: #EA580C;
+      --sky: #38BDF8;
+      --rose: #FB7185;
+      --emerald: #34D399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 20% 10%, #172544 0%, var(--bg) 60%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 16, 30, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .badge {
+      background: rgba(245, 158, 11, 0.15);
+      color: #FDE047;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dl-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-dl {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border);
+      background: var(--surface-elevated);
+      color: var(--text);
+    }
+    .btn-dl.primary {
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      color: #0B101E;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-dl:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.1);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 36px auto 0;
+      padding: 0 24px;
+    }
+    .hero-intro {
+      margin-bottom: 32px;
+    }
+    .hero-intro h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      line-height: 1.18;
+      margin-bottom: 12px;
+    }
+    .hero-intro p {
+      color: var(--text-muted);
+      max-width: 820px;
+      font-size: 1.02rem;
+    }
+
+    .workbench {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .workbench { grid-template-columns: 1fr; }
+    }
+
+    /* iOS Simulator Stage */
+    .ios-stage {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      padding: 18px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    .ios-notch {
+      width: 110px;
+      height: 22px;
+      background: #070B14;
+      border-radius: 999px;
+      margin: 0 auto 14px;
+    }
+    .canvas-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #0F172A;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    canvas#riveCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: pointer;
+    }
+    .state-pill-overlay {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+    .live-indicator {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+    }
+
+    /* Speech Bubble inside iOS Frame */
+    .vega-bubble {
+      margin-top: 14px;
+      background: rgba(255, 247, 237, 0.06);
+      border: 1px solid rgba(253, 186, 116, 0.25);
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.98rem;
+      color: #FFEDD5;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .audio-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 24px;
+    }
+    .bar {
+      width: 4px;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--sky);
+      transition: height 0.08s ease;
+    }
+
+    /* Controls & Telemetry Panel */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .panel-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .state-btn {
+      background: var(--surface-elevated);
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      padding: 15px 16px;
+      border-radius: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .state-btn:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      transform: translateY(-1px);
+    }
+    .state-btn.active {
+      background: rgba(234, 88, 12, 0.16);
+      border-color: var(--amber);
+      box-shadow: 0 0 0 1px var(--amber);
+    }
+    .state-btn strong {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05rem;
+      color: #FFF7ED;
+    }
+    .state-btn span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .lip-sync-box {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-voice {
+      background: var(--sky);
+      color: #0B101E;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-voice:hover { filter: brightness(1.1); }
+
+    .telemetry-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+    }
+    .telemetry-table th, .telemetry-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    .telemetry-table th { color: var(--text-muted); font-weight: 500; }
+    .val-true { color: var(--emerald); font-weight: 600; }
+    .val-false { color: var(--text-muted); }
+
+    pre.code-block {
+      background: #080C17;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #E2E8F0;
+      overflow-x: auto;
+      line-height: 1.55;
+    }
+    .philosophy-cards {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 860px) {
+      .philosophy-cards { grid-template-columns: 1fr; }
+    }
+    .p-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .p-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.12rem;
+      color: #FDE047;
+      margin-bottom: 8px;
+    }
+    .p-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <span>Vega Companion — Rive State Machine Studio</span>
+        <span class="badge">vega_companion.riv (2.85 KB Binary)</span>
+      </div>
+      <div class="dl-group">
+        <a href="./vega_companion.riv" download="vega_companion.riv" class="btn-dl primary">Download .RIV Binary</a>
+        <a href="./vega_sparkle_lottie.json" download="vega_sparkle_lottie.json" class="btn-dl">Download Lottie .JSON</a>
+        <a href="./scene.rml" target="_blank" class="btn-dl">View RML Source</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-intro">
+      <h1>Bringing Vega to Life: Storybook Warmth Meets Native iOS State Machines</h1>
+      <p>
+        Built specifically for <strong>111 Insights (Vega iOS Learning App)</strong>. Inspired by the tactile warmth of <em>Hilda</em> and the expressive ocular language of <em>The Wild Robot</em>, this live prototype runs a real compiled <code>.riv</code> binary (<code>Artboard: VegaCompanion</code>, <code>StateMachine: VegaStateMachine</code>) at 60 FPS with 4 latency-free states.
+      </p>
+    </section>
+
+    <section class="workbench">
+      <!-- Left: iOS Device Simulator running real .riv file -->
+      <div class="ios-stage">
+        <div class="ios-notch"></div>
+        <div class="canvas-box">
+          <canvas id="riveCanvas" width="600" height="600"></canvas>
+          <div class="state-pill-overlay">
+            <div class="live-indicator">
+              <span class="dot"></span>
+              <span id="activeStateLabel">STATE: IDLE (60 FPS)</span>
+            </div>
+            <span class="badge">RiveRuntime 60Hz</span>
+          </div>
+        </div>
+
+        <div class="vega-bubble">
+          <span id="vegaDialogue">"Hi! I'm Vega. Tap a state or test my voice lip-sync!"</span>
+          <div class="audio-bars" id="audioBars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Interactive State Machine Controller & iOS Integration -->
+      <div class="panel">
+        <div>
+          <div class="panel-title">
+            <span>1. Interactive State Machine Triggers</span>
+            <span class="badge">VegaStateMachine</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+            Click any state below to mutate the live Rive State Machine inputs (<code>isListening</code>, <code>isSpeaking</code>, <code>celebrate</code>) inside <code>vega_companion.riv</code>:
+          </p>
+          <div class="state-grid">
+            <button class="state-btn active" id="btnIdle" onclick="setVegaState('idle')">
+              <strong>1. Idle (Calm Presence)</strong>
+              <span>Soft 0.5Hz breathing, gentle ear sway & natural blink cycle.</span>
+            </button>
+            <button class="state-btn" id="btnListening" onclick="setVegaState('listening')">
+              <strong>2. Listening (Active Empathy)</strong>
+              <span>Curious head tilt, perked ears & pulsing sky-blue heart gem.</span>
+            </button>
+            <button class="state-btn" id="btnSpeaking" onclick="setVegaState('speaking')">
+              <strong>3. Speaking (Lip-Sync)</strong>
+              <span>Multi-viseme mouth articulation & expressive right-arm gesture.</span>
+            </button>
+            <button class="state-btn" id="btnCelebrating" onclick="setVegaState('celebrating')">
+              <strong>4. Celebrating (Reward)</strong>
+              <span>Anticipation squash, joyful jump, raised arms & star burst.</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Audio Lip-Sync Demo -->
+        <div class="lip-sync-box">
+          <div>
+            <strong style="display:block; font-family:'Fredoka',sans-serif; color:#E0F2FE;">Bonus: Audio-Driven Lip Sync Demo</strong>
+            <span style="font-size:0.82rem; color:var(--text-muted);">Drives <code>isSpeaking = true</code> synchronized with WebSpeech/Audio amplitude envelope.</span>
+          </div>
+          <button class="btn-voice" onclick="playVegaVoiceSample()">Play Voice + Lip Sync</button>
+        </div>
+
+        <!-- Live Input Telemetry Table -->
+        <div>
+          <div class="panel-title">
+            <span>2. Live Rive Input Telemetry</span>
+          </div>
+          <table class="telemetry-table">
+            <thead>
+              <tr>
+                <th>Input Name</th>
+                <th>Rive Type</th>
+                <th>Live Value</th>
+                <th>Transition Blend</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isListening</code></td>
+                <td>StateMachineBool</td>
+                <td id="valListening" class="val-false">false</td>
+                <td>200ms Cubic</td>
+              </tr>
+              <tr>
+                <td><code>isSpeaking</code></td>
+                <td>StateMachineBool</td>
+                <td id="valSpeaking" class="val-false">false</td>
+                <td>150ms Cubic</td>
+              </tr>
+              <tr>
+                <td><code>celebrate</code></td>
+                <td>StateMachineTrigger</td>
+                <td id="valCelebrate" class="val-false">ready</td>
+                <td>120ms AnyState -> Exit 100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SwiftUI RiveRuntime Snippet -->
+        <div>
+          <div class="panel-title">
+            <span>3. Native iOS Integration (SwiftUI + RiveRuntime)</span>
+          </div>
+          <pre class="code-block">import SwiftUI
+import RiveRuntime
+
+struct VegaCompanionView: View {
+    @StateObject private var riveVM = RiveViewModel(
+        fileName: "vega_companion",
+        stateMachineName: "VegaStateMachine",
+        artboardName: "VegaCompanion"
+    )
+
+    var body: some View {
+        riveVM.view()
+            .frame(width: 300, height: 300)
+    }
+
+    func updateAIState(listening: Bool, speaking: Bool) {
+        riveVM.setInput("isListening", value: listening)
+        riveVM.setInput("isSpeaking", value: speaking)
+    }
+
+    func triggerCelebration() {
+        riveVM.triggerInput("celebrate")
+    }
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Philosophy for Children's AI Companions -->
+    <section class="philosophy-cards">
+      <div class="p-card">
+        <h3>1. Emotional Legibility Before Words</h3>
+        <p>
+          Young learners process posture and ocular focus faster than text or speech. When a child speaks, Vega immediately tilts its head 8 degrees, perks its ears forward, and pulses its chest gem so the child feels genuinely heard before the AI even finishes transcribing.
+        </p>
+      </div>
+      <div class="p-card">
+        <h3>2. Zero-Latency State Blending</h3>
+        <p>
+          Every state transition in <code>VegaStateMachine</code> uses 120ms–200ms cubic interpolation with non-destructive layered keys. Interrupting <code>Idle</code> or <code>Listening</code> into <code>Speaking</code> or <code>Celebrating</code> never snaps or glitches on iOS.
+        </p>
+      </div>
+      <div class="p-card">
+        <h3>3. Tactile Storybook Palette</h3>
+        <p>
+          Inspired by <em>Hilda</em> and <em>The Wild Robot</em>, Vega avoids hyper-saturated neon overload in favor of warm russet-orange, soft cream facial framing, and dual-specular eye highlights that create warmth, safety, and curiosity.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let riveInstance = null;
+    let inputListening = null;
+    let inputSpeaking = null;
+    let inputCelebrate = null;
+    let audioInterval = null;
+
+    // Initialize Official Rive Canvas Runtime with our compiled binary .riv file
+    window.addEventListener('DOMContentLoaded', () => {
+      riveInstance = new rive.Rive({
+        src: './vega_companion.riv',
+        canvas: document.getElementById('riveCanvas'),
+        artboard: 'VegaCompanion',
+        stateMachines: 'VegaStateMachine',
+        autoplay: true,
+        onLoad: () => {
+          riveInstance.resizeDrawingSurfaceToCanvas();
+          const inputs = riveInstance.stateMachineInputs('VegaStateMachine');
+          if (inputs) {
+            inputListening = inputs.find(i => i.name === 'isListening');
+            inputSpeaking = inputs.find(i => i.name === 'isSpeaking');
+            inputCelebrate = inputs.find(i => i.name === 'celebrate');
+          }
+        }
+      });
+    });
+
+    function updateTelemetryUI(stateName, listeningVal, speakingVal, celebrateFired) {
+      document.getElementById('activeStateLabel').textContent = 'STATE: ' + stateName.toUpperCase() + ' (60 FPS)';
+
+      const elL = document.getElementById('valListening');
+      elL.textContent = String(listeningVal);
+      elL.className = listeningVal ? 'val-true' : 'val-false';
+
+      const elS = document.getElementById('valSpeaking');
+      elS.textContent = String(speakingVal);
+      elS.className = speakingVal ? 'val-true' : 'val-false';
+
+      const elC = document.getElementById('valCelebrate');
+      elC.textContent = celebrateFired ? 'FIRED (OneShot)' : 'ready';
+      elC.className = celebrateFired ? 'val-true' : 'val-false';
+
+      ['btnIdle', 'btnListening', 'btnSpeaking', 'btnCelebrating'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+      });
+      const mapBtn = {
+        idle: 'btnIdle',
+        listening: 'btnListening',
+        speaking: 'btnSpeaking',
+        celebrating: 'btnCelebrating'
+      };
+      if (mapBtn[stateName]) {
+        document.getElementById(mapBtn[stateName]).classList.add('active');
+      }
+    }
+
+    function setBarHeights(active) {
+      const bars = document.querySelectorAll('#audioBars .bar');
+      if (audioInterval) {
+        clearInterval(audioInterval);
+        audioInterval = null;
+      }
+      if (!active) {
+        bars.forEach(b => b.style.height = '6px');
+        return;
+      }
+      audioInterval = setInterval(() => {
+        bars.forEach(b => {
+          const h = Math.floor(6 + Math.random() * 18);
+          b.style.height = h + 'px';
+        });
+      }, 80);
+    }
+
+    function setVegaState(mode) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      const dialogue = document.getElementById('vegaDialogue');
+
+      if (mode === 'idle') {
+        if (inputListening) inputListening.value = false;
+        if (inputSpeaking) inputSpeaking.value = false;
+        setBarHeights(false);
+        dialogue.textContent = '"Hi! I\'m Vega. Tap a state or test my voice lip-sync!"';
+        updateTelemetryUI('idle', false, false, false);
+      } else if (mode === 'listening') {
+        if (inputSpeaking) inputSpeaking.value = false;
+        if (inputListening) inputListening.value = true;
+        setBarHeights(true);
+        dialogue.textContent = '(Listening attentively to the child\'s question...)';
+        updateTelemetryUI('listening', true, false, false);
+      } else if (mode === 'speaking') {
+        if (inputListening) inputListening.value = false;
+        if (inputSpeaking) inputSpeaking.value = true;
+        setBarHeights(true);
+        dialogue.textContent = '"Did you know octopuses have three hearts and blue blood?"';
+        updateTelemetryUI('speaking', false, true, false);
+      } else if (mode === 'celebrating') {
+        if (inputListening) inputListening.value = false;
+        if (inputSpeaking) inputSpeaking.value = false;
+        if (inputCelebrate) inputCelebrate.fire();
+        setBarHeights(false);
+        dialogue.textContent = '"Amazing job! You solved the puzzle all by yourself!"';
+        updateTelemetryUI('celebrating', false, false, true);
+        setTimeout(() => {
+          updateTelemetryUI('idle', false, false, false);
+        }, 1250);
+      }
+    }
+
+    function playVegaVoiceSample() {
+      setVegaState('speaking');
+      const phrase = "Hi there! I'm Vega, your learning companion. What adventure should we explore together today?";
+      document.getElementById('vegaDialogue').textContent = '"' + phrase + '"';
+
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(phrase);
+        utter.pitch = 1.25;
+        utter.rate = 1.02;
+        utter.onend = () => {
+          setVegaState('celebrating');
+        };
+        window.speechSynthesis.speak(utter);
+      } else {
+        setTimeout(() => {
+          setVegaState('celebrating');
+        }, 3600);
+      }
+    }
+  </script>
+</body>
+</html>

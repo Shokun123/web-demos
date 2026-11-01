@@ -1,0 +1,384 @@
+<Rive version="1" kind="fragment">
+  <Artboard id="0:1" name="VegaCompanion" width="600" height="600" defaultStateMachineId="0:7">
+    <!-- In RML, FIRST sibling draws on TOP, LAST sibling draws at the BACK! -->
+
+    <!-- FOREGROUND SPARKLES (Draw on top of everything) -->
+    <Shape id="0:101" name="StarL" x="115" y="155" opacity="0.9">
+      <Star width="28" height="28" points="4" innerRadius="0.38" />
+      <Fill><SolidColor colorValue="FFFDE047" /></Fill>
+    </Shape>
+    <Shape id="0:102" name="StarR" x="485" y="140" opacity="0.9">
+      <Star width="32" height="32" points="4" innerRadius="0.38" />
+      <Fill><SolidColor colorValue="FF38BDF8" /></Fill>
+    </Shape>
+    <Shape id="0:103" name="StarTop" x="300" y="68" opacity="0.75">
+      <Star width="22" height="22" points="4" innerRadius="0.38" />
+      <Fill><SolidColor colorValue="FFF472B6" /></Fill>
+    </Shape>
+
+    <!-- VEGA CHARACTER ROOT (First child inside VegaRoot draws on top) -->
+    <Node id="0:10" name="VegaRoot" x="300" y="340">
+
+      <!-- 1. HEAD GROUP (Draws in front of torso & arms) -->
+      <Node id="0:11" name="HeadGroup" x="0" y="-42">
+
+        <!-- Nose & Mouth (Topmost facial features) -->
+        <Shape id="0:12" name="Nose" x="0" y="12">
+          <Ellipse width="24" height="16" />
+          <Fill><SolidColor colorValue="FF1E293B" /></Fill>
+        </Shape>
+        <Shape id="0:13" name="Mouth" x="0" y="36">
+          <Ellipse width="34" height="18" />
+          <Fill><SolidColor colorValue="FFBE123C" /></Fill>
+        </Shape>
+
+        <!-- Eyes with Specular Highlights (Highlight first so it draws on top of pupil!) -->
+        <Node id="0:14" name="EyeLeft" x="-48" y="-8">
+          <Shape name="EyeLHighlight" x="-6" y="-7">
+            <Ellipse width="12" height="12" />
+            <Fill><SolidColor colorValue="FFFFFFFF" /></Fill>
+          </Shape>
+          <Shape name="EyeLSparkle2" x="6" y="7">
+            <Ellipse width="6" height="6" />
+            <Fill><SolidColor colorValue="FF38BDF8" /></Fill>
+          </Shape>
+          <Shape name="EyeLPupil" x="0" y="0">
+            <Ellipse width="32" height="36" />
+            <Fill><SolidColor colorValue="FF0F172A" /></Fill>
+          </Shape>
+        </Node>
+
+        <Node id="0:15" name="EyeRight" x="48" y="-8">
+          <Shape name="EyeRHighlight" x="-6" y="-7">
+            <Ellipse width="12" height="12" />
+            <Fill><SolidColor colorValue="FFFFFFFF" /></Fill>
+          </Shape>
+          <Shape name="EyeRSparkle2" x="6" y="7">
+            <Ellipse width="6" height="6" />
+            <Fill><SolidColor colorValue="FF38BDF8" /></Fill>
+          </Shape>
+          <Shape name="EyeRPupil" x="0" y="0">
+            <Ellipse width="32" height="36" />
+            <Fill><SolidColor colorValue="FF0F172A" /></Fill>
+          </Shape>
+        </Node>
+
+        <!-- Expressive Brows -->
+        <Shape id="0:16" name="BrowL" x="-48" y="-36" rotation="-0.12">
+          <Ellipse width="28" height="8" />
+          <Fill><SolidColor colorValue="FF7C2D12" /></Fill>
+        </Shape>
+        <Shape id="0:17" name="BrowR" x="48" y="-36" rotation="0.12">
+          <Ellipse width="28" height="8" />
+          <Fill><SolidColor colorValue="FF7C2D12" /></Fill>
+        </Shape>
+
+        <!-- Rosy Cheeks -->
+        <Shape id="0:18" name="CheekL" x="-70" y="20" opacity="0.65">
+          <Ellipse width="32" height="18" />
+          <Fill><SolidColor colorValue="FFFB7185" /></Fill>
+        </Shape>
+        <Shape id="0:19" name="CheekR" x="70" y="20" opacity="0.65">
+          <Ellipse width="32" height="18" />
+          <Fill><SolidColor colorValue="FFFB7185" /></Fill>
+        </Shape>
+
+        <!-- Cream Storybook Face Mask (Behind eyes/nose/mouth, in front of HeadBase) -->
+        <Shape id="0:20" name="FaceMask" x="0" y="14">
+          <Ellipse width="180" height="134" />
+          <Fill><SolidColor colorValue="FFFFF7ED" /></Fill>
+        </Shape>
+
+        <!-- Forehead Tuft -->
+        <Shape id="0:21" name="HeadTuft" x="0" y="-94">
+          <Ellipse width="46" height="28" />
+          <Fill><SolidColor colorValue="FFF97316" /></Fill>
+        </Shape>
+
+        <!-- Main Head Base -->
+        <Shape id="0:22" name="HeadBase" x="0" y="0">
+          <Ellipse width="226" height="196" />
+          <Fill><SolidColor colorValue="FFEA580C" /></Fill>
+        </Shape>
+
+        <!-- Ears (Behind HeadBase) -->
+        <Node id="0:23" name="EarLeft" x="-78" y="-88" rotation="-0.28">
+          <Shape name="EarLInner" x="0" y="-4">
+            <Ellipse width="32" height="64" />
+            <Fill><SolidColor colorValue="FFFDBA74" /></Fill>
+          </Shape>
+          <Shape name="EarLShape" x="0" y="-6">
+            <Ellipse width="58" height="106" />
+            <Fill><SolidColor colorValue="FFC2410C" /></Fill>
+          </Shape>
+        </Node>
+
+        <Node id="0:24" name="EarRight" x="78" y="-88" rotation="0.28">
+          <Shape name="EarRInner" x="0" y="-4">
+            <Ellipse width="32" height="64" />
+            <Fill><SolidColor colorValue="FFFDBA74" /></Fill>
+          </Shape>
+          <Shape name="EarRShape" x="0" y="-6">
+            <Ellipse width="58" height="106" />
+            <Fill><SolidColor colorValue="FFC2410C" /></Fill>
+          </Shape>
+        </Node>
+
+      </Node>
+
+      <!-- 2. ARMS (In front of torso, behind head) -->
+      <Node id="0:25" name="ArmLeft" x="-92" y="68" rotation="0.32">
+        <Shape name="ArmLShape" x="0" y="18">
+          <Ellipse width="42" height="78" />
+          <Fill><SolidColor colorValue="FFC2410C" /></Fill>
+        </Shape>
+      </Node>
+
+      <Node id="0:26" name="ArmRight" x="92" y="68" rotation="-0.32">
+        <Shape name="ArmRShape" x="0" y="18">
+          <Ellipse width="42" height="78" />
+          <Fill><SolidColor colorValue="FFC2410C" /></Fill>
+        </Shape>
+      </Node>
+
+      <!-- 3. CHEST HEART GEM & BELLY PATCH & TORSO -->
+      <Shape id="0:27" name="HeartGem" x="0" y="64">
+        <Ellipse width="28" height="28" />
+        <Fill><SolidColor colorValue="FF38BDF8" /></Fill>
+      </Shape>
+
+      <Shape id="0:28" name="BellyPatch" x="0" y="88">
+        <Ellipse width="110" height="96" />
+        <Fill><SolidColor colorValue="FFFFEDD5" /></Fill>
+      </Shape>
+
+      <Shape id="0:29" name="Torso" x="0" y="82">
+        <Ellipse width="170" height="148" />
+        <Fill><SolidColor colorValue="FFEA580C" /></Fill>
+      </Shape>
+
+    </Node>
+
+    <!-- BACKGROUND HALO & CANVAS (Last children draw at the very back) -->
+    <Shape id="0:30" name="GlowHalo" x="300" y="300" opacity="0.22">
+      <Ellipse width="390" height="390" />
+      <Fill><SolidColor colorValue="FFF59E0B" /></Fill>
+    </Shape>
+
+    <Shape id="0:31" name="BgCanvas" x="300" y="300">
+      <Rectangle width="600" height="600" />
+      <Fill><SolidColor colorValue="FF0F172A" /></Fill>
+    </Shape>
+
+    <!-- STATE MACHINE: 4 Core States (Idle, Listening, Speaking, Celebrating) -->
+    <StateMachine id="0:7" name="VegaStateMachine">
+      <StateMachineBool id="0:40" name="isListening" value="false" />
+      <StateMachineBool id="0:41" name="isSpeaking" value="false" />
+      <StateMachineTrigger id="0:42" name="celebrate" />
+
+      <StateMachineLayer id="0:8" name="MainLayer">
+        <AnyState id="0:50" x="0" y="-120">
+          <StateTransition stateToId="0:55" duration="120">
+            <TransitionTriggerCondition inputId="0:42" />
+          </StateTransition>
+        </AnyState>
+        <ExitState id="0:51" x="600" y="-120" />
+        <EntryState id="0:52" x="0" y="0">
+          <StateTransition stateToId="0:53" duration="0" />
+        </EntryState>
+
+        <!-- State 1: Idle -->
+        <AnimationState id="0:53" animationId="0:60" x="160" y="0">
+          <StateTransition stateToId="0:54" duration="200">
+            <TransitionBoolCondition inputId="0:40" opValue="equal" />
+          </StateTransition>
+          <StateTransition stateToId="0:56" duration="150">
+            <TransitionBoolCondition inputId="0:41" opValue="equal" />
+          </StateTransition>
+        </AnimationState>
+
+        <!-- State 2: Listening -->
+        <AnimationState id="0:54" animationId="0:61" x="360" y="-80">
+          <StateTransition stateToId="0:53" duration="200">
+            <TransitionBoolCondition inputId="0:40" opValue="notEqual" />
+          </StateTransition>
+          <StateTransition stateToId="0:56" duration="150">
+            <TransitionBoolCondition inputId="0:41" opValue="equal" />
+          </StateTransition>
+        </AnimationState>
+
+        <!-- State 3: Speaking -->
+        <AnimationState id="0:56" animationId="0:62" x="360" y="80">
+          <StateTransition stateToId="0:53" duration="200">
+            <TransitionBoolCondition inputId="0:41" opValue="notEqual" />
+          </StateTransition>
+        </AnimationState>
+
+        <!-- State 4: Celebrating -->
+        <AnimationState id="0:55" animationId="0:63" x="200" y="-120">
+          <StateTransition stateToId="0:53" duration="250" enableExitTime="true" exitTimeIsPercetange="true" exitTime="100" />
+        </AnimationState>
+      </StateMachineLayer>
+    </StateMachine>
+
+    <!-- ANIMATIONS -->
+    <!-- 1. IDLE: Warm breathing, gentle head float, natural blink -->
+    <LinearAnimation id="0:60" name="Idle" fps="60" duration="120" loopValue="1">
+      <KeyedObject objectId="0:10">
+        <KeyedProperty propertyKey="14">
+          <KeyFrameDouble frame="0" value="340" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="330" interpolationType="1" />
+          <KeyFrameDouble frame="120" value="340" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:23">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="-0.28" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="-0.18" interpolationType="1" />
+          <KeyFrameDouble frame="120" value="-0.28" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:24">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="0.28" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="0.18" interpolationType="1" />
+          <KeyFrameDouble frame="120" value="0.28" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:14">
+        <KeyedProperty propertyKey="17">
+          <KeyFrameDouble frame="0" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="52" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="56" value="0.1" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="120" value="1" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:15">
+        <KeyedProperty propertyKey="17">
+          <KeyFrameDouble frame="0" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="52" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="56" value="0.1" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="120" value="1" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+
+    <!-- 2. LISTENING: Curious head tilt, perked ears, glowing blue heart gem -->
+    <LinearAnimation id="0:61" name="Listening" fps="60" duration="90" loopValue="1">
+      <KeyedObject objectId="0:11">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="0.12" interpolationType="1" />
+          <KeyFrameDouble frame="45" value="0.18" interpolationType="1" />
+          <KeyFrameDouble frame="90" value="0.12" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:23">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="-0.08" interpolationType="1" />
+          <KeyFrameDouble frame="45" value="0.02" interpolationType="1" />
+          <KeyFrameDouble frame="90" value="-0.08" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:24">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="0.08" interpolationType="1" />
+          <KeyFrameDouble frame="45" value="-0.02" interpolationType="1" />
+          <KeyFrameDouble frame="90" value="0.08" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:27">
+        <KeyedProperty propertyKey="16">
+          <KeyFrameDouble frame="0" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="45" value="1.45" interpolationType="1" />
+          <KeyFrameDouble frame="90" value="1" interpolationType="1" />
+        </KeyedProperty>
+        <KeyedProperty propertyKey="17">
+          <KeyFrameDouble frame="0" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="45" value="1.45" interpolationType="1" />
+          <KeyFrameDouble frame="90" value="1" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+
+    <!-- 3. SPEAKING: Multi-viseme mouth articulation & expressive gesturing -->
+    <LinearAnimation id="0:62" name="Speaking" fps="60" duration="60" loopValue="1">
+      <KeyedObject objectId="0:13">
+        <KeyedProperty propertyKey="17">
+          <KeyFrameDouble frame="0" value="0.5" interpolationType="1" />
+          <KeyFrameDouble frame="12" value="1.85" interpolationType="1" />
+          <KeyFrameDouble frame="24" value="0.65" interpolationType="1" />
+          <KeyFrameDouble frame="36" value="2.15" interpolationType="1" />
+          <KeyFrameDouble frame="48" value="0.85" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="0.5" interpolationType="1" />
+        </KeyedProperty>
+        <KeyedProperty propertyKey="16">
+          <KeyFrameDouble frame="0" value="1.0" interpolationType="1" />
+          <KeyFrameDouble frame="12" value="1.25" interpolationType="1" />
+          <KeyFrameDouble frame="24" value="0.9" interpolationType="1" />
+          <KeyFrameDouble frame="36" value="1.35" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="1.0" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:11">
+        <KeyedProperty propertyKey="14">
+          <KeyFrameDouble frame="0" value="-42" interpolationType="1" />
+          <KeyFrameDouble frame="15" value="-48" interpolationType="1" />
+          <KeyFrameDouble frame="30" value="-42" interpolationType="1" />
+          <KeyFrameDouble frame="45" value="-49" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="-42" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:26">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="-0.32" interpolationType="1" />
+          <KeyFrameDouble frame="30" value="-0.78" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="-0.32" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+
+    <!-- 4. CELEBRATING: Joyful jump, arms raised high, sparkling stars -->
+    <LinearAnimation id="0:63" name="Celebrating" fps="60" duration="60" loopValue="0">
+      <KeyedObject objectId="0:10">
+        <KeyedProperty propertyKey="14">
+          <KeyFrameDouble frame="0" value="340" interpolationType="1" />
+          <KeyFrameDouble frame="12" value="354" interpolationType="1" />
+          <KeyFrameDouble frame="30" value="276" interpolationType="1" />
+          <KeyFrameDouble frame="48" value="345" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="340" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:25">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="0.32" interpolationType="1" />
+          <KeyFrameDouble frame="25" value="2.35" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="0.32" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:26">
+        <KeyedProperty propertyKey="15">
+          <KeyFrameDouble frame="0" value="-0.32" interpolationType="1" />
+          <KeyFrameDouble frame="25" value="-2.35" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="-0.32" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:101">
+        <KeyedProperty propertyKey="16">
+          <KeyFrameDouble frame="0" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="30" value="1.8" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="1" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="0:102">
+        <KeyedProperty propertyKey="16">
+          <KeyFrameDouble frame="0" value="1" interpolationType="1" />
+          <KeyFrameDouble frame="30" value="1.8" interpolationType="1" />
+          <KeyFrameDouble frame="60" value="1" interpolationType="1" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+
+  </Artboard>
+</Rive>
