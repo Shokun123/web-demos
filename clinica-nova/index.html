@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLINICA ESPECIALIZADA NOVA | Centro Medico y Odontologia Digital Avanzada</title>
+    <meta name="description" content="Centro de especialidades medicas y odontologia digital con sistema de reserva de turnos web en tiempo real, expediente electronico y diagnostico 3D.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Clinica Especializada Nova",
+      "description": "Clinica de especialidades medicas y odontologia digital con agendamiento web en tiempo real.",
+      "medicalSpecialty": ["Dentistry", "Dermatology", "Cardiology"]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --teal: #0d9488;
+            --border: #e2e8f0;
+            --success: #059669;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; }
+        header {
+            background: var(--surface); border-bottom: 1px solid var(--border);
+            padding: 16px 5%; position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-size: 1.2rem; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: var(--primary); }
+        nav { display: flex; gap: 24px; align-items: center; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        .btn-primary {
+            background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 6px;
+            font-weight: 600; font-size: 0.88rem; text-decoration: none; border: none; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover { background: var(--primary-dark); }
+
+        .hero {
+            max-width: 1280px; margin: 0 auto; padding: 64px 5%;
+            display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: start;
+        }
+        .badge {
+            display: inline-block; background: #e0f2fe; color: var(--primary-dark);
+            padding: 6px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 18px;
+        }
+        h1 { font-size: 2.75rem; line-height: 1.15; font-weight: 800; margin-bottom: 18px; color: var(--text); letter-spacing: -0.8px; }
+        .hero p { font-size: 1.05rem; color: var(--muted); margin-bottom: 28px; }
+        .trust-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border);
+        }
+        .trust-item strong { display: block; font-size: 1.4rem; color: var(--primary); font-weight: 800; }
+        .trust-item span { font-size: 0.8rem; color: var(--muted); }
+
+        .booking-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            padding: 32px; box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+        }
+        .booking-card h2 { font-size: 1.35rem; margin-bottom: 6px; }
+        .booking-card p.sub { font-size: 0.86rem; color: var(--muted); margin-bottom: 20px; }
+        .field { margin-bottom: 16px; }
+        .field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .input {
+            width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 6px;
+            font-size: 0.92rem; background: #fff; color: var(--text);
+        }
+        .slots-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 6px; }
+        .slot-btn {
+            padding: 9px 6px; border: 1px solid var(--border); background: var(--bg);
+            border-radius: 6px; font-size: 0.82rem; font-weight: 600; cursor: pointer; color: var(--text);
+        }
+        .slot-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        .ticket-box {
+            display: none; margin-top: 20px; padding: 20px; border-radius: 8px;
+            background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; font-size: 0.88rem;
+        }
+
+        .section { max-width: 1280px; margin: 0 auto; padding: 64px 5%; border-top: 1px solid var(--border); }
+        .section h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 10px; }
+        .section p.lead { color: var(--muted); margin-bottom: 32px; }
+        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .spec-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .spec-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+        .spec-card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
+        .spec-meta {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-top: 14px; border-top: 1px solid var(--border); font-size: 0.85rem; font-weight: 700;
+        }
+        footer {
+            background: var(--surface); border-top: 1px solid var(--border);
+            padding: 36px 5%; text-align: center; font-size: 0.85rem; color: var(--muted);
+        }
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            h1 { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">CLINICA <span>NOVA</span> DIGITAL</a>
+    <nav>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#profesionales">Equipo Medico</a>
+        <a href="#reserva" class="btn-primary">Reservar Turno Online</a>
+    </nav>
+</header>
+
+<section class="hero" id="reserva">
+    <div>
+        <span class="badge">Salud Digital & Diagnostico 3D</span>
+        <h1>Atencion Medica Especializada sin Tiempos de Espera</h1>
+        <p>Sistema integral de agendamiento web en tiempo real. Seleccione su especialidad, profesional asignado y horario disponible con confirmacion instantanea de expediente electronico.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="#especialidades" class="btn-primary">Ver Aranceles y Especialidades</a>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <strong>99.4%</strong>
+                <span>Puntualidad en Consultas</span>
+            </div>
+            <div class="trust-item">
+                <strong>+14,500</strong>
+                <span>Pacientes Atendidos</span>
+            </div>
+            <div class="trust-item">
+                <strong>100% Web</strong>
+                <span>Historial Clinico Digital</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="booking-card">
+        <h2>Motor de Reserva de Turnos en Linea</h2>
+        <p class="sub">Disponibilidad sincronizada con la agenda medica central.</p>
+        <form onsubmit="confirmAppointment(event)">
+            <div class="field">
+                <label>1. Especialidad Clinica</label>
+                <select id="bk-spec" class="input" onchange="updateDoctors()">
+                    <option value="Odontologia Digital & Rehabilitacion 3D">Odontologia Digital & Rehabilitacion 3D ($45 USD)</option>
+                    <option value="Dermatologia Clinica & Laser">Dermatologia Clinica & Laser ($55 USD)</option>
+                    <option value="Cardiologia Preventiva & Doppler">Cardiologia Preventiva & Doppler ($65 USD)</option>
+                    <option value="Medicina Interna & Chequeo Ejecutivo">Medicina Interna & Chequeo Ejecutivo ($50 USD)</option>
+                </select>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <div class="field">
+                    <label>2. Especialista</label>
+                    <select id="bk-doc" class="input"></select>
+                </div>
+                <div class="field">
+                    <label>3. Fecha de Consulta</label>
+                    <input type="date" id="bk-date" class="input" required>
+                </div>
+            </div>
+            <div class="field">
+                <label>4. Bloque Horario Disponible</label>
+                <div class="slots-grid" id="slots-box">
+                    <button type="button" class="slot-btn active" onclick="pickSlot('09:00 AM', this)">09:00 AM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('10:30 AM', this)">10:30 AM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('12:00 PM', this)">12:00 PM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('03:00 PM', this)">03:00 PM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('04:30 PM', this)">04:30 PM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('05:30 PM', this)">05:30 PM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('06:30 PM', this)">06:30 PM</button>
+                    <button type="button" class="slot-btn" onclick="pickSlot('07:30 PM', this)">07:30 PM</button>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <div class="field">
+                    <label>Nombre del Paciente</label>
+                    <input type="text" id="bk-name" class="input" placeholder="Nombre y Apellidos" required>
+                </div>
+                <div class="field">
+                    <label>Correo para Comprobante</label>
+                    <input type="email" id="bk-email" class="input" placeholder="paciente@correo.com" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; padding:13px; margin-top:6px;">Confirmar Reserva Medica en Linea</button>
+        </form>
+        <div id="bk-ticket" class="ticket-box"></div>
+    </div>
+</section>
+
+<section class="section" id="especialidades">
+    <h2>Unidades de Alta Especializacion</h2>
+    <p class="lead">Tecnologia diagnostica de ultima generacion con protocolos clinicos internacionales.</p>
+    <div class="spec-grid">
+        <div class="spec-card">
+            <div>
+                <h3>Odontologia Digital CAD/CAM</h3>
+                <p>Escaneo intraoral 3D sin moldes convencionales, diseno digital de sonrisa e implantologia guiada por computadora en una sola sesion.</p>
+            </div>
+            <div class="spec-meta">
+                <span>Consulta + Escaneo 3D: $45 USD</span>
+                <button class="btn-primary" onclick="preselectSpec(0)">Seleccionar</button>
+            </div>
+        </div>
+        <div class="spec-card">
+            <div>
+                <h3>Dermatologia Clinica & Mapeo Digital</h3>
+                <p>Dermatoscopia digital de alta resolucion, tratamiento laser dermatologico y protocolos clinicos personalizados.</p>
+            </div>
+            <div class="spec-meta">
+                <span>Evaluacion Especializada: $55 USD</span>
+                <button class="btn-primary" onclick="preselectSpec(1)">Seleccionar</button>
+            </div>
+        </div>
+        <div class="spec-card">
+            <div>
+                <h3>Cardiologia & Evaluacion Deportiva</h3>
+                <p>Electrocardiograma digital en reposo, ecocardiografia Doppler color y estratificacion cardiovascular preventiva.</p>
+            </div>
+            <div class="spec-meta">
+                <span>Chequeo Cardiologico: $65 USD</span>
+                <button class="btn-primary" onclick="preselectSpec(2)">Seleccionar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>CLINICA ESPECIALIZADA NOVA — Sistema Web de Reservas Desarrollado por <strong>Kudaka Studio (Shota Sebastian Kudaka Lino)</strong>.</p>
+    <p style="margin-top:6px;"><a href="../index.html" style="color:var(--primary); text-decoration:none; font-weight:600;">Volver al Portafolio Principal de Kudaka Studio</a></p>
+</footer>
+
+<script>
+    let selectedSlot = "09:00 AM";
+    const doctorsBySpec = {
+        "Odontologia Digital & Rehabilitacion 3D": ["Dr. Alejandro Vargas (Prostodoncia 3D)", "Dra. Sofia Mendez (Implantologia CAD)"],
+        "Dermatologia Clinica & Laser": ["Dra. Valeria Rojas (Dermatologia Clinica)", "Dr. Marcos Silva (Laser Medico)"],
+        "Cardiologia Preventiva & Doppler": ["Dr. Ricardo Solis (Cardiologia Clinica)", "Dra. Elena Paz (Ecocardiografia)"],
+        "Medicina Interna & Chequeo Ejecutivo": ["Dr. Gabriel Torres (Medicina Interna)"]
+    };
+
+    function updateDoctors() {
+        const spec = document.getElementById('bk-spec').value;
+        const docSelect = document.getElementById('bk-doc');
+        const list = doctorsBySpec[spec] || [];
+        docSelect.innerHTML = list.map(d => `<option value="${d}">${d}</option>`).join('');
+    }
+
+    function pickSlot(time, btn) {
+        selectedSlot = time;
+        document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    function preselectSpec(index) {
+        const sel = document.getElementById('bk-spec');
+        sel.selectedIndex = index;
+        updateDoctors();
+        document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function confirmAppointment(e) {
+        e.preventDefault();
+        const spec = document.getElementById('bk-spec').value;
+        const doc = document.getElementById('bk-doc').value;
+        const date = document.getElementById('bk-date').value;
+        const name = document.getElementById('bk-name').value;
+        const email = document.getElementById('bk-email').value;
+        const code = "NOVA-" + Math.floor(100000 + Math.random() * 900000);
+        const ticket = document.getElementById('bk-ticket');
+        ticket.style.display = 'block';
+        ticket.innerHTML = `<strong>TURNO MEDICO CONFIRMADO — CODIGO DE EXPEDIENTE: ${code}</strong><br>
+        Paciente: ${name} (${email})<br>
+        Especialidad: ${spec}<br>
+        Profesional: ${doc}<br>
+        Fecha y Hora: ${date} a las ${selectedSlot}<br>
+        <em>Su comprobante digital de admision e instrucciones previas fueron enviados a su correo electronico.</em>`;
+    }
+
+    document.getElementById('bk-date').valueAsDate = new Date(Date.now() + 86400000);
+    updateDoctors();
+</script>
+</body>
+</html>

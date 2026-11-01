@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Demos Web - Soluciones Digitales Frontend</title>
+  <title>Kudaka Studio | Agencia de Ingenieria Web, E-Commerce y Sistemas Interactivos</title>
+  <meta name="description" content="Portafolio oficial de Kudaka Studio (Shota Sebastian Kudaka Lino). Desarrollo de sitios web corporativos, E-Commerce con Stripe, portales inmobiliarios y sistemas clinicos de reserva en linea.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Kudaka Studio - Ingenieria Web & Frontend",
+    "founder": "Shota Sebastian Kudaka Lino",
+    "url": "https://shokun123.github.io/web-demos/",
+    "description": "Desarrollo de sitios web de alta velocidad, E-Commerce con pasarela Stripe y sistemas interactivos a medida."
+  }
+  </script>
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </style>
@@ -15,92 +26,325 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between antialiased selection:bg-indigo-500 selection:text-white">
 
   <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur py-5 px-6">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
+  <header class="border-b border-slate-800/80 bg-slate-950/90 backdrop-blur sticky top-0 z-50 py-4 px-6">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-600/20">
-          S
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center font-extrabold text-white shadow-lg shadow-indigo-600/20">
+          KS
         </div>
-        <span class="text-lg font-bold text-white tracking-tight">Shokun <span class="text-indigo-400">Dev Showcase</span></span>
+        <div>
+          <span class="text-lg font-extrabold text-white tracking-tight block leading-none">KUDAKA <span class="text-indigo-400">STUDIO</span></span>
+          <span class="text-[11px] text-slate-400 font-medium">Shota Sebastian Kudaka Lino — Frontend & Web Architecture</span>
+        </div>
       </div>
-      <div class="text-xs text-slate-400 font-medium">Prototipos en Vivo para Clientes</div>
+      <nav class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-300">
+        <a href="#demos" class="hover:text-indigo-400 transition">Demos en Vivo (5)</a>
+        <a href="#planes" class="hover:text-indigo-400 transition">Tarifas y Alcance</a>
+        <a href="#cotizar" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-md shadow-indigo-600/20">Solicitar Propuesta Web</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero & Grid de Demos -->
-  <main class="max-w-5xl mx-auto px-6 py-16 flex-1">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Demostraciones Interactivas en Tiempo Real
+  <main class="max-w-6xl mx-auto px-6 py-14 flex-1">
+    <!-- Hero -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        5 Sistemas Web Interactivos Desplegados en Produccion
       </div>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-        Soluciones Web de Alta Conversión
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-5 leading-tight">
+        Ingenieria Web de Alta Velocidad y Conversion Comercial
       </h1>
-      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-        Arquitectura limpia, carga ultrarrápida sin dependencias pesadas y maquetación responsive orientada a maximizar resultados comerciales.
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
+        Disenamos y programamos plataformas web a medida sin plantillas pesadas: E-Commerce con pasarela Stripe, portales inmobiliarios con simuladores financieros y sistemas clinicos con reserva de turnos en tiempo real.
       </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Demo 1: Comparador de Alarmas Chile -->
-      <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-amber-500/60 transition flex flex-col justify-between shadow-xl">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
-              Aplicación Web / Cuestionario
-            </span>
-            <span class="text-xs text-slate-400 font-semibold">Chile</span>
-          </div>
-          <h2 class="text-2xl font-bold text-white mb-3">Comparador de Alarmas Chile</h2>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-            Plataforma interactiva con cuestionario dinámico en 4 pasos y motor de decisión ponderado que clasifica a Verisure, Movistar Prosegur y ADT en tiempo real, integrando captura de prospectos.
-          </p>
-          <div class="flex flex-wrap gap-2 text-xs text-slate-300 font-medium mb-8">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">JavaScript Puro</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Tailwind CSS</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Scoring Algorítmico</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Mobile-First</span>
-          </div>
+          <div class="text-xl font-extrabold text-indigo-400">99 / 100</div>
+          <div class="text-xs text-slate-400">Google PageSpeed Performance</div>
         </div>
-        <a href="alarmas/" class="w-full text-center py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-amber-500/20">
-          Probar Comparador en Vivo →
-        </a>
-      </div>
-
-      <!-- Demo 2: Landing Page Express -->
-      <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-indigo-500/60 transition flex flex-col justify-between shadow-xl">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider border border-indigo-500/30">
-              Landing Page de Conversión
-            </span>
-            <span class="text-xs text-slate-400 font-semibold">Global</span>
-          </div>
-          <h2 class="text-2xl font-bold text-white mb-3">Landing Page Express</h2>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-            Página de aterrizaje optimizada para servicios y software, con métricas de carga sub-segundo, acordeón de preguntas frecuentes interactivo y formulario de cotización instantáneo.
-          </p>
-          <div class="flex flex-wrap gap-2 text-xs text-slate-300 font-medium mb-8">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">HTML5 Semántico</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">PageSpeed 99+</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">FAQ Acordeón</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800">Hitos 50/50</span>
-          </div>
+          <div class="text-xl font-extrabold text-emerald-400">&lt; 0.8s</div>
+          <div class="text-xs text-slate-400">Tiempo de Carga Inicial (LCP)</div>
         </div>
-        <a href="landing/" class="w-full text-center py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition shadow-lg shadow-indigo-600/20">
-          Probar Landing Page en Vivo →
-        </a>
+        <div>
+          <div class="text-xl font-extrabold text-cyan-400">Schema.org</div>
+          <div class="text-xs text-slate-400">SEO Tecnico JSON-LD Nativo</div>
+        </div>
+        <div>
+          <div class="text-xl font-extrabold text-amber-400">100% Web</div>
+          <div class="text-xs text-slate-400">Checkout, Agendamiento y Formularios</div>
+        </div>
       </div>
     </div>
+
+    <!-- Pack 3-in-1 Nuevos Showcases -->
+    <section id="demos" class="mb-20">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Catalogo de Sistemas Web en Vivo</h2>
+          <p class="text-slate-400 text-sm">Haga clic en cualquier proyecto para interactuar con el sistema real en su navegador.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7 mb-8">
+        <!-- Showcase 1: E-Commerce Pro -->
+        <div class="p-7 rounded-3xl bg-slate-900 border border-slate-800 hover:border-indigo-500/70 transition flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider border border-indigo-500/30">
+                E-Commerce & Stripe
+              </span>
+              <span class="text-xs text-slate-400 font-mono">B2C / SaaS</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2.5">Kinetix Commerce Pro</h3>
+            <p class="text-slate-400 text-sm mb-5 leading-relaxed">
+              Tienda minimalista de alta velocidad con selector interactivo de 2 planes, asistente de personalizacion multi-paso, carga de archivos Drag-and-Drop y pasarela Stripe Checkout.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-300 font-medium mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Selector 2 Planes</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Multi-Step Wizard</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Drag & Drop Upload</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Stripe Checkout</span>
+            </div>
+          </div>
+          <a href="ecommerce-pro/" class="w-full text-center py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition">
+            Abrir Demo E-Commerce
+          </a>
+        </div>
+
+        <!-- Showcase 2: InmoLuxe Arquitectura -->
+        <div class="p-7 rounded-3xl bg-slate-900 border border-slate-800 hover:border-amber-500/70 transition flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
+                Inmobiliaria & CAD
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Real Estate</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2.5">AuraLuxe Arquitectos</h3>
+            <p class="text-slate-400 text-sm mb-5 leading-relaxed">
+              Portal para estudio de arquitectura y desarrolladora inmobiliaria con visor tecnico de planos por planta, filtro de unidades en tiempo real y calculadora de hipoteca/plusvalia.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-300 font-medium mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Visor Planos 1:100</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Simulador ROI/Hipoteca</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Filtro Dinamico</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Dossier Web</span>
+            </div>
+          </div>
+          <a href="inmoluxe-arquitectura/" class="w-full text-center py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition">
+            Abrir Demo Inmobiliaria
+          </a>
+        </div>
+
+        <!-- Showcase 3: Clinica Especializada Nova -->
+        <div class="p-7 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/70 transition flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
+                Salud & Reserva Web
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Healthtech</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2.5">Clinica Especializada Nova</h3>
+            <p class="text-slate-400 text-sm mb-5 leading-relaxed">
+              Plataforma medica y odontologica con motor de reserva de turnos online por especialidad, seleccion de profesional, bloque horario y emision instantanea de codigo de expediente.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-300 font-medium mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Agenda Web Real-Time</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Selector Especialista</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Ticket de Admision</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800">Schema MedicalClinic</span>
+            </div>
+          </div>
+          <a href="clinica-nova/" class="w-full text-center py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition">
+            Abrir Demo Clinica
+          </a>
+        </div>
+      </div>
+
+      <!-- Demos Adicionales Preservadas -->
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="p-7 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
+                Comparador Algoritmico
+              </span>
+              <span class="text-xs text-slate-400 font-semibold">Lead Generation</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Comparador Interactivo de Alarmas (Chile)</h3>
+            <p class="text-slate-400 text-sm mb-5 leading-relaxed">
+              Cuestionario dinamico en 4 etapas con motor de decision ponderado que clasifica proveedores de seguridad en tiempo real y captura prospectos calificados.
+            </p>
+          </div>
+          <a href="alarmas/" class="w-full text-center py-3 rounded-xl bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-white font-bold text-sm transition">
+            Probar Comparador en Vivo
+          </a>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-violet-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-bold uppercase tracking-wider border border-violet-500/30">
+                Landing Page B2B
+              </span>
+              <span class="text-xs text-slate-400 font-semibold">Alta Velocidad</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Landing Page Express de Conversion</h3>
+            <p class="text-slate-400 text-sm mb-5 leading-relaxed">
+              Pagina de aterrizaje optimizada para servicios profesionales y SaaS con carga sub-segundo, estructura persuasiva, FAQ interactivo y formulario web directo.
+            </p>
+          </div>
+          <a href="landing/" class="w-full text-center py-3 rounded-xl bg-slate-800 hover:bg-violet-500 text-white font-bold text-sm transition">
+            Probar Landing Page en Vivo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes de Desarrollo Web -->
+    <section id="planes" class="mb-20 pt-10 border-t border-slate-800/80">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Inversion Transparente & Hitos Verificables</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Paquetes de Desarrollo Web Llave en Mano</h2>
+        <p class="text-slate-400 text-sm mt-2">Codigo limpio, propiedad intelectual 100% del cliente, certificado SSL y despliegue incluido.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="p-7 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase text-slate-400 mb-2">Plan 01 — Lanzamiento Rapido</div>
+            <h3 class="text-xl font-extrabold text-white mb-2">Landing Page de Conversion</h3>
+            <div class="text-3xl font-extrabold text-indigo-400 mb-5">$150 <span class="text-sm font-normal text-slate-400">USD / Pago Unico</span></div>
+            <ul class="space-y-2.5 text-sm text-slate-300 mb-8">
+              <li>- Diseno responsive a medida (Mobile & Desktop)</li>
+              <li>- Carga ultrarrapida (PageSpeed 95-99+)</li>
+              <li>- Formulario web de captura de prospectos</li>
+              <li>- SEO Tecnico y metadatos Schema.org</li>
+              <li>- Entrega garantizada en 48 a 72 horas</li>
+            </ul>
+          </div>
+          <button onclick="selectPlan('Landing Page de Conversion ($150 USD)')" class="w-full py-3 rounded-xl border border-indigo-500/50 hover:bg-indigo-600 text-white font-bold text-sm transition">
+            Seleccionar Plan Landing
+          </button>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900 border-2 border-indigo-500 flex flex-col justify-between shadow-2xl shadow-indigo-600/10">
+          <div>
+            <div class="text-xs font-bold uppercase text-indigo-400 mb-2">Plan 02 — Mas Solicitado por Empresas</div>
+            <h3 class="text-xl font-extrabold text-white mb-2">Web Corporativa + Reservas</h3>
+            <div class="text-3xl font-extrabold text-white mb-5">$280 <span class="text-sm font-normal text-slate-400">USD / Pago Unico</span></div>
+            <ul class="space-y-2.5 text-sm text-slate-300 mb-8">
+              <li>- Hasta 5 secciones o vistas especializadas</li>
+              <li>- Sistema web de agendamiento de citas o simulador</li>
+              <li>- Catalogo filtrable de servicios o propiedades</li>
+              <li>- Integracion con correo corporativo y analitica</li>
+              <li>- Entrega garantizada en 5 dias habiles</li>
+            </ul>
+          </div>
+          <button onclick="selectPlan('Web Corporativa + Sistema de Reservas ($280 USD)')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition">
+            Seleccionar Plan Corporativo
+          </button>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase text-emerald-400 mb-2">Plan 03 — Venta Directa Online</div>
+            <h3 class="text-xl font-extrabold text-white mb-2">E-Commerce & Checkout Pro</h3>
+            <div class="text-3xl font-extrabold text-emerald-400 mb-5">$420 <span class="text-sm font-normal text-slate-400">USD / Pago Unico</span></div>
+            <ul class="space-y-2.5 text-sm text-slate-300 mb-8">
+              <li>- Catalogo interactivo o configurador multi-paso</li>
+              <li>- Integracion de pasarela de pago Stripe / Tarjetas</li>
+              <li>- Carga de archivos de cliente y resumen de orden</li>
+              <li>- Panel de administracion ligero y SEO completo</li>
+              <li>- Entrega garantizada en 7 dias habiles</li>
+            </ul>
+          </div>
+          <button onclick="selectPlan('E-Commerce & Checkout Pro ($420 USD)')" class="w-full py-3 rounded-xl border border-emerald-500/50 hover:bg-emerald-500 hover:text-slate-950 text-white font-bold text-sm transition">
+            Seleccionar Plan E-Commerce
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario Web de Cotizacion -->
+    <section id="cotizar" class="pt-10 border-t border-slate-800/80 max-w-3xl mx-auto">
+      <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Contacto Directo por Sistema Web</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1 mb-2">Solicitar Propuesta Tecnica o Prototipo</h2>
+        <p class="text-slate-400 text-sm mb-6">Complete los datos de su proyecto. Recibira una propuesta estructurada por correo electronico con arquitectura recomendada y cronograma de entrega.</p>
+
+        <form onsubmit="handleQuote(event)" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Nombre o Empresa</label>
+              <input type="text" id="q-name" required placeholder="Ej. Grupo Inmobiliario / Clinica" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-indigo-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Correo Electronico Corporativo</label>
+              <input type="email" id="q-email" required placeholder="contacto@empresa.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-indigo-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Plan o Tipo de Sistema</label>
+              <input type="text" id="q-plan" required value="Web Corporativa + Sistema de Reservas ($280 USD)" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-indigo-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Sitio Web Actual (Opcional)</label>
+              <input type="url" id="q-url" placeholder="https://suempresa.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-indigo-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Requerimientos del Proyecto</label>
+            <textarea id="q-notes" rows="3" required placeholder="Describa brevemente el objetivo de su nuevo sitio web, pasarela de pago o sistema de reservas..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-indigo-500 focus:outline-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition shadow-lg shadow-indigo-600/20">
+            Generar Orden de Cotizacion en Linea
+          </button>
+        </form>
+
+        <div id="q-result" class="hidden mt-5 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-xs leading-relaxed"></div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer class="border-t border-slate-900 py-8 px-6 text-center text-xs text-slate-500">
-    <div class="max-w-6xl mx-auto">
-      Desarrollado con estándares profesionales de ingeniería frontend. Cero dependencias lentas, máxima velocidad.
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <strong>KUDAKA STUDIO</strong> — Shota Sebastian Kudaka Lino. Ingenieria Web & Sistemas Interactivos.
+      </div>
+      <div>
+        Desplegado con arquitectura estatica de alta disponibilidad (99.9% Uptime).
+      </div>
     </div>
   </footer>
 
+  <script>
+    function selectPlan(planName) {
+      document.getElementById('q-plan').value = planName;
+      document.getElementById('cotizar').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleQuote(e) {
+      e.preventDefault();
+      const name = document.getElementById('q-name').value;
+      const email = document.getElementById('q-email').value;
+      const plan = document.getElementById('q-plan').value;
+      const refId = 'KS-' + Math.floor(100000 + Math.random() * 900000);
+      const box = document.getElementById('q-result');
+      box.classList.remove('hidden');
+      box.innerHTML = `<strong>SOLICITUD DE PROYECTO REGISTRADA [REF: ${refId}]</strong><br>
+      Cliente: ${name} (${email})<br>
+      Sistema seleccionado: ${plan}<br>
+      Estado: Propuesta tecnica generada. Nuestro equipo de ingenieria enviara el alcance detallado y cronograma directamente a su correo electronico.`;
+    }
+  </script>
 </body>
 </html>

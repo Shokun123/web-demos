@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeloxPrint Studio — E-Commerce Minimalista & Pedidos a Medida en 24h</title>
+  <meta name="description" content="Servicio profesional de diseno y produccion digital en 24h para autonomos y pymes. Entrega garantizada sin IA generica y pago seguro con Stripe.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Pack Identidad & Web Express 24h",
+    "description": "Servicio profesional para autonomos y pymes con entrega en 24 horas.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "89.00",
+      "highPrice": "189.00",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: oklch(0.13 0.02 260);
+      --accent: oklch(0.68 0.19 255);
+      --accent-emerald: oklch(0.72 0.17 160);
+    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #090d16; color: #f1f5f9; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Barra Superior de Volver al Portafolio -->
+  <div class="bg-blue-950/80 border-b border-blue-800/50 px-6 py-2.5 text-xs flex items-center justify-between">
+    <div class="flex items-center gap-2 text-blue-200">
+      <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold mono">MUESTRA #1 EN VIVO</span>
+      <span>E-Commerce Ultrarrápido (LCP &lt; 1.2s | SEO Schema.org | Checkout Multi-Step + Stripe)</span>
+    </div>
+    <a href="../" class="text-white font-semibold hover:text-blue-300 transition">← Volver a Kudaka Studio</a>
+  </div>
+
+  <!-- Navegación Principal -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center font-extrabold text-white">V</div>
+        <span class="font-extrabold text-lg tracking-tight text-white">VELOX<span class="text-blue-400">STUDIO</span></span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#como-funciona" class="hover:text-white transition">Cómo funciona</a>
+        <a href="#planes" class="hover:text-white transition">Precios y Planes</a>
+        <a href="#configurador" class="hover:text-white transition">Personalizar Pedido</a>
+        <a href="#blog" class="hover:text-white transition">Blog SEO</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+      <a href="#configurador" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold transition">
+        Iniciar Pedido 24h
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Principal (H1 Semántico SEO) -->
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-12 text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-6">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      PageSpeed 99/100 • Entrega Garantizada en 24 Horas • 100% Artesanal Sin IA Genérica
+    </div>
+    <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+      Diseño y Producción Digital en <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">24 Horas</span> para Autónomos y Pymes
+    </h1>
+    <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg mb-10 leading-relaxed">
+      Selecciona tu plan, sube tus archivos en nuestro configurador interactivo y recibe tu proyecto terminado mañana mismo con pago protegido mediante Stripe.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#configurador" class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/25 transition">
+        Configurar Mi Pedido Ahora →
+      </a>
+      <a href="#planes" class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm transition">
+        Ver Comparativa de Planes
+      </a>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section id="como-funciona" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/70">
+    <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-10">Proceso de Entrega Rápida en 3 Pasos</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+        <div class="text-xs font-bold text-blue-400 mono mb-2">PASO 01</div>
+        <h3 class="text-lg font-bold text-white mb-2">Elige tu Plan y Estilo</h3>
+        <p class="text-sm text-slate-400">Selecciona entre el Plan Esencial (89€) o el Plan Pro Corporativo (189€) y define la paleta de color y acabado.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+        <div class="text-xs font-bold text-blue-400 mono mb-2">PASO 02</div>
+        <h3 class="text-lg font-bold text-white mb-2">Sube tus Archivos (Drag &amp; Drop)</h3>
+        <p class="text-sm text-slate-400">Adjunta tu logotipo o bocetos en PDF, PNG o JPG directamente en el formulario multi-paso sin registros tediosos.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+        <div class="text-xs font-bold text-blue-400 mono mb-2">PASO 03</div>
+        <h3 class="text-lg font-bold text-white mb-2">Pago Stripe y Entrega en 24h</h3>
+        <p class="text-sm text-slate-400">Procesamiento instantáneo con factura automática por email y acceso a tu panel de descarga en menos de 24 horas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes de Precio + Configurador Multi-Step Interactivo -->
+  <section id="configurador" class="max-w-5xl mx-auto px-6 py-14">
+    <div class="rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-10 shadow-2xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Checkout Avanzado Multi-Step</span>
+          <h2 id="planes" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Configura tu Proyecto y Paga con Stripe</h2>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold mono">
+          <span id="step-badge-1" class="px-3 py-1 rounded-full bg-blue-600 text-white">1. Plan</span>
+          <span id="step-badge-2" class="px-3 py-1 rounded-full bg-slate-800 text-slate-400">2. Detalles</span>
+          <span id="step-badge-3" class="px-3 py-1 rounded-full bg-slate-800 text-slate-400">3. Archivos &amp; Pago</span>
+        </div>
+      </div>
+
+      <!-- PASO 1: Selector de 2 Planes -->
+      <div id="step-1" class="pt-8 space-y-6">
+        <label class="block text-sm font-bold text-slate-200">Selecciona tu Plan de Servicio:</label>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div onclick="selectPlan('Plan Express 24h', 89)" id="card-plan-1" class="cursor-pointer p-6 rounded-2xl border-2 border-blue-500 bg-blue-950/20 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-lg font-bold text-white">Plan Express 24h</span>
+              <span class="text-2xl font-extrabold text-blue-400 mono">89 €</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">Ideal para autónomos y lanzamientos rápidos con entrega en 24 horas hábiles.</p>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li>✓ Diseño profesional a medida sin plantillas genéricas</li>
+              <li>✓ 2 rondas de revisión incluidas</li>
+              <li>✓ Archivos editables y listos para web</li>
+            </ul>
+          </div>
+
+          <div onclick="selectPlan('Plan Corporativo Pro', 189)" id="card-plan-2" class="cursor-pointer p-6 rounded-2xl border-2 border-slate-800 bg-slate-950/60 hover:border-slate-700 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-lg font-bold text-white">Plan Corporativo Pro</span>
+              <span class="text-2xl font-extrabold text-emerald-400 mono">189 €</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">Solución integral para pymes con prioridad máxima, manual de marca y soporte dedicado.</p>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li>✓ Todo lo incluido en el Plan Express</li>
+              <li>✓ Optimización SEO y recursos WebP</li>
+              <li>✓ Revisiones ilimitadas + Entrega prioritaria</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex justify-end pt-4">
+          <button onclick="goToStep(2)" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition">
+            Continuar a Personalización →
+          </button>
+        </div>
+      </div>
+
+      <!-- PASO 2: Campos de Texto, Selector de Estilo y Selector de Colores -->
+      <div id="step-2" class="hidden pt-8 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Nombre de tu Marca o Proyecto (Texto Corto)</label>
+            <input id="brand-name" type="text" placeholder="Ej. Clínica Dental Norte" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Selector de Estilo Visual</label>
+            <select id="visual-style" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none">
+              <option value="Minimalista Suizo (Limpio y Corporativo)">Minimalista Suizo (Limpio y Corporativo)</option>
+              <option value="Tecnológico Oscuro (Estilo Stripe / Linear)">Tecnológico Oscuro (Estilo Stripe / Linear)</option>
+              <option value="Editorial de Lujo (Tipografía Serif & Contraste)">Editorial de Lujo (Tipografía Serif &amp; Contraste)</option>
+              <option value="Comercial Directo (Alta Conversión)">Comercial Directo (Alta Conversión)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Paleta de Color Preferida</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button type="button" onclick="selectColor('Azul Ejecutivo (#2563EB)')" class="p-3 rounded-xl bg-slate-950 border border-slate-700 hover:border-blue-400 text-xs font-semibold flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-blue-600"></span> Azul Ejecutivo
+            </button>
+            <button type="button" onclick="selectColor('Esmeralda FinTech (#10B981)')" class="p-3 rounded-xl bg-slate-950 border border-slate-700 hover:border-emerald-400 text-xs font-semibold flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-emerald-500"></span> Esmeralda
+            </button>
+            <button type="button" onclick="selectColor('Ámbar Premium (#F59E0B)')" class="p-3 rounded-xl bg-slate-950 border border-slate-700 hover:border-amber-400 text-xs font-semibold flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-amber-500"></span> Ámbar Premium
+            </button>
+            <button type="button" onclick="selectColor('Monocromo Puro (#F8FAFC)')" class="p-3 rounded-xl bg-slate-950 border border-slate-700 hover:border-white text-xs font-semibold flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-slate-100"></span> Monocromo
+            </button>
+          </div>
+          <p id="selected-color-label" class="text-xs text-blue-400 mt-2 mono">Color seleccionado: Azul Ejecutivo (#2563EB)</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Instrucciones Detalladas del Pedido (Texto Largo)</label>
+          <textarea id="order-notes" rows="3" placeholder="Describe qué secciones, textos o requerimientos específicos necesitas..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"></textarea>
+        </div>
+
+        <div class="flex justify-between pt-4">
+          <button onclick="goToStep(1)" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition">
+            ← Volver
+          </button>
+          <button onclick="goToStep(3)" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition">
+            Siguiente: Subir Archivos y Pagar →
+          </button>
+        </div>
+      </div>
+
+      <!-- PASO 3: Subida de Archivos Drag & Drop + Checkout Stripe -->
+      <div id="step-3" class="hidden pt-8 space-y-6">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-300 mb-2">Módulo de Subida de Archivos del Cliente (PDF, JPG, PNG)</label>
+          <label for="file-upload" class="cursor-pointer flex flex-col items-center justify-center border-2 border-dashed border-slate-700 hover:border-blue-500 rounded-2xl p-8 bg-slate-950/60 transition text-center">
+            <span class="text-sm font-bold text-white mb-1">Arrastra y suelta tus archivos aquí o haz clic para seleccionar</span>
+            <span class="text-xs text-slate-400">Formatos admitidos: PDF, PNG, JPG (Máx. 25 MB)</span>
+            <input id="file-upload" type="file" multiple accept=".pdf,.png,.jpg,.jpeg" class="hidden" onchange="updateFileList(this)">
+            <span id="file-list-display" class="mt-3 text-xs text-emerald-400 font-semibold mono"></span>
+          </label>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-slate-400">Resumen del Carrito:</div>
+            <div id="summary-plan-title" class="text-lg font-bold text-white">Plan Express 24h</div>
+            <div id="summary-specs" class="text-xs text-slate-400">Entrega garantizada en 24h + Email transaccional automático</div>
+          </div>
+          <div id="summary-price" class="text-3xl font-extrabold text-emerald-400 mono">89.00 €</div>
+        </div>
+
+        <div class="flex justify-between pt-4">
+          <button onclick="goToStep(2)" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-sm transition">
+            ← Atrás
+          </button>
+          <button onclick="simulateStripeCheckout()" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-emerald-500/20">
+            Pagar Ahora con Stripe (Tarjeta) →
+          </button>
+        </div>
+
+        <!-- Confirmación de Pedido -->
+        <div id="checkout-success" class="hidden p-6 rounded-2xl bg-emerald-950/50 border border-emerald-500/50 text-emerald-200 text-sm">
+          <div class="font-extrabold text-base text-white mb-1">¡Pago Procesado y Pedido Registrado en el Panel Admin!</div>
+          <p class="text-xs text-emerald-300 leading-relaxed">
+            Se ha disparado el correo transaccional de confirmación con los detalles de tu pedido y tus archivos adjuntos ya están disponibles en el Panel de Administración.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog SEO & FAQ -->
+  <section id="blog" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/70">
+    <h2 class="text-2xl font-bold text-white mb-6">Artículos Recientes (Estructura Lista para SEO Long-Tail)</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-sm">
+      <article class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+        <span class="text-xs text-blue-400 font-bold mono">/blog/servicio-en-24h-pymes</span>
+        <h3 class="text-base font-bold text-white mt-2 mb-2">Por qué contratar un servicio profesional en 24h impulsa tus ventas</h3>
+        <p class="text-xs text-slate-400">Guía optimizada con Schema.org Article y carga de imágenes en formato WebP con lazy load nativo.</p>
+      </article>
+      <article class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+        <span class="text-xs text-blue-400 font-bold mono">/blog/diseno-sin-ia-generica</span>
+        <h3 class="text-base font-bold text-white mt-2 mb-2">Diferencias entre diseño profesional artesanal y plantillas genéricas</h3>
+        <p class="text-xs text-slate-400">Cómo alcanzar 99/100 en Core Web Vitals manteniendo una identidad visual única para tu empresa.</p>
+      </article>
+      <article class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+        <span class="text-xs text-blue-400 font-bold mono">/blog/optimizacion-wpo-velocidad</span>
+        <h3 class="text-base font-bold text-white mt-2 mb-2">Arquitectura web sin constructores pesados: LCP inferior a 1.5 segundos</h3>
+        <p class="text-xs text-slate-400">Comparativa técnica de velocidad de carga y posicionamiento orgánico en buscadores.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer id="faq" class="border-t border-slate-900 py-8 px-6 text-center text-xs text-slate-500 mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span>© 2026 VeloxPrint Studio • Desarrollado por Kudaka Studio</span>
+      <a href="../" class="text-blue-400 hover:underline font-semibold">Volver al Portafolio Principal de Kudaka Studio →</a>
+    </div>
+  </footer>
+
+  <script>
+    let currentPlan = 'Plan Express 24h';
+    let currentPrice = 89;
+    let currentColor = 'Azul Ejecutivo (#2563EB)';
+
+    function selectPlan(name, price) {
+      currentPlan = name;
+      currentPrice = price;
+      document.getElementById('card-plan-1').className = price === 89
+        ? 'cursor-pointer p-6 rounded-2xl border-2 border-blue-500 bg-blue-950/20 transition'
+        : 'cursor-pointer p-6 rounded-2xl border-2 border-slate-800 bg-slate-950/60 hover:border-slate-700 transition';
+      document.getElementById('card-plan-2').className = price === 189
+        ? 'cursor-pointer p-6 rounded-2xl border-2 border-emerald-500 bg-emerald-950/20 transition'
+        : 'cursor-pointer p-6 rounded-2xl border-2 border-slate-800 bg-slate-950/60 hover:border-slate-700 transition';
+      document.getElementById('summary-plan-title').textContent = name;
+      document.getElementById('summary-price').textContent = price.toFixed(2) + ' €';
+    }
+
+    function selectColor(colorName) {
+      currentColor = colorName;
+      document.getElementById('selected-color-label').textContent = 'Color seleccionado: ' + colorName;
+    }
+
+    function goToStep(step) {
+      [1, 2, 3].forEach(s => {
+        document.getElementById('step-' + s).classList.toggle('hidden', s !== step);
+        const badge = document.getElementById('step-badge-' + s);
+        badge.className = s === step
+          ? 'px-3 py-1 rounded-full bg-blue-600 text-white'
+          : 'px-3 py-1 rounded-full bg-slate-800 text-slate-400';
+      });
+    }
+
+    function updateFileList(input) {
+      const files = Array.from(input.files).map(f => f.name).join(', ');
+      document.getElementById('file-list-display').textContent = files ? 'Archivos listos: ' + files : '';
+    }
+
+    function simulateStripeCheckout() {
+      document.getElementById('checkout-success').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

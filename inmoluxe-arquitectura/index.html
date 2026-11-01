@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA ARQUITECTOS & INMOLUXE | Desarrollo Inmobiliario y Arquitectura de Autor</title>
+    <meta name="description" content="Firma de arquitectura contemporanea y comercializacion de propiedades residenciales y corporativas de alto nivel. Visor de planos interactivo y simulador financiero.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Aura Arquitectos & InmoLuxe",
+      "description": "Estudio de arquitectura de lujo y desarrollo inmobiliario exclusivo.",
+      "priceRange": "$$$"
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0c0d0e;
+            --surface: #141619;
+            --surface-2: #1c1f24;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --gold: #d4af37;
+            --gold-hover: #e5c358;
+            --border: #262930;
+            --success: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; }
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(12, 13, 14, 0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 5%; display: flex; justify-content: space-between; align-items: center;
+        }
+        .brand { font-size: 1.15rem; font-weight: 800; letter-spacing: 2px; color: var(--text); text-decoration: none; }
+        .brand span { color: var(--gold); }
+        nav { display: flex; gap: 28px; align-items: center; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+        nav a:hover { color: var(--gold); }
+        .btn-gold {
+            background: var(--gold); color: #000; padding: 10px 22px; font-weight: 700;
+            font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase;
+            border: none; border-radius: 4px; cursor: pointer; text-decoration: none; transition: background 0.2s;
+        }
+        .btn-gold:hover { background: var(--gold-hover); }
+
+        .hero {
+            padding: 90px 5% 70px; max-width: 1320px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+        }
+        .tag {
+            display: inline-block; padding: 6px 14px; border: 1px solid var(--gold);
+            color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 20px;
+        }
+        h1 { font-size: 3.1rem; line-height: 1.12; font-weight: 800; margin-bottom: 22px; letter-spacing: -1px; }
+        .hero p { color: var(--muted); font-size: 1.08rem; margin-bottom: 32px; max-width: 580px; }
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+            padding-top: 28px; border-top: 1px solid var(--border);
+        }
+        .stat-num { font-size: 1.85rem; font-weight: 800; color: var(--gold); }
+        .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .blueprint-card {
+            background: var(--surface); border: 1px solid var(--border); padding: 28px; border-radius: 8px;
+        }
+        .blueprint-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+        .blueprint-stage {
+            background: #08090a; border: 1px solid #22262e; height: 280px; border-radius: 6px;
+            position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 24px; text-align: center;
+        }
+        .grid-blueprint {
+            width: 100%; height: 100%; border: 1px dashed rgba(212, 175, 55, 0.35);
+            display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; padding: 12px;
+        }
+        .room-box {
+            border: 1px solid rgba(212, 175, 55, 0.5); background: rgba(212, 175, 55, 0.05);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            font-size: 0.78rem; color: var(--text); transition: all 0.2s;
+        }
+        .room-box:hover { background: rgba(212, 175, 55, 0.16); }
+        .room-box span { font-size: 0.7rem; color: var(--gold); font-family: monospace; margin-top: 4px; }
+        .floor-tabs { display: flex; gap: 8px; margin-top: 16px; }
+        .floor-btn {
+            flex: 1; padding: 9px; background: var(--surface-2); border: 1px solid var(--border);
+            color: var(--muted); font-size: 0.8rem; font-weight: 600; cursor: pointer; border-radius: 4px;
+        }
+        .floor-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(212, 175, 55, 0.08); }
+
+        .section { max-width: 1320px; margin: 0 auto; padding: 70px 5%; border-top: 1px solid var(--border); }
+        .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 20px; }
+        .section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; }
+        .filter-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        .filter-btn {
+            background: var(--surface); color: var(--muted); border: 1px solid var(--border);
+            padding: 9px 18px; font-size: 0.82rem; font-weight: 600; cursor: pointer; border-radius: 4px;
+        }
+        .filter-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+
+        .properties-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+        .prop-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .prop-visual {
+            height: 190px; background: linear-gradient(135deg, #1b2028 0%, #0f1216 100%);
+            padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
+            border-bottom: 1px solid var(--border); position: relative;
+        }
+        .prop-badge {
+            align-self: flex-start; background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold);
+            color: var(--gold); padding: 4px 10px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+        }
+        .prop-code { font-family: monospace; font-size: 0.78rem; color: var(--muted); }
+        .prop-body { padding: 24px; }
+        .prop-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; }
+        .prop-loc { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+        .prop-specs {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+            padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            margin-bottom: 18px; font-size: 0.82rem;
+        }
+        .prop-specs div span { display: block; color: var(--muted); font-size: 0.72rem; }
+        .prop-footer { display: flex; justify-content: space-between; align-items: center; }
+        .prop-price { font-size: 1.35rem; font-weight: 800; color: var(--gold); }
+
+        .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+        .panel { background: var(--surface); border: 1px solid var(--border); padding: 32px; border-radius: 8px; }
+        .panel h3 { font-size: 1.35rem; margin-bottom: 8px; }
+        .panel p.sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 24px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-control {
+            width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border);
+            color: var(--text); border-radius: 4px; font-size: 0.92rem;
+        }
+        .calc-results {
+            background: var(--bg); border: 1px solid var(--border); padding: 20px; border-radius: 6px;
+            margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+        }
+        .res-box span { display: block; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; }
+        .res-box strong { font-size: 1.35rem; color: var(--gold); }
+
+        .confirm-box {
+            display: none; margin-top: 18px; padding: 16px; background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success); color: var(--text); border-radius: 6px; font-size: 0.88rem;
+        }
+        footer {
+            border-top: 1px solid var(--border); padding: 40px 5%; text-align: center;
+            color: var(--muted); font-size: 0.85rem;
+        }
+        @media (max-width: 900px) {
+            .hero, .tools-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="brand">AURA<span>LUXE</span> ARQUITECTOS</a>
+    <nav>
+        <a href="#propiedades">Propiedades</a>
+        <a href="#planos">Planos CAD</a>
+        <a href="#simulador">Simulador ROI</a>
+        <a href="#agendar" class="btn-gold">Agendar Dossier Web</a>
+    </nav>
+</header>
+
+<section class="hero" id="planos">
+    <div>
+        <span class="tag">Arquitectura Contemporanea & Inversion Inmobiliaria</span>
+        <h1>Espacios de Autor Disenados para Alta Plusvalia</h1>
+        <p>Desarrollamos residencias minimalistas, penthouses y complejos corporativos con certificacion energetica, trazabilidad estructural y retorno de inversion proyectado.</p>
+        <div style="display:flex; gap:16px; margin-bottom:36px;">
+            <a href="#propiedades" class="btn-gold">Explorar Catalogo Activo</a>
+            <a href="#simulador" style="padding:10px 22px; border:1px solid var(--border); color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:700; text-transform:uppercase; border-radius:4px;">Calcular Hipoteca / ROI</a>
+        </div>
+        <div class="stats-bar">
+            <div>
+                <div class="stat-num">42,000 m2</div>
+                <div class="stat-label">Construidos y Entregados</div>
+            </div>
+            <div>
+                <div class="stat-num">11.4%</div>
+                <div class="stat-label">Plusvalia Anual Media</div>
+            </div>
+            <div>
+                <div class="stat-num">ISO 9001</div>
+                <div class="stat-label">Certificacion Estructural</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blueprint-card">
+        <div class="blueprint-header">
+            <div>
+                <strong style="font-size:0.95rem; display:block;">VISOR TECNICO DE DISTRIBUCION</strong>
+                <span style="font-size:0.78rem; color:var(--muted);" id="bp-subtitle">Nivel 1: Planta Social & Terraza Perimetral (245 m2)</span>
+            </div>
+            <span style="font-family:monospace; font-size:0.75rem; color:var(--gold);">ESCALA 1:100</span>
+        </div>
+        <div class="blueprint-stage">
+            <div class="grid-blueprint" id="bp-grid">
+                <div class="room-box"><strong>SALON PRINCIPAL DOBLE ALTURA</strong><span>88.5 m2 | H: 5.40m</span></div>
+                <div class="room-box"><strong>TERRAZA & ESPEJO DE AGUA</strong><span>64.0 m2 | Hormigon Visto</span></div>
+                <div class="room-box"><strong>COCINA DE AUTOR ISLA CENTRAL</strong><span>46.5 m2 | Cuarzo Negro</span></div>
+                <div class="room-box"><strong>ESTUDIO PRIVADO & CAVA</strong><span>46.0 m2 | Acustico</span></div>
+            </div>
+        </div>
+        <div class="floor-tabs">
+            <button class="floor-btn active" onclick="setBlueprint(1, this)">Planta Nivel 1 (Social)</button>
+            <button class="floor-btn" onclick="setBlueprint(2, this)">Planta Nivel 2 (Suites)</button>
+            <button class="floor-btn" onclick="setBlueprint(3, this)">Rooftop & Solarium</button>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="propiedades">
+    <div class="section-header">
+        <div>
+            <span class="tag">Cartera Exclusiva</span>
+            <h2 class="section-title">Unidades Disponibles en Tiempo Real</h2>
+        </div>
+        <div class="filter-group">
+            <button class="filter-btn active" onclick="filterProps('all', this)">Todas las Unidades</button>
+            <button class="filter-btn" onclick="filterProps('residencial', this)">Residencial</button>
+            <button class="filter-btn" onclick="filterProps('penthouse', this)">Penthouses</button>
+            <button class="filter-btn" onclick="filterProps('comercial', this)">Corporativo</button>
+        </div>
+    </div>
+
+    <div class="properties-grid" id="props-container">
+        <div class="prop-card" data-category="penthouse">
+            <div class="prop-visual">
+                <span class="prop-badge">Penthouse Triplex</span>
+                <span class="prop-code">REF: ALX-901 | ENTREGA INMEDIATA</span>
+            </div>
+            <div class="prop-body">
+                <h3 class="prop-title">The Obsidian Sky Penthouse</h3>
+                <p class="prop-loc">Distrito Financiero Norte — Piso 28 y 29</p>
+                <div class="prop-specs">
+                    <div><span>Superficie</span><strong>410 m2</strong></div>
+                    <div><span>Suites</span><strong>4 + Estudio</strong></div>
+                    <div><span>ROI Est.</span><strong>9.8% Anual</strong></div>
+                </div>
+                <div class="prop-footer">
+                    <span class="prop-price">$685,000 USD</span>
+                    <button class="btn-gold" onclick="selectProperty('The Obsidian Sky Penthouse - $685,000 USD', 685000)">Solicitar Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="prop-card" data-category="residencial">
+            <div class="prop-visual">
+                <span class="prop-badge">Residencia de Autor</span>
+                <span class="prop-code">REF: ALX-404 | EN PRE-VENTA</span>
+            </div>
+            <div class="prop-body">
+                <h3 class="prop-title">Villa Brutalista Bosque Alto</h3>
+                <p class="prop-loc">Reserva Residencial Privada — Lote 14</p>
+                <div class="prop-specs">
+                    <div><span>Superficie</span><strong>560 m2</strong></div>
+                    <div><span>Terreno</span><strong>1,200 m2</strong></div>
+                    <div><span>ROI Est.</span><strong>12.2% Anual</strong></div>
+                </div>
+                <div class="prop-footer">
+                    <span class="prop-price">$890,000 USD</span>
+                    <button class="btn-gold" onclick="selectProperty('Villa Brutalista Bosque Alto - $890,000 USD', 890000)">Solicitar Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="prop-card" data-category="comercial">
+            <div class="prop-visual">
+                <span class="prop-badge">Planta Corporativa</span>
+                <span class="prop-code">REF: ALX-712 | CERTIFICACION LEED</span>
+            </div>
+            <div class="prop-body">
+                <h3 class="prop-title">Torre Kinetix — Piso Corporativo 15</h3>
+                <p class="prop-loc">Corredor Empresarial Central</p>
+                <div class="prop-specs">
+                    <div><span>Superficie</span><strong>320 m2</strong></div>
+                    <div><span>Parqueos</span><strong>8 Privados</strong></div>
+                    <div><span>Renta Anual</span><strong>10.5% Neto</strong></div>
+                </div>
+                <div class="prop-footer">
+                    <span class="prop-price">$520,000 USD</span>
+                    <button class="btn-gold" onclick="selectProperty('Torre Kinetix Piso 15 - $520,000 USD', 520000)">Solicitar Ficha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="simulador">
+    <div class="tools-grid">
+        <div class="panel">
+            <span class="tag">Finanzas Inmobiliarias</span>
+            <h3>Simulador de Financiamiento y Plusvalia</h3>
+            <p class="sub">Calcule su cuota mensual estimada y la proyeccion de capitalizacion a 5 anos.</p>
+            <div class="form-group">
+                <label>Valor de la Propiedad (USD)</label>
+                <input type="number" id="calc-price" class="form-control" value="685000" oninput="runCalculator()">
+            </div>
+            <div class="form-group">
+                <label>Aporte Inicial (%): <span id="down-label">30%</span></label>
+                <input type="range" id="calc-down" min="10" max="80" value="30" style="width:100%;" oninput="runCalculator()">
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                <div class="form-group">
+                    <label>Plazo (Anos)</label>
+                    <select id="calc-years" class="form-control" onchange="runCalculator()">
+                        <option value="10">10 Anos</option>
+                        <option value="15" selected>15 Anos</option>
+                        <option value="20">20 Anos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tasa Anual Estimada (%)</label>
+                    <input type="number" id="calc-rate" class="form-control" value="6.5" step="0.1" oninput="runCalculator()">
+                </div>
+            </div>
+            <div class="calc-results">
+                <div class="res-box">
+                    <span>Cuota Mensual Estimada</span>
+                    <strong id="res-monthly">$4,175 USD</strong>
+                </div>
+                <div class="res-box">
+                    <span>Valor Proyectado (5 Anos)</span>
+                    <strong id="res-appreciation">$1,092,000 USD</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="agendar">
+            <span class="tag">Atencion Directa en Linea</span>
+            <h3>Reserva de Visita Privada o Dossier Tecnico</h3>
+            <p class="sub">Complete el formulario web para recibir los planos estructurales en PDF y confirmar su recorrido presencial o virtual.</p>
+            <form onsubmit="submitLead(event)">
+                <div class="form-group">
+                    <label>Unidad o Proyecto de Interes</label>
+                    <input type="text" id="lead-prop" class="form-control" value="The Obsidian Sky Penthouse - $685,000 USD" required>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="lead-name" class="form-control" placeholder="Ej. Carlos Mendoza" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Corporativo / Personal</label>
+                        <input type="email" id="lead-email" class="form-control" placeholder="inversionista@dominio.com" required>
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                    <div class="form-group">
+                        <label>Modalidad de Sesion</label>
+                        <select id="lead-mode" class="form-control">
+                            <option value="Recorrido Presencial Privado">Recorrido Presencial Privado</option>
+                            <option value="Presentacion Ejecutiva por Videollamada">Presentacion Ejecutiva por Videollamada</option>
+                            <option value="Envio de Dossier Financiero y Planos PDF">Solo Envio de Dossier y Planos PDF</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha Preferida</label>
+                        <input type="date" id="lead-date" class="form-control" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-gold" style="width:100%; padding:14px;">Confirmar Solicitud en Sistema Web</button>
+            </form>
+            <div id="lead-confirm" class="confirm-box"></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>AURA ARQUITECTOS & INMOLUXE — Demostracion Interactiva Desarrollada por <strong>Kudaka Studio (Shota Sebastian Kudaka Lino)</strong>.</p>
+    <p style="margin-top:6px;"><a href="../index.html" style="color:var(--gold); text-decoration:none;">Volver al Portafolio Principal de Kudaka Studio</a></p>
+</footer>
+
+<script>
+    const blueprints = {
+        1: {
+            sub: "Nivel 1: Planta Social & Terraza Perimetral (245 m2)",
+            rooms: [
+                ["SALON PRINCIPAL DOBLE ALTURA", "88.5 m2 | H: 5.40m"],
+                ["TERRAZA & ESPEJO DE AGUA", "64.0 m2 | Hormigon Visto"],
+                ["COCINA DE AUTOR ISLA CENTRAL", "46.5 m2 | Cuarzo Negro"],
+                ["ESTUDIO PRIVADO & CAVA", "46.0 m2 | Acustico"]
+            ]
+        },
+        2: {
+            sub: "Nivel 2: Area Privada de Suites & Vestidores (195 m2)",
+            rooms: [
+                ["MASTER SUITE PANORAMICA", "72.0 m2 | Vista 270 Grados"],
+                ["WALK-IN CLOSET & SPA", "38.0 m2 | Marmol Travertino"],
+                ["SUITE SECUNDARIA NORTE", "45.0 m2 | Bano Integrado"],
+                ["SUITE SECUNDARIA SUR", "40.0 m2 | Balcon Privado"]
+            ]
+        },
+        3: {
+            sub: "Nivel 3: Rooftop Privado, Solarium & Domotica (120 m2)",
+            rooms: [
+                ["PISCINA INFINITY CLIMATIZADA", "48.0 m2 | Borde Infinito"],
+                ["LOUNGE EXTERIOR & FIREPIT", "36.0 m2 | Deck Madera Teka"],
+                ["GIMNASIO & SAUNA SECO", "24.0 m2 | Cristal Templado"],
+                ["CUARTO DE CONTROL DOMOTICO", "12.0 m2 | Panel KNX Solar"]
+            ]
+        }
+    };
+
+    function setBlueprint(level, btn) {
+        document.querySelectorAll('.floor-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const data = blueprints[level];
+        document.getElementById('bp-subtitle').textContent = data.sub;
+        const grid = document.getElementById('bp-grid');
+        grid.innerHTML = data.rooms.map(r => `<div class="room-box"><strong>${r[0]}</strong><span>${r[1]}</span></div>`).join('');
+    }
+
+    function filterProps(cat, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.prop-card').forEach(card => {
+            card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'flex' : 'none';
+        });
+    }
+
+    function selectProperty(title, price) {
+        document.getElementById('lead-prop').value = title;
+        document.getElementById('calc-price').value = price;
+        runCalculator();
+        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function runCalculator() {
+        const price = parseFloat(document.getElementById('calc-price').value) || 0;
+        const downPct = parseFloat(document.getElementById('calc-down').value) || 30;
+        const years = parseInt(document.getElementById('calc-years').value) || 15;
+        const rate = parseFloat(document.getElementById('calc-rate').value) || 6.5;
+
+        document.getElementById('down-label').textContent = downPct + "% ($" + Math.round(price * downPct / 100).toLocaleString() + " USD)";
+        const principal = price * (1 - downPct / 100);
+        const monthlyRate = (rate / 100) / 12;
+        const n = years * 12;
+        const monthly = monthlyRate > 0
+            ? (principal * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1)
+            : principal / n;
+
+        const projected = price * Math.pow(1.098, 5);
+        document.getElementById('res-monthly').textContent = "$" + Math.round(monthly).toLocaleString() + " USD";
+        document.getElementById('res-appreciation').textContent = "$" + Math.round(projected).toLocaleString() + " USD";
+    }
+
+    function submitLead(e) {
+        e.preventDefault();
+        const name = document.getElementById('lead-name').value;
+        const email = document.getElementById('lead-email').value;
+        const prop = document.getElementById('lead-prop').value;
+        const mode = document.getElementById('lead-mode').value;
+        const date = document.getElementById('lead-date').value;
+        const code = "AURA-" + Math.floor(100000 + Math.random() * 900000);
+        const box = document.getElementById('lead-confirm');
+        box.style.display = 'block';
+        box.innerHTML = `<strong>SOLICITUD REGISTRADA EN EL SISTEMA WEB [${code}]</strong><br>
+        Titular: ${name} (${email})<br>
+        Propiedad: ${prop}<br>
+        Modalidad: ${mode} | Fecha programada: ${date}<br>
+        <em>El dossier tecnico en PDF y el enlace de calendario han sido emitidos a su correo electronico.</em>`;
+    }
+
+    document.getElementById('lead-date').valueAsDate = new Date(Date.now() + 86400000 * 2);
+    runCalculator();
+</script>
+</body>
+</html>
