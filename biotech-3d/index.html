@@ -385,7 +385,7 @@
           <button class="phase-pill" id="pbtn-2" onclick="scrollToFraction(0.70)">03. Stem Cell</button>
           <button class="phase-pill" id="pbtn-3" onclick="scrollToFraction(0.98)">04. Bio-Vascular</button>
         </div>
-        <div>SCROLL-CONTROLLED 3D WEBGL • 18,558 BIOLUMINESCENT PARTICLES • 60 FPS</div>
+        <div>SCROLL-CONTROLLED 3D WEBGL • 45,000 PURE CELLULAR PARTICLES • 60 FPS</div>
       </div>
     </div>
   </div>
@@ -393,8 +393,9 @@
   <script>
     // =========================================================================
     // SCROLL-CONTROLLED REVERSIBLE 3D BIOTECH & HUMAN LONGEVITY ENGINE
-    // 18,558 Bioluminescent Cellular Particles Sculpting a Real 3D Human Face
-    // (0.0s) -> DNA Telomere Helix (3.5s) -> Stem Cell (7.0s) -> Vascular (10s)
+    // 45,000 Pure Bioluminescent Cellular Particles (Zero Solid 3D Mesh!)
+    // Uses the 3D human scan strictly as a spatial coordinate reference so the
+    // human face is formed 100% by living cellular particles.
     // =========================================================================
     const canvas = document.getElementById('webgl-stage');
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
@@ -408,27 +409,11 @@
     const camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.1, 100);
     camera.position.set(0, 0.2, 16.2);
 
-    // Subtle interior occlusion core so back-of-head particles never muddy the front facial features
-    const ambientLight = new THREE.AmbientLight(0x1e1a24, 1.4);
-    scene.add(ambientLight);
-
-    const keyLight = new THREE.DirectionalLight(0xfff4e0, 2.4);
-    keyLight.position.set(5.5, 4.0, 7.5);
-    scene.add(keyLight);
-
-    const goldRimLight = new THREE.DirectionalLight(0xe5b869, 2.8);
-    goldRimLight.position.set(-6.0, 3.0, -4.0);
-    scene.add(goldRimLight);
-
-    const bioCyanLight = new THREE.PointLight(0x2dd4bf, 1.9, 18);
-    bioCyanLight.position.set(2.5, -2.5, 4.5);
-    scene.add(bioCyanLight);
-
     const bioGroup = new THREE.Group();
     bioGroup.position.set(3.1, -0.1, 0);
     scene.add(bioGroup);
 
-    const COUNT = 27837; // 3x ultra-dense bioluminescent particle cloud from real 3D human head scan (9,279 x 3)
+    const COUNT = 45000; // 45,000 pure particles (zero solid mesh)
     const geometry = new THREE.BufferGeometry();
 
     const posCurrent = new Float32Array(COUNT * 3);
@@ -527,7 +512,7 @@
     sCtx.fillRect(0, 0, 64, 64);
 
     const material = new THREE.PointsMaterial({
-      size: 0.082,
+      size: 0.088,
       map: new THREE.CanvasTexture(spCanvas),
       vertexColors: true,
       transparent: true,
@@ -540,7 +525,7 @@
     points.renderOrder = 10;
     bioGroup.add(points);
 
-    // Pure Black Occlusion Core inside the particle cloud so back-of-skull points don't bleed through the eyes/nose/lips
+    // Load 3D human scan ONLY as an invisible coordinate reference to position & shade the 45,000 particles (ZERO solid mesh added to scene!)
     let portraitSolidMesh = null;
     let portraitWireMesh = null;
     const gltfLoader = new THREE.GLTFLoader();
@@ -554,13 +539,11 @@
       const srcNorm = headGeo.attributes.normal.array;
       const srcIdx = headGeo.index ? headGeo.index.array : null;
       const scale = 1.18;
-      const numVerts = srcPos.length / 3;
       const numFaces = srcIdx ? (srcIdx.length / 3) : 0;
       const colorAttr = geometry.attributes.color;
       const colArr = colorAttr.array;
 
-      // Build PURE Area-Weighted Cumulative Distribution across exterior triangles only.
-      // Filter out any interior eye-bag/mouth-bag cavities by requiring outward normal (nx*ax + ny*ay + nz*az > 0) and front Z.
+      // Build Area-Weighted Cumulative Distribution across exterior front-facing triangles ONLY
       const triAreas = new Float32Array(numFaces);
       let totalArea = 0;
       for (let f = 0; f < numFaces; f++) {
@@ -580,16 +563,15 @@
         const cz = abx * acy - aby * acx;
         const area2 = Math.hypot(cx, cy, cz);
 
-        // Face normal outward check: prevents sampling internal mouth-bag or eyeball-socket backwalls
+        // Exclude back of skull and internal mouth/eye-socket backwalls
         const fnz = cz / Math.max(1e-6, area2);
         const radialDot = cx * avgX + cy * (avgY - 0.3) + cz * avgZ;
 
-        if (avgZ < -0.5 || radialDot < 0 || fnz < -0.25) {
+        if (avgZ < -0.25 || radialDot < 0 || fnz < -0.15) {
           triAreas[f] = totalArea;
           continue;
         }
 
-        // Pure 1:1 geometric triangle area (zero artificial region multipliers = zero rings!)
         totalArea += area2 * 0.5;
         triAreas[f] = totalArea;
       }
@@ -609,6 +591,7 @@
         let vx, vy, vz, nx, ny, nz;
 
         if (i < COUNT * 0.88 && numFaces > 0) {
+          // 39,600 particles uniformly distributed by surface area across the human face, neck & shoulders
           const f = sampleFaceByArea((i / (COUNT * 0.88)) * totalArea);
           const f3 = f * 3;
           const ia = srcIdx[f3] * 3;
@@ -626,7 +609,7 @@
           ny = srcNorm[ia + 1] * wa + srcNorm[ib + 1] * wb + srcNorm[ic + 1] * wc;
           nz = srcNorm[ia + 2] * wa + srcNorm[ib + 2] * wb + srcNorm[ic + 2] * wc;
         } else {
-          // Outer 12% bioluminescent cellular spores gently detaching/floating off the portrait into the cellular aura
+          // 5,400 bioluminescent cellular spores floating & detaching off the portrait into the surrounding space
           const f = sampleFaceByArea(Math.random() * totalArea);
           const ia = srcIdx[f * 3] * 3;
           vx = srcPos[ia] * scale;
@@ -635,35 +618,44 @@
           nx = srcNorm[ia];
           ny = srcNorm[ia + 1];
           nz = srcNorm[ia + 2];
-          const drift = 0.15 + Math.pow(Math.random(), 1.5) * 1.5;
-          vx += nx * drift + (Math.random() - 0.5) * 0.25;
-          vy += ny * drift + (Math.random() - 0.5) * 0.25;
-          vz += nz * drift + (Math.random() - 0.5) * 0.25;
+          const drift = 0.14 + Math.pow(Math.random(), 1.5) * 1.65;
+          vx += nx * drift + (Math.random() - 0.5) * 0.28;
+          vy += ny * drift + (Math.random() - 0.5) * 0.28;
+          vz += nz * drift + (Math.random() - 0.5) * 0.28;
         }
 
-        // Push particles slightly outward along surface normal so they float cleanly above the sculptural bust
         const nLen = Math.max(0.001, Math.hypot(nx, ny, nz));
         const snx = nx / nLen, sny = ny / nLen, snz = nz / nLen;
-        posBust[i3] = vx + snx * 0.03;
-        posBust[i3 + 1] = vy + sny * 0.03;
-        posBust[i3 + 2] = vz + snz * 0.03;
+        posBust[i3] = vx;
+        posBust[i3 + 1] = vy;
+        posBust[i3 + 2] = vz;
 
-        // Smooth studio lighting across the particle cloud
-        const keyLight = Math.max(0, snx * 0.38 + sny * 0.35 + snz * 0.85);
-        const fillLight = Math.max(0, -snx * 0.35 + sny * 0.15 + snz * 0.90);
-        const rimLight = Math.pow(Math.max(0, 1.0 - Math.abs(snz)), 2.2);
+        // High-Contrast Chiaroscuro Particle Shading (Zero solid mesh — 100% particle luminance sculpts the face):
+        // High-curvature & lit planes (nose bridge, eyelids, lips, brow, cheekbones, ears) glow brightly,
+        // while recessed shadow planes (eye sockets, under nose, under chin) stay deep bronze.
+        const keyLight = Math.max(0, snx * 0.45 + sny * 0.36 + snz * 0.82);
+        const fillLight = Math.max(0, -snx * 0.38 + sny * 0.12 + snz * 0.91);
+        const rimLight = Math.pow(Math.max(0, 1.0 - Math.abs(snz)), 1.9);
 
-        const lum = Math.min(1.15, 0.22 + Math.pow(keyLight, 1.4) * 0.72 + fillLight * 0.22 + rimLight * 0.48);
+        // Curvature/feature accent: highlights ridges of eyelids, lips, nose tip & cheekbones
+        const featureRidge = Math.pow(Math.max(0, snz), 1.4) * (vz > 1.25 ? 1.35 : 0.92);
+        const zRelief = Math.pow(Math.max(0.18, Math.min(1.15, (vz + 0.5) / 2.7)), 1.25);
+
+        let lum = (0.06 + Math.pow(keyLight, 2.2) * 1.15 + Math.pow(fillLight, 2.0) * 0.28 + rimLight * 0.55) * zRelief * featureRidge;
+        if (i >= COUNT * 0.88) {
+          lum = 0.55 + Math.random() * 0.65; // Bright floating cellular spores
+        }
+        lum = Math.min(1.35, lum);
 
         let baseCol;
         if (i >= COUNT * 0.88) {
           baseCol = (i % 2 === 0) ? cEmerald : cGold;
-        } else if (keyLight > 0.65) {
-          baseCol = cCream.clone().lerp(cGold, 0.35);
+        } else if (keyLight > 0.64 && vz > 1.1) {
+          baseCol = cCream.clone().lerp(cGold, 0.22);
         } else if (rimLight > 0.48) {
-          baseCol = (i % 4 === 0) ? cEmerald : cGold;
+          baseCol = (i % 3 === 0) ? cEmerald : cGold;
         } else {
-          baseCol = cGold.clone().lerp(cCream, 0.22);
+          baseCol = cGold.clone().lerp(cIris, 0.14);
         }
 
         colArr[i3] = Math.min(1, baseCol.r * lum);
@@ -671,21 +663,7 @@
         colArr[i3 + 2] = Math.min(1, baseCol.b * lum);
       }
       colorAttr.needsUpdate = true;
-
-      // Smooth matte-obsidian sculptural human bust underneath the 27,837 particles so eyes, nose, lips & cheekbones have 100% realistic human shading
-      const solidMat = new THREE.MeshStandardMaterial({
-        color: 0x1a1511,
-        emissive: 0x0f0b05,
-        emissiveIntensity: 0.22,
-        roughness: 0.68,
-        metalness: 0.22,
-        transparent: true,
-        opacity: 0.86
-      });
-      portraitSolidMesh = new THREE.Mesh(headGeo, solidMat);
-      portraitSolidMesh.scale.setScalar(scale * 0.992);
-      portraitSolidMesh.position.y = 0.15;
-      bioGroup.add(portraitSolidMesh);
+      // ZERO solid mesh added to scene! 100% pure particles.
     });
 
     // Subtle Organic Wireframe Ring
