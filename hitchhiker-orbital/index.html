@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hitchhiker Orbital — Interactive 3D Pod, Exploded CAD & Framer Integration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Oxanium:wght@500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    :root {
+      --bg-void: #020712;
+      --bg-panel: rgba(7, 20, 38, 0.78);
+      --cyan: #73c8ff;
+      --cyan-soft: #d8f3ff;
+      --text-main: #f3faff;
+      --text-muted: rgba(216, 243, 255, 0.68);
+      --border-cyan: rgba(115, 200, 255, 0.24);
+      --gold: #f59e0b;
+      --emerald: #34d399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg-void);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    body.transparent-mode {
+      background: transparent !important;
+    }
+
+    /* Fixed 3D Viewport Canvas */
+    #webgl-container {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+    canvas:active { cursor: grabbing; }
+
+    /* Top Navigation & Telemetry Bar (Matches hitchhikerorbital.com) */
+    header.hud-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+      background: rgba(2, 7, 18, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-cyan);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-title {
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .leo-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--cyan);
+      background: rgba(115, 200, 255, 0.1);
+      border: 1px solid var(--border-cyan);
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+    }
+
+    /* Interactive State Switcher Dock */
+    .state-dock {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .dock-btn {
+      background: rgba(7, 20, 38, 0.9);
+      border: 1px solid rgba(115, 200, 255, 0.22);
+      color: var(--cyan-soft);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.74rem;
+      padding: 7px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+    }
+    .dock-btn:hover {
+      border-color: var(--cyan);
+      color: #fff;
+    }
+    .dock-btn.active {
+      background: var(--cyan);
+      color: #020712;
+      border-color: var(--cyan);
+      font-weight: 500;
+      box-shadow: 0 0 16px rgba(115, 200, 255, 0.45);
+    }
+
+    .action-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn-export {
+      background: rgba(115, 200, 255, 0.14);
+      border: 1px solid var(--cyan);
+      color: var(--text-main);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.74rem;
+      padding: 7px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-export:hover {
+      background: var(--cyan);
+      color: #020712;
+    }
+
+    /* Right-Hand Live CAD & Framer Controls HUD */
+    .hud-inspector {
+      position: fixed;
+      right: 24px;
+      top: 76px;
+      width: 310px;
+      z-index: 25;
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-cyan);
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.76rem;
+    }
+    @media (max-width: 900px) {
+      .hud-inspector { display: none; }
+    }
+    .hud-sec-title {
+      color: var(--cyan);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(115, 200, 255, 0.15);
+      padding-bottom: 6px;
+    }
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .t-cell {
+      background: rgba(2, 7, 18, 0.65);
+      border: 1px solid rgba(115, 200, 255, 0.14);
+      padding: 8px;
+      border-radius: 6px;
+    }
+    .t-label {
+      font-size: 0.64rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    .t-val {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .slider-row {
+      margin-bottom: 12px;
+    }
+    .slider-row label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--cyan-soft);
+      margin-bottom: 4px;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--cyan);
+      cursor: pointer;
+    }
+    .hover-callout {
+      background: rgba(115, 200, 255, 0.09);
+      border-left: 3px solid var(--cyan);
+      padding: 9px 10px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+    .hover-callout strong {
+      display: block;
+      color: #fff;
+      font-size: 0.76rem;
+      margin-bottom: 2px;
+    }
+    .hover-callout span {
+      color: var(--text-muted);
+      font-size: 0.69rem;
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* Scroll Story Sections (Left Column) */
+    main.scroll-track {
+      position: relative;
+      z-index: 10;
+      pointer-events: none;
+    }
+    section.step-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 24px 60px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .step-card {
+      pointer-events: auto;
+      max-width: 440px;
+      background: rgba(2, 7, 18, 0.78);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-cyan);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .step-kicker {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.74rem;
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .step-card h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .step-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .spec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .spec-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--cyan-soft);
+      background: rgba(115, 200, 255, 0.08);
+      border: 1px solid rgba(115, 200, 255, 0.2);
+      padding: 4px 9px;
+      border-radius: 4px;
+    }
+
+    body.embed-only header.hud-header,
+    body.embed-only main.scroll-track,
+    body.embed-only .hud-inspector {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="webgl-container"></div>
+
+  <header class="hud-header">
+    <div class="brand-block">
+      <span class="brand-title">Hitchhiker Orbital</span>
+      <span class="leo-pill">LOW EARTH ORBIT / 408 KM / 7.66 KM/S</span>
+    </div>
+
+    <div class="state-dock">
+      <button class="dock-btn active" id="btn-orbital" onclick="jumpToState(0)">01. Orbital Motion</button>
+      <button class="dock-btn" id="btn-exploded" onclick="jumpToState(1)">02. Exploded CAD</button>
+      <button class="dock-btn" id="btn-scale" onclick="jumpToState(2)">03. Human Scale (1.8m)</button>
+      <button class="dock-btn" id="btn-multirack" onclick="jumpToState(3)">04. Multi-Rack Node</button>
+    </div>
+
+    <div class="action-links">
+      <button class="btn-export" id="recordBtn" onclick="recordPitchDeckClip()">Record 5s Deck Clip (.WebM)</button>
+      <a href="./HitchhikerOrbital3D.tsx" download="HitchhikerOrbital3D.tsx" class="btn-export">Download Framer .TSX</a>
+    </div>
+  </header>
+
+  <!-- Right-side Interactive Framer / Spline Property Inspector -->
+  <aside class="hud-inspector">
+    <div class="hud-sec-title">
+      <span>Framer / Spline State Inspector</span>
+      <span style="color:var(--emerald);">60 FPS</span>
+    </div>
+
+    <div class="telemetry-grid">
+      <div class="t-cell">
+        <span class="t-label">ALTITUDE (LEO)</span>
+        <span class="t-val">408.2 km</span>
+      </div>
+      <div class="t-cell">
+        <span class="t-label">ORBITAL VELOCITY</span>
+        <span class="t-val">7.66 km/s</span>
+      </div>
+      <div class="t-cell">
+        <span class="t-label">ATOMIC UNIT</span>
+        <span class="t-val">1.00 m³ Pod</span>
+      </div>
+      <div class="t-cell">
+        <span class="t-label">INTERFACE</span>
+        <span class="t-val">CCC Docking</span>
+      </div>
+    </div>
+
+    <div class="slider-row">
+      <label>
+        <span>EXPLODED-VIEW / FLY-IN</span>
+        <span id="explodeValLabel">0%</span>
+      </label>
+      <input type="range" id="explodeSlider" min="0" max="1" step="0.01" value="0" oninput="onManualExplode(this.value)" />
+    </div>
+
+    <div class="slider-row">
+      <label>
+        <span>EVA HUMAN SCALE REF (1.80m)</span>
+        <span id="scaleValLabel">OFF</span>
+      </label>
+      <input type="range" id="scaleSlider" min="0" max="1" step="0.01" value="0" oninput="onManualScale(this.value)" />
+    </div>
+
+    <div class="slider-row">
+      <label>
+        <span>MULTI-RACK NODE ARRAY</span>
+        <span id="rackValLabel">STANDALONE</span>
+      </label>
+      <input type="range" id="rackSlider" min="0" max="1" step="0.01" value="0" oninput="onManualRack(this.value)" />
+    </div>
+
+    <div style="margin: 10px 0; display:flex; align-items:center; justify-content:space-between;">
+      <span style="color:var(--text-muted); font-size:0.7rem;">PITCH DECK ALPHA BG:</span>
+      <button class="dock-btn" id="alphaBtn" onclick="toggleAlphaBg()" style="padding:4px 8px;">Transparent: OFF</button>
+    </div>
+
+    <div class="hover-callout">
+      <strong id="calloutTitle">HOVER HARDWARE SUBSYSTEM</strong>
+      <span id="calloutDesc">Move cursor over the 3D Pod to inspect the Common Client Connector, Express Rack Core, or Thermal Radiators. Drag to orbit camera.</span>
+    </div>
+  </aside>
+
+  <!-- Scroll-Driven Narrative Sections -->
+  <main class="scroll-track">
+    <section class="step-section" data-step="0">
+      <div class="step-card">
+        <span class="step-kicker">01 // THE POD — CANONICAL ATOMIC UNIT</span>
+        <h2>Orbital Infrastructure as a Service</h2>
+        <p>
+          As ISS Express Rack access sunsets in 2030, the Hitchhiker Orbital <strong>Pod</strong> provides a standardized, autonomous <strong>1-cubic-meter (1m³)</strong> orbital enclosure with integrated power, thermal rejection, and high-throughput telemetry.
+        </p>
+        <div class="spec-tags">
+          <span class="spec-tag">408 KM LEO ORBIT</span>
+          <span class="spec-tag">7.66 KM/S</span>
+          <span class="spec-tag">AUTONOMOUS EXPRESS RACK</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section" data-step="1">
+      <div class="step-card">
+        <span class="step-kicker">02 // EXPLODED-VIEW & FLY-IN ASSEMBLY</span>
+        <h2>Engineered for Microgravity Research & Manufacturing</h2>
+        <p>
+          Scroll or drag the <strong>Explode %</strong> slider to inspect the internal architecture: brushed aluminum micrometeoroid shielding, dual deployable active thermal radiators, Kapton MLI gold insulation, and the modular Express payload core.
+        </p>
+        <div class="spec-tags">
+          <span class="spec-tag">EXPLODED CAD VIEW</span>
+          <span class="spec-tag">ACTIVE RADIATORS</span>
+          <span class="spec-tag">HOVER RAYCASTING</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section" data-step="2">
+      <div class="step-card">
+        <span class="step-kicker">03 // STYLIZED HUMAN INTERACTION & SCALE</span>
+        <h2>1.00m³ Pod vs. 1.80m EVA Engineer Reference</h2>
+        <p>
+          Built like standardized intermodal containers for orbit. A stylized <strong>1.80m holographic EVA engineer</strong> provides immediate visual scale reference alongside the <strong>1000mm × 1000mm × 1000mm</strong> Pod enclosure and Common Client Connector.
+        </p>
+        <div class="spec-tags">
+          <span class="spec-tag">1.80M HUMAN SCALE</span>
+          <span class="spec-tag">1000MM CUBE BASELINE</span>
+          <span class="spec-tag">EVA INTERFACE</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section" data-step="3">
+      <div class="step-card">
+        <span class="step-kicker">04 // CONNECTIVE INFRASTRUCTURE</span>
+        <h2>Hardware that Scales into Space Stations</h2>
+        <p>
+          Using the proprietary <strong>Common Client Connector (CCC)</strong>, individual Pods fly in and dock autonomously onto a central <strong>Multi-Rack Node</strong>, scaling seamlessly from a single research cube into a multi-module orbital facility.
+        </p>
+        <div class="spec-tags">
+          <span class="spec-tag">COMMON CLIENT CONNECTOR</span>
+          <span class="spec-tag">MULTI-RACK NODE</span>
+          <span class="spec-tag">FLY-IN DOCKING</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Check if embedded inside Framer
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('embed') === 'framer') {
+      document.body.classList.add('embed-only');
+    }
+
+    const container = document.getElementById('webgl-container');
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(3.4, 2.1, 4.8);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.25;
+    container.appendChild(renderer.domElement);
+
+    // Lighting setup for crisp aerospace metallic hardware
+    const ambientLight = new THREE.AmbientLight(0xd8f3ff, 0.65);
+    scene.add(ambientLight);
+
+    const sunLight = new THREE.DirectionalLight(0xffffff, 2.4);
+    sunLight.position.set(8, 10, 7);
+    scene.add(sunLight);
+
+    const earthRimLight = new THREE.DirectionalLight(0x73c8ff, 1.85);
+    earthRimLight.position.set(-7, -9, -4);
+    scene.add(earthRimLight);
+
+    const goldAccentLight = new THREE.PointLight(0xf59e0b, 1.2, 12);
+    goldAccentLight.position.set(0, 0.5, 2.5);
+    scene.add(goldAccentLight);
+
+    // Aerospace PBR Materials
+    const matTitanium = new THREE.MeshStandardMaterial({
+      color: 0xdbeafe,
+      metalness: 0.82,
+      roughness: 0.24,
+    });
+    const matDarkAlloy = new THREE.MeshStandardMaterial({
+      color: 0x1e293b,
+      metalness: 0.88,
+      roughness: 0.32,
+    });
+    const matGoldMLI = new THREE.MeshStandardMaterial({
+      color: 0xf59e0b,
+      metalness: 0.92,
+      roughness: 0.18,
+    });
+    const matRadiator = new THREE.MeshStandardMaterial({
+      color: 0x0f172a,
+      metalness: 0.65,
+      roughness: 0.2,
+      emissive: 0x071426,
+    });
+    const matCyanGlow = new THREE.MeshBasicMaterial({
+      color: 0x73c8ff,
+    });
+    const matHoloHuman = new THREE.MeshStandardMaterial({
+      color: 0x73c8ff,
+      emissive: 0x1d4ed8,
+      emissiveIntensity: 0.65,
+      metalness: 0.3,
+      roughness: 0.2,
+      transparent: true,
+      opacity: 0.78,
+      wireframe: false,
+    });
+    const matHoloWire = new THREE.LineBasicMaterial({
+      color: 0xd8f3ff,
+      transparent: true,
+      opacity: 0.55,
+    });
+
+    // Root Scene Group
+    const worldGroup = new THREE.Group();
+    scene.add(worldGroup);
+
+    // 1. EARTH LEO HORIZON CURVE & ORBITAL TRAJECTORY RINGS
+    const envGroup = new THREE.Group();
+    worldGroup.add(envGroup);
+
+    const earthGeo = new THREE.SphereGeometry(26, 64, 64);
+    const earthMat = new THREE.MeshStandardMaterial({
+      color: 0x041022,
+      emissive: 0x0b2b4c,
+      emissiveIntensity: 0.45,
+      roughness: 0.7,
+      metalness: 0.2,
+    });
+    const earthMesh = new THREE.Mesh(earthGeo, earthMat);
+    earthMesh.position.set(0, -28.2, -6);
+    envGroup.add(earthMesh);
+
+    // Atmospheric Rim Halo
+    const atmoGeo = new THREE.RingGeometry(25.8, 26.9, 96);
+    const atmoMat = new THREE.MeshBasicMaterial({
+      color: 0x73c8ff,
+      side: THREE.DoubleSide,
+      transparent: true,
+      opacity: 0.24,
+    });
+    const atmoRing = new THREE.Mesh(atmoGeo, atmoMat);
+    atmoRing.position.set(0, -28.2, -5.5);
+    envGroup.add(atmoRing);
+
+    // Orbital Trajectory Spline Curve
+    const orbitCurveGeo = new THREE.TorusGeometry(14, 0.012, 8, 160);
+    const orbitCurveMat = new THREE.MeshBasicMaterial({ color: 0x73c8ff, transparent: true, opacity: 0.35 });
+    const orbitArc = new THREE.Mesh(orbitCurveGeo, orbitCurveMat);
+    orbitArc.rotation.x = Math.PI * 0.48;
+    orbitArc.position.set(0, -1.2, -4);
+    envGroup.add(orbitArc);
+
+    // Starfield
+    const starCount = 1200;
+    const starPos = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      starPos[i * 3] = (Math.random() - 0.5) * 90;
+      starPos[i * 3 + 1] = (Math.random() - 0.5) * 60;
+      starPos[i * 3 + 2] = -10 - Math.random() * 50;
+    }
+    const starGeo = new THREE.BufferGeometry();
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0xd8f3ff, size: 0.09, transparent: true, opacity: 0.75 });
+    envGroup.add(new THREE.Points(starGeo, starMat));
+
+    // Helper function to build a complete Hitchhiker 1m³ Pod (with explodable parts)
+    const interactableMeshes = [];
+
+    function createHitchhikerPod(isPrimary) {
+      const podRoot = new THREE.Group();
+
+      // A. Internal Autonomous Express Payload Rack (1m³ Core)
+      const coreGroup = new THREE.Group();
+      const coreBox = new THREE.Mesh(new THREE.BoxGeometry(0.84, 0.84, 0.84), matDarkAlloy);
+      coreBox.userData = {
+        name: "ISS EXPRESS PAYLOAD RACK (1m³ CORE)",
+        desc: "Autonomous microgravity lab core with 8 modular payload drawers, 28V DC power bus, and optical data backplane."
+      };
+      if (isPrimary) interactableMeshes.push(coreBox);
+      coreGroup.add(coreBox);
+
+      // Gold MLI Kapton Thermal Foil Patches on Core
+      const foilGeo = new THREE.BoxGeometry(0.86, 0.38, 0.72);
+      const foilMesh = new THREE.Mesh(foilGeo, matGoldMLI);
+      foilMesh.userData = coreBox.userData;
+      if (isPrimary) interactableMeshes.push(foilMesh);
+      coreGroup.add(foilMesh);
+
+      // Cyan Telemetry LED Strips
+      for (let i = -1; i <= 1; i += 2) {
+        const led = new THREE.Mesh(new THREE.BoxGeometry(0.87, 0.03, 0.65), matCyanGlow);
+        led.position.y = i * 0.26;
+        coreGroup.add(led);
+      }
+      podRoot.add(coreGroup);
+
+      // B. Top & Bottom Micrometeoroid Armor Shells (Explode Y)
+      const topShell = new THREE.Group();
+      const topPlate = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.12, 1.02), matTitanium);
+      topPlate.position.y = 0.48;
+      topPlate.userData = {
+        name: "MICROMETEOROID & THERMAL SHIELD (UPPER)",
+        desc: "Whipple-shielded brushed aerospace aluminum hull protecting payloads from orbital debris and solar flux."
+      };
+      if (isPrimary) interactableMeshes.push(topPlate);
+      topShell.add(topPlate);
+      podRoot.add(topShell);
+
+      const botShell = new THREE.Group();
+      const botPlate = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.12, 1.02), matTitanium);
+      botPlate.position.y = -0.48;
+      botPlate.userData = {
+        name: "AVIONICS & GN&C BASEBUS (LOWER)",
+        desc: "Houses star trackers, reaction wheels, and cold-gas thrusters for autonomous orbital station-keeping."
+      };
+      if (isPrimary) interactableMeshes.push(botPlate);
+      botShell.add(botPlate);
+      podRoot.add(botShell);
+
+      // C. Left & Right Deployable Active Thermal Radiator Wings (Explode X)
+      const radLeft = new THREE.Group();
+      const radLPlate = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.88, 0.92), matTitanium);
+      radLPlate.position.x = -0.49;
+      const wingL = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.74, 0.04), matRadiator);
+      wingL.position.set(-1.02, 0, 0);
+      const wingLGrid = new THREE.LineSegments(
+        new THREE.EdgesGeometry(new THREE.BoxGeometry(0.95, 0.74, 0.045)),
+        new THREE.LineBasicMaterial({ color: 0x73c8ff })
+      );
+      wingLGrid.position.copy(wingL.position);
+      radLPlate.userData = wingL.userData = {
+        name: "ACTIVE THERMAL RADIATOR ARRAY (PORT)",
+        desc: "Deployable ammonia-loop heat rejection wing providing up to 3.5 kW of continuous thermal dissipation."
+      };
+      if (isPrimary) { interactableMeshes.push(radLPlate, wingL); }
+      radLeft.add(radLPlate, wingL, wingLGrid);
+      podRoot.add(radLeft);
+
+      const radRight = new THREE.Group();
+      const radRPlate = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.88, 0.92), matTitanium);
+      radRPlate.position.x = 0.49;
+      const wingR = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.74, 0.04), matRadiator);
+      wingR.position.set(1.02, 0, 0);
+      const wingRGrid = new THREE.LineSegments(
+        new THREE.EdgesGeometry(new THREE.BoxGeometry(0.95, 0.74, 0.045)),
+        new THREE.LineBasicMaterial({ color: 0x73c8ff })
+      );
+      wingRGrid.position.copy(wingR.position);
+      radRPlate.userData = wingR.userData = {
+        name: "ACTIVE THERMAL RADIATOR ARRAY (STARBOARD)",
+        desc: "Dual-sided radiative surface maintaining +/- 0.5C isothermal stability for biotech and semiconductor payloads."
+      };
+      if (isPrimary) { interactableMeshes.push(radRPlate, wingR); }
+      radRight.add(radRPlate, wingR, wingRGrid);
+      podRoot.add(radRight);
+
+      // D. Front Common Client Connector (CCC) Docking Ring (Explode +Z)
+      const cccGroup = new THREE.Group();
+      const frontHull = new THREE.Mesh(new THREE.BoxGeometry(0.92, 0.88, 0.08), matTitanium);
+      frontHull.position.z = 0.49;
+      const dockRing = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.38, 0.16, 32), matDarkAlloy);
+      dockRing.rotation.x = Math.PI / 2;
+      dockRing.position.z = 0.58;
+      const dockGlow = new THREE.Mesh(new THREE.TorusGeometry(0.31, 0.018, 16, 48), matCyanGlow);
+      dockGlow.position.z = 0.66;
+
+      frontHull.userData = dockRing.userData = {
+        name: "COMMON CLIENT CONNECTOR (CCC)",
+        desc: "Proprietary universal docking interface uniting standalone Pods into Multi-Rack Nodes with blind-mate power, fluid & fiber links."
+      };
+      if (isPrimary) { interactableMeshes.push(frontHull, dockRing); }
+      cccGroup.add(frontHull, dockRing, dockGlow);
+      podRoot.add(cccGroup);
+
+      // E. Rear Aft Bulkhead (Explode -Z)
+      const aftGroup = new THREE.Group();
+      const aftHull = new THREE.Mesh(new THREE.BoxGeometry(0.92, 0.88, 0.08), matTitanium);
+      aftHull.position.z = -0.49;
+      aftHull.userData = {
+        name: "AFT PROPULSION & UMBILICAL BULKHEAD",
+        desc: "Launch vehicle separation ring and redundant docking port for multi-node orbital stacking."
+      };
+      if (isPrimary) interactableMeshes.push(aftHull);
+      aftGroup.add(aftHull);
+      podRoot.add(aftGroup);
+
+      // Store references for exploded-view animation
+      podRoot.userData.parts = { topShell, botShell, radLeft, radRight, cccGroup, aftGroup };
+      return podRoot;
+    }
+
+    const mainPod = createHitchhikerPod(true);
+    worldGroup.add(mainPod);
+
+    // 2. STYLIZED HUMAN INTERACTION / SCALE REFERENCE (1.80m EVA Engineer vs 1.00m³ Pod)
+    const humanScaleGroup = new THREE.Group();
+    humanScaleGroup.position.set(1.85, -0.35, 0.35);
+    worldGroup.add(humanScaleGroup);
+
+    // Build stylized articulated 1.80m EVA Astronaut/Engineer (1 unit = 1 meter!)
+    const evaFigure = new THREE.Group();
+    // Helmet & Visor
+    const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.14, 24, 24), matHoloHuman);
+    helmet.position.y = 1.64;
+    const visor = new THREE.Mesh(new THREE.SphereGeometry(0.125, 20, 20), matGoldMLI);
+    visor.position.set(-0.03, 1.64, 0.03);
+    // Torso & PLSS Life Support Backpack
+    const torso = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.14, 0.56, 16), matHoloHuman);
+    torso.position.y = 1.22;
+    const backpack = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.46, 0.18), matHoloHuman);
+    backpack.position.set(0.12, 1.24, -0.04);
+    // Left Arm reaching toward the Pod's Common Client Connector!
+    const armL = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.045, 0.58, 12), matHoloHuman);
+    armL.position.set(-0.34, 1.36, 0.08);
+    armL.rotation.z = Math.PI * 0.36;
+    // Right Arm at side
+    const armR = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.045, 0.54, 12), matHoloHuman);
+    armR.position.set(0.22, 1.18, 0);
+    armR.rotation.z = -0.18;
+    // Legs
+    const legL = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.05, 0.82, 12), matHoloHuman);
+    legL.position.set(-0.09, 0.48, 0);
+    const legR = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.05, 0.82, 12), matHoloHuman);
+    legR.position.set(0.09, 0.44, -0.06);
+    legR.rotation.x = 0.12;
+
+    evaFigure.add(helmet, visor, torso, backpack, armL, armR, legL, legR);
+    evaFigure.traverse(obj => {
+      if (obj.isMesh) {
+        obj.userData = {
+          name: "STYLIZED EVA ENGINEER (1.80M SCALE REF)",
+          desc: "1:1 metric scale comparison: 1.80m human astronaut interfacing with the 1.00m x 1.00m x 1.00m Hitchhiker Pod."
+        };
+        interactableMeshes.push(obj);
+      }
+    });
+    humanScaleGroup.add(evaFigure);
+
+    // 1.00m³ Bounding Box & 1.80m Height Calibration Frame
+    const podBoundsWire = new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.BoxGeometry(1.06, 1.06, 1.06)),
+      matHoloWire
+    );
+    podBoundsWire.position.set(-1.85, 0.35, -0.35);
+    humanScaleGroup.add(podBoundsWire);
+
+    const humanBoundsWire = new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.BoxGeometry(0.55, 1.80, 0.45)),
+      matHoloWire
+    );
+    humanBoundsWire.position.set(0, 0.90, 0);
+    humanScaleGroup.add(humanBoundsWire);
+
+    // 3. MULTI-RACK NODE & DOCKING SATELLITE PODS (State 4)
+    const multiRackGroup = new THREE.Group();
+    worldGroup.add(multiRackGroup);
+
+    // Central 6-Port Multi-Rack Node Core
+    const nodeCore = new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.58, 1.12, 24), matDarkAlloy);
+    nodeCore.rotation.x = Math.PI / 2;
+    nodeCore.position.set(0, 0, 1.45);
+    nodeCore.userData = {
+      name: "MULTI-RACK NODE HUB (STATION CORE)",
+      desc: "Central connective hub allowing up to 6 Hitchhiker Pods to aggregate into a commercial space station."
+    };
+    interactableMeshes.push(nodeCore);
+    multiRackGroup.add(nodeCore);
+
+    // 3 Partner Pods that fly-in to dock around the Multi-Rack Node
+    const partnerPodTop = createHitchhikerPod(false);
+    const partnerPodBot = createHitchhikerPod(false);
+    const partnerPodFwd = createHitchhikerPod(false);
+    multiRackGroup.add(partnerPodTop, partnerPodBot, partnerPodFwd);
+
+    // Animation State Variables (Smooth Lerped Targets)
+    let targetExplode = 0;
+    let currentExplode = 0;
+    let targetScaleVis = 0;
+    let currentScaleVis = 0;
+    let targetRackVis = 0;
+    let currentRackVis = 0;
+    let autoOrbitSpeed = 0.35;
+
+    // Camera Orbit Dragging
+    let isDragging = false;
+    let prevX = 0, prevY = 0;
+    let camTheta = 0.62;
+    let camPhi = 0.38;
+    let camRadius = 5.4;
+
+    renderer.domElement.addEventListener('pointerdown', e => {
+      isDragging = true;
+      prevX = e.clientX;
+      prevY = e.clientY;
+    });
+    window.addEventListener('pointerup', () => { isDragging = false; });
+    window.addEventListener('pointermove', e => {
+      if (isDragging) {
+        const dx = (e.clientX - prevX) * 0.007;
+        const dy = (e.clientY - prevY) * 0.007;
+        camTheta -= dx;
+        camPhi = Math.max(-0.6, Math.min(1.1, camPhi + dy));
+        prevX = e.clientX;
+        prevY = e.clientY;
+      }
+      // Hover Raycasting for Subsystem Callouts
+      updateHoverRaycast(e.clientX, e.clientY);
+    });
+
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    function updateHoverRaycast(clientX, clientY) {
+      mouse.x = (clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(clientY / window.innerHeight) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+      const hits = raycaster.intersectObjects(interactableMeshes, false);
+      if (hits.length > 0 && hits[0].object.userData.name) {
+        const info = hits[0].object.userData;
+        document.getElementById('calloutTitle').textContent = info.name;
+        document.getElementById('calloutDesc').textContent = info.desc;
+      }
+    }
+
+    // Apply State Preset
+    function applyStateTargets(stepIndex) {
+      ['btn-orbital', 'btn-exploded', 'btn-scale', 'btn-multirack'].forEach((id, idx) => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('active', idx === stepIndex);
+      });
+
+      if (stepIndex === 0) {
+        targetExplode = 0;
+        targetScaleVis = 0;
+        targetRackVis = 0;
+        camRadius = 5.2;
+      } else if (stepIndex === 1) {
+        targetExplode = 0.88;
+        targetScaleVis = 0;
+        targetRackVis = 0;
+        camRadius = 5.8;
+      } else if (stepIndex === 2) {
+        targetExplode = 0.18;
+        targetScaleVis = 1.0;
+        targetRackVis = 0;
+        camRadius = 5.6;
+      } else if (stepIndex === 3) {
+        targetExplode = 0;
+        targetScaleVis = 0;
+        targetRackVis = 1.0;
+        camRadius = 7.4;
+      }
+      syncSlidersToTargets();
+    }
+
+    function syncSlidersToTargets() {
+      document.getElementById('explodeSlider').value = targetExplode;
+      document.getElementById('explodeValLabel').textContent = Math.round(targetExplode * 100) + '%';
+      document.getElementById('scaleSlider').value = targetScaleVis;
+      document.getElementById('scaleValLabel').textContent = targetScaleVis > 0.5 ? '1.80M ACTIVE' : 'OFF';
+      document.getElementById('rackSlider').value = targetRackVis;
+      document.getElementById('rackValLabel').textContent = targetRackVis > 0.5 ? '4-POD NODE' : 'STANDALONE';
+    }
+
+    function jumpToState(idx) {
+      applyStateTargets(idx);
+      const sec = document.querySelector(`section[data-step="${idx}"]`);
+      if (sec && !document.body.classList.contains('embed-only')) {
+        sec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function onManualExplode(val) {
+      targetExplode = parseFloat(val);
+      document.getElementById('explodeValLabel').textContent = Math.round(targetExplode * 100) + '%';
+    }
+    function onManualScale(val) {
+      targetScaleVis = parseFloat(val);
+      document.getElementById('scaleValLabel').textContent = targetScaleVis > 0.1 ? Math.round(targetScaleVis * 100) + '%' : 'OFF';
+    }
+    function onManualRack(val) {
+      targetRackVis = parseFloat(val);
+      document.getElementById('rackValLabel').textContent = targetRackVis > 0.1 ? 'DOCKING ' + Math.round(targetRackVis * 100) + '%' : 'STANDALONE';
+    }
+
+    // Scroll Listener for Smooth Scroll-Triggered Motion States
+    window.addEventListener('scroll', () => {
+      if (document.body.classList.contains('embed-only')) return;
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+      const idx = Math.min(3, Math.max(0, Math.round(scrollY / vh)));
+      applyStateTargets(idx);
+    });
+
+    // Listen to Framer Code Component postMessage
+    window.addEventListener('message', (event) => {
+      const msg = event.data;
+      if (msg && msg.type === 'HHO_SET_STATE') {
+        const map = { orbital: 0, exploded: 1, scale: 2, multirack: 3 };
+        if (map[msg.state] !== undefined) applyStateTargets(map[msg.state]);
+        if (typeof msg.explode === 'number') targetExplode = msg.explode;
+        if (typeof msg.speed === 'number') autoOrbitSpeed = msg.speed;
+        if (msg.transparent !== undefined) {
+          document.body.classList.toggle('transparent-mode', !!msg.transparent);
+          envGroup.visible = !msg.transparent;
+        }
+      }
+    });
+
+    function toggleAlphaBg() {
+      const isAlpha = document.body.classList.toggle('transparent-mode');
+      envGroup.visible = !isAlpha;
+      document.getElementById('alphaBtn').textContent = isAlpha ? 'Transparent: ON' : 'Transparent: OFF';
+      document.getElementById('alphaBtn').classList.toggle('active', isAlpha);
+    }
+
+    // Pitch-Deck 60 FPS Video Exporter (.WebM)
+    function recordPitchDeckClip() {
+      const btn = document.getElementById('recordBtn');
+      btn.textContent = 'Recording 5s 60FPS...';
+      const stream = renderer.domElement.captureStream(60);
+      const recorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+      const chunks = [];
+      recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Hitchhiker_Orbital_Pod_60FPS.webm';
+        a.click();
+        btn.textContent = 'Record 5s Deck Clip (.WebM)';
+      };
+      recorder.start();
+      setTimeout(() => recorder.stop(), 5000);
+    }
+
+    // Main 60 FPS Animation Loop
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const dt = clock.getDelta();
+      const t = clock.getElapsedTime();
+
+      // Smooth interpolation of state parameters
+      currentExplode += (targetExplode - currentExplode) * 0.08;
+      currentScaleVis += (targetScaleVis - currentScaleVis) * 0.08;
+      currentRackVis += (targetRackVis - currentRackVis) * 0.07;
+
+      // 1. Apply Exploded-View / Fly-In Offsets to Main Pod Subsystems
+      const p = mainPod.userData.parts;
+      p.topShell.position.y = currentExplode * 0.68;
+      p.botShell.position.y = -currentExplode * 0.68;
+      p.radLeft.position.x = -currentExplode * 0.75;
+      p.radRight.position.x = currentExplode * 0.75;
+      p.cccGroup.position.z = currentExplode * 0.78;
+      p.aftGroup.position.z = -currentExplode * 0.65;
+
+      // Subtle microgravity float on Main Pod
+      mainPod.position.y = Math.sin(t * 1.4) * 0.06;
+
+      // 2. Apply Stylized Human Scale Reference Visibility & Float
+      humanScaleGroup.visible = currentScaleVis > 0.02;
+      humanScaleGroup.scale.setScalar(Math.max(0.001, currentScaleVis));
+      evaFigure.position.y = Math.sin(t * 1.8 + 1.0) * 0.05;
+
+      // 3. Apply Multi-Rack Node Fly-In Docking Assembly
+      multiRackGroup.visible = currentRackVis > 0.02;
+      const flyDist = (1.0 - currentRackVis) * 4.5;
+      nodeCore.scale.setScalar(Math.max(0.001, currentRackVis));
+
+      partnerPodTop.position.set(0, 1.45 + flyDist, 1.45);
+      partnerPodTop.rotation.x = Math.PI / 2;
+
+      partnerPodBot.position.set(0, -1.45 - flyDist, 1.45);
+      partnerPodBot.rotation.x = -Math.PI / 2;
+
+      partnerPodFwd.position.set(0, 0, 2.90 + flyDist);
+      partnerPodFwd.rotation.y = Math.PI;
+
+      // Rotate Earth slowly below
+      earthMesh.rotation.z = t * 0.015;
+
+      // Update Orbit Camera
+      if (!isDragging) {
+        camTheta += dt * autoOrbitSpeed * 0.45;
+      }
+      const cx = camRadius * Math.sin(camTheta) * Math.cos(camPhi);
+      const cy = camRadius * Math.sin(camPhi) + 0.35;
+      const cz = camRadius * Math.cos(camTheta) * Math.cos(camPhi);
+      camera.position.lerp(new THREE.Vector3(cx, cy, cz), 0.08);
+      camera.lookAt(0.2 * currentScaleVis, 0, 0.5 * currentRackVis);
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
