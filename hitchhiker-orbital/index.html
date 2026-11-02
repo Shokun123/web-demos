@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Oxanium:wght@500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
   <style>
@@ -43,8 +44,9 @@
       width: 100vw;
       height: 100vh;
       background:
-        radial-gradient(circle at 58% 50%, rgba(2, 7, 18, 0.18) 0%, rgba(2, 7, 18, 0.82) 85%),
+        radial-gradient(circle at 58% 50%, rgba(2, 7, 18, 0.08) 0%, rgba(2, 7, 18, 0.62) 88%),
         url('./earth_leo_bg.jpg') center center / cover no-repeat;
+      filter: brightness(1.18) contrast(1.14) saturate(1.20);
       z-index: 0;
       transition: opacity 0.4s ease;
     }
@@ -500,59 +502,54 @@
     goldRimLight.position.set(3, 2, 4);
     scene.add(goldRimLight);
 
-    // Load Official Hitchhiker Orbital Common Client Connector (CCC) CAD Texture
+    // Load Official Hitchhiker Orbital Photorealistic PBR Textures & Normal Maps
     const texLoader = new THREE.TextureLoader();
-    const cccOfficialTex = texLoader.load('./ccc_ring.png');
-    cccOfficialTex.encoding = THREE.sRGBEncoding;
-
-    // High-Resolution Solar Cell Texture with Silver Busbars
-    function createCrispSolarTexture() {
-      const c = document.createElement('canvas');
-      c.width = 1024;
-      c.height = 512;
-      const ctx = c.getContext('2d');
-      ctx.fillStyle = '#07132c';
-      ctx.fillRect(0, 0, 1024, 512);
-
-      // Individual bevel-corner solar cells
-      for (let x = 8; x < 1024; x += 64) {
-        for (let y = 8; y < 512; y += 64) {
-          const grad = ctx.createLinearGradient(x, y, x + 56, y + 56);
-          grad.addColorStop(0, '#0f295c');
-          grad.addColorStop(0.5, '#173b7a');
-          grad.addColorStop(1, '#0a1c40');
-          ctx.fillStyle = grad;
-          ctx.fillRect(x, y, 56, 56);
-
-          // Fine silver collector grid lines
-          ctx.strokeStyle = 'rgba(186, 230, 253, 0.38)';
-          ctx.lineWidth = 1;
-          ctx.strokeRect(x, y, 56, 56);
-          ctx.beginPath();
-          ctx.moveTo(x + 28, y);
-          ctx.lineTo(x + 28, y + 56);
-          ctx.stroke();
-        }
-      }
-      const t = new THREE.CanvasTexture(c);
-      t.encoding = THREE.sRGBEncoding;
+    function loadPBRTex(url, isSRGB = true, repeatX = 1, repeatY = 1) {
+      const t = texLoader.load(url);
+      if (isSRGB) t.encoding = THREE.sRGBEncoding;
       t.anisotropy = 8;
+      if (repeatX > 1 || repeatY > 1) {
+        t.wrapS = THREE.RepeatWrapping;
+        t.wrapT = THREE.RepeatWrapping;
+        t.repeat.set(repeatX, repeatY);
+      }
       return t;
     }
-    const solarCellTex = createCrispSolarTexture();
+
+    const cccOfficialTex   = loadPBRTex('./ccc_ring.png', true);
+    const podFaceAlbedo    = loadPBRTex('./pod_face_real.jpg', true);
+    const podFaceNormal    = loadPBRTex('./pod_face_normal.jpg', false);
+    const podFaceRoughness = loadPBRTex('./pod_face_roughness.jpg', false);
+
+    const kaptonAlbedo     = loadPBRTex('./kapton_albedo.jpg', true, 2, 2);
+    const kaptonNormal     = loadPBRTex('./kapton_normal.jpg', false, 2, 2);
+
+    const solarRealTex     = loadPBRTex('./solar_real.jpg', true, 2, 1);
+    const solarNormalTex   = loadPBRTex('./solar_normal.jpg', false, 2, 1);
+
+    const radiatorRealTex  = loadPBRTex('./radiator_real.jpg', true, 1, 1);
+    const radiatorNormal   = loadPBRTex('./radiator_normal.jpg', false, 1, 1);
 
     // ============================================================================
-    // 2. AEROSPACE PBR MATERIALS (Driven by HDRI scene.environment)
+    // 2. PHOTOREALISTIC AEROSPACE PBR MATERIALS (Driven by HDRI + Tangent Normals)
     // ============================================================================
+    const matPodPhotorealFace = new THREE.MeshStandardMaterial({
+      map: podFaceAlbedo,
+      normalMap: podFaceNormal,
+      normalScale: new THREE.Vector2(2.4, 2.4),
+      roughnessMap: podFaceRoughness,
+      metalness: 0.78,
+      roughness: 0.36,
+    });
     const matChampagneGoldRibs = new THREE.MeshStandardMaterial({
-      color: 0xd99b26,
-      metalness: 0.85,
-      roughness: 0.28,
+      color: 0xe6be6a,
+      metalness: 0.88,
+      roughness: 0.24,
     });
     const matBrushedTitanium = new THREE.MeshStandardMaterial({
-      color: 0x334155,
-      metalness: 0.78,
-      roughness: 0.34,
+      color: 0x1e2430,
+      metalness: 0.84,
+      roughness: 0.28,
     });
     const matDarkCarbonMMOD = new THREE.MeshStandardMaterial({
       color: 0x050811,
@@ -560,135 +557,95 @@
       roughness: 0.75,
     });
     const matBronzeFlange = new THREE.MeshStandardMaterial({
-      color: 0x5c3415,
-      metalness: 0.82,
-      roughness: 0.30,
+      color: 0x3b210d,
+      metalness: 0.86,
+      roughness: 0.26,
     });
     const matCCCPhoto = new THREE.MeshStandardMaterial({
       map: cccOfficialTex,
-      metalness: 0.65,
-      roughness: 0.25,
+      normalMap: podFaceNormal,
+      normalScale: new THREE.Vector2(1.2, 1.2),
+      metalness: 0.75,
+      roughness: 0.22,
     });
     const matBlueBallLock = new THREE.MeshStandardMaterial({
       color: 0x2563eb,
-      metalness: 0.9,
+      metalness: 0.92,
       roughness: 0.12,
     });
     const matAnodizedGreen = new THREE.MeshStandardMaterial({
-      color: 0x487a4b,
-      metalness: 0.55,
-      roughness: 0.34,
-    });
-    const matAerospaceBlue = new THREE.MeshStandardMaterial({
-      color: 0x6c8ebf,
-      metalness: 0.58,
+      color: 0x437046,
+      normalMap: kaptonNormal,
+      normalScale: new THREE.Vector2(0.25, 0.25),
+      metalness: 0.62,
       roughness: 0.32,
     });
+    const matAerospaceBlue = new THREE.MeshStandardMaterial({
+      color: 0x6b8eb8,
+      normalMap: kaptonNormal,
+      normalScale: new THREE.Vector2(0.25, 0.25),
+      metalness: 0.64,
+      roughness: 0.30,
+    });
     const matSilverHardware = new THREE.MeshStandardMaterial({
-      color: 0xe2e8f0,
+      color: 0xd8e2ec,
       metalness: 0.92,
       roughness: 0.18,
     });
+    const matCorrugatedRadiator = new THREE.MeshStandardMaterial({
+      map: radiatorRealTex,
+      normalMap: radiatorNormal,
+      normalScale: new THREE.Vector2(2.2, 2.2),
+      metalness: 0.88,
+      roughness: 0.22,
+    });
 
     // ============================================================================
-    // 3. BUILD TRUE 3D EXTRUDED ISO-GRID PANEL & 3D STEPPED CCC RING
-    //    (Replaces flat 2D box texture with real 3D sculptural CAD geometry!)
+    // 3. BUILD PHOTOREALISTIC 3D ISO-GRID PANEL & 3D STEPPED CCC RING
+    //    (Combines official ray-traced PBR textures + Normal Map + 3D relief!)
     // ============================================================================
     const sharedIsoFaceGeometryGroup = (() => {
       const template = new THREE.Group();
 
-      // 1. Recessed Dark Carbon-Polymer MMOD Backing Plate
-      const backPlate = new THREE.Mesh(new THREE.BoxGeometry(1.02, 1.02, 0.024), matDarkCarbonMMOD);
-      backPlate.position.z = 0.0;
-      template.add(backPlate);
+      // 1. Primary Machined Iso-Grid Structural Plate with 2K Official PBR Albedo + Normal + Roughness
+      const mainPlate = new THREE.Mesh(new THREE.BoxGeometry(1.04, 1.04, 0.036), [
+        matBrushedTitanium, matBrushedTitanium, matBrushedTitanium, matBrushedTitanium,
+        matPodPhotorealFace, matDarkCarbonMMOD
+      ]);
+      mainPlate.position.z = 0.008;
+      mainPlate.castShadow = true;
+      mainPlate.receiveShadow = true;
+      template.add(mainPlate);
 
-      // 2. Thick 3D Machined Perimeter Frame & Central Cross-Beams (+ shape from img_3.png)
-      const frameThickness = 0.052;
-      const barW = 0.042;
+      // 2. Ultra-Thin 3D Machined Dark-Gunmetal Edge Bevel (Preserves 100% of pod_face_real.jpg!)
+      const frameThickness = 0.042;
+      const barW = 0.012;
       const borderBars = [
-        { s: [1.06, barW, frameThickness], p: [0, 0.51, 0.015] },
-        { s: [1.06, barW, frameThickness], p: [0, -0.51, 0.015] },
-        { s: [barW, 1.06, frameThickness], p: [0.51, 0, 0.015] },
-        { s: [barW, 1.06, frameThickness], p: [-0.51, 0, 0.015] },
-        // Central Cross Stiffeners dividing face into 4 Iso-Grid Quadrants
-        { s: [1.02, 0.036, frameThickness], p: [0, 0, 0.015] },
-        { s: [0.036, 1.02, frameThickness], p: [0, 0, 0.015] }
+        { s: [1.05, barW, frameThickness], p: [0, 0.522, 0.008] },
+        { s: [1.05, barW, frameThickness], p: [0, -0.522, 0.008] },
+        { s: [barW, 1.05, frameThickness], p: [0.522, 0, 0.008] },
+        { s: [barW, 1.05, frameThickness], p: [-0.522, 0, 0.008] }
       ];
       borderBars.forEach(b => {
-        const m = new THREE.Mesh(new THREE.BoxGeometry(b.s[0], b.s[1], b.s[2]), matBrushedTitanium);
+        const m = new THREE.Mesh(new THREE.BoxGeometry(b.s[0], b.s[1], b.s[2]), matDarkCarbonMMOD);
         m.position.set(b.p[0], b.p[1], b.p[2]);
         template.add(m);
       });
 
-      // 3. True 3D Extruded Triangular Iso-Grid Ribs inside each of the 4 Quadrants!
-      const quadOffsets = [[-0.255, 0.255], [0.255, 0.255], [-0.255, -0.255], [0.255, -0.255]];
-      const ribDepth = 0.038;
-      const ribThick = 0.009;
-
-      quadOffsets.forEach(([qx, qy]) => {
-        const qGroup = new THREE.Group();
-        qGroup.position.set(qx, qy, 0.012);
-
-        // Horizontal & Vertical sub-ribs in quadrant
-        for (let i = -1; i <= 1; i++) {
-          const hRib = new THREE.Mesh(new THREE.BoxGeometry(0.45, ribThick, ribDepth), matChampagneGoldRibs);
-          hRib.position.y = i * 0.115;
-          qGroup.add(hRib);
-
-          const vRib = new THREE.Mesh(new THREE.BoxGeometry(ribThick, 0.45, ribDepth), matChampagneGoldRibs);
-          vRib.position.x = i * 0.115;
-          qGroup.add(vRib);
-        }
-
-        // +/- 45 deg Diagonal Iso-Grid Struts + Machined Node Bosses
-        for (let d = -1; d <= 1; d++) {
-          const len = d === 0 ? 0.62 : 0.34;
-          const off = d * 0.16;
-
-          const diag1 = new THREE.Mesh(new THREE.BoxGeometry(len, ribThick, ribDepth * 0.92), matChampagneGoldRibs);
-          diag1.rotation.z = Math.PI / 4;
-          diag1.position.set(off * 0.7, -off * 0.7, 0);
-          qGroup.add(diag1);
-
-          const diag2 = new THREE.Mesh(new THREE.BoxGeometry(len, ribThick, ribDepth * 0.92), matChampagneGoldRibs);
-          diag2.rotation.z = -Math.PI / 4;
-          diag2.position.set(off * 0.7, off * 0.7, 0);
-          qGroup.add(diag2);
-        }
-
-        // Circular Iso-Grid Node Bosses at rib intersections
-        for (let nx = -1; nx <= 1; nx++) {
-          for (let ny = -1; ny <= 1; ny++) {
-            const boss = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, ribDepth + 0.004, 12), matChampagneGoldRibs);
-            boss.rotation.x = Math.PI / 2;
-            boss.position.set(nx * 0.115, ny * 0.115, 0);
-            qGroup.add(boss);
-          }
-        }
-        template.add(qGroup);
-      });
-
-      // 4. 4 Corner Chamfered RCS Thruster / Grapple Pockets (Matches img_1.png!)
-      const cornerCoords = [[-0.41, 0.41], [0.41, 0.41], [-0.41, -0.41], [0.41, -0.41]];
+      // 3. 4 Corner Chamfered 3D RCS Thruster / Grapple Nozzles (Protruding in 3D over the corner bays of img_1.png!)
+      const cornerCoords = [[-0.435, 0.435], [0.435, 0.435], [-0.435, -0.435], [0.435, -0.435]];
       cornerCoords.forEach(([cx, cy]) => {
         const pocket = new THREE.Group();
         pocket.position.set(cx, cy, 0.022);
 
-        // Triangular/Beveled Corner Housing Plate
-        const housing = new THREE.Mesh(new THREE.CylinderGeometry(0.082, 0.092, 0.028, 3), matBrushedTitanium);
-        housing.rotation.x = Math.PI / 2;
-        housing.rotation.z = Math.atan2(cy, cx) - Math.PI / 2;
-        pocket.add(housing);
-
-        // White/Silver Recessed Thruster Collar & Dark Nozzle Bore (exact match to img_1.png)
-        const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.048, 0.052, 0.045, 24), matSilverHardware);
+        const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.046, 0.052, 0.032, 28), matSilverHardware);
         collar.rotation.x = Math.PI / 2;
-        collar.position.z = 0.012;
+        collar.position.z = 0.006;
         pocket.add(collar);
 
-        const bore = new THREE.Mesh(new THREE.CylinderGeometry(0.036, 0.036, 0.048, 20), matDarkCarbonMMOD);
+        const bore = new THREE.Mesh(new THREE.CylinderGeometry(0.034, 0.034, 0.036, 24), matDarkCarbonMMOD);
         bore.rotation.x = Math.PI / 2;
-        bore.position.z = 0.014;
+        bore.position.z = 0.009;
         pocket.add(bore);
 
         template.add(pocket);
@@ -697,47 +654,39 @@
       return template;
     })();
 
-    // Build 3D Machined Common Client Connector (CCC) Assembly (Matches img_1.png & img_2.png)
+    // Build 3D Machined Common Client Connector (CCC) Assembly (Preserves outer 60 gear teeth of pod_face_real.jpg!)
     function create3DCCCAssembly() {
       const ccc = new THREE.Group();
 
-      // 1. Outer Geared Bronze/Brown Structural Ring (with 36 machined perimeter teeth like img_1.png!)
-      const outerRing = new THREE.Mesh(new THREE.CylinderGeometry(0.305, 0.315, 0.042, 48), matBronzeFlange);
-      outerRing.rotation.x = Math.PI / 2;
-      ccc.add(outerRing);
+      // 1. Raised 3D Dark-Bronze Geared Rim Collar (aligned with the bronze ring of pod_face_real.jpg)
+      const outerTor = new THREE.Mesh(new THREE.TorusGeometry(0.282, 0.018, 16, 64), matBronzeFlange);
+      outerTor.position.z = 0.012;
+      ccc.add(outerTor);
 
-      for (let i = 0; i < 24; i++) {
-        const a = (i / 24) * Math.PI * 2;
-        const tooth = new THREE.Mesh(new THREE.BoxGeometry(0.022, 0.018, 0.044), matSilverHardware);
-        tooth.position.set(Math.cos(a) * 0.308, Math.sin(a) * 0.308, 0);
-        tooth.rotation.z = a;
-        ccc.add(tooth);
-      }
+      // 2. Inner Stepped Brushed-Steel Ring + Official CCC Multi-Ring Core (`ccc_ring.png`)
+      const innerGearFlange = new THREE.Mesh(new THREE.CylinderGeometry(0.168, 0.176, 0.038, 48), matSilverHardware);
+      innerGearFlange.rotation.x = Math.PI / 2;
+      innerGearFlange.position.z = 0.004;
+      ccc.add(innerGearFlange);
 
-      // 2. Stepped Silver Bolted Flange & Official CCC Ring Disc (`ccc_ring.png`)
-      const midFlange = new THREE.Mesh(new THREE.CylinderGeometry(0.265, 0.275, 0.052, 48), matSilverHardware);
-      midFlange.rotation.x = Math.PI / 2;
-      midFlange.position.z = 0.008;
-      ccc.add(midFlange);
-
-      const cccFaceDisc = new THREE.Mesh(new THREE.CylinderGeometry(0.255, 0.255, 0.056, 48), matCCCPhoto);
+      const cccFaceDisc = new THREE.Mesh(new THREE.CylinderGeometry(0.158, 0.158, 0.042, 48), matCCCPhoto);
       cccFaceDisc.rotation.x = Math.PI / 2;
-      cccFaceDisc.position.z = 0.012;
+      cccFaceDisc.position.z = 0.007;
       ccc.add(cccFaceDisc);
 
-      // 3. 4 Protruding 3D Anodized Blue Kinematic Alignment Spheres (from img_2.png)
+      // 3. 4 Protruding 3D Anodized Blue Kinematic Alignment Spheres
       for (let i = 0; i < 4; i++) {
         const a = (i / 4) * Math.PI * 2 + 0.42;
-        const ball = new THREE.Mesh(new THREE.SphereGeometry(0.018, 16, 16), matBlueBallLock);
-        ball.position.set(Math.cos(a) * 0.095, Math.sin(a) * 0.095, 0.042);
+        const ball = new THREE.Mesh(new THREE.SphereGeometry(0.013, 16, 16), matBlueBallLock);
+        ball.position.set(Math.cos(a) * 0.072, Math.sin(a) * 0.072, 0.030);
         ccc.add(ball);
       }
 
-      // 4. 4 Rectangular Latch Blocks on Outer Bronze Ring (from img_1.png)
+      // 4. 4 Rectangular Silver Latch Blocks on Outer Dark-Bronze Ring (top/bottom/left/right of img_1.png)
       for (let i = 0; i < 4; i++) {
         const a = (i / 4) * Math.PI * 2;
-        const latch = new THREE.Mesh(new THREE.BoxGeometry(0.048, 0.024, 0.052), matSilverHardware);
-        latch.position.set(Math.cos(a) * 0.275, Math.sin(a) * 0.275, 0.008);
+        const latch = new THREE.Mesh(new THREE.BoxGeometry(0.044, 0.018, 0.036), matSilverHardware);
+        latch.position.set(Math.cos(a) * 0.282, Math.sin(a) * 0.282, 0.016);
         latch.rotation.z = a + Math.PI / 2;
         ccc.add(latch);
       }
@@ -850,37 +799,69 @@
     worldGroup.add(canonicalPod);
 
     // ============================================================================
-    // 5. OFFICIAL NASA 3D EVA ASTRONAUT (`Astronaut.glb`) FOR 1.80M SCALE REF
+    // 5. OFFICIAL HIGH-POLY NASA 3D EMU SUIT (`NASA_EMU_Suit.glb`, 442,172 VERTS!)
     // ============================================================================
+    const astronautNormalTex = loadPBRTex('./astronaut_normal.jpg', false);
     const humanScaleGroup = new THREE.Group();
-    humanScaleGroup.position.set(0.92, -0.56, 0.25);
+    humanScaleGroup.position.set(0.95, -0.58, 0.22);
     worldGroup.add(humanScaleGroup);
 
     let nasaAstronautMesh = null;
+    let nasaAstronautBaseY = 0;
+    const dracoLoader = new THREE.DRACOLoader();
+    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
     const gltfLoader = new THREE.GLTFLoader();
-    gltfLoader.load('./Astronaut.glb', (gltf) => {
+    gltfLoader.setDRACOLoader(dracoLoader);
+    gltfLoader.load('./NASA_EMU_Suit.glb', (gltf) => {
       const model = gltf.scene;
-      // Compute exact bounding box of NASA Astronaut and normalize height to 1.80 meters
+      // Compute exact bounding box of 442,172-vertex NASA EMU Suit and normalize height to 1.80m
       const box = new THREE.Box3().setFromObject(model);
       const currentHeight = box.max.y - box.min.y;
       const scaleFactor = 1.80 / (currentHeight || 1.80);
       model.scale.setScalar(scaleFactor);
 
-      // Re-center feet at y = 0
+      // Re-center feet at y = 0 and X/Z at 0
       const box2 = new THREE.Box3().setFromObject(model);
-      model.position.y = -box2.min.y;
-      model.rotation.y = -0.52; // Turned facing the 1100mm Pod!
+      const center2 = new THREE.Vector3();
+      box2.getCenter(center2);
+      nasaAstronautBaseY = -box2.min.y;
+      model.position.set(-center2.x, nasaAstronautBaseY, -center2.z);
+      model.rotation.y = -2.26; // Turned 180 deg so front chest DCM & 24K Gold Visor face the camera!
 
       model.traverse(c => {
         if (c.isMesh) {
           c.castShadow = true;
           c.receiveShadow = true;
-          if (c.material) {
-            c.material.envMapIntensity = 1.4;
-          }
+          const mats = Array.isArray(c.material) ? c.material : [c.material];
+          mats.forEach(m => {
+            if (!m) return;
+            m.transparent = false;
+            m.opacity = 1.0;
+            m.depthWrite = true;
+            m.envMapIntensity = 1.35;
+            const mName = (m.name || '').toLowerCase();
+            // blinn1 / blinn3 is the EVA Helmet Sun Visor -> 24K Gold Mirror!
+            if (mName.includes('blinn1') || mName.includes('blinn3')) {
+              m.color.setHex(0xd99b26);
+              m.metalness = 0.96;
+              m.roughness = 0.06;
+            } else if (m.map) {
+              // Preserve US flag patch, chest DCM box & Vitruvian patch textures!
+              m.roughness = 0.48;
+              m.metalness = 0.15;
+            } else {
+              // Tone down bright white albedo slightly so the 442k-vertex 3D fabric folds have crisp shadow contrast!
+              m.color.multiplyScalar(0.76);
+              m.normalMap = astronautNormalTex;
+              m.normalScale = new THREE.Vector2(0.45, 0.45);
+              m.roughness = 0.58;
+              m.metalness = 0.18;
+            }
+            m.needsUpdate = true;
+          });
           c.userData = {
-            name: "NASA EMU ASTRONAUT (1.80M SCALE REFERENCE)",
-            desc: "Official 3D sculpted NASA Extravehicular Mobility Unit suit scaled to 1800mm beside the 1100mm (1m³) Hitchhiker Pod."
+            name: "NASA EXTRAVEHICULAR MOBILITY UNIT (442,172 VERTICES, 1.80M)",
+            desc: "Official 442,172-vertex NASA 3D CAD model of the Space Shuttle/ISS Extravehicular Mobility Unit (EMU) scaled to 1800mm beside the 1100mm Pod."
           };
           interactableMeshes.push(c);
         }
@@ -891,9 +872,9 @@
     });
 
     // Subtle CAD Laser Scale Callout Frame around 1.80m Astronaut & 1.10m Pod
-    const wireMat = new THREE.LineBasicMaterial({ color: 0x73c8ff, transparent: true, opacity: 0.45 });
+    const wireMat = new THREE.LineBasicMaterial({ color: 0x73c8ff, transparent: true, opacity: 0.42 });
     const humanMeasureBox = new THREE.LineSegments(
-      new THREE.EdgesGeometry(new THREE.BoxGeometry(0.76, 1.80, 0.62)),
+      new THREE.EdgesGeometry(new THREE.BoxGeometry(0.84, 1.80, 0.72)),
       wireMat
     );
     humanMeasureBox.position.set(0, 0.90, 0);
@@ -903,77 +884,124 @@
       new THREE.EdgesGeometry(new THREE.BoxGeometry(1.12, 1.12, 1.12)),
       wireMat
     );
-    podMeasureBox.position.set(-1.26, 0.56, -0.15);
+    podMeasureBox.position.set(-1.22, 0.58, -0.22);
     humanScaleGroup.add(podMeasureBox);
 
     // ============================================================================
-    // 6. MULTI-RACK NODE & HOME PLATFORM (3D Crumpled Gold Kapton MLI + Truss)
+    // 6. MULTI-RACK NODE & HOME PLATFORM (Photorealistic Kapton MLI + Canadarm)
     //    Exact match to Hitchhiker Orbital's img_4.png & img_7.png!
     // ============================================================================
     const multiRackSystem = new THREE.Group();
     worldGroup.add(multiRackSystem);
 
-    // Helper: Create 3D Vertex-Crumpled Gold Kapton MLI Foil Geometry
-    function createCrumpledKaptonBox(w, h, d, segs = 28) {
-      const geo = new THREE.BoxGeometry(w, h, d, segs, segs, segs);
+    const matPhotorealKaptonMLI = new THREE.MeshStandardMaterial({
+      map: kaptonAlbedo,
+      normalMap: kaptonNormal,
+      normalScale: new THREE.Vector2(2.8, 2.8),
+      color: 0xffd166,
+      metalness: 0.88,
+      roughness: 0.26,
+    });
+
+    // Helper: Create 3D Rounded-Square Extruded Hull Shell (Matches rounded corners of img_7.png!)
+    function createRoundedSquareHull(outerW, outerH, wallT, depth) {
+      const shape = new THREE.Shape();
+      const hw = outerW / 2, hh = outerH / 2, r = 0.24;
+      shape.moveTo(-hw + r, -hh);
+      shape.lineTo(hw - r, -hh);
+      shape.quadraticCurveTo(hw, -hh, hw, -hh + r);
+      shape.lineTo(hw, hh - r);
+      shape.quadraticCurveTo(hw, hh, hw - r, hh);
+      shape.lineTo(-hw + r, hh);
+      shape.quadraticCurveTo(-hw, hh, -hw, hh - r);
+      shape.lineTo(-hw, -hh + r);
+      shape.quadraticCurveTo(-hw, -hh, -hw + r, -hh);
+
+      const hole = new THREE.Path();
+      const ihw = hw - wallT, ihh = hh - wallT, ir = Math.max(0.08, r - wallT);
+      hole.moveTo(-ihw + ir, -ihh);
+      hole.lineTo(ihw - ir, -ihh);
+      hole.quadraticCurveTo(ihw, -ihh, ihw, -ihh + ir);
+      hole.lineTo(ihw, ihh - ir);
+      hole.quadraticCurveTo(ihw, ihh, ihw - ir, ihh);
+      hole.lineTo(-ihw + ir, ihh);
+      hole.quadraticCurveTo(-ihw, ihh, -ihw, ihh - ir);
+      hole.lineTo(-ihw, -ihh + ir);
+      hole.quadraticCurveTo(-ihw, -ihh, -ihw + ir, -ihh);
+      shape.holes.push(hole);
+
+      const geo = new THREE.ExtrudeGeometry(shape, {
+        depth: depth,
+        bevelEnabled: true,
+        bevelSegments: 4,
+        steps: 16,
+        bevelSize: 0.02,
+        bevelThickness: 0.02
+      });
+      geo.center();
+      // Subtle organic foil wave along vertices
       const pos = geo.attributes.position;
       for (let i = 0; i < pos.count; i++) {
-        const vx = pos.getX(i);
-        const vy = pos.getY(i);
-        const vz = pos.getZ(i);
-        // Multi-frequency trigonometric foil crinkle displacement
-        const wave =
-          Math.sin(vx * 19.0 + vy * 14.0) * 0.011 +
-          Math.cos(vy * 27.0 - vz * 21.0) * 0.008 +
-          Math.sin(vz * 33.0 + vx * 25.0) * 0.006;
-        pos.setXYZ(i, vx + wave, vy + wave * 0.8, vz + wave);
+        const vx = pos.getX(i), vy = pos.getY(i), vz = pos.getZ(i);
+        const wv = Math.sin(vx * 14 + vz * 16) * 0.008 + Math.cos(vy * 18 - vz * 12) * 0.006;
+        pos.setXYZ(i, vx + wv, vy + wv, vz);
       }
       geo.computeVertexNormals();
       return geo;
     }
 
-    const matCrumpledGoldMLI = new THREE.MeshStandardMaterial({
-      color: 0xf59e0b,
-      metalness: 0.94,
-      roughness: 0.24,
-      flatShading: true, // Gives the crisp, multi-faceted metallic Kapton foil crinkle look of img_7.png!
-    });
-
-    // A. Central Crumpled Gold Kapton MLI Hull with Open Front Payload Bay (Matches img_7.png)
+    // A. Central Rounded-Square Gold Kapton MLI Hull with Open Front Payload Bay (Matches img_7.png)
     const goldBusCore = new THREE.Group();
-    const hullThickness = 0.11;
-    const topFoil = new THREE.Mesh(createCrumpledKaptonBox(1.46, hullThickness, 1.52), matCrumpledGoldMLI);
-    topFoil.position.y = 0.68;
-    const botFoil = new THREE.Mesh(createCrumpledKaptonBox(1.46, hullThickness, 1.52), matCrumpledGoldMLI);
-    botFoil.position.y = -0.68;
-    const leftFoil = new THREE.Mesh(createCrumpledKaptonBox(hullThickness, 1.42, 1.52), matCrumpledGoldMLI);
-    leftFoil.position.x = -0.68;
-    const rightFoil = new THREE.Mesh(createCrumpledKaptonBox(hullThickness, 1.42, 1.52), matCrumpledGoldMLI);
-    rightFoil.position.x = 0.68;
-    const backFoil = new THREE.Mesh(createCrumpledKaptonBox(1.46, 1.42, hullThickness), matCrumpledGoldMLI);
-    backFoil.position.z = -0.71;
+    const roundedShell = new THREE.Mesh(createRoundedSquareHull(1.52, 1.48, 0.095, 1.54), matPhotorealKaptonMLI);
+    goldBusCore.add(roundedShell);
+
+    const backBulkhead = new THREE.Mesh(new THREE.BoxGeometry(1.36, 1.32, 0.08), matPhotorealKaptonMLI);
+    backBulkhead.position.z = -0.74;
+    goldBusCore.add(backBulkhead);
 
     // 2 Circular Top Hatch Ports on Gold Kapton Hull (seen on top of img_7.png!)
     [-0.18, 0.22].forEach(zOff => {
-      const hatch = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.04, 24), matBronzeFlange);
+      const hatch = new THREE.Mesh(new THREE.CylinderGeometry(0.115, 0.115, 0.045, 32), matBronzeFlange);
       hatch.position.set(0.05, 0.75, zOff);
       goldBusCore.add(hatch);
     });
 
-    goldBusCore.add(topFoil, botFoil, leftFoil, rightFoil, backFoil);
+    // Official NASA Remote Manipulator Robotic Arm (`NASA_Canadarm.glb`) mounted on front-left edge like img_7.png!
+    gltfLoader.load('./NASA_Canadarm.glb', (gltf) => {
+      const arm = gltf.scene;
+      const abox = new THREE.Box3().setFromObject(arm);
+      const aLen = Math.max(abox.max.x - abox.min.x, abox.max.y - abox.min.y, abox.max.z - abox.min.z);
+      arm.scale.setScalar(1.15 / (aLen || 1));
+      arm.position.set(-0.74, 0.15, 0.68);
+      arm.rotation.set(0.3, 0.4, -0.5);
+      arm.traverse(c => {
+        if (c.isMesh) {
+          c.userData = {
+            name: "ARTICULATED ROBOTIC MANIPULATOR ARM (CANADARM)",
+            desc: "Grapple and berthing manipulator arm mounted on the Multi-Rack Node forward rim for autonomous Pod transfer."
+          };
+          interactableMeshes.push(c);
+        }
+      });
+      goldBusCore.add(arm);
+    });
+
     registerHoverInfo(
       goldBusCore,
-      "3D CRUMPLED GOLD KAPTON MLI BUS CORE",
-      "Multi-Layer Insulation (MLI) thermal blanket shroud protecting the internal Multi-Rack Node avionics and payload bays."
+      "ROUNDED-SQUARE GOLD KAPTON MLI BUS CORE",
+      "Photorealistic Multi-Layer Insulation (MLI) thermal blanket shroud protecting the internal Multi-Rack Node avionics and payload bays."
     );
 
-    // Internal Green & Blue Payload Lockers + Central 4-Blade Silver Spindle inside Open Cutaway (img_7.png)
+    // Internal Green, Blue, Purple & Pink Payload Lockers + Central 4-Blade Silver Spindle inside Open Cutaway (img_7.png)
     const internalCutaway = new THREE.Group();
+    const matAnodizedPurple = new THREE.MeshStandardMaterial({ color: 0x3b3355, metalness: 0.6, roughness: 0.35 });
+    const matAnodizedPink   = new THREE.MeshStandardMaterial({ color: 0xb56576, metalness: 0.58, roughness: 0.35 });
     const baySpecs = [
       { p: [-0.36, -0.24, 0.12], s: [0.46, 0.36, 0.98], m: matAerospaceBlue },
       { p: [0.36, -0.20, 0.12],  s: [0.46, 0.38, 0.98], m: matAerospaceBlue },
       { p: [0.34, 0.28, 0.12],   s: [0.48, 0.36, 0.98], m: matAnodizedGreen },
-      { p: [-0.36, 0.26, -0.05], s: [0.44, 0.36, 0.82], m: matAnodizedGreen }
+      { p: [-0.36, 0.26, -0.05], s: [0.44, 0.36, 0.82], m: matAnodizedPurple },
+      { p: [0.38, -0.44, 0.22],  s: [0.32, 0.18, 0.65], m: matAnodizedPink }
     ];
     baySpecs.forEach(bs => {
       const locker = new THREE.Mesh(new THREE.BoxGeometry(bs.s[0], bs.s[1], bs.s[2]), bs.m);
@@ -982,7 +1010,7 @@
     });
 
     // Central Silver Spindle + 4-Blade Hub (exact match to center of img_7.png)
-    const spindleShaft = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 1.48, 20), matSilverHardware);
+    const spindleShaft = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 1.48, 24), matSilverHardware);
     spindleShaft.rotation.x = Math.PI / 2;
     const hubDisc = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.32, 0.04), matSilverHardware);
     hubDisc.rotation.z = Math.PI / 4;
@@ -991,23 +1019,47 @@
     registerHoverInfo(
       internalCutaway,
       "HOSTED ISS EXPRESS RACK PAYLOAD BAYS",
-      "Cutaway view of internal green and blue payload modules mounted inside the Multi-Rack Node."
+      "Cutaway view of internal green, blue, and purple payload modules mounted inside the Multi-Rack Node."
     );
     multiRackSystem.add(goldBusCore, internalCutaway);
 
-    // B. 3 Exterior Hosted Pods mounted at +/- 45 deg across 3 faces (Matches img_7.png & img_4.png)
-    const mountedPodTopRight = buildCanonicalPod(false);
-    mountedPodTopRight.scale.setScalar(0.68);
-    const mountedPodTopLeft = buildCanonicalPod(false);
-    mountedPodTopLeft.scale.setScalar(0.68);
-    const mountedPodBotLeft = buildCanonicalPod(false);
-    mountedPodBotLeft.scale.setScalar(0.68);
+    // B. Exterior Angled Ribbed Payload Racks & Pods mounted at +/- 45 deg (Matches img_7.png & img_4.png)
+    function buildExteriorPayloadRackCluster(includePod = true) {
+      const cluster = new THREE.Group();
+      // 4 Ribbed Anodized Green & Blue Rectangular Payload Modules (as seen on upper-right & lower-left of img_7.png)
+      const modColors = [matAerospaceBlue, matAnodizedGreen, matAnodizedGreen, matAerospaceBlue];
+      for (let i = 0; i < 4; i++) {
+        const mod = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.42, 0.92), modColors[i]);
+        mod.position.set((i - 1.5) * 0.255, 0, 0);
+        cluster.add(mod);
+        // Circular recessed port details on top/side of each module (from img_7.png)
+        [-0.24, 0.24].forEach(zP => {
+          const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.43, 16), matDarkCarbonMMOD);
+          ring.position.set((i - 1.5) * 0.255, 0, zP);
+          cluster.add(ring);
+        });
+      }
+      if (includePod) {
+        const dockedPod = buildCanonicalPod(false);
+        dockedPod.scale.setScalar(0.58);
+        dockedPod.position.set(0, 0.56, 0);
+        cluster.add(dockedPod);
+      }
+      return cluster;
+    }
+
+    const mountedPodTopRight = buildExteriorPayloadRackCluster(true);
+    const mountedPodTopLeft  = buildCanonicalPod(false);
+    mountedPodTopLeft.scale.setScalar(0.62);
+    const mountedPodBotLeft  = buildExteriorPayloadRackCluster(false);
     multiRackSystem.add(mountedPodTopRight, mountedPodTopLeft, mountedPodBotLeft);
 
     // C. Dual Gold-Framed Photovoltaic Solar Array Wings with 3D Space-Truss Booms (Matches img_4 & img_7)
     const matSolarSurface = new THREE.MeshStandardMaterial({
-      map: solarCellTex,
-      metalness: 0.72,
+      map: solarRealTex,
+      normalMap: solarNormalTex,
+      normalScale: new THREE.Vector2(1.4, 1.4),
+      metalness: 0.76,
       roughness: 0.18,
     });
 
@@ -1015,84 +1067,99 @@
       const wing = new THREE.Group();
 
       // Upper & Lower Solar Panel Halves separated by a central 3D Lattice Truss Channel (like img_4.png!)
-      [-0.34, 0.34].forEach(yOff => {
-        const frame = new THREE.Mesh(new THREE.BoxGeometry(2.75, 0.56, 0.035), matChampagneGoldRibs);
-        frame.position.set(sign * 2.22, yOff, 0);
-        const cells = new THREE.Mesh(new THREE.BoxGeometry(2.64, 0.48, 0.042), matSolarSurface);
+      [-0.35, 0.35].forEach(yOff => {
+        const frame = new THREE.Mesh(new THREE.BoxGeometry(2.82, 0.56, 0.036), matChampagneGoldRibs);
+        frame.position.set(sign * 2.24, yOff, 0);
+        const cells = new THREE.Mesh(new THREE.BoxGeometry(2.70, 0.48, 0.044), matSolarSurface);
         cells.position.copy(frame.position);
         wing.add(frame, cells);
+
+        // 3 Gold Sub-Divider Ribs across the 4 solar sections (as seen in img_7.png!)
+        [-0.68, 0, 0.68].forEach(xDiv => {
+          const divBar = new THREE.Mesh(new THREE.BoxGeometry(0.045, 0.56, 0.048), matChampagneGoldRibs);
+          divBar.position.set(sign * 2.24 + xDiv, yOff, 0);
+          wing.add(divBar);
+        });
       });
 
-      // Gold End-Bar Handle (as seen on the outer tips of the solar wings in img_7.png)
-      const tipHandle = new THREE.Mesh(new THREE.BoxGeometry(0.14, 1.26, 0.045), matChampagneGoldRibs);
-      tipHandle.position.set(sign * 3.64, 0, 0);
+      // Gold Beveled End-Bar Handle (as seen on the outer tips of the solar wings in img_7.png)
+      const tipHandle = new THREE.Mesh(new THREE.BoxGeometry(0.16, 1.28, 0.048), matChampagneGoldRibs);
+      tipHandle.position.set(sign * 3.70, 0, 0);
       wing.add(tipHandle);
 
       // Central 3D Open-Lattice Truss Boom running along the wing axis
-      for (let i = 0; i < 10; i++) {
-        const xPos = sign * (0.85 + i * 0.26);
-        const strut = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.28, 8), matSilverHardware);
+      for (let i = 0; i < 12; i++) {
+        const xPos = sign * (0.82 + i * 0.24);
+        const strut = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.28, 8), matSilverHardware);
         strut.rotation.z = (i % 2 === 0 ? 0.65 : -0.65);
         strut.position.set(xPos, 0, 0.02);
         wing.add(strut);
       }
-      const mainSpar = new THREE.Mesh(new THREE.BoxGeometry(2.9, 0.05, 0.05), matSilverHardware);
-      mainSpar.position.set(sign * 2.15, 0, 0);
+      const mainSpar = new THREE.Mesh(new THREE.BoxGeometry(2.95, 0.048, 0.048), matSilverHardware);
+      mainSpar.position.set(sign * 2.18, 0, 0);
       wing.add(mainSpar);
 
-      wing.rotation.x = 0.26;
+      wing.rotation.x = 0.28;
       registerHoverInfo(
         wing,
         "TRANSIT SPEAR PHOTOVOLTAIC SOLAR ARRAY WING",
-        "Deployable dual-panel solar array with central space-truss boom and gold structural framing."
+        "Deployable 4-bay dual solar array with central space-truss boom and gold structural framing."
       );
       return wing;
     }
 
     multiRackSystem.add(buildDetailedSolarWing(-1), buildDetailedSolarWing(1));
 
-    // D. Forward 3D Lattice Truss Boom + Ribbed Silver Accordion Radiator Array + Visiting Vehicle (img_4.png)
+    // D. Forward 3D Lattice Truss Boom + Corrugated Silver Radiator Array + NASA Docking Vehicle (img_4.png)
     const forwardRadiatorGroup = new THREE.Group();
 
     // 3D Triangular Space Truss Boom extending from center hub
-    const boomLength = 2.6;
-    for (let i = 0; i < 12; i++) {
-      const zPos = 0.75 + i * 0.20;
-      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.07, 0.008, 6, 3), matSilverHardware);
+    for (let i = 0; i < 14; i++) {
+      const zPos = 0.72 + i * 0.19;
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.009, 6, 3), matSilverHardware);
       ring.position.set(0, -0.1, zPos);
-      const diag = new THREE.Mesh(new THREE.CylinderGeometry(0.007, 0.007, 0.24, 6), matSilverHardware);
-      diag.position.set(0, -0.1, zPos + 0.1);
+      const diag = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.24, 6), matSilverHardware);
+      diag.position.set(0, -0.1, zPos + 0.095);
       diag.rotation.x = 0.6;
       diag.rotation.z = i * 1.1;
       forwardRadiatorGroup.add(ring, diag);
     }
 
-    // 4 Ribbed Silver Radiator Panels (Left & Right wings along the forward boom like img_4.png)
+    // 4 Pairs of Corrugated Silver Radiator Panels (mapped with radiator_real.jpg + radiator_normal.jpg!)
     for (let i = 0; i < 4; i++) {
-      const zPos = 1.45 + i * 0.44;
-      [-0.54, 0.54].forEach(xSide => {
-        const panel = new THREE.Mesh(new THREE.BoxGeometry(0.96, 0.022, 0.40), matSilverHardware);
+      const zPos = 1.48 + i * 0.44;
+      [-0.56, 0.56].forEach(xSide => {
+        const panel = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.024, 0.41), matCorrugatedRadiator);
         panel.position.set(xSide, -0.14, zPos);
-        panel.rotation.x = (i % 2 === 0 ? 0.07 : -0.07);
+        panel.rotation.x = (i % 2 === 0 ? 0.06 : -0.06);
         forwardRadiatorGroup.add(panel);
       });
     }
 
-    // Approaching Cylindrical Orbital Transfer Vehicle at end of boom (bottom-right of img_4.png!)
+    // Approaching Cylindrical Orbital Transfer Vehicle + Official NASA Orbiter Docking System (`NASA_Docking_System.glb`)
     const transferVehicle = new THREE.Group();
-    transferVehicle.position.set(0, -0.14, 3.65);
-    const tvHull = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.62, 24), matSilverHardware);
+    transferVehicle.position.set(0, -0.14, 3.72);
+    const tvHull = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.64, 32), matSilverHardware);
     tvHull.rotation.x = Math.PI / 2;
-    const tvNose = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 0.18, 24), matDarkCarbonMMOD);
+    const tvNose = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 0.18, 32), matDarkCarbonMMOD);
     tvNose.rotation.x = Math.PI / 2;
     tvNose.position.z = -0.38;
     transferVehicle.add(tvHull, tvNose);
+
+    gltfLoader.load('./NASA_Docking_System.glb', (gltf) => {
+      const ods = gltf.scene;
+      const obox = new THREE.Box3().setFromObject(ods);
+      const oSize = Math.max(obox.max.x - obox.min.x, obox.max.y - obox.min.y, obox.max.z - obox.min.z);
+      ods.scale.setScalar(0.48 / (oSize || 1));
+      ods.position.set(0, 0, -0.25);
+      transferVehicle.add(ods);
+    });
     forwardRadiatorGroup.add(transferVehicle);
 
     registerHoverInfo(
       forwardRadiatorGroup,
-      "HOME PHASE 1 THERMAL RADIATOR BOOM & TRANSFER VEHICLE",
-      "Deployed silver radiator array boom providing thermal symmetry for multi-rack orbital operations."
+      "HOME PHASE 1 CORRUGATED RADIATOR BOOM & DOCKING VEHICLE",
+      "Deployed corrugated silver radiator array boom providing thermal symmetry for multi-rack orbital operations."
     );
     multiRackSystem.add(forwardRadiatorGroup);
 
@@ -1170,7 +1237,7 @@
     let ignoreScrollUntil = 0;
 
     function jumpToState(idx) {
-      ignoreScrollUntil = Date.now() + 1200;
+      ignoreScrollUntil = Date.now() + 2500;
       applyStateTargets(idx);
       const sec = document.querySelector(`section[data-step="${idx}"]`);
       if (sec && !document.body.classList.contains('embed-only')) {
@@ -1260,7 +1327,7 @@
       humanScaleGroup.visible = currentScaleVis > 0.05 && currentRackVis < 0.25;
       humanScaleGroup.scale.setScalar(Math.max(0.001, currentScaleVis));
       if (nasaAstronautMesh) {
-        nasaAstronautMesh.position.y = Math.sin(t * 1.5) * 0.03;
+        nasaAstronautMesh.position.y = nasaAstronautBaseY + Math.sin(t * 1.5) * 0.025;
       }
 
       // 3. Multi-Rack Node & HOME Platform Fly-In Assembly
@@ -1268,14 +1335,14 @@
       multiRackSystem.scale.setScalar(Math.max(0.001, currentRackVis));
       const flyOffset = (1.0 - currentRackVis) * 2.8;
 
-      mountedPodTopRight.position.set(0.52, 1.12 + flyOffset, -0.08);
-      mountedPodTopRight.rotation.z = -0.45;
+      mountedPodTopRight.position.set(0.62, 0.86 + flyOffset, -0.06);
+      mountedPodTopRight.rotation.z = -0.52;
 
-      mountedPodTopLeft.position.set(-0.52 - flyOffset, 1.12, -0.08);
-      mountedPodTopLeft.rotation.z = 0.45;
+      mountedPodTopLeft.position.set(-0.66 - flyOffset, 0.92, -0.06);
+      mountedPodTopLeft.rotation.z = 0.52;
 
-      mountedPodBotLeft.position.set(-0.62 - flyOffset, -1.04, -0.08);
-      mountedPodBotLeft.rotation.z = 0.58;
+      mountedPodBotLeft.position.set(-0.62 - flyOffset, -0.82, -0.06);
+      mountedPodBotLeft.rotation.z = 0.56;
 
       canonicalPod.visible = currentRackVis < 0.35;
 
