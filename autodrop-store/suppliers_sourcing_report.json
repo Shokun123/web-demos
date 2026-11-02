@@ -1,0 +1,770 @@
+{
+  "generated_at": "2026-11-02T15:41:27.104176",
+  "selected_product_id": "1005006678225060",
+  "selected_product_name": "Máscara Facial Fototerapia LED",
+  "economics": {
+    "sale_price": 24.95,
+    "total_landed_cost": 6.11,
+    "net_profit_usd": 18.84,
+    "gross_margin_pct": 75.5,
+    "roi_pct": 308.3
+  },
+  "suppliers": [
+    {
+      "provider": "TeemDrop Direct Sourcing (ID: TD-LED7C)",
+      "unit_cost": 3.21,
+      "shipping": 2.8,
+      "delivery_days": "6-10 días (YunExpress)",
+      "moq": 1,
+      "match_score": "99% Exact Match (Imagen)",
+      "url": "https://seller.teemdrop.com"
+    },
+    {
+      "provider": "AliExpress Choice Verified (Item #1005006678225060)",
+      "unit_cost": 5.22,
+      "shipping": 0.0,
+      "delivery_days": "8-12 días (Choice Fast)",
+      "moq": 1,
+      "match_score": "100% Producto Original del Video",
+      "url": "https://es.aliexpress.com/item/1005006678225060.html"
+    },
+    {
+      "provider": "1688 Factory Wholesale (Shenzhen Beauty Photon Co.)",
+      "unit_cost": 2.65,
+      "shipping": 3.1,
+      "delivery_days": "7-12 días (Agente Privado)",
+      "moq": 5,
+      "match_score": "98% Fábrica OEM",
+      "url": "https://s.1688.com/selloffer/offer_search.htm?keywords=LED+Beauty+Mask+7+Color"
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "ORD-2026-1001",
+      "created_at": "2026-11-02 15:15",
+      "product_id": "1005006678225060",
+      "product_name": "Máscara Facial Fototerapia LED",
+      "bundle_qty": 2,
+      "bundle_label": "Pack 2 Unidades (15% Extra OFF)",
+      "customer_name": "Laura Fernanda Gómez",
+      "customer_phone": "+34 612 489 102",
+      "customer_address": "Calle Serrano 84, Piso 3B, Madrid",
+      "payment_method": "Pago Contra Entrega (COD)",
+      "total_paid_usd": 42.42,
+      "supplier_cost_usd": 9.22,
+      "net_profit_usd": 33.2,
+      "supplier_url": "https://seller.teemdrop.com",
+      "aliexpress_url": "https://es.aliexpress.com/item/1005006678225060.html",
+      "status": "Listo para Despachar en 1-Clic"
+    }
+  ],
+  "all_viral_products": [
+    {
+      "id": "1005006678225060",
+      "handle": "mascara-facial-fototerapia-led-7-colores",
+      "short_name": "Máscara Facial Fototerapia LED",
+      "original_title": "Máscara Facial de Terapia de Luz LED de 7 Colores HTMCK | Mascarilla de Fototerapia Casera, Renovación de la Piel, Tratamiento del Acné y Cuidado Antiarrugas",
+      "aliexpress_url": "https://es.aliexpress.com/item/1005006678225060.html",
+      "category": "Belleza y Cuidado de la Piel",
+      "target_audience": "Mujeres (24-50 años) interesadas en skincare clínico en casa y bienestar nocturno",
+      "selected_angle": "Rutina Nocturna de Skincare y Paz en Casa (Evening Skincare Routine)",
+      "angles": [
+        {
+          "id": "evening_routine",
+          "title": "Rutina Nocturna de Skincare",
+          "desc": "Relájate después del trabajo con terapia de luz LED que rejuvenece tu rostro en 15 minutos."
+        },
+        {
+          "id": "acne_spot",
+          "title": "Tratamiento Anti-Acné e Imperfecciones",
+          "desc": "Combate brotes y bacterias con longitud de onda azul y roja sin químicos agresivos."
+        },
+        {
+          "id": "pro_glow",
+          "title": "Efecto Spa Clínico Sin Salir de Casa",
+          "desc": "Obtén resultados de cabina dermatológica ahorrando cientos de dólares en sesiones."
+        }
+      ],
+      "viral_scripts": [
+        {
+          "hook": "0-3s: Si gastas más de $50 al mes en cremas que no quitan el acné ni las líneas de expresión, mira esto.",
+          "body": "3-12s: Esta máscara de fototerapia LED de 7 colores usa la misma longitud de onda roja (630nm) y azul (470nm) de las clínicas dermatológicas, pero desde tu cama en 15 minutos.",
+          "cta": "12-18s: Hoy está al 50% de descuento con envío asegurado en el link de mi perfil antes de que se agoten las últimas 14 unidades."
+        },
+        {
+          "hook": "0-3s: Mi momento favorito de las 10:00 PM cuando por fin apago todas las pantallas.",
+          "body": "3-12s: Aplico mi sérum hidratante, enciendo el modo luz roja durante 15 minutos y despierto con la piel desinflamada y luminosa.",
+          "cta": "12-18s: Consigue la tuya con garantía de 30 días y 50% OFF en el enlace de abajo."
+        }
+      ],
+      "price_sale": 24.95,
+      "price_compare": 49.9,
+      "supplier_cost_min": 3.21,
+      "supplier_cost_avg": 5.22,
+      "shipping_cost": 2.9,
+      "rating": 4.8,
+      "reviews_count": 4679,
+      "stock_left": 14,
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/S2c9f6849f2bb4c2f8723645200cf0b63Y.png",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S52bcb59168bd4b0582453c9508c638acY.png",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S3fe50f881efd4235886154d296cc98128.png",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sf4754e7eccf64a31a0de7e457c6727b3I.png",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sec077b2267b747a880201c0990bcb3fbv.png",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S7958e81139714c9882b93642b1d787d7I.jpg"
+      ],
+      "hero_subtitle": "Transforma tu dormitorio en un santuario de spa nocturno con fototerapia LED de 7 espectros que calma tu mente y renueva tu piel.",
+      "bullets": [
+        "Siente una luz suave y cálida sobre tu rostro sin calor excesivo",
+        "Crea un momento de paz antes de dormir mientras estimulas el colágeno",
+        "Simplifica tu rutina de cuidado nocturno con sesiones automáticas de 15 min"
+      ],
+      "urgency_note": "ACTUALIZACIÓN: Debido a nuestra viralidad en redes sociales, el inventario disponible en promoción del 50% es limitado.",
+      "editorial_sections": [
+        {
+          "headline": "Tu faro luminoso de paz nocturna",
+          "body": "La vida diaria agota tu energía y apaga el brillo natural de tu rostro. Nuestra máscara facial de fototerapia LED de 7 colores combina longitudes de onda clínicas (Roja 630nm, Azul 470nm, Ámbar 590nm y más) para reparar la barrera cutánea mientras descansas.",
+          "cta": "EMPIEZA EL TUYO AHORA"
+        },
+        {
+          "headline": "Lo que necesitas cuando todo calla",
+          "body": "Diseñada ergonómicamente con protectores oculares de silicona médica, correa ajustable sin presión y control táctil integrado para cambiar entre los 7 modos sin cables incómodos.",
+          "features": [
+            {
+              "title": "Sin dolor ni químicos",
+              "desc": "Fototerapia no invasiva apta para pieles sensibles o con tendencia acneica."
+            },
+            {
+              "title": "7 longitudes de onda reales",
+              "desc": "Desde estimulación de colágeno hasta reducción de manchas y rojeces."
+            },
+            {
+              "title": "Temporizador inteligente",
+              "desc": "Apagado automático tras 15 minutos para que puedas relajarte por completo."
+            }
+          ]
+        }
+      ],
+      "circular_benefits": [
+        {
+          "title": "Facilidad de uso",
+          "desc": "Un solo botón táctil en la frente para elegir tu color de terapia ideal."
+        },
+        {
+          "title": "Piel radiante",
+          "desc": "Despierta con una textura más uniforme, poros atenuados y luminosidad visible."
+        },
+        {
+          "title": "Firmeza progresiva",
+          "desc": "La luz roja penetra la dermis favoreciendo la elasticidad natural."
+        },
+        {
+          "title": "Descanso profundo",
+          "desc": "Convierte tu noche en un ritual relajante libre de pantallas."
+        },
+        {
+          "title": "Ajuste ergonómico",
+          "desc": "Ligera y cómoda para usar recostada en tu cama o sofá."
+        },
+        {
+          "title": "Cuidado personal",
+          "desc": "Resultados de salón estético desde la comodidad de tu hogar."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Es segura esta máscara LED para todo tipo de piel y para los ojos?",
+          "a": "Sí. Utiliza diodos LED libres de rayos UV que no generan quemaduras térmicas e incluye almohadillas oculares opacas integradas para proteger completamente la vista durante la sesión."
+        },
+        {
+          "q": "¿Cómo encaja este ritual en mi noche y cuántos minutos debo usarla?",
+          "a": "Solo necesitas limpiar tu rostro, aplicar tu sérum hidratante habitual (sin ácidos fotosensibles) y colocarte la máscara durante 10 a 15 minutos, de 3 a 4 veces por semana."
+        },
+        {
+          "q": "¿Cómo funciona el envío y cuánto tarda en llegar?",
+          "a": "Procesamos todos los pedidos en 24-48 horas hábiles con código de seguimiento internacional en tiempo real. El tiempo estimado de entrega es de 6 a 12 días hábiles."
+        },
+        {
+          "q": "¿En cuánto tiempo empezaré a notar resultados en mi piel?",
+          "a": "La sensación de calma y desinflamación se percibe desde la primera semana. Los cambios en textura, control de grasa y líneas finas suelen observarse de forma progresiva entre la tercera y cuarta semana de uso constante."
+        }
+      ],
+      "suppliers": [
+        {
+          "provider": "TeemDrop Direct Sourcing (ID: TD-LED7C)",
+          "unit_cost": 3.21,
+          "shipping": 2.8,
+          "delivery_days": "6-10 días (YunExpress)",
+          "moq": 1,
+          "match_score": "99% Exact Match (Imagen)",
+          "url": "https://seller.teemdrop.com"
+        },
+        {
+          "provider": "AliExpress Choice Verified (Item #1005006678225060)",
+          "unit_cost": 5.22,
+          "shipping": 0.0,
+          "delivery_days": "8-12 días (Choice Fast)",
+          "moq": 1,
+          "match_score": "100% Producto Original del Video",
+          "url": "https://es.aliexpress.com/item/1005006678225060.html"
+        },
+        {
+          "provider": "1688 Factory Wholesale (Shenzhen Beauty Photon Co.)",
+          "unit_cost": 2.65,
+          "shipping": 3.1,
+          "delivery_days": "7-12 días (Agente Privado)",
+          "moq": 5,
+          "match_score": "98% Fábrica OEM",
+          "url": "https://s.1688.com/selloffer/offer_search.htm?keywords=LED+Beauty+Mask+7+Color"
+        }
+      ],
+      "economics": {
+        "sale_price": 24.95,
+        "total_landed_cost": 6.11,
+        "net_profit_usd": 18.84,
+        "gross_margin_pct": 75.5,
+        "roi_pct": 308.3
+      }
+    },
+    {
+      "id": "1005004222697913",
+      "handle": "corrector-postura-ortopedico-ergonomico",
+      "short_name": "Corrector de Postura Ergonómico Pro",
+      "original_title": "Corrector de postura para aliviar el corsé de espalda para corrección de postura, soporte ortopédico para columna vertebral",
+      "aliexpress_url": "https://es.aliexpress.com/item/1005004222697913.html",
+      "category": "Salud, Postura y Bienestar",
+      "target_audience": "Profesionales de oficina, teletrabajadores y estudiantes con dolor dorsal o cervical",
+      "selected_angle": "Alivio Cervical y Postura Impecable frente al Computador",
+      "angles": [
+        {
+          "id": "office_relief",
+          "title": "Alivio Cervical en Teletrabajo",
+          "desc": "Elimina la tensión acumulada tras 8 horas frente al monitor alineando tus hombros sin esfuerzo."
+        }
+      ],
+      "viral_scripts": [
+        {
+          "hook": "0-3s: Si pasas más de 5 horas sentado frente a la computadora o el celular, haz esta prueba ahora mismo.",
+          "body": "3-12s: Este soporte ortopédico invisible alinea tus clavículas y descomprime tus vértebras dorsales en segundos sin sudar ni marcar la ropa.",
+          "cta": "12-18s: Pídelo hoy con 50% de descuento en el enlace del perfil y recupera tu postura en 21 días."
+        }
+      ],
+      "price_sale": 22.9,
+      "price_compare": 45.8,
+      "supplier_cost_min": 2.4,
+      "supplier_cost_avg": 3.85,
+      "shipping_cost": 1.9,
+      "rating": 4.9,
+      "reviews_count": 3120,
+      "stock_left": 9,
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/S418e832e4402496391d99c7906252120J.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S4be65cd45b3846bba592ef5600086b52m.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sb942b841b6c74a6e9c93598c6386653bv.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S40b14452a1f44e7bbad3d7d414d032bcB.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S1ad6d70472c34b94b74d352a03a5bfbf1.jpg"
+      ],
+      "hero_subtitle": "Recupera la alineación natural de tu espalda y despídete de la fatiga lumbar y cervical con soporte ortopédico transpirable.",
+      "bullets": [
+        "Alinea clavículas y columna dorsal desde el primer minuto de uso",
+        "Malla transpirable acolchada que no irrita las axilas ni marca la piel",
+        "Entrena tu memoria muscular usándolo solo 30 a 60 minutos al día"
+      ],
+      "urgency_note": "ACTUALIZACIÓN: Alta demanda por temporada de oficina y estudio. Últimas unidades con 50% de descuento.",
+      "editorial_sections": [
+        {
+          "headline": "Tu espalda merece terminar el día sin dolor",
+          "body": "Pasar horas encorvado frente al teléfono o el portátil sobrecarga tus vértebras cervicales. Nuestro soporte ortopédico distribuye la tensión suavemente hacia atrás, devolviendo tu postura natural.",
+          "cta": "RECUPERA TU POSTURA HOY"
+        },
+        {
+          "headline": "Ingeniería ergonómica que se adapta a tu cuerpo",
+          "body": "Correas de doble tracción ajustables con velcro de alta adherencia y tejido celular respirable para usar bajo o sobre tu prenda favorita.",
+          "features": [
+            {
+              "title": "Memoria muscular real",
+              "desc": "Reeduca tu postura progresivamente sin depender del soporte todo el día."
+            },
+            {
+              "title": "Tejido fresco y lavable",
+              "desc": "Neopreno perforado ligero que evita la sudoración excesiva."
+            },
+            {
+              "title": "Ajuste unisex universal",
+              "desc": "Bandas elásticas adaptables a distintos contornos de tórax y hombros."
+            }
+          ]
+        }
+      ],
+      "circular_benefits": [
+        {
+          "title": "Alivio inmediato",
+          "desc": "Descomprime la zona interescapular al instante."
+        },
+        {
+          "title": "Mayor presencia",
+          "desc": "Una postura erguida proyecta seguridad y vitalidad."
+        },
+        {
+          "title": "Ligero y discreto",
+          "desc": "Pesa menos de 150 gramos y cabe en cualquier bolso."
+        },
+        {
+          "title": "Respiración amplia",
+          "desc": "Abrir el pecho mejora tu capacidad torácica."
+        },
+        {
+          "title": "Sin pellizcos",
+          "desc": "Bordes suaves recubiertos para máximo confort."
+        },
+        {
+          "title": "Fácil colocación",
+          "desc": "Te lo pones y ajustas tú mismo en 10 segundos."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Cuánto tiempo al día debo usarlo?",
+          "a": "Recomendamos comenzar con 20-30 minutos diarios durante la primera semana y aumentar hasta 1-2 horas mientras trabajas o caminas."
+        },
+        {
+          "q": "¿Se puede usar debajo de una camisa?",
+          "a": "Sí, su perfil delgado permite llevarlo discretamente debajo de camisas holgadas, suéteres o chaquetas."
+        },
+        {
+          "q": "¿Cómo elijo mi talla ideal?",
+          "a": "Sus correas con velcro de amplio rango se adaptan cómodamente a contornos de pecho desde 70 cm hasta 120 cm."
+        }
+      ],
+      "suppliers": [
+        {
+          "provider": "TeemDrop Direct Sourcing (ID: TD-POSTURE02)",
+          "unit_cost": 2.4,
+          "shipping": 1.9,
+          "delivery_days": "6-10 días",
+          "moq": 1,
+          "match_score": "99% Exact Match",
+          "url": "https://seller.teemdrop.com"
+        },
+        {
+          "provider": "AliExpress Verified (Item #1005004222697913)",
+          "unit_cost": 3.85,
+          "shipping": 0.0,
+          "delivery_days": "8-13 días",
+          "moq": 1,
+          "match_score": "100% Producto Verificado",
+          "url": "https://es.aliexpress.com/item/1005004222697913.html"
+        }
+      ],
+      "economics": {
+        "sale_price": 22.9,
+        "total_landed_cost": 4.3,
+        "net_profit_usd": 18.6,
+        "gross_margin_pct": 81.2,
+        "roi_pct": 432.6
+      }
+    },
+    {
+      "id": "1005006165675705",
+      "handle": "masajeador-electrico-inalambrico-tejido-profundo",
+      "short_name": "Masajeador Inalámbrico KEMOKO Pro",
+      "original_title": "Masajeador de Mano Eléctrico Inalámbrico KEMOKO para Alivio Muscular y Relajación Cervical",
+      "aliexpress_url": "https://es.aliexpress.com/item/1005006165675705.html",
+      "category": "Fisioterapia y Recuperación Muscular",
+      "target_audience": "Deportistas y adultos activos que buscan descontracturar cuello, hombros y piernas en casa",
+      "selected_angle": "Fisioterapia Profunda en Casa en 5 Minutos",
+      "angles": [
+        {
+          "id": "deep_recovery",
+          "title": "Recuperación Muscular Post-Entreno",
+          "desc": "Libera nudos musculares y ácido láctico con percusión silenciosa e inalámbrica."
+        }
+      ],
+      "viral_scripts": [
+        {
+          "hook": "0-3s: Ese nudo en el cuello que no te deja dormir se quita en exactamente 3 minutos con esto.",
+          "body": "3-12s: Es 100% inalámbrico, silencioso y su cabezal amortiguado disuelve la contractura sin lastimar las vértebras.",
+          "cta": "12-18s: Aprovecha el 50% de descuento hoy haciendo clic en el enlace de mi perfil."
+        }
+      ],
+      "price_sale": 29.95,
+      "price_compare": 59.9,
+      "supplier_cost_min": 5.4,
+      "supplier_cost_avg": 7.1,
+      "shipping_cost": 2.5,
+      "rating": 4.8,
+      "reviews_count": 2190,
+      "stock_left": 11,
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/S1cb822ecc4dd4f9d9cc67e4de8638dbbw.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S1650fe1251d04d53ad845de1b03de5bd6.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S29b1b9854d114572a4ddcd588ffeaa35i.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sb99ef51a39c9449885770e655f2469035.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sf0e405e727d04d908a4c59862c7923a3e.jpg"
+      ],
+      "hero_subtitle": "Descontractura cuello, espalda y piernas en minutos con vibración terapéutica silenciosa y batería recargable de larga duración.",
+      "bullets": [
+        "Motor silencioso de alto torque para aliviar nudos profundos sin dolor",
+        "Diseño inalámbrico recargable por USB-C para llevar a cualquier lugar",
+        "Múltiples niveles de intensidad adaptados a zonas sensibles o musculatura densa"
+      ],
+      "urgency_note": "ACTUALIZACIÓN: Envío prioritario activado con 50% de descuento por tiempo limitado.",
+      "editorial_sections": [
+        {
+          "headline": "Tu masajista personal disponible las 24 horas",
+          "body": "No esperes a tener una contractura severa. Cinco minutos de masaje focalizado estimulan la circulación sanguínea y disuelven la rigidez acumulada del día.",
+          "cta": "QUIERO EL MÍO AHORA"
+        },
+        {
+          "headline": "Potencia terapéutica en la palma de tu mano",
+          "body": "Construido con materiales suaves al tacto, cabezal ergonómico adaptable y batería de litio de alta autonomía.",
+          "features": [
+            {
+              "title": "100% Inalámbrico",
+              "desc": "Olvídate de cables molestos mientras descansas en el sillón."
+            },
+            {
+              "title": "Ultra silencioso",
+              "desc": "Menos de 45 dB para que puedas usarlo mientras ves tu serie favorita."
+            },
+            {
+              "title": "Carga rápida USB",
+              "desc": "Hasta 2 semanas de sesiones breves con una sola carga completa."
+            }
+          ]
+        }
+      ],
+      "circular_benefits": [
+        {
+          "title": "Alivio cervical",
+          "desc": "Desbloquea la tensión en trapecios y nuca."
+        },
+        {
+          "title": "Circulación activa",
+          "desc": "Ideal para piernas cansadas al final de la jornada."
+        },
+        {
+          "title": "Cabezal suave",
+          "desc": "Silicona agradable con la piel y fácil de limpiar."
+        },
+        {
+          "title": "Portabilidad total",
+          "desc": "Cabe en tu mochila de gimnasio o maleta de mano."
+        },
+        {
+          "title": "Control intuitivo",
+          "desc": "Cambia de velocidad e intensidad con un solo toque."
+        },
+        {
+          "title": "Descanso reparador",
+          "desc": "Relaja el sistema nervioso antes de ir a dormir."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Es recargable o usa pilas?",
+          "a": "Cuenta con batería interna recargable mediante cable USB incluido en la caja."
+        },
+        {
+          "q": "¿Se puede usar en el cuello y zona lumbar?",
+          "a": "Sí, su cabezal amortiguado está diseñado específicamente para adaptarse a cuello, hombros, zona lumbar, gemelos y plantas de los pies."
+        }
+      ],
+      "suppliers": [
+        {
+          "provider": "TeemDrop Direct Sourcing (ID: TD-MASSAGE09)",
+          "unit_cost": 5.4,
+          "shipping": 2.5,
+          "delivery_days": "7-11 días",
+          "moq": 1,
+          "match_score": "98% Exact Match",
+          "url": "https://seller.teemdrop.com"
+        },
+        {
+          "provider": "AliExpress Verified (Item #1005006165675705)",
+          "unit_cost": 7.1,
+          "shipping": 0.0,
+          "delivery_days": "8-12 días",
+          "moq": 1,
+          "match_score": "100% Producto Verificado",
+          "url": "https://es.aliexpress.com/item/1005006165675705.html"
+        }
+      ],
+      "economics": {
+        "sale_price": 29.95,
+        "total_landed_cost": 7.9,
+        "net_profit_usd": 22.05,
+        "gross_margin_pct": 73.6,
+        "roi_pct": 279.1
+      }
+    },
+    {
+      "id": "1005013334016344",
+      "handle": "cepillo-exfoliante-corporal-mango-largo-spa",
+      "short_name": "Cepillo Corporal Exfoliante Spa",
+      "original_title": "Cepillo de baño con mango largo y cerdas suaves para exfoliar el cuerpo, masaje linfático y piel tersa",
+      "aliexpress_url": "https://es.aliexpress.com/item/1005013334016344.html",
+      "category": "Cuidado Corporal y Spa en Casa",
+      "target_audience": "Mujeres interesadas en exfoliación corporal, dry brushing y piel suave libre de poros obstruidos",
+      "selected_angle": "Ritual de Ducha Exfoliante para Piel de Seda",
+      "angles": [
+        {
+          "id": "silk_skin",
+          "title": "Piel de Seda y Drenaje en la Ducha",
+          "desc": "Alcanza cada zona de tu espalda renovando células muertas y suavizando la textura de la piel."
+        }
+      ],
+      "viral_scripts": [
+        {
+          "hook": "0-3s: La razón por la que salen granitos en la espalda es porque tu esponja normal acumula humedad y no llega bien.",
+          "body": "3-12s: Este cepillo curvo de cerdas ultrasuaves exfolia toda tu espalda en segundos y se seca al instante sin guardar bacterias.",
+          "cta": "12-18s: Llévatelo hoy con 50% OFF o en pack 2x1 desde el link de mi perfil."
+        }
+      ],
+      "price_sale": 17.95,
+      "price_compare": 35.9,
+      "supplier_cost_min": 1.65,
+      "supplier_cost_avg": 2.5,
+      "shipping_cost": 1.8,
+      "rating": 4.8,
+      "reviews_count": 1840,
+      "stock_left": 18,
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/S07153e55d56d438caed0e9f6c9aa15dbO.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sec6db113b89141d88d6aaff861ef12ceW.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S9171da68d6014f81b249b807e962bc4dO.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S0fb9553fff1946788e95cdaad1b906d3v.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S5a06c4b230a6458282ec1455b60b1bf1u.jpg"
+      ],
+      "hero_subtitle": "Renueva la suavidad de tu espalda, hombros y piernas con cerdas de densidad media que limpian profundamente sin irritar.",
+      "bullets": [
+        "Mango ergonómico extralargo antideslizante para llegar a toda la espalda",
+        "Cerdas ultrasuaves de secado rápido que previenen acumulación de humedad",
+        "Ideal para usar con tu gel de baño favorito o masaje exfoliante"
+      ],
+      "urgency_note": "ACTUALIZACIÓN: Promoción 2x1 y 50% OFF activa hoy hasta agotar existencias.",
+      "editorial_sections": [
+        {
+          "headline": "Convierte tu ducha diaria en un tratamiento renovador",
+          "body": "La piel de la espalda y los hombros suele acumular impurezas difíciles de alcanzar. Nuestro cepillo de mango curvo proporciona la presión exacta para limpiar los poros y dejar una sensación de frescura absoluta.",
+          "cta": "ORDENAR CON 50% OFF"
+        },
+        {
+          "headline": "Higiene superior y diseño duradero",
+          "body": "A diferencia de las esponjas tradicionales que retienen bacterias, sus filamentos de alta densidad se enjuagan en segundos y se secan colgados.",
+          "features": [
+            {
+              "title": "Alcance total 360°",
+              "desc": "Curvatura anatómica diseñada para espalda, rodillas y tobillos."
+            },
+            {
+              "title": "Espuma abundante",
+              "desc": "Multiplica el rendimiento de tu jabón o gel hidratante."
+            },
+            {
+              "title": "Piel más luminosa",
+              "desc": "Estimula la microcirculación superficial en cada pasada."
+            }
+          ]
+        }
+      ],
+      "circular_benefits": [
+        {
+          "title": "Exfoliación suave",
+          "desc": "Elimina células muertas respetando la barrera cutánea."
+        },
+        {
+          "title": "Mango curvo",
+          "desc": "Llega sin esfuerzo a la zona media de la espalda."
+        },
+        {
+          "title": "Secado higiénico",
+          "desc": "Incluye cordón para colgar y secar al aire."
+        },
+        {
+          "title": "Cerdas densas",
+          "desc": "Masaje placentero que no raya ni enrojece."
+        },
+        {
+          "title": "Agarre firme",
+          "desc": "No resbala incluso con las manos enjabonadas."
+        },
+        {
+          "title": "Uso diario",
+          "desc": "Material resistente al agua caliente y vapor."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Las cerdas son muy duras o suaves?",
+          "a": "Tienen una firmeza media-suave calibrada para exfoliar eficazmente sin rasguñar la piel sensible."
+        },
+        {
+          "q": "¿Cuánto mide el mango?",
+          "a": "Tiene una longitud ergonómica de 36 cm que permite alcanzar toda la espalda cómodamente."
+        }
+      ],
+      "suppliers": [
+        {
+          "provider": "TeemDrop Direct Sourcing (ID: TD-BRUSH15)",
+          "unit_cost": 1.65,
+          "shipping": 1.8,
+          "delivery_days": "6-10 días",
+          "moq": 1,
+          "match_score": "99% Exact Match",
+          "url": "https://seller.teemdrop.com"
+        },
+        {
+          "provider": "AliExpress Verified (Item #1005013334016344)",
+          "unit_cost": 2.5,
+          "shipping": 0.0,
+          "delivery_days": "8-12 días",
+          "moq": 1,
+          "match_score": "100% Producto Verificado",
+          "url": "https://es.aliexpress.com/item/1005013334016344.html"
+        }
+      ],
+      "economics": {
+        "sale_price": 17.95,
+        "total_landed_cost": 3.45,
+        "net_profit_usd": 14.5,
+        "gross_margin_pct": 80.8,
+        "roi_pct": 420.3
+      }
+    },
+    {
+      "id": "1005012848434347",
+      "handle": "mini-proyector-portatil-laser-1080p-smart",
+      "short_name": "Mini Proyector Smart 1080p HDR10",
+      "original_title": "Mini Proyector Portátil Wemax S5, 500 ISO Lúmenes, 1080p, Láser ALPD, HDR10, Enfoque Automático, Corrección Trapezoidal Automática, Tipo-C, WiFi 5G",
+      "aliexpress_url": "https://es.aliexpress.com/item/1005012848434347.html",
+      "category": "Tecnología y Cine en Casa",
+      "target_audience": "Jóvenes, parejas y familias que desean transformar su habitación en una sala de cine de 120 pulgadas",
+      "selected_angle": "Noches de Cine en tu Techo o Pared sin Instalar TV",
+      "angles": [
+        {
+          "id": "bedroom_cinema",
+          "title": "Cine de 120 Pulgadas en tu Dormitorio",
+          "desc": "Enfoque automático instantáneo y WiFi 5G para proyectar tus series favoritas en cualquier pared."
+        }
+      ],
+      "viral_scripts": [
+        {
+          "hook": "0-3s: Quité el televisor de mi habitación y lo cambié por este cubo del tamaño de una taza.",
+          "body": "3-12s: Proyecta hasta 120 pulgadas en la pared o en el techo, enfoca solo en 2 segundos y tiene WiFi 5G integrado.",
+          "cta": "12-18s: Quedan solo 7 unidades con 50% de descuento en el link de mi perfil."
+        }
+      ],
+      "price_sale": 89.95,
+      "price_compare": 179.9,
+      "supplier_cost_min": 28.5,
+      "supplier_cost_avg": 34.0,
+      "shipping_cost": 4.5,
+      "rating": 4.9,
+      "reviews_count": 1520,
+      "stock_left": 7,
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sf93351cb6a0c4a37b9df6984fb2d96e1b.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S8dc900a1b6d24d55b23bc8a00be4cd06y.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sc8d17d27318f4fd5a5f79657fee2e56do.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sc9bd0bd6ef83472aa6ea6a6ff56e873br.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S42d7fee1129649f28108ce2e471e0f5bC.jpg"
+      ],
+      "hero_subtitle": "Convierte cualquier pared blanca o techo en una pantalla gigante Full HD 1080p con autoenfoque inteligente y sonido envolvente.",
+      "bullets": [
+        "Corrección trapezoidal y enfoque 100% automáticos en 2 segundos",
+        "Conectividad WiFi 5G de doble banda, HDMI y alimentación USB Tipo-C",
+        "Tamaño ultracompacto con brillo nítido HDR10 para noches de películas"
+      ],
+      "urgency_note": "ACTUALIZACIÓN: Últimas 7 unidades en almacén con envío asegurado y 50% de descuento.",
+      "editorial_sections": [
+        {
+          "headline": "La experiencia del cine sin cables ni pantallas gigantes",
+          "body": "Olvídate de colgar televisores pesados. Solo apúntalo hacia tu pared o techo y deja que su sensor inteligente ajuste el encuadre y la nitidez automáticamente.",
+          "cta": "ESTRENAR MI CINE EN CASA"
+        },
+        {
+          "headline": "Óptica de alta definición y portabilidad absoluta",
+          "body": "Compatible con consolas, laptops, smartphones y sticks de streaming, con alimentación versátil incluso mediante baterías externas Tipo-C.",
+          "features": [
+            {
+              "title": "Auto-Keystone Inteligente",
+              "desc": "Imagen perfectamente rectangular aunque el proyector esté en ángulo lateral."
+            },
+            {
+              "title": "Resolución 1080p + HDR10",
+              "desc": "Colores vibrantes y contraste profundo para películas y videojuegos."
+            },
+            {
+              "title": "Audio integrado",
+              "desc": "Altavoces de cámara acústica incorporados listos para reproducir."
+            }
+          ]
+        }
+      ],
+      "circular_benefits": [
+        {
+          "title": "Hasta 120 pulgadas",
+          "desc": "Tamaño de pantalla ajustable según la distancia a la pared."
+        },
+        {
+          "title": "Autoenfoque láser",
+          "desc": "Imagen nítida al instante sin girar ruedas manuales."
+        },
+        {
+          "title": "WiFi 5G rápido",
+          "desc": "Transmisión fluida sin cortes ni retrasos."
+        },
+        {
+          "title": "Puerto Tipo-C",
+          "desc": "Úsalo en tu habitación, terraza o viaje de camping."
+        },
+        {
+          "title": "Bajo ruido",
+          "desc": "Ventilación silenciosa que no interrumpe los diálogos."
+        },
+        {
+          "title": "Plug & Play",
+          "desc": "Conecta tu Fire Stick, consola o celular en segundos."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Necesito un telón especial o sirve una pared normal?",
+          "a": "Funciona perfectamente sobre cualquier pared lisa clara o en el techo de tu habitación."
+        },
+        {
+          "q": "¿Puedo conectar mi celular o consola?",
+          "a": "Sí, cuenta con entrada HDMI para consolas/TV sticks y conexión inalámbrica WiFi para duplicar pantalla."
+        }
+      ],
+      "suppliers": [
+        {
+          "provider": "TeemDrop Direct Sourcing (ID: TD-PROJ1080)",
+          "unit_cost": 28.5,
+          "shipping": 4.5,
+          "delivery_days": "6-10 días",
+          "moq": 1,
+          "match_score": "98% Exact Match",
+          "url": "https://seller.teemdrop.com"
+        },
+        {
+          "provider": "AliExpress Verified (Item #1005012848434347)",
+          "unit_cost": 34.0,
+          "shipping": 0.0,
+          "delivery_days": "8-12 días",
+          "moq": 1,
+          "match_score": "100% Producto Verificado",
+          "url": "https://es.aliexpress.com/item/1005012848434347.html"
+        }
+      ],
+      "economics": {
+        "sale_price": 89.95,
+        "total_landed_cost": 33.0,
+        "net_profit_usd": 56.95,
+        "gross_margin_pct": 63.3,
+        "roi_pct": 172.6
+      }
+    }
+  ]
+}

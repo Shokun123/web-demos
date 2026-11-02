@@ -1,0 +1,37 @@
+{
+  "product": {
+    "title": "Máscara Facial Fototerapia LED",
+    "body_html": "<p>Transforma tu dormitorio en un santuario de spa nocturno con fototerapia LED de 7 espectros que calma tu mente y renueva tu piel.</p><ul><li>Siente una luz suave y cálida sobre tu rostro sin calor excesivo</li><li>Crea un momento de paz antes de dormir mientras estimulas el colágeno</li><li>Simplifica tu rutina de cuidado nocturno con sesiones automáticas de 15 min</li></ul>",
+    "vendor": "AutoDrop Official",
+    "product_type": "Belleza y Cuidado de la Piel",
+    "status": "active",
+    "variants": [
+      {
+        "price": "24.95",
+        "compare_at_price": "49.90",
+        "sku": "AD-1005006678225060",
+        "inventory_quantity": 100
+      }
+    ],
+    "images": [
+      {
+        "src": "https://ae-pic-a1.aliexpress-media.com/kf/S2c9f6849f2bb4c2f8723645200cf0b63Y.png"
+      },
+      {
+        "src": "https://ae-pic-a1.aliexpress-media.com/kf/S52bcb59168bd4b0582453c9508c638acY.png"
+      },
+      {
+        "src": "https://ae-pic-a1.aliexpress-media.com/kf/S3fe50f881efd4235886154d296cc98128.png"
+      },
+      {
+        "src": "https://ae-pic-a1.aliexpress-media.com/kf/Sf4754e7eccf64a31a0de7e457c6727b3I.png"
+      },
+      {
+        "src": "https://ae-pic-a1.aliexpress-media.com/kf/Sec077b2267b747a880201c0990bcb3fbv.png"
+      },
+      {
+        "src": "https://ae-pic-a1.aliexpress-media.com/kf/S7958e81139714c9882b93642b1d787d7I.jpg"
+      }
+    ]
+  }
+}
