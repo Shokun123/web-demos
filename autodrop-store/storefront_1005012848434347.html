@@ -888,32 +888,15 @@
           <input id="custAddress" type="text" required placeholder="Calle, Número, Piso, Ciudad">
         </div>
         <div class="checkout-field">
-          <label>Elige cómo deseas pagar (BCP Bolivia o Binance Pay)</label>
-          <select id="custPayment" onchange="togglePaymentDetails()">
-            <option value="QR BCP Bolivia (Cta: 201-51627293-3-61)">Opción 1: QR Simple / BCP Bolivia (Titular: Shota Sebastian Kudaka Lino)</option>
-            <option value="Binance Pay (UID: 1049392123)">Opción 2: Binance Pay QR / USDT (UID: 1049392123)</option>
-            <option value="Coordinar por WhatsApp (+591 75549155)">Opción 3: Coordinar Pago Manual por WhatsApp</option>
+          <label>Método de Pago Preferido (A confirmar manualmente)</label>
+          <select id="custPayment">
+            <option value="Pago Manual (Transferencia / QR a confirmar)">Transferencia Bancaria / QR (Se enviará tras confirmar stock)</option>
+            <option value="Binance / USDT (A confirmar)">Cripto / Binance USDT (Se coordinará al confirmar pedido)</option>
+            <option value="Pago Contra Entrega (COD)">Pago Contra Entrega (Al recibir en domicilio)</option>
           </select>
         </div>
-        <div id="bcpQrBox" style="background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center;margin-bottom:12px;">
-          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;">ESCANEA EL QR OFICIAL BCP / YAPE / BANCOS BOLIVIA</div>
-          <img src="qr_bcp_shota.png" alt="QR Oficial BCP Shota Sebastian Kudaka Lino" style="width:165px;height:165px;border-radius:10px;border:1px solid var(--border);background:#fff;padding:4px;">
-          <div style="font-size:12px;color:var(--muted);margin-top:6px;">
-            <strong>Titular:</strong> Shota Sebastian Kudaka Lino<br>
-            <strong>Cuenta BCP Bolivia:</strong> 201-51627293-3-61<br>
-            <span id="bcpAmountText" style="color:var(--primary);font-weight:700;">Monto a transferir: $89.95 USD (Bs. 626.05)</span>
-          </div>
-        </div>
-        <div id="binanceBox" style="display:none;background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center;margin-bottom:12px;">
-          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;">ESCANEA CON BINANCE APP (BINANCE PAY 0% COMISIÓN)</div>
-          <img src="qr_binance_pay_uid.png" alt="QR Oficial Binance Pay UID 1049392123" style="width:165px;height:165px;border-radius:10px;border:1px solid var(--border);background:#fff;padding:4px;">
-          <div style="font-size:12px;color:var(--muted);margin-top:6px;">
-            <strong>Binance Pay UID:</strong> 1049392123 (Shota Kudaka)<br>
-            <span id="binanceAmountText" style="color:var(--primary);font-weight:700;">Monto exacto: $89.95 USDT</span>
-          </div>
-        </div>
         <div id="checkoutConfirmMsg" style="display:none;background:#e1f4eb;color:#146c43;padding:12px;border-radius:10px;font-size:13px;font-weight:600;margin-bottom:12px;"></div>
-        <button type="submit" class="cta-button" style="margin-bottom:0;">CONFIRMAR PEDIDO Y ENVIAR COMPROBANTE A WHATSAPP</button>
+        <button type="submit" class="cta-button" style="margin-bottom:0;">REGISTRAR PEDIDO (SIN COBRO AUTOMÁTICO)</button>
       </form>
     </div>
   </div>
@@ -937,16 +920,6 @@
       document.getElementById('livePriceDisplay').textContent = '$' + price.toFixed(2) + ' USD';
       document.getElementById('ctaText').textContent = 'COMPRAR AHORA (' + qty + 'x) — $' + price.toFixed(2) + ' USD';
       document.getElementById('stickyPriceText').innerHTML = '$' + price.toFixed(2) + ' USD';
-      const bcpTxt = document.getElementById('bcpAmountText');
-      if (bcpTxt) bcpTxt.textContent = 'Monto a transferir: $' + price.toFixed(2) + ' USD (Bs. ' + (price * 6.96).toFixed(2) + ')';
-      const binTxt = document.getElementById('binanceAmountText');
-      if (binTxt) binTxt.textContent = 'Monto exacto: $' + price.toFixed(2) + ' USDT';
-    }
-
-    function togglePaymentDetails() {
-      const val = document.getElementById('custPayment').value;
-      document.getElementById('bcpQrBox').style.display = val.includes('BCP') ? 'block' : 'none';
-      document.getElementById('binanceBox').style.display = val.includes('Binance') ? 'block' : 'none';
     }
 
     function openCheckoutModal() {
@@ -963,8 +936,6 @@
       const phone = document.getElementById('custPhone').value;
       const addr = document.getElementById('custAddress').value;
       const pay = document.getElementById('custPayment').value;
-      const prodName = "Mini Proyector Smart 1080p HDR10";
-      const bsAmount = (selectedBundlePrice * 6.96).toFixed(2);
 
       const payload = {
         product_id: PRODUCT_ID,
@@ -993,20 +964,7 @@
 
       const msgBox = document.getElementById('checkoutConfirmMsg');
       msgBox.style.display = 'block';
-      msgBox.textContent = 'Pedido ' + orderId + ' registrado. Abriendo WhatsApp (+591 75549155) para enviar tu comprobante de pago...';
-
-      const waText = encodeURIComponent(
-        'Hola Shota! Realicé el pedido ' + orderId + ':\n' +
-        '• Producto: ' + prodName + ' (Pack ' + selectedBundleQty + 'x)\n' +
-        '• Total a pagar: $' + selectedBundlePrice.toFixed(2) + ' USD (Bs. ' + bsAmount + ')\n' +
-        '• Método elegido: ' + pay + '\n' +
-        '• Cliente: ' + name + ' (' + phone + ')\n' +
-        '• Dirección de entrega: ' + addr + '\n' +
-        'Adjunto mi comprobante de pago a continuación:'
-      );
-      setTimeout(() => {
-        window.open('https://wa.me/59175549155?text=' + waText, '_blank');
-      }, 700);
+      msgBox.textContent = 'Pedido ' + orderId + ' registrado en el panel local para envío manual de método de pago autorizado.';
     }
   </script>
 </body>
