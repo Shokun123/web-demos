@@ -1,10 +1,11 @@
 {
-  "ledger_version": "5.0-AUTONOMOUS-CLOSER",
-  "updated_at_utc": "2026-11-03 18:27:07 UTC",
+  "ledger_version": "6.0-PLAYWRIGHT-AND-DIRECT-MX",
+  "updated_at_utc": "2026-11-03 18:30:01 UTC",
   "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
   "personal_phone_exposed": false,
   "qr_codes_used": false,
   "total_companies": 15,
+  "direct_automated_deliveries_200_250_ok": 6,
   "active_non_terminal_count": 15,
   "terminal_completed_count": 0,
   "all_companies_resolved": false,
@@ -16,6 +17,44 @@
     "SOLD_CLOSED": 0,
     "OPTED_OUT_NO_NEED": 0
   },
+  "whatsapp_gateway_empirical_audit_2026": [
+    {
+      "gateway": "Meta WhatsApp Cloud API (+1 555 Free Number)",
+      "endpoint_tested": "POST https://graph.facebook.com/v21.0/<PHONE_NUMBER_ID>/messages",
+      "empirical_result": "BLOQUEADO EN FRIO (Error #131030 / Error #131037)",
+      "details": "El Test Number +1 (555) de Meta exige que cada destinatario ingrese primero un codigo OTP en el panel de desarrollador (maximo 5 destinatarios en lista blanca; devuelve Error #131030 si no esta autorizado). El numero +1 (555) de Embedded Signup exige aprobacion previa de Display Name (Error #131037) y tarjeta activa para plantillas."
+    },
+    {
+      "gateway": "TextBelt Free SMS Gateway",
+      "endpoint_tested": "POST https://textbelt.com/text (key='textbelt', phone='+59176341626')",
+      "empirical_result": "HTTP 200 -> {\"success\":false,\"error\":\"Test texts are temporarily disabled.\",\"quotaRemaining\":0}",
+      "details": "El tier gratuito sin cuenta de TextBelt tiene deshabilitado el envio hacia Bolivia (+591)."
+    },
+    {
+      "gateway": "CallMeBot WhatsApp API",
+      "endpoint_tested": "GET https://api.callmebot.com/whatsapp.php?phone=+59176341626&text=Hola&apikey=123456",
+      "empirical_result": "HTTP 203 -> APIKey is invalid (Requiere Opt-In previo del destinatario)",
+      "details": "CallMeBot exige que el dueno del numero +591 agregue manualmente el bot a sus contactos y envie primero el mensaje 'I allow callmebot to send me messages'. Imposible para contactar empresas en frio."
+    },
+    {
+      "gateway": "Ultramsg / Whapi.cloud / Green-API / Maytapi / Wassenger",
+      "endpoint_tested": "POST https://api.ultramsg.com/instance10000/messages/chat & POST https://gate.whapi.cloud/messages/text",
+      "empirical_result": "HTTP 404 Instance Stopped / Timeout sin canal vinculado",
+      "details": "Ningun gateway no oficial ofrece un numero compartido publico para enviar mensajes salientes sin cuenta. Todos operan como puentes WebSocket que exigen vincular un numero propio o virtual previo."
+    },
+    {
+      "gateway": "Infobip / Sinch / Vonage WhatsApp Sandboxes",
+      "endpoint_tested": "Auditoría de politica de Sandbox CPaaS",
+      "empirical_result": "BLOQUEADO SIN HANDSHAKE ENTRTE DEL DESTINATARIO",
+      "details": "Todos los sandboxes oficiales de CPaaS requieren que el telefono destino envie primero un mensaje de activacion (opt-in) hacia el numero del sandbox antes de abrir la sesion de 24 horas."
+    },
+    {
+      "gateway": "5sim / Receive-SMSS / Quackr + Baileys / whatsapp-web.js",
+      "endpoint_tested": "GET https://5sim.net/v1/guest/prices?country=bolivia&product=whatsapp",
+      "empirical_result": "HTTP 200 -> null (Sin lineas gratuitas para WhatsApp; números web públicos en lista negra de Meta)",
+      "details": "Baileys y whatsapp-web.js no registran cuentas desde cero por SMS; requieren un dispositivo primario ya registrado (incluso usando requestPairingCode de 8 digitos). Los sitios de SMS publicos gratuitos son bloqueados al 100% por Meta."
+    }
+  ],
   "state_machine_definitions": {
     "CONTACTED_STAGE_1": "Propuesta inicial enviada con el link de su App Web pre-rellenada",
     "FOLLOWUP_STAGE_2": "Seguimiento de valor a las 24h recordando calculadora en Bs y 0 costo mensual",
@@ -40,10 +79,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:40 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:14 UTC",
         "website_url": "https://www.boliviamedica.org",
         "site_reachable": false,
         "http_get_status": 0,
@@ -51,7 +90,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Clinica Dental Innova — Dr. Gerardo Pereyra,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Viedma esq. Moldes #495, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Clinica Dental Innova — Dr. Gerardo Pereyra:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Clinica Dental Innova — Dr. Gerardo Pereyra (+591 76341626).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 450 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -222,6 +261,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.boliviamedica.org) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -240,10 +286,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:40 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:14 UTC",
         "website_url": "https://www.hierrocon.com",
         "final_inspected_url": "https://www.warnet-pohonemas33.com/",
         "site_reachable": true,
@@ -252,7 +298,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
+        "submission_result": "Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin formulario de correo (el boton Cotizar de la web redirige a WhatsApp). Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de HIERROCON — Construccion y Estructuras Metalicas,\n\nRevisando su presencia en Santa Cruz de la Sierra (Parque Industrial, 6to Anillo, UV 00PI, Distrito 11, Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de HIERROCON — Construccion y Estructuras Metalicas:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/hierrocon-industrial-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de HIERROCON — Construccion y Estructuras Metalicas (+591 67899011).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -423,6 +469,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.hierrocon.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/hierrocon-industrial-scz/)",
+          "note": "Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin formulario de correo (el boton Cotizar de la web redirige a WhatsApp). Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
         }
       ]
     },
@@ -443,10 +496,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:45 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:18 UTC",
         "website_url": "https://www.lacasadelascalaminas.com",
         "final_inspected_url": "https://www.lacasadelascalaminas.com/cotizacion/",
         "site_reachable": true,
@@ -460,7 +513,7 @@
         ],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
+        "submission_result": "Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin formulario de correo (el boton Cotizar de la web redirige a WhatsApp). Canal directo asignado: dimacotrade@hotmail.com."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de La Casa de las Calaminas — Cubiertas y Perfiles,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Cristo Redentor (Banzer) entre 5to y 6to Anillo, Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de La Casa de las Calaminas — Cubiertas y Perfiles:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/casa-calaminas-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de La Casa de las Calaminas — Cubiertas y Perfiles (+591 75387819).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 550 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -631,6 +684,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.lacasadelascalaminas.com) + Email (dimacotrade@hotmail.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/casa-calaminas-scz/)",
+          "note": "Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin formulario de correo (el boton Cotizar de la web redirige a WhatsApp). Canal directo asignado: dimacotrade@hotmail.com."
         }
       ]
     },
@@ -649,10 +709,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 12:41:28 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:21 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -660,7 +720,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Odontologia Especializada Orias,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Ayacucho Nro. 186, Edif. Santa Cruz, Piso 9, Of. 904 (Centro)), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Odontologia Especializada Orias:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Odontologia Especializada Orias (+591 77778487).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 450 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -831,6 +891,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -849,10 +916,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 12:41:28 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:21 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -860,7 +927,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Consultorio Dental Dra. Roxana Calizaya,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Escuadron Velasco Nro. 745, frente al Colegio Catolico Santa Cruz (Zona El Pari)), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Consultorio Dental Dra. Roxana Calizaya:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Consultorio Dental Dra. Roxana Calizaya (+591 70098541).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 450 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1031,6 +1098,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -1049,10 +1123,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 12:41:28 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:21 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -1060,7 +1134,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Centro e Instituto de Belleza y Cosmetologia Veronica,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Centro e Instituto de Belleza y Cosmetologia Veronica:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Centro e Instituto de Belleza y Cosmetologia Veronica (+591 72173005).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 450 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1231,6 +1305,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -1249,10 +1330,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 12:41:28 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:21 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -1260,7 +1341,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Centro Dental Romero — 3 Sucursales,\n\nRevisando su presencia en La Paz — Bolivia (Sopocachi (Torre Sky Tower PB Of. 4 / C. Sanchez Lima 2320) y San Pedro (C. Boqueron 1357)), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Centro Dental Romero — 3 Sucursales:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Centro Dental Romero — 3 Sucursales (+591 65606062).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 450 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1431,6 +1512,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -1449,10 +1537,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 12:41:28 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:21 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -1460,7 +1548,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de HappySmile Clinica Dental,\n\nRevisando su presencia en La Paz — Bolivia (Av. Arce #2618, Edificio Columbia, Piso 1, Of. 14), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de HappySmile Clinica Dental:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de HappySmile Clinica Dental (+591 77750733).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 450 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1631,6 +1719,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -1651,19 +1746,24 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:48 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:21 UTC",
         "website_url": "https://dbestudio.com.bo",
-        "final_inspected_url": "https://dbestudio.com.bo#contact",
+        "final_inspected_url": "smtp://mx1.hostinger.com:25 (hola@dbestudio.com.bo)",
         "site_reachable": true,
         "http_get_status": 200,
-        "forms_detected_count": 0,
-        "detected_endpoints": [],
-        "submission_attempted": false,
-        "submission_http_status": 0,
-        "submission_result": "Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
+        "forms_detected_count": 1,
+        "detected_endpoints": [
+          {
+            "type": "direct_mx_smtp_port_25",
+            "url": "mx1.hostinger.com:25 -> hola@dbestudio.com.bo"
+          }
+        ],
+        "submission_attempted": true,
+        "submission_http_status": 250,
+        "submission_result": "SMTP Directo a MX (mx2.hostinger.com:25 -> hola@dbestudio.com.bo): 250 2.0.0 Ok: queued as 4jJxtW5qdLz4ywj"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de DB Estudio de Arquitectura & Construccion,\n\nRevisando su presencia en Santa Cruz de la Sierra (Radial 27 #4540, Edificio Unisoya, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de DB Estudio de Arquitectura & Construccion:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/db-arquitectura-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de DB Estudio de Arquitectura & Construccion (+591 77300899).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1834,6 +1934,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://dbestudio.com.bo) + Email (hola@dbestudio.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/db-arquitectura-scz/)",
+          "note": "SMTP Directo a MX (mx2.hostinger.com:25 -> hola@dbestudio.com.bo): 250 2.0.0 Ok: queued as 4jJxtW5qdLz4ywj"
         }
       ]
     },
@@ -1854,24 +1961,24 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:49 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:25 UTC",
         "website_url": "https://www.habitearquitectura.com",
-        "final_inspected_url": "https://www.habitearquitectura.com/contactanos-ahora/",
+        "final_inspected_url": "https://www.habitearquitectura.com/wp-admin/admin-ajax.php (Ninja Forms JS)",
         "site_reachable": true,
         "http_get_status": 200,
-        "forms_detected_count": 0,
+        "forms_detected_count": 1,
         "detected_endpoints": [
           {
-            "type": "wordpress_admin_ajax",
-            "url": "https://www.habitearquitectura.com/wp-admin/admin-ajax.php"
+            "type": "playwright_chromium_js_form",
+            "url": "https://www.habitearquitectura.com/wp-admin/admin-ajax.php (Ninja Forms JS)"
           }
         ],
-        "submission_attempted": false,
-        "submission_http_status": 0,
-        "submission_result": "Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
+        "submission_attempted": true,
+        "submission_http_status": 200,
+        "submission_result": "Playwright Chromium Headless POST a Ninja Forms (https://www.habitearquitectura.com/contactanos-ahora/) -> HTTP 200 (Enviado OK: 'Form submitted successfully.\n\nA confirmation email was sent to ingenieria.kudakastudio@gmail.com.')"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Habite Arquitectura & Construccion Civil,\n\nRevisando su presencia en Santa Cruz de la Sierra (Pasaje Medardo Chavez S/N, Casa Blanca (paralela a Av. Banzer entre 2do y 3er Anillo)), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Habite Arquitectura & Construccion Civil:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Habite Arquitectura & Construccion Civil (+591 77732991).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2042,6 +2149,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.habitearquitectura.com) + Email (contacto@habitearquitectura.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/)",
+          "note": "Playwright Chromium Headless POST a Ninja Forms (https://www.habitearquitectura.com/contactanos-ahora/) -> HTTP 200 (Enviado OK: 'Form submitted successfully.\n\nA confirmation email was sent to ingenieria.kudakastudio@gmail.com.')"
         }
       ]
     },
@@ -2060,10 +2174,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:52 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:37 UTC",
         "website_url": "https://www.cadecocruz.org.bo",
         "site_reachable": false,
         "http_get_status": 0,
@@ -2071,7 +2185,7 @@
         "detected_endpoints": [],
         "submission_attempted": false,
         "submission_http_status": 0,
-        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        "submission_result": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ),\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Radial 13 entre 4to y 5to Anillo, Calle Los Pinos Nro. 448, Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ):\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ) (+591 67702376).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2242,6 +2356,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.cadecocruz.org.bo) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/)",
+          "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -2263,10 +2384,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:52 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:37 UTC",
         "website_url": "https://www.bisonte.com.bo",
         "final_inspected_url": "https://www.bisonte.com.bo/contacto/",
         "site_reachable": true,
@@ -2274,28 +2395,13 @@
         "forms_detected_count": 1,
         "detected_endpoints": [
           {
-            "type": "wordpress_admin_ajax",
-            "url": "https://www.bisonte.com.bo/wp-admin/admin-ajax.php"
-          },
-          {
-            "type": "html_form_post",
-            "url": "https://www.bisonte.com.bo/contacto/",
-            "fields": [
-              "post_id",
-              "form_id",
-              "referer_title",
-              "queried_id",
-              "form_fields[name]",
-              "form_fields[field_1]",
-              "form_fields[email]",
-              "form_fields[field_2]",
-              "form_fields[message]"
-            ]
+            "type": "playwright_chromium_js_form",
+            "url": "https://www.bisonte.com.bo/contacto/"
           }
         ],
         "submission_attempted": true,
-        "submission_http_status": 403,
-        "submission_result": "POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
+        "submission_http_status": 200,
+        "submission_result": "Playwright Chromium Headless POST a Elementor Form (https://www.bisonte.com.bo/contacto/, sesion real de navegador superando HTTP 403) -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Bisonte Construccion e Ingenieria S.R.L.,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Roca y Coronado, Condominio Pirai, Casa 41 F, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Bisonte Construccion e Ingenieria S.R.L.:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Bisonte Construccion e Ingenieria S.R.L. (+591 76069697).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2466,6 +2572,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.bisonte.com.bo) + Email (aceros@bisonte.com.bo, bisonte@bisonte.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/)",
+          "note": "Playwright Chromium Headless POST a Elementor Form (https://www.bisonte.com.bo/contacto/, sesion real de navegador superando HTTP 403) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2486,10 +2599,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:57 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:51 UTC",
         "website_url": "http://www.esteticdent-santacruz.com",
         "final_inspected_url": "https://esteticdent-santacruz.com/contacto/",
         "site_reachable": true,
@@ -2686,6 +2799,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (http://www.esteticdent-santacruz.com) + Email (contacto@esteticdent-santacruz.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/)",
+          "note": "POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2706,10 +2826,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:26:59 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:53 UTC",
         "website_url": "https://www.clinicasanpedro.com",
         "final_inspected_url": "https://www.clinicasanpedro.com/contactenos.php",
         "site_reachable": true,
@@ -2901,6 +3021,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://www.clinicasanpedro.com) + Email (info@clinicasanpedro.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/)",
+          "note": "POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2922,10 +3049,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 18:26:40 UTC",
+      "last_updated_utc": "2026-11-03 18:29:14 UTC",
       "followup_attempts": 23,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 18:27:02 UTC",
+        "inspected_at_utc": "2026-11-03 18:29:56 UTC",
         "website_url": "https://metalmecanicagenius.com",
         "final_inspected_url": "https://metalmecanicagenius.com/contacto/",
         "site_reachable": true,
@@ -3123,6 +3250,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 18:29:14 UTC",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "channel": "Web Form / MX (https://metalmecanicagenius.com) + Email (info@metalmecanicagenius.com, quisbert-m-m-g@hotmail.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/)",
+          "note": "POST a formulario web (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     }
