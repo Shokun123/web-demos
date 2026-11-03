@@ -1,6 +1,6 @@
 {
   "ledger_version": "5.0-AUTONOMOUS-CLOSER",
-  "updated_at_utc": "2026-11-03 04:38:11 UTC",
+  "updated_at_utc": "2026-11-03 04:52:33 UTC",
   "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
   "personal_phone_exposed": false,
   "qr_codes_used": false,
@@ -9,8 +9,8 @@
   "terminal_completed_count": 0,
   "all_companies_resolved": false,
   "state_counts": {
-    "CONTACTED_STAGE_1": 15,
-    "FOLLOWUP_STAGE_2": 0,
+    "CONTACTED_STAGE_1": 0,
+    "FOLLOWUP_STAGE_2": 15,
     "FOLLOWUP_STAGE_3": 0,
     "REPLIED_INTERESTED": 0,
     "SOLD_CLOSED": 0,
@@ -37,13 +37,13 @@
       "website_url": "https://www.boliviamedica.org",
       "facebook_url": "https://www.facebook.com/search/top?q=Clinica%20Dental%20Innova%20Gerardo%20Pereyra%20Santa%20Cruz",
       "facebook_label": "Facebook: Clinica Dental Innova / Dr. Gerardo Pereyra",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:40 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:03 UTC",
         "website_url": "https://www.boliviamedica.org",
         "site_reachable": false,
         "http_get_status": 0,
@@ -68,6 +68,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -83,13 +90,13 @@
       "website_url": "https://www.hierrocon.com",
       "facebook_url": "https://www.facebook.com/search/top?q=Hierrocon%20Srl%20Santa%20Cruz",
       "facebook_label": "Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:40 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:03 UTC",
         "website_url": "https://www.hierrocon.com",
         "final_inspected_url": "https://www.warnet-pohonemas33.com/",
         "site_reachable": true,
@@ -115,6 +122,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://www.hierrocon.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/hierrocon-industrial-scz/)",
           "note": "GET a formulario HTML (https://www.footlocker.id/catalogsearch/result/, campos=['q']) -> HTTP 200 (OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
         }
       ]
     },
@@ -132,13 +146,13 @@
       "website_url": "https://www.lacasadelascalaminas.com",
       "facebook_url": "https://www.facebook.com/search/top?q=La%20Casa%20de%20las%20Calaminas%20Santa%20Cruz",
       "facebook_label": "Email: dimacotrade@hotmail.com | Web: lacasadelascalaminas.com",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:43 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:07 UTC",
         "website_url": "https://www.lacasadelascalaminas.com",
         "final_inspected_url": "https://www.lacasadelascalaminas.com/cotizacion/",
         "site_reachable": true,
@@ -169,6 +183,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://www.lacasadelascalaminas.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/casa-calaminas-scz/)",
           "note": "Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Facebook/Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
         }
       ]
     },
@@ -184,11 +205,11 @@
       "website_url": "",
       "facebook_url": "https://www.facebook.com/search/top?q=Odontologia%20Especializada%20Orias%20Santa%20Cruz",
       "facebook_label": "Facebook: Odontologia Especializada Orias",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -215,6 +236,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -230,11 +258,11 @@
       "website_url": "",
       "facebook_url": "https://www.facebook.com/search/top?q=Consultorio%20Dental%20Roxana%20Calizaya%20Santa%20Cruz",
       "facebook_label": "Facebook / Directorio Local Zona El Pari",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -261,6 +289,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -276,11 +311,11 @@
       "website_url": "",
       "facebook_url": "https://www.facebook.com/search/top?q=Instituto%20Tecnico%20de%20Belleza%20y%20Cosmetologia%20Veronica%20ITBCV",
       "facebook_label": "FB Oficial: Instituto Tecnico de Belleza y Cosmetologia Veronica ITBCV",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -307,6 +342,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -322,11 +364,11 @@
       "website_url": "",
       "facebook_url": "https://www.facebook.com/search/top?q=Centro%20Orofacial%20y%20Dental%20Romero",
       "facebook_label": "Facebook: Centro Orofacial y Dental Romero (Edif. Sky Tower Of. 4)",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -353,6 +395,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -368,11 +417,11 @@
       "website_url": "",
       "facebook_url": "https://www.facebook.com/search/top?q=Centro%20de%20Especialidades%20Odontologicas%20Happy%20Smile%20La%20Paz",
       "facebook_label": "FB: Centro de Especialidades Odontologicas Happy Smile (Fijo: +591 2 2432025)",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -399,6 +448,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -416,13 +472,13 @@
       "website_url": "https://dbestudio.com.bo",
       "facebook_url": "https://www.facebook.com/dbestudiobo",
       "facebook_label": "Email: hola@dbestudio.com.bo | Web: dbestudio.com.bo | FB: @dbestudiobo",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:10 UTC",
         "website_url": "https://dbestudio.com.bo",
         "final_inspected_url": "https://dbestudio.com.bo#contact",
         "site_reachable": true,
@@ -448,6 +504,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://dbestudio.com.bo) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/db-arquitectura-scz/)",
           "note": "Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Facebook/Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
         }
       ]
     },
@@ -465,13 +528,13 @@
       "website_url": "https://www.habitearquitectura.com",
       "facebook_url": "https://www.facebook.com/search/top?q=Habite%20Arquitectura%20Santa%20Cruz",
       "facebook_label": "Email: contacto@habitearquitectura.com | Web: habitearquitectura.com",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:48 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:11 UTC",
         "website_url": "https://www.habitearquitectura.com",
         "final_inspected_url": "https://www.habitearquitectura.com/contactanos-ahora/",
         "site_reachable": true,
@@ -502,6 +565,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://www.habitearquitectura.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/)",
           "note": "Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Facebook/Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
         }
       ]
     },
@@ -517,13 +587,13 @@
       "website_url": "https://www.cadecocruz.org.bo",
       "facebook_url": "https://www.facebook.com/search/top?q=ARPEC%20SRL%20Ingenieria%20Construccion%20Santa%20Cruz",
       "facebook_label": "Registro Oficial CADECOCRUZ (cadecocruz.org.bo) + Busqueda Corporativa",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:51 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:14 UTC",
         "website_url": "https://www.cadecocruz.org.bo",
         "site_reachable": false,
         "http_get_status": 0,
@@ -548,6 +618,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (SIN_WEB_PROPIA) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/)",
           "note": "Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -566,13 +643,13 @@
       "website_url": "https://www.bisonte.com.bo",
       "facebook_url": "https://www.facebook.com/search/top?q=Bisonte%20SRL%20Santa%20Cruz",
       "facebook_label": "Emails: aceros@bisonte.com.bo / bisonte@bisonte.com.bo | Web: bisonte.com.bo",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:51 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:14 UTC",
         "website_url": "https://www.bisonte.com.bo",
         "final_inspected_url": "https://www.bisonte.com.bo/contacto/",
         "site_reachable": true,
@@ -618,6 +695,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://www.bisonte.com.bo) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/)",
           "note": "POST a formulario HTML (https://www.bisonte.com.bo/contacto/, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 404 (HTTPError 404: Not Found)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
         }
       ]
     },
@@ -635,13 +719,13 @@
       "website_url": "http://www.esteticdent-santacruz.com",
       "facebook_url": "https://www.facebook.com/1647034508897342",
       "facebook_label": "Email: contacto@esteticdent-santacruz.com | FB Oficial: Estetic Dent Bolivia",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:37:57 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:22 UTC",
         "website_url": "http://www.esteticdent-santacruz.com",
         "final_inspected_url": "https://esteticdent-santacruz.com/contacto/",
         "site_reachable": true,
@@ -684,6 +768,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (http://www.esteticdent-santacruz.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/)",
           "note": "POST a formulario HTML (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 404 (HTTPError 404: Not Found)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -701,13 +792,13 @@
       "website_url": "https://www.clinicasanpedro.com",
       "facebook_url": "https://www.facebook.com/search/top?q=Clinica%20San%20Pedro%20Santa%20Cruz",
       "facebook_label": "Email: info@clinicasanpedro.com | FB: Clinica San Pedro",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:38:00 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:25 UTC",
         "website_url": "https://www.clinicasanpedro.com",
         "final_inspected_url": "https://www.clinicasanpedro.com/contactenos.php",
         "site_reachable": true,
@@ -745,6 +836,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://www.clinicasanpedro.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/)",
           "note": "POST a formulario HTML (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -763,13 +861,13 @@
       "website_url": "https://metalmecanicagenius.com",
       "facebook_url": "https://www.facebook.com/search/top?q=Metal%20Mecanica%20Genius%20Santa%20Cruz",
       "facebook_label": "Emails: info@metalmecanicagenius.com / quisbert-m-m-g@hotmail.com | Web: metalmecanicagenius.com",
-      "state": "CONTACTED_STAGE_1",
+      "state": "FOLLOWUP_STAGE_2",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 04:33:14 UTC",
-      "followup_attempts": 1,
+      "last_updated_utc": "2026-11-03 04:52:03 UTC",
+      "followup_attempts": 2,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:38:03 UTC",
+        "inspected_at_utc": "2026-11-03 04:52:27 UTC",
         "website_url": "https://metalmecanicagenius.com",
         "final_inspected_url": "https://metalmecanicagenius.com/contacto/",
         "site_reachable": true,
@@ -813,6 +911,13 @@
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form (https://metalmecanicagenius.com) + Email (N/A) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/)",
           "note": "POST a formulario HTML (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 404 (HTTPError 404: Not Found)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 04:52:03 UTC",
+          "from_state": "CONTACTED_STAGE_1",
+          "state": "FOLLOWUP_STAGE_2",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     }
