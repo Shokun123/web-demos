@@ -66,7 +66,7 @@
       },
       {
         "title": "Tinglado Metalico Paraboloide / Dos Aguas",
-        "desc": "Estructura metalica de alta resistencia al viento cruceño para almacenes, canchas y centros comerciales.",
+        "desc": "Estructura metalica de alta resistencia al viento cruceno para almacenes, canchas y centros comerciales.",
         "base_bs": 360,
         "tag": "Entrega Rapida"
       },
@@ -418,5 +418,215 @@
     "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/",
     "wa_outreach_url": "https://wa.me/59177732991?text=Buenas%20tardes%20equipo%20de%20Habite%20Arquitectura%20%26%20Construccion%20Civil.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Pasaje%20Medardo%20Chavez%20S/N%2C%20Casa%20Blanca%20%28paralela%20a%20Av.%20Banzer%20entre%202do%20y%203er%20Anillo%29%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Habite%20Arquitectura%20%26%20Construccion%20Civil%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2077732991%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20650%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
     "wa_message_plain": "Buenas tardes equipo de Habite Arquitectura & Construccion Civil.\n\nViendo su trayectoria en Santa Cruz de la Sierra (Pasaje Medardo Chavez S/N, Casa Blanca (paralela a Av. Banzer entre 2do y 3er Anillo)), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de Habite Arquitectura & Construccion Civil:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 77732991).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 650 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "arpec-ingenieria-scz",
+    "repo_template": "inmoluxe-arquitectura + commercial_b2b_pack",
+    "theme_mode": "dark-gold",
+    "business_name": "ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ)",
+    "category": "Obras Civiles, Pavimentacion, Estructuras e Ingenieria Corporativa",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Av. Radial 13 entre 4to y 5to Anillo, Calle Los Pinos Nro. 448, Santa Cruz",
+    "phone_display": "+591 67702376",
+    "phone_wa": "59167702376",
+    "accent_color": "#f59e0b",
+    "hero_badge": "Asociado CADECOCRUZ — Av. Radial 13 Calle Los Pinos #448",
+    "hero_title": "Ingenieria Civil, Infraestructura y Ejecucion de Obras de Alto Estandar",
+    "hero_subtitle": "Cotizador tecnico referencial por metro cuadrado (m2) para proyectos corporativos, industriales y obras civiles en Santa Cruz de la Sierra.",
+    "calc_label": "Superficie o alcance de obra civil (en m2)",
+    "calc_unit": "m2",
+    "services": [
+      {
+        "title": "Ejecucion de Obra Civil e Infraestructura Corporativa",
+        "desc": "Construccion de edificios empresariales, centros logisticos y fundaciones de hormigon armado.",
+        "base_bs": 2450,
+        "tag": "CADECOCRUZ"
+      },
+      {
+        "title": "Pavimentacion Rigida y Plataformas Industriales",
+        "desc": "Losas de alto trafico para parques industriales, patios de maniobra y condominios en Santa Cruz.",
+        "base_bs": 420,
+        "tag": "Alta Resistencia"
+      },
+      {
+        "title": "Supervision, Direccion Tecnica y Gerencia de Proyectos",
+        "desc": "Control de calidad estructural, computos metricos y auditoria tecnica de obra.",
+        "base_bs": 140,
+        "tag": "Gerencia Tecnica"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:00 a 18:30 | Sabados: 08:30 a 12:30",
+    "offer_price_bs": "700 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/",
+    "wa_outreach_url": "https://wa.me/59167702376?text=Buenas%20tardes%20equipo%20de%20ARPEC%20S.R.L.%20%E2%80%94%20Ingenieria%20y%20Construccion%20%28CADECOCRUZ%29.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Radial%2013%20entre%204to%20y%205to%20Anillo%2C%20Calle%20Los%20Pinos%20Nro.%20448%2C%20Santa%20Cruz%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20ARPEC%20S.R.L.%20%E2%80%94%20Ingenieria%20y%20Construccion%20%28CADECOCRUZ%29%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2067702376%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20700%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ).\n\nViendo su trayectoria en Santa Cruz de la Sierra (Av. Radial 13 entre 4to y 5to Anillo, Calle Los Pinos Nro. 448, Santa Cruz), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ):\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 67702376).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 700 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "bisonte-construccion-scz",
+    "repo_template": "inmoluxe-arquitectura + commercial_b2b_pack",
+    "theme_mode": "dark-gold",
+    "business_name": "Bisonte Construccion e Ingenieria S.R.L.",
+    "category": "Proyectos de Ingenieria Civil, Condominios y Construcciones",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Av. Roca y Coronado, Condominio Pirai, Casa 41 F, Santa Cruz de la Sierra",
+    "phone_display": "+591 76069697",
+    "phone_wa": "59176069697",
+    "accent_color": "#eab308",
+    "hero_badge": "Av. Roca y Coronado — Condominio Pirai, Santa Cruz",
+    "hero_title": "Solidez Estructural y Construccion de Proyectos Residenciales y Comerciales",
+    "hero_subtitle": "Simula el costo estimado por metro cuadrado (m2) de tu construccion o remodelacion y agenda una visita tecnica con ingenieros de Bisonte S.R.L.",
+    "calc_label": "Superficie proyectada a construir (en m2)",
+    "calc_unit": "m2",
+    "services": [
+      {
+        "title": "Construccion de Residencias y Condominios Llave en Mano",
+        "desc": "Ejecucion integral desde movimiento de tierras y fundaciones hasta acabados finos en Santa Cruz.",
+        "base_bs": 2600,
+        "tag": "Llave en Mano"
+      },
+      {
+        "title": "Obra Bruta Estructural (Hormigon Armado y Mamposteria)",
+        "desc": "Ejecucion estructural garantizada bajo normas sismorresistentes y control de laboratorio.",
+        "base_bs": 1350,
+        "tag": "Obra Gris m2"
+      },
+      {
+        "title": "Ingenieria de Detalle y Presupuestos Ejecutivos",
+        "desc": "Elaboracion de pliegos tecnicos, calculo estructural, hidrosanitario y electrico.",
+        "base_bs": 95,
+        "tag": "Ingenieria m2"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:30 a 18:30 | Sabados: 09:00 a 12:30",
+    "offer_price_bs": "700 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/",
+    "wa_outreach_url": "https://wa.me/59176069697?text=Buenas%20tardes%20equipo%20de%20Bisonte%20Construccion%20e%20Ingenieria%20S.R.L..%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Roca%20y%20Coronado%2C%20Condominio%20Pirai%2C%20Casa%2041%20F%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Bisonte%20Construccion%20e%20Ingenieria%20S.R.L.%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2076069697%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20700%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Bisonte Construccion e Ingenieria S.R.L..\n\nViendo su trayectoria en Santa Cruz de la Sierra (Av. Roca y Coronado, Condominio Pirai, Casa 41 F, Santa Cruz de la Sierra), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de Bisonte Construccion e Ingenieria S.R.L.:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 76069697).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 700 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "estetic-dent-scz",
+    "repo_template": "clinica-nova + ui-ux-pro-max",
+    "theme_mode": "light",
+    "business_name": "Estetic Dent — Clinica Dental y Armonizacion Facial",
+    "category": "Implantes, Ortodoncia, Diseno de Sonrisa y Estetica Orofacial",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Calle Moldes esq. Chuquisaca Nro. 597, Santa Cruz de la Sierra",
+    "phone_display": "+591 76337570",
+    "phone_wa": "59176337570",
+    "accent_color": "#0891b2",
+    "hero_badge": "Calle Moldes esq. Chuquisaca #597 — Centro Santa Cruz",
+    "hero_title": "Odontologia Estetica Avanzada y Armonizacion Orofacial en Santa Cruz",
+    "hero_subtitle": "Cotiza tu tratamiento de implantes, carillas o armonizacion facial en Bolivianos y agenda tu cita directa en Calle Moldes #597.",
+    "calc_label": "Cantidad de piezas / zonas a tratar",
+    "calc_unit": "Piezas / Sesiones",
+    "services": [
+      {
+        "title": "Diseno de Sonrisa con Carillas de Porcelana / Resina Alta Estetica",
+        "desc": "Transformacion estetica dental con planificacion digital personalizada.",
+        "base_bs": 1150,
+        "tag": "Estetica Dental"
+      },
+      {
+        "title": "Armonizacion Orofacial (Acido Hialuronico / Toxina Botulinica)",
+        "desc": "Rejuvenecimiento facial y perfilado labial aplicado por especialistas.",
+        "base_bs": 1400,
+        "tag": "Armonizacion"
+      },
+      {
+        "title": "Implante Dental Oseointegrado + Rehabilitacion",
+        "desc": "Recuperacion funcional y estetica con titanio grado medico.",
+        "base_bs": 2350,
+        "tag": "Implantes"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 09:00 a 19:30 | Sabados: 09:00 a 13:30",
+    "offer_price_bs": "500 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/",
+    "wa_outreach_url": "https://wa.me/59176337570?text=Buenas%20tardes%20equipo%20de%20Estetic%20Dent%20%E2%80%94%20Clinica%20Dental%20y%20Armonizacion%20Facial.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Calle%20Moldes%20esq.%20Chuquisaca%20Nro.%20597%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Estetic%20Dent%20%E2%80%94%20Clinica%20Dental%20y%20Armonizacion%20Facial%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2076337570%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20500%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Estetic Dent — Clinica Dental y Armonizacion Facial.\n\nViendo su trayectoria en Santa Cruz de la Sierra (Calle Moldes esq. Chuquisaca Nro. 597, Santa Cruz de la Sierra), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de Estetic Dent — Clinica Dental y Armonizacion Facial:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 76337570).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 500 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "clinica-san-pedro-scz",
+    "repo_template": "clinica-nova + ui-ux-pro-max",
+    "theme_mode": "light",
+    "business_name": "Clinica Dental San Pedro — Odontologia Integral",
+    "category": "Rehabilitacion Oral, Ortodoncia y Odontologia Digital",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Av. Horacio Sosa #3085 (entre 3er Anillo Interno y Externo), Santa Cruz",
+    "phone_display": "+591 75310054",
+    "phone_wa": "59175310054",
+    "accent_color": "#0284c7",
+    "hero_badge": "Av. Horacio Sosa #3085 — Entre 3er Anillo Interno y Externo",
+    "hero_title": "Tecnologia Odontologica Avanzada para Toda la Familia en 3er Anillo",
+    "hero_subtitle": "Simula el presupuesto de tu tratamiento dental en Bolivianos y selecciona tu turno en linea para atencion en Av. Horacio Sosa #3085.",
+    "calc_label": "Numero de piezas / sesiones requeridas",
+    "calc_unit": "Piezas / Sesiones",
+    "services": [
+      {
+        "title": "Rehabilitacion Oral e Implantes Dentales",
+        "desc": "Soluciones fijas de alta precision con diagnostico digital en 3er Anillo.",
+        "base_bs": 2300,
+        "tag": "Tecnologia Digital"
+      },
+      {
+        "title": "Ortodoncia Autoligable y Alineadores Esteticos",
+        "desc": "Tratamientos mas rapidos y comodos para alinear tu sonrisa.",
+        "base_bs": 900,
+        "tag": "Ortodoncia"
+      },
+      {
+        "title": "Blanqueamiento Dental Clinico + Profilaxis Ultrasonica",
+        "desc": "Sonrisa mas blanca y encia saludable en una sola visita.",
+        "base_bs": 380,
+        "tag": "1 Sesion"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:30 a 19:30 | Sabados: 09:00 a 13:00",
+    "offer_price_bs": "500 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/",
+    "wa_outreach_url": "https://wa.me/59175310054?text=Buenas%20tardes%20equipo%20de%20Clinica%20Dental%20San%20Pedro%20%E2%80%94%20Odontologia%20Integral.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Horacio%20Sosa%20%233085%20%28entre%203er%20Anillo%20Interno%20y%20Externo%29%2C%20Santa%20Cruz%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Clinica%20Dental%20San%20Pedro%20%E2%80%94%20Odontologia%20Integral%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2075310054%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20500%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Clinica Dental San Pedro — Odontologia Integral.\n\nViendo su trayectoria en Santa Cruz de la Sierra (Av. Horacio Sosa #3085 (entre 3er Anillo Interno y Externo), Santa Cruz), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de Clinica Dental San Pedro — Odontologia Integral:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 75310054).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 500 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "metalmecanica-genius-scz",
+    "repo_template": "inmoluxe-arquitectura + commercial_b2b_pack",
+    "theme_mode": "dark-gold",
+    "business_name": "Metal Mecanica Genius — Soluciones Industriales",
+    "category": "Torneria, Fabricacion Metalmecanica, Estructuras y Mantenimiento Industrial",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Av. Principal Villa 1ro. de Mayo #133, Santa Cruz de la Sierra",
+    "phone_display": "+591 70406360",
+    "phone_wa": "59170406360",
+    "accent_color": "#f97316",
+    "hero_badge": "Villa 1ro de Mayo #133 — Metalmecanica e Ingenieria Industrial",
+    "hero_title": "Fabricacion Metalmecanica, Torneria de Precision y Montaje Industrial",
+    "hero_subtitle": "Calcula presupuestos orientativos para estructuras, piezas mecanizadas o mantenimiento de planta en Santa Cruz y contacta directo a ingenieria.",
+    "calc_label": "Unidades / Metros cuadrados estructurales a cotizar",
+    "calc_unit": "Unidades / m2",
+    "services": [
+      {
+        "title": "Fabricacion de Estructuras Metalicas, Tanques y Tolvas Industriales",
+        "desc": "Soldadura calificada y montaje para agroindustria, construccion y transporte en Santa Cruz.",
+        "base_bs": 460,
+        "tag": "Industrial"
+      },
+      {
+        "title": "Torneria, Fresado y Mecanizado de Piezas Especiales",
+        "desc": "Fabricacion y recuperacion de ejes, engranajes, bujes y componentes hidraulicos.",
+        "base_bs": 320,
+        "tag": "Alta Precision"
+      },
+      {
+        "title": "Mantenimiento Mecanico de Planta y Equipos Pesados",
+        "desc": "Servicio tecnico en taller o en planta industrial con respuesta inmediata.",
+        "base_bs": 550,
+        "tag": "Servicio B2B"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:00 a 18:30 | Sabados: 08:00 a 13:00",
+    "offer_price_bs": "600 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/",
+    "wa_outreach_url": "https://wa.me/59170406360?text=Buenas%20tardes%20equipo%20de%20Metal%20Mecanica%20Genius%20%E2%80%94%20Soluciones%20Industriales.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Principal%20Villa%201ro.%20de%20Mayo%20%23133%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Metal%20Mecanica%20Genius%20%E2%80%94%20Soluciones%20Industriales%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2070406360%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20600%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Metal Mecanica Genius — Soluciones Industriales.\n\nViendo su trayectoria en Santa Cruz de la Sierra (Av. Principal Villa 1ro. de Mayo #133, Santa Cruz de la Sierra), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de Metal Mecanica Genius — Soluciones Industriales:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 70406360).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 600 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
   }
 ]

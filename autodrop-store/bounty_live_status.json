@@ -1,0 +1,81 @@
+{
+  "updated_at_utc": "2026-11-03 03:39:33 UTC",
+  "repository": "limitlessprojects/Go-Hybrid",
+  "total_prs": 9,
+  "merged_count": 3,
+  "open_count": 6,
+  "prs": [
+    {
+      "createdAt": "2026-11-03T03:26:09Z",
+      "mergedAt": null,
+      "number": 3438,
+      "state": "OPEN",
+      "title": "fix(hy-check): validate elided slice literals in map entries and any slots (fixes #3437)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3438"
+    },
+    {
+      "createdAt": "2026-11-02T22:09:43Z",
+      "mergedAt": null,
+      "number": 3393,
+      "state": "OPEN",
+      "title": "tools/check_guarantees: enforce path containment, full marker scanning, and link/marker bounds (fixes #3392)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3393"
+    },
+    {
+      "createdAt": "2026-11-02T22:04:39Z",
+      "mergedAt": null,
+      "number": 3389,
+      "state": "OPEN",
+      "title": "runtime/go/hybench: fix minVal sentinel, NaN guard, and bucket upper-bound clamping in Histogram (fixes #3388)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3389"
+    },
+    {
+      "createdAt": "2026-11-02T22:01:50Z",
+      "mergedAt": "2026-11-03T03:23:12Z",
+      "number": 3384,
+      "state": "MERGED",
+      "title": "benchmarks/workloads: enforce canonical LF and fail-closed drift checks in shape.py (fixes #3383)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3384"
+    },
+    {
+      "createdAt": "2026-11-02T21:31:11Z",
+      "mergedAt": null,
+      "number": 3366,
+      "state": "OPEN",
+      "title": "worker/script: fail closed on invalid JOB_JSON, unquoted runner paths, and missing/failed summary.json (fixes #3365)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3366"
+    },
+    {
+      "createdAt": "2026-11-02T21:26:53Z",
+      "mergedAt": null,
+      "number": 3362,
+      "state": "OPEN",
+      "title": "tools/fuzz: fail closed on empty/corrupt corpus entries, non-UTF-8 output, and invalid --failures-dir (fixes #3361)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3362"
+    },
+    {
+      "createdAt": "2026-11-02T19:42:21Z",
+      "mergedAt": "2026-11-02T20:26:58Z",
+      "number": 3340,
+      "state": "MERGED",
+      "title": "tools/specialized_brain: fail closed on missing accept controls, nonpositive rounds, and exception cleanup (#3339)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3340"
+    },
+    {
+      "createdAt": "2026-11-02T19:38:41Z",
+      "mergedAt": "2026-11-02T22:22:24Z",
+      "number": 3338,
+      "state": "MERGED",
+      "title": "tools/job: fail closed on nonzero wait status, invalid job.json, and unsafe artifact names (#3337)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3338"
+    },
+    {
+      "createdAt": "2026-11-02T18:58:40Z",
+      "mergedAt": null,
+      "number": 3333,
+      "state": "OPEN",
+      "title": "tools/check_claims_links: fail closed on (accept) vs ACCEPT-MANAGED and unmarked .hy headers (#3332)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3333"
+    }
+  ]
+}

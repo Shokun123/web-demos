@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supervisor Automatico V2.0 — Santa Cruz Multi-Repo Engine</title>
+  <title>Supervisor Automatico V3.0 — Santa Cruz Multi-Repo Engine</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -67,6 +67,7 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 22px;
+      margin-bottom: 24px;
     }
     .panel h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
     .panel-desc { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
@@ -102,6 +103,16 @@
       font-weight: 800;
       padding: 3px 10px;
       border-radius: 999px;
+      white-space: nowrap;
+    }
+    .tag-open {
+      background: rgba(56, 189, 248, 0.18);
+      color: #7dd3fc;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
     }
     .engine-stat {
       border: 1px solid var(--border);
@@ -119,6 +130,31 @@
       font-weight: 700;
     }
     .engine-stat p { font-size: 12px; color: var(--muted); }
+    .bounty-table-wrap {
+      overflow-x: auto;
+    }
+    table.bounty-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    table.bounty-table th, table.bounty-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    table.bounty-table th {
+      color: var(--muted);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pr-link {
+      color: #60a5fa;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      text-decoration: none;
+    }
     .leads-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -211,24 +247,24 @@
   <div class="wrap">
     <div class="top-bar">
       <div>
-        <h1><span class="status-dot"></span>Supervisor Automatico V2.0 — Multi-Repo Engine (Santa Cruz, Bolivia)</h1>
+        <h1><span class="status-dot"></span>Supervisor Automatico V3.0 — Multi-Repo Engine (Santa Cruz, Bolivia)</h1>
         <p class="sub">Proyectos interactivos armados combinando repositorios: clinica-nova + inmoluxe-arquitectura + ecommerce-pro + ui-ux-pro-max + commercial_b2b_pack.</p>
       </div>
       <div class="security-badge">
-        MODO SEGURO: Sin datos bancarios ni codigos de cobro expuestos
+        MODO SEGURO: Sin datos bancarios privados expuestos
       </div>
     </div>
 
     <div class="grid-2">
-      <div class="panel">
+      <div class="panel" style="margin-bottom:0;">
         <h2>1. Motores Multi-Repositorio Trabajando en Automatico</h2>
         <p class="panel-desc">Cada proyecto incluye simuladores de presupuesto en Bs, selector de horarios en vivo y auto-relleno a WhatsApp.</p>
         <div class="engine-stat">
           <div class="engine-stat-top">
-            <span>Motor A: 10 Apps Web Pre-Rellenadas con Simuladores en Bs (Santa Cruz / Bolivia)</span>
-            <span class="tag-ok">10 APPS EN VIVO</span>
+            <span>Motor A: 15 Apps Web Pre-Rellenadas con Simuladores en Bs (Santa Cruz / Bolivia)</span>
+            <span class="tag-ok">15 APPS EN VIVO</span>
           </div>
-          <p>Usa las arquitecturas de clinica-nova (salud/estetica) e inmoluxe-arquitectura (constructoras/arquitectura/industria en Santa Cruz). Cobro: 450 a 700 Bs.</p>
+          <p>Usa las arquitecturas de clinica-nova (salud/estetica) e inmoluxe-arquitectura (constructoras/arquitectura/industria en Santa Cruz). Cobro unico sugerido: 450 a 700 Bs.</p>
         </div>
         <div class="engine-stat">
           <div class="engine-stat-top">
@@ -239,14 +275,14 @@
         </div>
         <div class="engine-stat">
           <div class="engine-stat-top">
-            <span>Motor C: Bounties de Codigo en Dólares/USDC (ai_remote_work_bolivia)</span>
-            <span class="tag-ok">3 MERGED (#3340, #3338, #3384) + 6 EN COLA (#3438 Soundness)</span>
+            <span>Motor C: Bounties de Codigo en Dólares/USDC (limitlessprojects/Go-Hybrid)</span>
+            <span class="tag-ok">3 MERGED + 6 EN COLA</span>
           </div>
-          <p>3 Pull Requests ya fusionados oficialmente en main en limitlessprojects/Go-Hybrid y registrados en Discussion #295 para liquidacion en USDC.</p>
+          <p>Sincronizado en vivo con la API de GitHub (2026-11-03 03:39:33 UTC). 3 Pull Requests fusionados oficialmente en main y 6 en revision.</p>
         </div>
       </div>
 
-      <div class="panel">
+      <div class="panel" style="margin-bottom:0;">
         <h2>2. Descartado tras Auditoria (No Funciona en Bolivia)</h2>
         <p class="panel-desc">Eliminado para evitar bloqueos bancarios y gastos innecesarios en suscripciones.</p>
         
@@ -286,8 +322,91 @@
     </div>
 
     <div class="panel">
-      <h2>3. Proyectos Interactivos Pre-Rellenados con Nuestros Repositorios (10 Empresas Reales)</h2>
-      <p class="panel-desc">Cada app incluye Calculadora Interactiva en Bolivianos (Bs), Selector de Horarios en Vivo y Auto-Relleno hacia el WhatsApp de la empresa:</p>
+      <h2>3. Monitor en Vivo de Pull Requests y Bounties (limitlessprojects/Go-Hybrid)</h2>
+      <p class="panel-desc">Estado real consultado dinamicamente desde GitHub API (Ultima sincronizacion: 2026-11-03 03:39:33 UTC — 3 MERGED / 6 OPEN):</p>
+      <div class="bounty-table-wrap">
+        <table class="bounty-table">
+          <thead>
+            <tr>
+              <th>PR #</th>
+              <th>Estado</th>
+              <th>Titulo Tecnico del Pull Request</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3438" target="_blank" class="pr-link">#3438</a></td>
+          <td><span class="tag-open">OPEN (EN COLA)</span></td>
+          <td>fix(hy-check): validate elided slice literals in map entries and any slots (fixes #3437)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-03</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3393" target="_blank" class="pr-link">#3393</a></td>
+          <td><span class="tag-open">OPEN (EN COLA)</span></td>
+          <td>tools/check_guarantees: enforce path containment, full marker scanning, and link/marker bounds (fixes #3392)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3389" target="_blank" class="pr-link">#3389</a></td>
+          <td><span class="tag-open">OPEN (EN COLA)</span></td>
+          <td>runtime/go/hybench: fix minVal sentinel, NaN guard, and bucket upper-bound clamping in Histogram (fixes #3388)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3384" target="_blank" class="pr-link">#3384</a></td>
+          <td><span class="tag-ok">MERGED (FUSIONADO)</span></td>
+          <td>benchmarks/workloads: enforce canonical LF and fail-closed drift checks in shape.py (fixes #3383)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-03</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3366" target="_blank" class="pr-link">#3366</a></td>
+          <td><span class="tag-open">OPEN (EN COLA)</span></td>
+          <td>worker/script: fail closed on invalid JOB_JSON, unquoted runner paths, and missing/failed summary.json (fixes #3365)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3362" target="_blank" class="pr-link">#3362</a></td>
+          <td><span class="tag-open">OPEN (EN COLA)</span></td>
+          <td>tools/fuzz: fail closed on empty/corrupt corpus entries, non-UTF-8 output, and invalid --failures-dir (fixes #3361)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3340" target="_blank" class="pr-link">#3340</a></td>
+          <td><span class="tag-ok">MERGED (FUSIONADO)</span></td>
+          <td>tools/specialized_brain: fail closed on missing accept controls, nonpositive rounds, and exception cleanup (#3339)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3338" target="_blank" class="pr-link">#3338</a></td>
+          <td><span class="tag-ok">MERGED (FUSIONADO)</span></td>
+          <td>tools/job: fail closed on nonzero wait status, invalid job.json, and unsafe artifact names (#3337)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://github.com/limitlessprojects/Go-Hybrid/pull/3333" target="_blank" class="pr-link">#3333</a></td>
+          <td><span class="tag-open">OPEN (EN COLA)</span></td>
+          <td>tools/check_claims_links: fail closed on (accept) vs ACCEPT-MANAGED and unmarked .hy headers (#3332)</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#9ca3af;">2026-11-02</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>4. Proyectos Interactivos Pre-Rellenados con Nuestros Repositorios (15 Empresas Reales Verificadas)</h2>
+      <p class="panel-desc">Cada app incluye Calculadora Interactiva en Bolivianos (Bs), Selector de Horarios en Vivo y Auto-Relleno hacia el WhatsApp real de la empresa:</p>
       <div class="leads-grid">
         
         <div class="lead-card">
@@ -507,6 +626,116 @@
           <div class="actions-row">
             <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/" target="_blank" class="btn-outline">Abrir App Interactiva</a>
             <a href="https://wa.me/59177732991?text=Buenas%20tardes%20equipo%20de%20Habite%20Arquitectura%20%26%20Construccion%20Civil.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Pasaje%20Medardo%20Chavez%20S/N%2C%20Casa%20Blanca%20%28paralela%20a%20Av.%20Banzer%20entre%202do%20y%203er%20Anillo%29%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Habite%20Arquitectura%20%26%20Construccion%20Civil%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2077732991%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20650%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar WhatsApp (+591 77732991)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra | Repo: inmoluxe-arquitectura + commercial_b2b_pack</span>
+              <h3>ARPEC S.R.L. — Ingenieria y Construccion (CADECOCRUZ)</h3>
+              <p class="addr">Av. Radial 13 entre 4to y 5to Anillo, Calle Los Pinos Nro. 448, Santa Cruz</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>700 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>App Pre-Rellenada:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/" target="_blank" class="btn-outline">Abrir App Interactiva</a>
+            <a href="https://wa.me/59167702376?text=Buenas%20tardes%20equipo%20de%20ARPEC%20S.R.L.%20%E2%80%94%20Ingenieria%20y%20Construccion%20%28CADECOCRUZ%29.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Radial%2013%20entre%204to%20y%205to%20Anillo%2C%20Calle%20Los%20Pinos%20Nro.%20448%2C%20Santa%20Cruz%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20ARPEC%20S.R.L.%20%E2%80%94%20Ingenieria%20y%20Construccion%20%28CADECOCRUZ%29%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/arpec-ingenieria-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2067702376%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20700%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar WhatsApp (+591 67702376)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra | Repo: inmoluxe-arquitectura + commercial_b2b_pack</span>
+              <h3>Bisonte Construccion e Ingenieria S.R.L.</h3>
+              <p class="addr">Av. Roca y Coronado, Condominio Pirai, Casa 41 F, Santa Cruz de la Sierra</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>700 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>App Pre-Rellenada:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/" target="_blank" class="btn-outline">Abrir App Interactiva</a>
+            <a href="https://wa.me/59176069697?text=Buenas%20tardes%20equipo%20de%20Bisonte%20Construccion%20e%20Ingenieria%20S.R.L..%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Roca%20y%20Coronado%2C%20Condominio%20Pirai%2C%20Casa%2041%20F%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Bisonte%20Construccion%20e%20Ingenieria%20S.R.L.%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/bisonte-construccion-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2076069697%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20700%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar WhatsApp (+591 76069697)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra | Repo: clinica-nova + ui-ux-pro-max</span>
+              <h3>Estetic Dent — Clinica Dental y Armonizacion Facial</h3>
+              <p class="addr">Calle Moldes esq. Chuquisaca Nro. 597, Santa Cruz de la Sierra</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>500 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>App Pre-Rellenada:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/" target="_blank" class="btn-outline">Abrir App Interactiva</a>
+            <a href="https://wa.me/59176337570?text=Buenas%20tardes%20equipo%20de%20Estetic%20Dent%20%E2%80%94%20Clinica%20Dental%20y%20Armonizacion%20Facial.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Calle%20Moldes%20esq.%20Chuquisaca%20Nro.%20597%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Estetic%20Dent%20%E2%80%94%20Clinica%20Dental%20y%20Armonizacion%20Facial%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/estetic-dent-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2076337570%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20500%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar WhatsApp (+591 76337570)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra | Repo: clinica-nova + ui-ux-pro-max</span>
+              <h3>Clinica Dental San Pedro — Odontologia Integral</h3>
+              <p class="addr">Av. Horacio Sosa #3085 (entre 3er Anillo Interno y Externo), Santa Cruz</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>500 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>App Pre-Rellenada:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/" target="_blank" class="btn-outline">Abrir App Interactiva</a>
+            <a href="https://wa.me/59175310054?text=Buenas%20tardes%20equipo%20de%20Clinica%20Dental%20San%20Pedro%20%E2%80%94%20Odontologia%20Integral.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Horacio%20Sosa%20%233085%20%28entre%203er%20Anillo%20Interno%20y%20Externo%29%2C%20Santa%20Cruz%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Clinica%20Dental%20San%20Pedro%20%E2%80%94%20Odontologia%20Integral%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-san-pedro-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2075310054%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20500%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar WhatsApp (+591 75310054)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra | Repo: inmoluxe-arquitectura + commercial_b2b_pack</span>
+              <h3>Metal Mecanica Genius — Soluciones Industriales</h3>
+              <p class="addr">Av. Principal Villa 1ro. de Mayo #133, Santa Cruz de la Sierra</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>600 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>App Pre-Rellenada:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/" target="_blank" class="btn-outline">Abrir App Interactiva</a>
+            <a href="https://wa.me/59170406360?text=Buenas%20tardes%20equipo%20de%20Metal%20Mecanica%20Genius%20%E2%80%94%20Soluciones%20Industriales.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Principal%20Villa%201ro.%20de%20Mayo%20%23133%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Metal%20Mecanica%20Genius%20%E2%80%94%20Soluciones%20Industriales%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/metalmecanica-genius-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2070406360%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20600%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar WhatsApp (+591 70406360)</a>
           </div>
         </div>
         
