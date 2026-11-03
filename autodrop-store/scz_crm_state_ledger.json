@@ -1,6 +1,6 @@
 {
   "ledger_version": "5.0-AUTONOMOUS-CLOSER",
-  "updated_at_utc": "2026-11-03 04:36:57 UTC",
+  "updated_at_utc": "2026-11-03 04:38:11 UTC",
   "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
   "personal_phone_exposed": false,
   "qr_codes_used": false,
@@ -43,7 +43,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:29 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:40 UTC",
         "website_url": "https://www.boliviamedica.org",
         "site_reachable": false,
         "http_get_status": 0,
@@ -89,7 +89,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:29 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:40 UTC",
         "website_url": "https://www.hierrocon.com",
         "final_inspected_url": "https://www.warnet-pohonemas33.com/",
         "site_reachable": true,
@@ -138,7 +138,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:32 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:43 UTC",
         "website_url": "https://www.lacasadelascalaminas.com",
         "final_inspected_url": "https://www.lacasadelascalaminas.com/cotizacion/",
         "site_reachable": true,
@@ -190,7 +190,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:36 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -236,7 +236,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:36 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -282,7 +282,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:36 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -328,7 +328,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:36 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -374,7 +374,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:36 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "SIN_WEB_PROPIA",
         "site_reachable": false,
         "http_get_status": 0,
@@ -422,7 +422,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:36 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:46 UTC",
         "website_url": "https://dbestudio.com.bo",
         "final_inspected_url": "https://dbestudio.com.bo#contact",
         "site_reachable": true,
@@ -471,7 +471,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:37 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:48 UTC",
         "website_url": "https://www.habitearquitectura.com",
         "final_inspected_url": "https://www.habitearquitectura.com/contactanos-ahora/",
         "site_reachable": true,
@@ -523,7 +523,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:39 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:51 UTC",
         "website_url": "https://www.cadecocruz.org.bo",
         "site_reachable": false,
         "http_get_status": 0,
@@ -572,7 +572,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:39 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:51 UTC",
         "website_url": "https://www.bisonte.com.bo",
         "final_inspected_url": "https://www.bisonte.com.bo/contacto/",
         "site_reachable": true,
@@ -641,7 +641,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:47 UTC",
+        "inspected_at_utc": "2026-11-03 04:37:57 UTC",
         "website_url": "http://www.esteticdent-santacruz.com",
         "final_inspected_url": "https://esteticdent-santacruz.com/contacto/",
         "site_reachable": true,
@@ -707,7 +707,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:49 UTC",
+        "inspected_at_utc": "2026-11-03 04:38:00 UTC",
         "website_url": "https://www.clinicasanpedro.com",
         "final_inspected_url": "https://www.clinicasanpedro.com/contactenos.php",
         "site_reachable": true,
@@ -769,7 +769,7 @@
       "last_updated_utc": "2026-11-03 04:33:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 04:36:52 UTC",
+        "inspected_at_utc": "2026-11-03 04:38:03 UTC",
         "website_url": "https://metalmecanicagenius.com",
         "final_inspected_url": "https://metalmecanicagenius.com/contacto/",
         "site_reachable": true,
