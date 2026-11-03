@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Automatico de Ingresos — Santa Cruz, Bolivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #111827;
+      --border: #1f2937;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --blue: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 28px 20px 60px;
+      line-height: 1.55;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .top-bar {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--emerald);
+      margin-right: 8px;
+    }
+    h1 { font-size: 24px; font-weight: 800; }
+    .sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .security-badge {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #6ee7b7;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .panel h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .panel-desc { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .disc-item {
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      background: rgba(239, 68, 68, 0.05);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .disc-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .disc-item p { font-size: 12px; color: var(--muted); }
+    .tag-bad {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .tag-ok {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .engine-stat {
+      border: 1px solid var(--border);
+      background: #0f172a;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    .engine-stat-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .engine-stat p { font-size: 12px; color: var(--muted); }
+    .leads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .lead-card {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .lead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .city-pill {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+    .lead-card h3 { font-size: 16px; font-weight: 800; }
+    .addr { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .price-box {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .price-box small { display: block; font-size: 10px; color: var(--muted); }
+    .price-box strong { font-size: 15px; color: #34d399; font-weight: 800; }
+    .url-bar {
+      background: #111827;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .url-bar span { color: var(--muted); margin-right: 6px; }
+    .url-bar a { color: #60a5fa; text-decoration: none; }
+    .actions-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-outline {
+      flex: 1;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      background: #1e293b;
+    }
+    .btn-wa {
+      flex: 1.5;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #16a34a;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .btn-wa:hover { background: #15803d; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-bar">
+      <div>
+        <h1><span class="status-dot"></span>Centro de Supervision Automatica — Santa Cruz, Bolivia</h1>
+        <p class="sub">Foco 100% Programador: Relleno automatico de paginas web para negocios reales + Tienda sin Shopify + Bounties de Codigo.</p>
+      </div>
+      <div class="security-badge">
+        REGLA ACTIVA: 0 QRs y 0 datos bancarios expuestos sin tu autorizacion
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2>1. Motores Activos que SI Funcionan en Bolivia</h2>
+        <p class="panel-desc">Verificados empiricamente con costo $0 USD de servidor y cobro directo a tu BCP o Binance.</p>
+        <div class="engine-stat">
+          <div class="engine-stat-top">
+            <span>Motor A: Fabrica de Demos Web Pre-Rellenadas (Santa Cruz)</span>
+            <span class="tag-ok">ACTIVO (6 WEBS EN VIVO)</span>
+          </div>
+          <p>Rellena automaticamente el nombre, direccion, especialidades y WhatsApp de negocios reales de Santa Cruz sin web propia. Cobro: 350 Bs a tu BCP.</p>
+        </div>
+        <div class="engine-stat">
+          <div class="engine-stat-top">
+            <span>Motor B: AutoDrop AI Storefront (Reemplazo gratuito de Shopify)</span>
+            <span class="tag-ok">ACTIVO (5 LANDINGS)</span>
+          </div>
+          <p>Tienda propia alojada gratis en GitHub Pages sin pagar $29/mes a Shopify ni $39/mes a PagePilot. Recibe pedidos directo por WhatsApp.</p>
+        </div>
+        <div class="engine-stat">
+          <div class="engine-stat-top">
+            <span>Motor C: Bounties de Codigo Remotos (Algora / GitHub USDC)</span>
+            <span class="tag-ok">8 PRs ENVIADOS (1 MERGED)</span>
+          </div>
+          <p>Resolucion de issues de programacion pagados en cripto/USDC directo a billetera/Binance sin pasar por bancos bolivianos.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>2. Descartado tras Investigacion (No Funciona en Bolivia)</h2>
+        <p class="panel-desc">Eliminado para no perder tiempo ni dinero en suscripciones bloqueadas.</p>
+        
+        <div class="disc-item">
+          <div class="disc-head">
+            <strong>Shopify + Tarjetas Visa/Mastercard sin LLC (Video de TikTok original)</strong>
+            <span class="tag-bad">DESCARTADO</span>
+          </div>
+          <p>Shopify Payments y Stripe no existen en Bolivia. Las pasarelas locales (Red Enlace / Libelula / dLocal Go nivel completo) exigen NIT empresarial o LLC en EE.UU. ($200-$300 USD). Ademas Shopify cobra mensualidad en USD.</p>
+        </div>
+        
+        <div class="disc-item">
+          <div class="disc-head">
+            <strong>PagePilot.ai + TeemDrop con cobro previo por tarjeta</strong>
+            <span class="tag-bad">DESCARTADO</span>
+          </div>
+          <p>PagePilot cobra suscripcion mensual tras 3 pruebas y TeemDrop exige pagar el producto antes de enviarlo, lo cual se bloquea si el cliente no puede pagar con tarjeta en Shopify Bolivia.</p>
+        </div>
+        
+        <div class="disc-item">
+          <div class="disc-head">
+            <strong>PayPal Bolivia para recibir cobros de tiendas</strong>
+            <span class="tag-bad">DESCARTADO</span>
+          </div>
+          <p>Las cuentas de PayPal registradas en Bolivia solo permiten enviar pagos, pero tienen bloqueado recibir cobros comerciales y retirarlos a bancos bolivianos como el BCP.</p>
+        </div>
+        
+        <div class="disc-item">
+          <div class="disc-head">
+            <strong>Prospectos simulados (example.com) o repositorios sin fondos verificados</strong>
+            <span class="tag-bad">DESCARTADO</span>
+          </div>
+          <p>Cero retorno real. Se reemplazan al 100% por negocios reales verificados de Santa Cruz con telefono/WhatsApp activo y bounties con bot de pago verificable.</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>3. Fabrica Automatica de Paginas Web Pre-Rellenadas (Clientes Reales Verificados)</h2>
+      <p class="panel-desc">Cada pagina ya fue rellenada automaticamente con los datos reales del negocio y publicada en internet. Al pulsar el boton verde, se auto-rellena el formulario de WhatsApp Web con el link de su propia demo terminada:</p>
+      <div class="leads-grid">
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra</span>
+              <h3>Clinica Dental Innova — Dr. Gerardo Pereyra</h3>
+              <p class="addr">Av. Viedma esq. Moldes #495, Santa Cruz de la Sierra</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>350 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>Web Pre-Rellenada en Vivo:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/" target="_blank" class="btn-outline">Ver Pagina Pre-Rellenada</a>
+            <a href="https://wa.me/59176341626?text=Buenas%20tardes%20equipo%20de%20Clinica%20Dental%20Innova%20%E2%80%94%20Dr.%20Gerardo%20Pereyra.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Viedma%20esq.%20Moldes%20%23495%2C%20Santa%20Cruz%20de%20la%20Sierra%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Clinica%20Dental%20Innova%20%E2%80%94%20Dr.%20Gerardo%20Pereyra%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2076341626%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar Propuesta en WhatsApp (+591 76341626)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra</span>
+              <h3>Odontologia Especializada Orias</h3>
+              <p class="addr">Calle Ayacucho Nro. 186, Edif. Santa Cruz, Piso 9, Of. 904 (Centro)</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>350 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>Web Pre-Rellenada en Vivo:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/" target="_blank" class="btn-outline">Ver Pagina Pre-Rellenada</a>
+            <a href="https://wa.me/59177778487?text=Buenas%20tardes%20equipo%20de%20Odontologia%20Especializada%20Orias.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Calle%20Ayacucho%20Nro.%20186%2C%20Edif.%20Santa%20Cruz%2C%20Piso%209%2C%20Of.%20904%20%28Centro%29%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Odontologia%20Especializada%20Orias%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2077778487%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar Propuesta en WhatsApp (+591 77778487)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra</span>
+              <h3>Consultorio Dental Dra. Roxana Calizaya</h3>
+              <p class="addr">Av. Escuadron Velasco Nro. 745, frente al Colegio Catolico Santa Cruz (Zona El Pari)</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>350 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>Web Pre-Rellenada en Vivo:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/" target="_blank" class="btn-outline">Ver Pagina Pre-Rellenada</a>
+            <a href="https://wa.me/59170098541?text=Buenas%20tardes%20equipo%20de%20Consultorio%20Dental%20Dra.%20Roxana%20Calizaya.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Escuadron%20Velasco%20Nro.%20745%2C%20frente%20al%20Colegio%20Catolico%20Santa%20Cruz%20%28Zona%20El%20Pari%29%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Consultorio%20Dental%20Dra.%20Roxana%20Calizaya%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2070098541%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar Propuesta en WhatsApp (+591 70098541)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">Santa Cruz de la Sierra</span>
+              <h3>Centro e Instituto de Belleza y Cosmetologia Veronica</h3>
+              <p class="addr">Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>350 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>Web Pre-Rellenada en Vivo:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/" target="_blank" class="btn-outline">Ver Pagina Pre-Rellenada</a>
+            <a href="https://wa.me/59172173005?text=Buenas%20tardes%20equipo%20de%20Centro%20e%20Instituto%20de%20Belleza%20y%20Cosmetologia%20Veronica.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Calle%20Vallegrande%20Nro.%20291%20esq.%20Pari%20%28a%202%20cuadras%20de%207%20Calles%29%2C%20Santa%20Cruz%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Centro%20e%20Instituto%20de%20Belleza%20y%20Cosmetologia%20Veronica%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2072173005%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar Propuesta en WhatsApp (+591 72173005)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">La Paz — Bolivia</span>
+              <h3>Centro Dental Romero — Sucursales Sopocachi y San Pedro</h3>
+              <p class="addr">Sopocachi (Torre Sky Tower PB Of. 4 / C. Sanchez Lima 2320) y San Pedro (C. Boqueron 1357)</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>350 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>Web Pre-Rellenada en Vivo:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/" target="_blank" class="btn-outline">Ver Pagina Pre-Rellenada</a>
+            <a href="https://wa.me/59165606062?text=Buenas%20tardes%20equipo%20de%20Centro%20Dental%20Romero%20%E2%80%94%20Sucursales%20Sopocachi%20y%20San%20Pedro.%0A%0AEstuve%20viendo%20su%20presencia%20en%20La%20Paz%20%E2%80%94%20Bolivia%20%28Sopocachi%20%28Torre%20Sky%20Tower%20PB%20Of.%204%20/%20C.%20Sanchez%20Lima%202320%29%20y%20San%20Pedro%20%28C.%20Boqueron%201357%29%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Centro%20Dental%20Romero%20%E2%80%94%20Sucursales%20Sopocachi%20y%20San%20Pedro%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2065606062%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar Propuesta en WhatsApp (+591 65606062)</a>
+          </div>
+        </div>
+        
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <span class="city-pill">La Paz — Bolivia</span>
+              <h3>HappySmile Clinica Dental</h3>
+              <p class="addr">Av. Arce #2618, Edificio Columbia, Piso 1, Of. 14</p>
+            </div>
+            <div class="price-box">
+              <small>Cobro sugerido</small>
+              <strong>350 Bs</strong>
+            </div>
+          </div>
+          <div class="url-bar">
+            <span>Web Pre-Rellenada en Vivo:</span>
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/" target="_blank">https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/</a>
+          </div>
+          <div class="actions-row">
+            <a href="https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/" target="_blank" class="btn-outline">Ver Pagina Pre-Rellenada</a>
+            <a href="https://wa.me/59177750733?text=Buenas%20tardes%20equipo%20de%20HappySmile%20Clinica%20Dental.%0A%0AEstuve%20viendo%20su%20presencia%20en%20La%20Paz%20%E2%80%94%20Bolivia%20%28Av.%20Arce%20%232618%2C%20Edificio%20Columbia%2C%20Piso%201%2C%20Of.%2014%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20HappySmile%20Clinica%20Dental%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2077750733%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana." target="_blank" class="btn-wa">Auto-Rellenar Propuesta en WhatsApp (+591 77750733)</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>

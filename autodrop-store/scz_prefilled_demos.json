@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "clinica-innova-scz",
+    "business_name": "Clinica Dental Innova — Dr. Gerardo Pereyra",
+    "category": "Rehabilitacion Oral, Implantes y Estetica Dental",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Av. Viedma esq. Moldes #495, Santa Cruz de la Sierra",
+    "phone_display": "+591 76341626",
+    "phone_wa": "59176341626",
+    "accent_color": "#0d9488",
+    "hero_badge": "Especialistas en Rehabilitacion Oral en Santa Cruz",
+    "hero_title": "Recupera tu Sonrisa con Implantes y Estetica Dental de Alta Precision",
+    "hero_subtitle": "Atencion odontologica especializada bajo la direccion del Dr. Gerardo Pereyra en Av. Viedma esq. Moldes #495. Agenda tu valoracion directo por WhatsApp en 30 segundos.",
+    "services": [
+      {
+        "title": "Implantes Dentales de Titanio",
+        "desc": "Reemplazo definitivo y seguro de piezas dentales con rehabilitacion funcional completa.",
+        "price_tag": "Valoracion por WhatsApp"
+      },
+      {
+        "title": "Rehabilitacion Oral y Protesis",
+        "desc": "Coronas de porcelana, carillas esteticas y restauracion integral de la mordida.",
+        "price_tag": "Atencion Especializada"
+      },
+      {
+        "title": "Estetica Dental y Blanqueamiento",
+        "desc": "Diseno de sonrisa y limpieza ultrasonica avanzada sin sensibilidad.",
+        "price_tag": "Reserva en 1 Clic"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 09:00 a 19:30 | Sabados: 09:00 a 13:00",
+    "offer_price_bs": "350 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/",
+    "wa_outreach_url": "https://wa.me/59176341626?text=Buenas%20tardes%20equipo%20de%20Clinica%20Dental%20Innova%20%E2%80%94%20Dr.%20Gerardo%20Pereyra.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Viedma%20esq.%20Moldes%20%23495%2C%20Santa%20Cruz%20de%20la%20Sierra%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Clinica%20Dental%20Innova%20%E2%80%94%20Dr.%20Gerardo%20Pereyra%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2076341626%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Clinica Dental Innova — Dr. Gerardo Pereyra.\n\nEstuve viendo su presencia en Santa Cruz de la Sierra (Av. Viedma esq. Moldes #495, Santa Cruz de la Sierra) y note que no cuentan con una pagina web propia optimizada para celular donde sus clientes puedan ver sus servicios y agendar cita directo a su WhatsApp.\n\nComo desarrollador en Santa Cruz, ya les programe y rellene una demostracion funcional en vivo con los datos de Clinica Dental Innova — Dr. Gerardo Pereyra:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-innova-scz/\n\nYa tiene conectado su propio numero (+591 76341626) y sus servicios sin ningun costo mensual de servidor.\n\nSi desean que la dejemos activa con su logotipo y fotos oficiales, el costo unico de entrega es de 350 Bs (sin mensualidades). Quedo atento si les gustaria activarla esta semana."
+  },
+  {
+    "slug": "odontologia-orias-scz",
+    "business_name": "Odontologia Especializada Orias",
+    "category": "Consultorio Odontologico de Especialidades",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Calle Ayacucho Nro. 186, Edif. Santa Cruz, Piso 9, Of. 904 (Centro)",
+    "phone_display": "+591 77778487",
+    "phone_wa": "59177778487",
+    "accent_color": "#0284c7",
+    "hero_badge": "Odontologia en el Centro de Santa Cruz — Edif. Santa Cruz Piso 9",
+    "hero_title": "Cuidado Dental Especializado en el Corazon de Santa Cruz",
+    "hero_subtitle": "Ubicados en Calle Ayacucho #186 (Edificio Santa Cruz, Piso 9, Of. 904). Reserva tu turno sin esperas directamente a nuestro WhatsApp de recepcion.",
+    "services": [
+      {
+        "title": "Ortodoncia y Alineacion Dental",
+        "desc": "Correccion de mordida y alineacion estetica para adolescentes y adultos.",
+        "price_tag": "Consulta Directa"
+      },
+      {
+        "title": "Endodoncia y Restauraciones",
+        "desc": "Tratamiento de conducto sin dolor y reconstruccion estetica con resinas de alta resistencia.",
+        "price_tag": "Atencion Inmediata"
+      },
+      {
+        "title": "Profilaxis y Prevencion",
+        "desc": "Limpieza profunda con ultrasonido y control odontologico integral.",
+        "price_tag": "Turno por WhatsApp"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:30 a 19:00 | Sabados: 09:00 a 13:00",
+    "offer_price_bs": "350 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/",
+    "wa_outreach_url": "https://wa.me/59177778487?text=Buenas%20tardes%20equipo%20de%20Odontologia%20Especializada%20Orias.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Calle%20Ayacucho%20Nro.%20186%2C%20Edif.%20Santa%20Cruz%2C%20Piso%209%2C%20Of.%20904%20%28Centro%29%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Odontologia%20Especializada%20Orias%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2077778487%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Odontologia Especializada Orias.\n\nEstuve viendo su presencia en Santa Cruz de la Sierra (Calle Ayacucho Nro. 186, Edif. Santa Cruz, Piso 9, Of. 904 (Centro)) y note que no cuentan con una pagina web propia optimizada para celular donde sus clientes puedan ver sus servicios y agendar cita directo a su WhatsApp.\n\nComo desarrollador en Santa Cruz, ya les programe y rellene una demostracion funcional en vivo con los datos de Odontologia Especializada Orias:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/odontologia-orias-scz/\n\nYa tiene conectado su propio numero (+591 77778487) y sus servicios sin ningun costo mensual de servidor.\n\nSi desean que la dejemos activa con su logotipo y fotos oficiales, el costo unico de entrega es de 350 Bs (sin mensualidades). Quedo atento si les gustaria activarla esta semana."
+  },
+  {
+    "slug": "dental-calizaya-scz",
+    "business_name": "Consultorio Dental Dra. Roxana Calizaya",
+    "category": "Odontologia General, Estetica y Ninos",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Av. Escuadron Velasco Nro. 745, frente al Colegio Catolico Santa Cruz (Zona El Pari)",
+    "phone_display": "+591 70098541",
+    "phone_wa": "59170098541",
+    "accent_color": "#7c3aed",
+    "hero_badge": "Zona El Pari — Av. Escuadron Velasco #745, Santa Cruz",
+    "hero_title": "Atencion Dental Calida y Profesional para Toda tu Familia",
+    "hero_subtitle": "Consultorio Dental de la Dra. Roxana Calizaya frente al Colegio Catolico Santa Cruz. Selecciona el tratamiento que necesitas y agenda tu cita por WhatsApp.",
+    "services": [
+      {
+        "title": "Odontologia Familiar y Ninos",
+        "desc": "Atencion paciente, preventiva y libre de estres para ninos y adultos en Zona El Pari.",
+        "price_tag": "Agenda Familiar"
+      },
+      {
+        "title": "Restauraciones y Curaciones Esteticas",
+        "desc": "Eliminacion de caries y restauracion con materiales del color exacto de tu diente.",
+        "price_tag": "Reserva Hoy"
+      },
+      {
+        "title": "Limpieza Dental y Urgencias",
+        "desc": "Alivio inmediato de dolor dental, extracciones y profilaxis completa.",
+        "price_tag": "Atencion Rapida"
+      }
+    ],
+    "schedule": "Lunes a Sabado: 09:00 a 19:00",
+    "offer_price_bs": "350 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/",
+    "wa_outreach_url": "https://wa.me/59170098541?text=Buenas%20tardes%20equipo%20de%20Consultorio%20Dental%20Dra.%20Roxana%20Calizaya.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Av.%20Escuadron%20Velasco%20Nro.%20745%2C%20frente%20al%20Colegio%20Catolico%20Santa%20Cruz%20%28Zona%20El%20Pari%29%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Consultorio%20Dental%20Dra.%20Roxana%20Calizaya%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2070098541%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Consultorio Dental Dra. Roxana Calizaya.\n\nEstuve viendo su presencia en Santa Cruz de la Sierra (Av. Escuadron Velasco Nro. 745, frente al Colegio Catolico Santa Cruz (Zona El Pari)) y note que no cuentan con una pagina web propia optimizada para celular donde sus clientes puedan ver sus servicios y agendar cita directo a su WhatsApp.\n\nComo desarrollador en Santa Cruz, ya les programe y rellene una demostracion funcional en vivo con los datos de Consultorio Dental Dra. Roxana Calizaya:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-calizaya-scz/\n\nYa tiene conectado su propio numero (+591 70098541) y sus servicios sin ningun costo mensual de servidor.\n\nSi desean que la dejemos activa con su logotipo y fotos oficiales, el costo unico de entrega es de 350 Bs (sin mensualidades). Quedo atento si les gustaria activarla esta semana."
+  },
+  {
+    "slug": "belleza-veronica-scz",
+    "business_name": "Centro e Instituto de Belleza y Cosmetologia Veronica",
+    "category": "Estetica Profesional, Cosmetologia y Capacitacion",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz",
+    "phone_display": "+591 72173005",
+    "phone_wa": "59172173005",
+    "accent_color": "#db2777",
+    "hero_badge": "Zona 7 Calles — Calle Vallegrande #291 esq. Pari, Santa Cruz",
+    "hero_title": "Realza tu Belleza o Formate como Profesional en Cosmetologia",
+    "hero_subtitle": "Servicios de estetica facial, capilar y cursos practicos de cosmetologia en el centro de Santa Cruz. Escribenos directo a WhatsApp para reservar cita o pedir inscripciones.",
+    "services": [
+      {
+        "title": "Tratamientos Faciales y Cosmetologia",
+        "desc": "Limpieza facial profunda, hidratacion, peeling y rejuvenecimiento con productos profesionales.",
+        "price_tag": "Cita por WhatsApp"
+      },
+      {
+        "title": "Estilismo, Colorimetria y Maquillaje",
+        "desc": "Acabados de salon para eventos, alisados, nutricion capilar y diseno de cejas.",
+        "price_tag": "Reserva tu Turno"
+      },
+      {
+        "title": "Cursos Tecnicos de Belleza",
+        "desc": "Formacion practica con practica real en cosmetologia, peluqueria y estetica integral.",
+        "price_tag": "Inscripciones Abiertas"
+      }
+    ],
+    "schedule": "Lunes a Sabado: 08:30 a 19:30",
+    "offer_price_bs": "350 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/",
+    "wa_outreach_url": "https://wa.me/59172173005?text=Buenas%20tardes%20equipo%20de%20Centro%20e%20Instituto%20de%20Belleza%20y%20Cosmetologia%20Veronica.%0A%0AEstuve%20viendo%20su%20presencia%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Calle%20Vallegrande%20Nro.%20291%20esq.%20Pari%20%28a%202%20cuadras%20de%207%20Calles%29%2C%20Santa%20Cruz%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Centro%20e%20Instituto%20de%20Belleza%20y%20Cosmetologia%20Veronica%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2072173005%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Centro e Instituto de Belleza y Cosmetologia Veronica.\n\nEstuve viendo su presencia en Santa Cruz de la Sierra (Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz) y note que no cuentan con una pagina web propia optimizada para celular donde sus clientes puedan ver sus servicios y agendar cita directo a su WhatsApp.\n\nComo desarrollador en Santa Cruz, ya les programe y rellene una demostracion funcional en vivo con los datos de Centro e Instituto de Belleza y Cosmetologia Veronica:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/belleza-veronica-scz/\n\nYa tiene conectado su propio numero (+591 72173005) y sus servicios sin ningun costo mensual de servidor.\n\nSi desean que la dejemos activa con su logotipo y fotos oficiales, el costo unico de entrega es de 350 Bs (sin mensualidades). Quedo atento si les gustaria activarla esta semana."
+  },
+  {
+    "slug": "dental-romero-bo",
+    "business_name": "Centro Dental Romero — Sucursales Sopocachi y San Pedro",
+    "category": "Implantes, Ortodoncia y Estetica Dental",
+    "city": "La Paz — Bolivia",
+    "address": "Sopocachi (Torre Sky Tower PB Of. 4 / C. Sanchez Lima 2320) y San Pedro (C. Boqueron 1357)",
+    "phone_display": "+591 65606062",
+    "phone_wa": "59165606062",
+    "accent_color": "#0f766e",
+    "hero_badge": "3 Sucursales de Atencion — Sopocachi y San Pedro",
+    "hero_title": "Especialistas en Implantes, Ortodoncia y Estetica Dental",
+    "hero_subtitle": "Elige la sucursal mas cercana a ti (Sky Tower, Sanchez Lima o San Pedro) y agenda tu cita directamente a nuestra linea oficial de WhatsApp.",
+    "services": [
+      {
+        "title": "Implantologia y Rehabilitacion",
+        "desc": "Soluciones fijas de alta durabilidad con tecnologia digital.",
+        "price_tag": "3 Sucursales"
+      },
+      {
+        "title": "Ortodoncia Convencional y Estetica",
+        "desc": "Planes accesibles con seguimiento mensual en cualquiera de nuestras sedes.",
+        "price_tag": "Valoracion Inicial"
+      },
+      {
+        "title": "Diseno de Sonrisa y Blanqueamiento",
+        "desc": "Estetica dental avanzada con resultados visibles desde la primera sesion.",
+        "price_tag": "Reserva Online"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 09:00 a 19:30 | Sabados: 09:00 a 13:30",
+    "offer_price_bs": "350 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/",
+    "wa_outreach_url": "https://wa.me/59165606062?text=Buenas%20tardes%20equipo%20de%20Centro%20Dental%20Romero%20%E2%80%94%20Sucursales%20Sopocachi%20y%20San%20Pedro.%0A%0AEstuve%20viendo%20su%20presencia%20en%20La%20Paz%20%E2%80%94%20Bolivia%20%28Sopocachi%20%28Torre%20Sky%20Tower%20PB%20Of.%204%20/%20C.%20Sanchez%20Lima%202320%29%20y%20San%20Pedro%20%28C.%20Boqueron%201357%29%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20Centro%20Dental%20Romero%20%E2%80%94%20Sucursales%20Sopocachi%20y%20San%20Pedro%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2065606062%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Centro Dental Romero — Sucursales Sopocachi y San Pedro.\n\nEstuve viendo su presencia en La Paz — Bolivia (Sopocachi (Torre Sky Tower PB Of. 4 / C. Sanchez Lima 2320) y San Pedro (C. Boqueron 1357)) y note que no cuentan con una pagina web propia optimizada para celular donde sus clientes puedan ver sus servicios y agendar cita directo a su WhatsApp.\n\nComo desarrollador en Santa Cruz, ya les programe y rellene una demostracion funcional en vivo con los datos de Centro Dental Romero — Sucursales Sopocachi y San Pedro:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-romero-bo/\n\nYa tiene conectado su propio numero (+591 65606062) y sus servicios sin ningun costo mensual de servidor.\n\nSi desean que la dejemos activa con su logotipo y fotos oficiales, el costo unico de entrega es de 350 Bs (sin mensualidades). Quedo atento si les gustaria activarla esta semana."
+  },
+  {
+    "slug": "happysmile-bo",
+    "business_name": "HappySmile Clinica Dental",
+    "category": "Ortodoncia, Estetica y Profilaxis Clinica",
+    "city": "La Paz — Bolivia",
+    "address": "Av. Arce #2618, Edificio Columbia, Piso 1, Of. 14",
+    "phone_display": "+591 77750733",
+    "phone_wa": "59177750733",
+    "accent_color": "#2563eb",
+    "hero_badge": "Av. Arce #2618 — Edificio Columbia Piso 1 Of. 14",
+    "hero_title": "Tu Sonrisa en Manos de Especialistas en Avenida Arce",
+    "hero_subtitle": "Atencion personalizada en el Edificio Columbia. Selecciona el motivo de tu consulta y agenda tu horario directamente en nuestro WhatsApp.",
+    "services": [
+      {
+        "title": "Ortodoncia y Ortopedia Maxilar",
+        "desc": "Tratamientos modernos para alinear tu sonrisa con controles puntuales.",
+        "price_tag": "Edif. Columbia"
+      },
+      {
+        "title": "Limpieza con Ultrasonido y Estetica",
+        "desc": "Eliminacion de placa, pulido coronario y blanqueamiento clinico.",
+        "price_tag": "Reserva en 30 seg"
+      },
+      {
+        "title": "Restauraciones y Urgencias",
+        "desc": "Atencion odontologica integral con materiales importados.",
+        "price_tag": "WhatsApp Directo"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 09:00 a 19:00 | Sabados: 09:00 a 13:00",
+    "offer_price_bs": "350 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/",
+    "wa_outreach_url": "https://wa.me/59177750733?text=Buenas%20tardes%20equipo%20de%20HappySmile%20Clinica%20Dental.%0A%0AEstuve%20viendo%20su%20presencia%20en%20La%20Paz%20%E2%80%94%20Bolivia%20%28Av.%20Arce%20%232618%2C%20Edificio%20Columbia%2C%20Piso%201%2C%20Of.%2014%29%20y%20note%20que%20no%20cuentan%20con%20una%20pagina%20web%20propia%20optimizada%20para%20celular%20donde%20sus%20clientes%20puedan%20ver%20sus%20servicios%20y%20agendar%20cita%20directo%20a%20su%20WhatsApp.%0A%0AComo%20desarrollador%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20rellene%20una%20demostracion%20funcional%20en%20vivo%20con%20los%20datos%20de%20HappySmile%20Clinica%20Dental%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/%0A%0AYa%20tiene%20conectado%20su%20propio%20numero%20%28%2B591%2077750733%29%20y%20sus%20servicios%20sin%20ningun%20costo%20mensual%20de%20servidor.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20fotos%20oficiales%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20350%20Bs%20%28sin%20mensualidades%29.%20Quedo%20atento%20si%20les%20gustaria%20activarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de HappySmile Clinica Dental.\n\nEstuve viendo su presencia en La Paz — Bolivia (Av. Arce #2618, Edificio Columbia, Piso 1, Of. 14) y note que no cuentan con una pagina web propia optimizada para celular donde sus clientes puedan ver sus servicios y agendar cita directo a su WhatsApp.\n\nComo desarrollador en Santa Cruz, ya les programe y rellene una demostracion funcional en vivo con los datos de HappySmile Clinica Dental:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/\n\nYa tiene conectado su propio numero (+591 77750733) y sus servicios sin ningun costo mensual de servidor.\n\nSi desean que la dejemos activa con su logotipo y fotos oficiales, el costo unico de entrega es de 350 Bs (sin mensualidades). Quedo atento si les gustaria activarla esta semana."
+  }
+]
