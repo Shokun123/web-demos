@@ -334,5 +334,89 @@
     "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/",
     "wa_outreach_url": "https://wa.me/59177750733?text=Buenas%20tardes%20equipo%20de%20HappySmile%20Clinica%20Dental.%0A%0AViendo%20su%20trayectoria%20en%20La%20Paz%20%E2%80%94%20Bolivia%20%28Av.%20Arce%20%232618%2C%20Edificio%20Columbia%2C%20Piso%201%2C%20Of.%2014%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20HappySmile%20Clinica%20Dental%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2077750733%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20450%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
     "wa_message_plain": "Buenas tardes equipo de HappySmile Clinica Dental.\n\nViendo su trayectoria en La Paz — Bolivia (Av. Arce #2618, Edificio Columbia, Piso 1, Of. 14), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de HappySmile Clinica Dental:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/happysmile-bo/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 77750733).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 450 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "db-arquitectura-scz",
+    "repo_template": "inmoluxe-arquitectura + ui-ux-pro-max",
+    "theme_mode": "dark-gold",
+    "business_name": "DB Estudio de Arquitectura & Construccion",
+    "category": "Diseno Arquitectonico, Planificacion y Ejecucion de Obra",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Radial 27 #4540, Edificio Unisoya, Santa Cruz de la Sierra",
+    "phone_display": "+591 77300899",
+    "phone_wa": "59177300899",
+    "accent_color": "#d4af37",
+    "hero_badge": "Radial 27 #4540, Edificio Unisoya — Santa Cruz de la Sierra",
+    "hero_title": "Arquitectura Contemporanea y Construccion Llave en Mano en Santa Cruz",
+    "hero_subtitle": "Simula el presupuesto referencial de diseno arquitectonico o construccion por m2 y agenda tu reunion tecnica en el Edificio Unisoya.",
+    "calc_label": "Superficie aproximada del proyecto (en m2)",
+    "calc_unit": "m2",
+    "services": [
+      {
+        "title": "Proyecto Arquitectonico Completo + Renders 3D + Planos Aprobados",
+        "desc": "Diseno integral residencial o comercial listo para construccion en Santa Cruz.",
+        "base_bs": 110,
+        "tag": "Diseno por m2"
+      },
+      {
+        "title": "Construccion de Vivienda / Residencia Llave en Mano",
+        "desc": "Ejecucion completa de obra gris y acabados de primera calidad con supervision diaria.",
+        "base_bs": 2650,
+        "tag": "Obra Completa m2"
+      },
+      {
+        "title": "Remodelacion Corporativa / Locales Comerciales",
+        "desc": "Modernizacion de oficinas, clinicas y locales comerciales en Santa Cruz.",
+        "base_bs": 1400,
+        "tag": "Corporativo"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:30 a 18:30 | Sabados: 09:00 a 12:30",
+    "offer_price_bs": "650 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/db-arquitectura-scz/",
+    "wa_outreach_url": "https://wa.me/59177300899?text=Buenas%20tardes%20equipo%20de%20DB%20Estudio%20de%20Arquitectura%20%26%20Construccion.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Radial%2027%20%234540%2C%20Edificio%20Unisoya%2C%20Santa%20Cruz%20de%20la%20Sierra%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20DB%20Estudio%20de%20Arquitectura%20%26%20Construccion%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/db-arquitectura-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2077300899%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20650%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de DB Estudio de Arquitectura & Construccion.\n\nViendo su trayectoria en Santa Cruz de la Sierra (Radial 27 #4540, Edificio Unisoya, Santa Cruz de la Sierra), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de DB Estudio de Arquitectura & Construccion:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/db-arquitectura-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 77300899).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 650 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
+  },
+  {
+    "slug": "habite-arquitectura-scz",
+    "repo_template": "inmoluxe-arquitectura + ui-ux-pro-max",
+    "theme_mode": "dark-gold",
+    "business_name": "Habite Arquitectura & Construccion Civil",
+    "category": "Diseno Sostenible, Ingenieria, Consultoria y Construccion",
+    "city": "Santa Cruz de la Sierra",
+    "address": "Pasaje Medardo Chavez S/N, Casa Blanca (paralela a Av. Banzer entre 2do y 3er Anillo)",
+    "phone_display": "+591 77732991",
+    "phone_wa": "59177732991",
+    "accent_color": "#10b981",
+    "hero_badge": "Zona Av. Banzer entre 2do y 3er Anillo — Santa Cruz",
+    "hero_title": "Diseno Sostenible, Ingenieria y Construccion Civil en Santa Cruz",
+    "hero_subtitle": "Calcula el estimado de tu obra civil o diseno sostenible por metro cuadrado y solicita una asesoria directa con nuestro equipo de ingenieria.",
+    "calc_label": "Area estimada de intervencion (en m2)",
+    "calc_unit": "m2",
+    "services": [
+      {
+        "title": "Diseno Arquitectonico Sostenible y Bioclimatico",
+        "desc": "Proyectos optimizados para el clima de Santa Cruz con eficiencia energetica y confort termico.",
+        "base_bs": 120,
+        "tag": "Sostenible m2"
+      },
+      {
+        "title": "Ingenieria Estructural, Hidrosanitaria y Electrica",
+        "desc": "Calculo y pliego tecnico completo para edificaciones residenciales e industriales.",
+        "base_bs": 85,
+        "tag": "Ingenieria m2"
+      },
+      {
+        "title": "Construccion y Direccion Tecnica de Obra Civil",
+        "desc": "Ejecucion integral con control estricto de cronograma y presupuesto.",
+        "base_bs": 2500,
+        "tag": "Construccion m2"
+      }
+    ],
+    "schedule": "Lunes a Viernes: 08:30 a 18:30",
+    "offer_price_bs": "650 Bs",
+    "public_url": "https://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/",
+    "wa_outreach_url": "https://wa.me/59177732991?text=Buenas%20tardes%20equipo%20de%20Habite%20Arquitectura%20%26%20Construccion%20Civil.%0A%0AViendo%20su%20trayectoria%20en%20Santa%20Cruz%20de%20la%20Sierra%20%28Pasaje%20Medardo%20Chavez%20S/N%2C%20Casa%20Blanca%20%28paralela%20a%20Av.%20Banzer%20entre%202do%20y%203er%20Anillo%29%29%2C%20note%20que%20no%20contaban%20con%20una%20aplicacion%20web%20propia%20con%20cotizador%20en%20Bolivianos%20y%20reserva%20directa%20a%20su%20WhatsApp.%0A%0AComo%20ingeniero%20de%20software%20en%20Santa%20Cruz%2C%20ya%20les%20programe%20y%20deje%20funcionando%20una%20version%20interactiva%20pre-rellenada%20con%20los%20servicios%20y%20datos%20de%20Habite%20Arquitectura%20%26%20Construccion%20Civil%3A%0A%0Ahttps%3A//shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/%0A%0AIncluye%3A%0A-%20Simulador%20interactivo%20de%20presupuesto%20en%20Bolivianos%20%28Bs%29.%0A-%20Selector%20de%20turnos%20/%20horarios%20en%20tiempo%20real%20conectado%20a%20su%20WhatsApp%20%28%2B591%2077732991%29.%0A-%200%20costo%20mensual%20de%20servidor%20o%20mantenimiento.%0A%0ASi%20desean%20que%20la%20dejemos%20activa%20con%20su%20logotipo%20y%20catalogo%20completo%2C%20el%20costo%20unico%20de%20entrega%20es%20de%20650%20Bs%20%28pago%20unico%29.%20Quedo%20atento%20si%20les%20gustaria%20implementarla%20esta%20semana.",
+    "wa_message_plain": "Buenas tardes equipo de Habite Arquitectura & Construccion Civil.\n\nViendo su trayectoria en Santa Cruz de la Sierra (Pasaje Medardo Chavez S/N, Casa Blanca (paralela a Av. Banzer entre 2do y 3er Anillo)), note que no contaban con una aplicacion web propia con cotizador en Bolivianos y reserva directa a su WhatsApp.\n\nComo ingeniero de software en Santa Cruz, ya les programe y deje funcionando una version interactiva pre-rellenada con los servicios y datos de Habite Arquitectura & Construccion Civil:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/habite-arquitectura-scz/\n\nIncluye:\n- Simulador interactivo de presupuesto en Bolivianos (Bs).\n- Selector de turnos / horarios en tiempo real conectado a su WhatsApp (+591 77732991).\n- 0 costo mensual de servidor o mantenimiento.\n\nSi desean que la dejemos activa con su logotipo y catalogo completo, el costo unico de entrega es de 650 Bs (pago unico). Quedo atento si les gustaria implementarla esta semana."
   }
 ]

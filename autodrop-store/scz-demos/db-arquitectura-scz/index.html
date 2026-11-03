@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DB Estudio de Arquitectura & Construccion | Santa Cruz de la Sierra</title>
+  <meta name="description" content="Simula el presupuesto referencial de diseno arquitectonico o construccion por m2 y agenda tu reunion tecnica en el Edificio Unisoya.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DB Estudio de Arquitectura & Construccion",
+    "address": "Radial 27 #4540, Edificio Unisoya, Santa Cruz de la Sierra",
+    "telephone": "+591 77300899"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #d4af37;
+      --bg: #0c0f14;
+      --surface: #151921;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: #262d3d;
+      --input-bg: #0f131a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .demo-banner {
+      background: #090d16;
+      color: #f8fafc;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+    }
+    .demo-banner span { color: var(--accent); font-weight: 800; }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 20px;
+    }
+    .nav-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+    }
+    .brand small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .wa-top-btn {
+      background: #16a34a;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .hero {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 44px 20px 32px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding: 28px 20px; }
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.12);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      border: 1px solid var(--accent);
+    }
+    h1 {
+      font-size: clamp(27px, 3.8vw, 42px);
+      line-height: 1.14;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 15.5px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .info-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .calc-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .calc-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .calc-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .calc-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .form-card {
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.25);
+    }
+    .form-card h2 {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .form-card p {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 13.5px;
+      background: var(--input-bg);
+      color: var(--text);
+    }
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .slot-btn {
+      padding: 8px 4px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .slot-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .submit-wa {
+      width: 100%;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14.5px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .submit-wa:hover { background: #15803d; }
+    .section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+    .section h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .section-sub { color: var(--muted); font-size: 13.5px; margin-bottom: 20px; }
+    .srv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+    .srv-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .srv-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .srv-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .srv-num { font-weight: 800; font-size: 13px; color: var(--accent); }
+    .srv-tag {
+      background: var(--input-bg);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .srv-card h3 { font-size: 17px; font-weight: 800; }
+    .srv-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+    .srv-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+    .srv-btn { color: var(--accent); font-weight: 800; }
+    footer {
+      background: #090d16;
+      color: #cbd5e1;
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 12.5px;
+      margin-top: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">
+    SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>DB ESTUDIO DE ARQUITECTURA & CONSTRUCCION</span> (Motor: inmoluxe-arquitectura + ui-ux-pro-max)
+  </div>
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        DB Estudio de Arquitectura & Construccion
+        <small>Diseno Arquitectonico, Planificacion y Ejecucion de Obra</small>
+      </div>
+      <a class="wa-top-btn" href="https://wa.me/59177300899?text=Hola%2C%20vi%20su%20sistema%20web%20y%20deseo%20hacer%20una%20consulta%20en%20DB Estudio de Arquitectura & Construccion" target="_blank">
+        WhatsApp: +591 77300899
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="badge">Radial 27 #4540, Edificio Unisoya — Santa Cruz de la Sierra</span>
+      <h1>Arquitectura Contemporanea y Construccion Llave en Mano en Santa Cruz</h1>
+      <p class="subtitle">Simula el presupuesto referencial de diseno arquitectonico o construccion por m2 y agenda tu reunion tecnica en el Edificio Unisoya.</p>
+      <div class="info-pills">
+        <div><strong>Ubicacion Oficial:</strong> Radial 27 #4540, Edificio Unisoya, Santa Cruz de la Sierra</div>
+        <div><strong>Horarios de Atencion:</strong> Lunes a Viernes: 08:30 a 18:30 | Sabados: 09:00 a 12:30</div>
+        <div><strong>Linea Directa WhatsApp:</strong> +591 77300899 (Santa Cruz de la Sierra)</div>
+      </div>
+
+      <div class="calc-box">
+        <h3>Simulador Rapido de Presupuesto en Bolivianos (Bs)</h3>
+        <div class="field" style="margin-top:8px;">
+          <label>Superficie aproximada del proyecto (en m2): <span id="qtyVal">1</span> m2</label>
+          <input type="range" id="qtyRange" min="1" max="50" value="1" oninput="updateBudget()">
+        </div>
+        <div class="calc-row">
+          <span style="font-size:12.5px;color:var(--muted);">Presupuesto referencial estimado:</span>
+          <span class="calc-total" id="budgetTotal">110 Bs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card" id="reservar">
+      <h2>Reserva / Cotizacion Instantanea a WhatsApp</h2>
+      <p>Selecciona el servicio y horario; los datos se auto-rellenan hacia el WhatsApp de DB Estudio de Arquitectura & Construccion.</p>
+      <form onsubmit="sendBooking(event)">
+        <div class="field">
+          <label>Tu Nombre o Empresa *</label>
+          <input type="text" id="clientName" required placeholder="Ej. Carlos Salvatierra">
+        </div>
+        <div class="field">
+          <label>Servicio o Producto Requerido *</label>
+          <select id="clientService" onchange="updateBudget()">
+            <option value="Proyecto Arquitectonico Completo + Renders 3D + Planos Aprobados" data-price="110">Proyecto Arquitectonico Completo + Renders 3D + Planos Aprobados (Ref: 110 Bs)</option><option value="Construccion de Vivienda / Residencia Llave en Mano" data-price="2650">Construccion de Vivienda / Residencia Llave en Mano (Ref: 2650 Bs)</option><option value="Remodelacion Corporativa / Locales Comerciales" data-price="1400">Remodelacion Corporativa / Locales Comerciales (Ref: 1400 Bs)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Selecciona un Horario Disponible *</label>
+          <input type="hidden" id="selectedSlot" value="09:30 AM">
+          <div class="slots-grid">
+            <button type="button" class="slot-btn active" onclick="pickSlot(this, '09:30 AM')">09:30 AM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '11:00 AM')">11:00 AM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '15:30 PM')">15:30 PM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '17:30 PM')">17:30 PM</button>
+          </div>
+        </div>
+        <button type="submit" class="submit-wa">Enviar Solicitud a WhatsApp (+591 77300899)</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Catalogo Interactivo de Servicios y Especialidades</h2>
+    <p class="section-sub">Haz clic en cualquier tarjeta para calcular su presupuesto y pre-rellenar tu solicitud en DB Estudio de Arquitectura & Construccion:</p>
+    <div class="srv-grid">
+      
+        <div class="srv-card" onclick="selectServiceAndCalc(0, 'Proyecto Arquitectonico Completo + Renders 3D + Planos Aprobados', 110)">
+          <div class="srv-top">
+            <span class="srv-num">01</span>
+            <span class="srv-tag">Diseno por m2</span>
+          </div>
+          <h3>Proyecto Arquitectonico Completo + Renders 3D + Planos Aprobados</h3>
+          <p>Diseno integral residencial o comercial listo para construccion en Santa Cruz.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>110 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
+        </div>
+        
+        <div class="srv-card" onclick="selectServiceAndCalc(1, 'Construccion de Vivienda / Residencia Llave en Mano', 2650)">
+          <div class="srv-top">
+            <span class="srv-num">02</span>
+            <span class="srv-tag">Obra Completa m2</span>
+          </div>
+          <h3>Construccion de Vivienda / Residencia Llave en Mano</h3>
+          <p>Ejecucion completa de obra gris y acabados de primera calidad con supervision diaria.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>2650 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
+        </div>
+        
+        <div class="srv-card" onclick="selectServiceAndCalc(2, 'Remodelacion Corporativa / Locales Comerciales', 1400)">
+          <div class="srv-top">
+            <span class="srv-num">03</span>
+            <span class="srv-tag">Corporativo</span>
+          </div>
+          <h3>Remodelacion Corporativa / Locales Comerciales</h3>
+          <p>Modernizacion de oficinas, clinicas y locales comerciales en Santa Cruz.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>1400 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>DB Estudio de Arquitectura & Construccion</strong> — Radial 27 #4540, Edificio Unisoya, Santa Cruz de la Sierra</p>
+    <p style="margin-top:6px;">WhatsApp Oficial: +591 77300899 | Santa Cruz de la Sierra</p>
+  </footer>
+
+  <script>
+    function pickSlot(btn, slotText) {
+      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('selectedSlot').value = slotText;
+    }
+    function updateBudget() {
+      const sel = document.getElementById('clientService');
+      const opt = sel.options[sel.selectedIndex];
+      const basePrice = parseFloat(opt.getAttribute('data-price') || '110');
+      const qty = parseInt(document.getElementById('qtyRange').value || '1', 10);
+      document.getElementById('qtyVal').textContent = qty;
+      const total = Math.round(basePrice * qty);
+      document.getElementById('budgetTotal').textContent = total.toLocaleString('es-BO') + ' Bs';
+    }
+    function selectServiceAndCalc(idx, title, price) {
+      const sel = document.getElementById('clientService');
+      if (sel) sel.selectedIndex = idx;
+      updateBudget();
+      document.getElementById('clientName').focus();
+    }
+    function sendBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const srv = document.getElementById('clientService').value;
+      const slot = document.getElementById('selectedSlot').value;
+      const qty = document.getElementById('qtyRange').value;
+      const est = document.getElementById('budgetTotal').textContent;
+      const msg = `Hola equipo de DB Estudio de Arquitectura & Construccion, soy ${name}. Usando su sistema web cotice: ${srv} (Cantidad: ${qty} m2 — Estimado: ${est}) y deseo agendar atencion para el horario ${slot}. Quedo atento(a).`;
+      window.open(`https://wa.me/59177300899?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
