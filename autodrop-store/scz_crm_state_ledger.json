@@ -1,6 +1,6 @@
 {
   "ledger_version": "5.0-AUTONOMOUS-CLOSER",
-  "updated_at_utc": "2026-11-03 17:39:54 UTC",
+  "updated_at_utc": "2026-11-03 17:55:27 UTC",
   "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
   "personal_phone_exposed": false,
   "qr_codes_used": false,
@@ -40,10 +40,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:19 UTC",
+        "inspected_at_utc": "2026-11-03 17:54:54 UTC",
         "website_url": "https://www.boliviamedica.org",
         "site_reachable": false,
         "http_get_status": 0,
@@ -201,6 +201,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -219,10 +226,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:19 UTC",
+        "inspected_at_utc": "2026-11-03 17:54:54 UTC",
         "website_url": "https://www.hierrocon.com",
         "final_inspected_url": "https://www.warnet-pohonemas33.com/",
         "site_reachable": true,
@@ -381,6 +388,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
         }
       ]
     },
@@ -401,10 +415,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:23 UTC",
+        "inspected_at_utc": "2026-11-03 17:54:58 UTC",
         "website_url": "https://www.lacasadelascalaminas.com",
         "final_inspected_url": "https://www.lacasadelascalaminas.com/cotizacion/",
         "site_reachable": true,
@@ -568,6 +582,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
         }
       ]
     },
@@ -586,8 +607,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 12:41:28 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -747,6 +768,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -765,8 +793,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 12:41:28 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -926,6 +954,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -944,8 +979,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 12:41:28 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -1105,6 +1140,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -1123,8 +1165,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 12:41:28 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -1284,6 +1326,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -1302,8 +1351,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-03 12:41:28 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -1463,6 +1512,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -1483,10 +1539,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:27 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:02 UTC",
         "website_url": "https://dbestudio.com.bo",
         "final_inspected_url": "https://dbestudio.com.bo#contact",
         "site_reachable": true,
@@ -1645,6 +1701,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
         }
       ]
     },
@@ -1665,10 +1728,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:28 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:04 UTC",
         "website_url": "https://www.habitearquitectura.com",
         "final_inspected_url": "https://www.habitearquitectura.com/contactanos-ahora/",
         "site_reachable": true,
@@ -1832,6 +1895,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
         }
       ]
     },
@@ -1850,10 +1920,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:32 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:08 UTC",
         "website_url": "https://www.cadecocruz.org.bo",
         "site_reachable": false,
         "http_get_status": 0,
@@ -2011,6 +2081,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -2032,10 +2109,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:32 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:08 UTC",
         "website_url": "https://www.bisonte.com.bo",
         "final_inspected_url": "https://www.bisonte.com.bo/contacto/",
         "site_reachable": true,
@@ -2214,6 +2291,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
         }
       ]
     },
@@ -2234,10 +2318,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:40 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:17 UTC",
         "website_url": "http://www.esteticdent-santacruz.com",
         "final_inspected_url": "https://esteticdent-santacruz.com/contacto/",
         "site_reachable": true,
@@ -2413,6 +2497,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2433,10 +2524,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:46 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:19 UTC",
         "website_url": "https://www.clinicasanpedro.com",
         "final_inspected_url": "https://www.clinicasanpedro.com/contactenos.php",
         "site_reachable": true,
@@ -2607,6 +2698,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2628,10 +2726,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-03 17:39:19 UTC",
-      "followup_attempts": 20,
+      "last_updated_utc": "2026-11-03 17:54:54 UTC",
+      "followup_attempts": 21,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-03 17:39:49 UTC",
+        "inspected_at_utc": "2026-11-03 17:55:22 UTC",
         "website_url": "https://metalmecanicagenius.com",
         "final_inspected_url": "https://metalmecanicagenius.com/contacto/",
         "site_reachable": true,
@@ -2804,6 +2902,13 @@
         },
         {
           "timestamp_utc": "2026-11-03 17:39:19 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-03 17:54:54 UTC",
           "from_state": "FOLLOWUP_STAGE_3",
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
