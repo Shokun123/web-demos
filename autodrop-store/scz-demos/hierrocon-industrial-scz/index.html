@@ -37,27 +37,13 @@
     .demo-banner {
       background: #090d16;
       color: #f8fafc;
-      padding: 10px 18px;
+      text-align: center;
+      padding: 10px 16px;
       font-size: 12px;
       font-weight: 600;
       border-bottom: 2px solid var(--accent);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
     }
     .demo-banner span { color: var(--accent); font-weight: 800; }
-    .activate-top-btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 800;
-      cursor: pointer;
-    }
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -192,7 +178,7 @@
       font-weight: 700;
       margin-bottom: 5px;
     }
-    .field input, .field select, .field textarea {
+    .field input, .field select {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid var(--border);
@@ -291,90 +277,6 @@
       font-size: 12.5px;
     }
     .srv-btn { color: var(--accent); font-weight: 800; }
-    .owner-activation-section {
-      max-width: 1140px;
-      margin: 12px auto 32px;
-      padding: 0 20px;
-    }
-    .owner-card {
-      background: #090d16;
-      color: #f8fafc;
-      border: 2px solid var(--accent);
-      border-radius: 20px;
-      padding: 26px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: center;
-    }
-    @media (max-width: 860px) {
-      .owner-card { grid-template-columns: 1fr; }
-    }
-    .owner-card h3 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-    .owner-card p {
-      font-size: 13.5px;
-      color: #cbd5e1;
-      margin-bottom: 12px;
-    }
-    .owner-list {
-      list-style: none;
-      font-size: 12.5px;
-      color: #94a3b8;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .owner-form-box {
-      background: #111827;
-      border: 1px solid #1f2937;
-      padding: 18px;
-      border-radius: 14px;
-    }
-    .owner-form-box label {
-      display: block;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #cbd5e1;
-      margin-bottom: 4px;
-    }
-    .owner-form-box input, .owner-form-box select {
-      width: 100%;
-      padding: 9px 11px;
-      border-radius: 8px;
-      border: 1px solid #374151;
-      background: #0b0f19;
-      color: #fff;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-    .owner-btn-primary {
-      width: 100%;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-      margin-bottom: 8px;
-    }
-    .owner-btn-secondary {
-      width: 100%;
-      background: #1e293b;
-      color: #e2e8f0;
-      border: 1px solid #334155;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-    }
     footer {
       background: #090d16;
       color: #cbd5e1;
@@ -387,12 +289,7 @@
 </head>
 <body>
   <div class="demo-banner">
-    <div>
-      SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>HIERROCON — CONSTRUCCION Y ESTRUCTURAS METALICAS</span> (Motor: inmoluxe-arquitectura + commercial_b2b_pack)
-    </div>
-    <button type="button" class="activate-top-btn" onclick="document.getElementById('activar-oficialmente').scrollIntoView({behavior:'smooth'})">
-      Activar esta App Oficialmente para HIERROCON — Construccion y Estructuras Metalicas (700 Bs Pago Unico)
-    </button>
+    SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>HIERROCON — CONSTRUCCION Y ESTRUCTURAS METALICAS</span> (Motor: inmoluxe-arquitectura + commercial_b2b_pack)
   </div>
   <header>
     <div class="nav-wrap">
@@ -506,41 +403,9 @@
     </div>
   </section>
 
-  <section class="owner-activation-section" id="activar-oficialmente">
-    <div class="owner-card">
-      <div>
-        <span class="badge" style="margin-bottom:10px;">CONTACTO DIRECTO CON INGENIERIA — SIN INTERMEDIARIOS</span>
-        <h3>Activar esta App Oficialmente para HIERROCON — Construccion y Estructuras Metalicas</h3>
-        <p>Si usted es propietario o encargado de <strong>HIERROCON — Construccion y Estructuras Metalicas</strong>, esta aplicacion ya fue programada con sus datos reales y esta lista para conectarse con su logotipo oficial y su catalogo completo.</p>
-        <ul class="owner-list">
-          <li>1. Pago unico de entrega: <strong>700 Bs</strong> (se abona unicamente al entregarse 100% personalizada y funcionando).</li>
-          <li>2. Cero mensualidades de servidor: hospedaje web de alta disponibilidad incluido sin costo mensual.</li>
-          <li>3. Todos los clientes que usen el simulador llegan directo al WhatsApp oficial de su empresa (+591 67899011).</li>
-        </ul>
-      </div>
-      <div class="owner-form-box">
-        <form onsubmit="requestOfficialActivation(event)">
-          <label>Nombre del Encargado / Direccion de HIERROCON — Construccion y Estructuras Metalicas *</label>
-          <input type="text" id="ownerContactName" required placeholder="Ej. Gerencia / Direccion">
-          <label>Correo o Telefono de Respuesta de la Empresa *</label>
-          <input type="text" id="ownerContactReply" required placeholder="Ej. gerencia@empresa.com o +591 67899011">
-          <label>Personalizacion Deseada *</label>
-          <select id="ownerCustomOption">
-            <option value="Activar con nuestro logotipo oficial y mantener precios actuales (700 Bs)">Activar con nuestro logotipo oficial y precios actuales (700 Bs)</option>
-            <option value="Activar y actualizar tabla de precios / servicios (700 Bs)">Activar y actualizar tabla de precios / servicios (700 Bs)</option>
-            <option value="Solicitar reunion breve por correo / llamada para revisar detalles">Solicitar revision tecnica de detalles antes de activar</option>
-          </select>
-          <button type="submit" class="owner-btn-primary">Solicitar Activacion Oficial por Correo Directo</button>
-          <button type="button" class="owner-btn-secondary" onclick="copyActivationTicket()">Copiar Solicitud de Activacion (Para enviar por Facebook / Correo)</button>
-          <div id="ownerCopyFeedback" style="display:none;margin-top:8px;font-size:11.5px;color:#34d399;font-weight:700;text-align:center;"></div>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <p><strong>HIERROCON — Construccion y Estructuras Metalicas</strong> — Parque Industrial, 6to Anillo, UV 00PI, Distrito 11, Santa Cruz</p>
-    <p style="margin-top:6px;">WhatsApp Oficial: +591 67899011 | Santa Cruz de la Sierra | Ingenieria Digital B2B: ingenieria.kudakastudio@gmail.com</p>
+    <p style="margin-top:6px;">WhatsApp Oficial: +591 67899011 | Santa Cruz de la Sierra</p>
   </footer>
 
   <script>
@@ -573,31 +438,6 @@
       const est = document.getElementById('budgetTotal').textContent;
       const msg = `Hola equipo de HIERROCON — Construccion y Estructuras Metalicas, soy ${name}. Usando su sistema web cotice: ${srv} (Cantidad: ${qty} m2 — Estimado: ${est}) y deseo agendar atencion para el horario ${slot}. Quedo atento(a).`;
       window.open(`https://wa.me/59167899011?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-    function buildOwnerTicketText() {
-      const ownerName = (document.getElementById('ownerContactName').value || 'Direccion').trim();
-      const ownerReply = (document.getElementById('ownerContactReply').value || '+591 67899011').trim();
-      const customOpt = document.getElementById('ownerCustomOption').value;
-      return `SOLICITUD DE ACTIVACION OFICIAL DE SISTEMA WEB\n` +
-             `Empresa: HIERROCON — Construccion y Estructuras Metalicas (Santa Cruz de la Sierra)\n` +
-             `Encargado: ${ownerName}\n` +
-             `Canal de respuesta de la empresa: ${ownerReply}\n` +
-             `Modalidad seleccionada: ${customOpt}\n` +
-             `URL Demo Pre-Rellenada: ${window.location.href}`;
-    }
-    function requestOfficialActivation(e) {
-      e.preventDefault();
-      const subject = `Activacion Oficial de Sistema Web — HIERROCON — Construccion y Estructuras Metalicas`;
-      const body = buildOwnerTicketText();
-      window.location.href = `mailto:ingenieria.kudakastudio@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }
-    function copyActivationTicket() {
-      const text = buildOwnerTicketText();
-      navigator.clipboard.writeText(text).then(() => {
-        const fb = document.getElementById('ownerCopyFeedback');
-        fb.style.display = 'block';
-        fb.textContent = 'Solicitud copiada al portapapeles. Puede enviarla a ingenieria.kudakastudio@gmail.com';
-      });
     }
   </script>
 </body>
