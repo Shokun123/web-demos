@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro e Instituto de Belleza y Cosmetologia Veronica | Santa Cruz de la Sierra</title>
+  <meta name="description" content="Reserva turnos de salon o solicita inscripcion a nuestros cursos tecnicos practicos directamente por WhatsApp.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Centro e Instituto de Belleza y Cosmetologia Veronica",
+    "address": "Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz",
+    "telephone": "+591 72173005"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #db2777;
@@ -15,6 +25,7 @@
       --text: #0f172a;
       --muted: #475569;
       --border: #e2e8f0;
+      --input-bg: #f8fafc;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -24,25 +35,25 @@
       line-height: 1.6;
     }
     .demo-banner {
-      background: #0f172a;
+      background: #090d16;
       color: #f8fafc;
       text-align: center;
       padding: 10px 16px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       border-bottom: 2px solid var(--accent);
     }
-    .demo-banner span { color: #38bdf8; font-weight: 800; }
+    .demo-banner span { color: var(--accent); font-weight: 800; }
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 50;
       padding: 14px 20px;
     }
     .nav-wrap {
-      max-width: 1080px;
+      max-width: 1140px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -71,39 +82,41 @@
       white-space: nowrap;
     }
     .hero {
-      max-width: 1080px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 48px 20px 36px;
+      padding: 44px 20px 32px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 32px;
-      align-items: center;
+      align-items: start;
     }
-    @media (max-width: 820px) {
-      .hero { grid-template-columns: 1fr; padding: 32px 20px; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding: 28px 20px; }
     }
     .badge {
       display: inline-block;
-      background: color-mix(in srgb, var(--accent) 12%, white);
+      background: rgba(14, 165, 233, 0.12);
       color: var(--accent);
-      font-weight: 700;
-      font-size: 12px;
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
       padding: 6px 12px;
       border-radius: 999px;
       margin-bottom: 16px;
-      border: 1px solid color-mix(in srgb, var(--accent) 30%, white);
+      border: 1px solid var(--accent);
     }
     h1 {
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.15;
+      font-size: clamp(27px, 3.8vw, 42px);
+      line-height: 1.14;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: -0.02em;
     }
     .subtitle {
-      font-size: 16px;
+      font-size: 15.5px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .info-pills {
       display: flex;
@@ -114,43 +127,88 @@
       padding: 16px;
       border-radius: 14px;
       font-size: 13px;
+      margin-bottom: 20px;
     }
-    .info-pills div strong { color: var(--text); }
+    .calc-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .calc-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .calc-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .calc-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+    }
     .form-card {
       background: var(--surface);
       border: 2px solid var(--accent);
       border-radius: 20px;
       padding: 24px;
-      box-shadow: 0 18px 40px -15px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.25);
     }
     .form-card h2 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .form-card p {
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-    .field {
-      margin-bottom: 12px;
-    }
+    .field { margin-bottom: 12px; }
     .field label {
       display: block;
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 4px;
-      color: var(--text);
+      margin-bottom: 5px;
     }
     .field input, .field select {
       width: 100%;
-      padding: 11px 12px;
+      padding: 10px 12px;
       border: 1px solid var(--border);
       border-radius: 10px;
       font-family: inherit;
-      font-size: 14px;
-      background: #f8fafc;
+      font-size: 13.5px;
+      background: var(--input-bg);
+      color: var(--text);
+    }
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .slot-btn {
+      padding: 8px 4px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .slot-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
     }
     .submit-wa {
       width: 100%;
@@ -159,89 +217,87 @@
       border: none;
       padding: 14px;
       border-radius: 12px;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       cursor: pointer;
-      margin-top: 6px;
+      margin-top: 8px;
     }
     .submit-wa:hover { background: #15803d; }
     .section {
-      max-width: 1080px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 36px 20px;
+      padding: 32px 20px;
     }
-    .section h2 {
-      font-size: 26px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .section-sub {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
+    .section h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .section-sub { color: var(--muted); font-size: 13.5px; margin-bottom: 20px; }
     .srv-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
     }
     .srv-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 22px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 12px;
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .srv-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
     }
     .srv-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .srv-num {
-      font-weight: 800;
-      font-size: 13px;
-      color: var(--accent);
-    }
+    .srv-num { font-weight: 800; font-size: 13px; color: var(--accent); }
     .srv-tag {
-      background: #f1f5f9;
+      background: var(--input-bg);
       color: var(--muted);
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 999px;
+      border: 1px solid var(--border);
     }
-    .srv-card h3 { font-size: 18px; font-weight: 800; }
-    .srv-card p { font-size: 14px; color: var(--muted); flex: 1; }
-    .srv-btn {
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 13px;
-      text-decoration: none;
+    .srv-card h3 { font-size: 17px; font-weight: 800; }
+    .srv-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+    .srv-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
     }
+    .srv-btn { color: var(--accent); font-weight: 800; }
     footer {
-      background: #0f172a;
+      background: #090d16;
       color: #cbd5e1;
-      padding: 32px 20px;
+      padding: 28px 20px;
       text-align: center;
-      font-size: 13px;
-      margin-top: 32px;
+      font-size: 12.5px;
+      margin-top: 28px;
     }
   </style>
 </head>
 <body>
   <div class="demo-banner">
-    DEMO WEB PERSONALIZADA PARA: <span>CENTRO E INSTITUTO DE BELLEZA Y COSMETOLOGIA VERONICA</span> (Santa Cruz de la Sierra)
+    SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>CENTRO E INSTITUTO DE BELLEZA Y COSMETOLOGIA VERONICA</span> (Motor: ecommerce-pro + ui-ux-pro-max)
   </div>
   <header>
     <div class="nav-wrap">
       <div class="brand">
         Centro e Instituto de Belleza y Cosmetologia Veronica
-        <small>Estetica Profesional, Cosmetologia y Capacitacion</small>
+        <small>Salon de Estetica Profesional y Capacitacion en Cosmetologia</small>
       </div>
-      <a class="wa-top-btn" href="https://wa.me/59172173005?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20en%20Centro e Instituto de Belleza y Cosmetologia Veronica" target="_blank">
+      <a class="wa-top-btn" href="https://wa.me/59172173005?text=Hola%2C%20vi%20su%20sistema%20web%20y%20deseo%20hacer%20una%20consulta%20en%20Centro e Instituto de Belleza y Cosmetologia Veronica" target="_blank">
         WhatsApp: +591 72173005
       </a>
     </div>
@@ -250,76 +306,98 @@
   <section class="hero">
     <div>
       <span class="badge">Zona 7 Calles — Calle Vallegrande #291 esq. Pari, Santa Cruz</span>
-      <h1>Realza tu Belleza o Formate como Profesional en Cosmetologia</h1>
-      <p class="subtitle">Servicios de estetica facial, capilar y cursos practicos de cosmetologia en el centro de Santa Cruz. Escribenos directo a WhatsApp para reservar cita o pedir inscripciones.</p>
+      <h1>Realza tu Imagen o Formate como Profesional en Cosmetologia</h1>
+      <p class="subtitle">Reserva turnos de salon o solicita inscripcion a nuestros cursos tecnicos practicos directamente por WhatsApp.</p>
       <div class="info-pills">
-        <div><strong>Direccion:</strong> Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz</div>
-        <div><strong>Horarios:</strong> Lunes a Sabado: 08:30 a 19:30</div>
-        <div><strong>Atencion Directa:</strong> +591 72173005 (Santa Cruz de la Sierra)</div>
+        <div><strong>Ubicacion Oficial:</strong> Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz</div>
+        <div><strong>Horarios de Atencion:</strong> Lunes a Sabado: 08:30 a 19:30</div>
+        <div><strong>Linea Directa WhatsApp:</strong> +591 72173005 (Santa Cruz de la Sierra)</div>
+      </div>
+
+      <div class="calc-box">
+        <h3>Simulador Rapido de Presupuesto en Bolivianos (Bs)</h3>
+        <div class="field" style="margin-top:8px;">
+          <label>Cantidad de servicios / modulos a consultar: <span id="qtyVal">1</span> Servicios / Modulos</label>
+          <input type="range" id="qtyRange" min="1" max="50" value="1" oninput="updateBudget()">
+        </div>
+        <div class="calc-row">
+          <span style="font-size:12.5px;color:var(--muted);">Presupuesto referencial estimado:</span>
+          <span class="calc-total" id="budgetTotal">180 Bs</span>
+        </div>
       </div>
     </div>
 
     <div class="form-card" id="reservar">
-      <h2>Agendar Cita por WhatsApp</h2>
-      <p>Completa tus datos y tu solicitud llegara lista al WhatsApp de Centro e Instituto de Belleza y Cosmetologia Veronica.</p>
+      <h2>Reserva / Cotizacion Instantanea a WhatsApp</h2>
+      <p>Selecciona el servicio y horario; los datos se auto-rellenan hacia el WhatsApp de Centro e Instituto de Belleza y Cosmetologia Veronica.</p>
       <form onsubmit="sendBooking(event)">
         <div class="field">
-          <label>Tu Nombre Completo *</label>
-          <input type="text" id="clientName" required placeholder="Ej. Maria Fernandez">
+          <label>Tu Nombre o Empresa *</label>
+          <input type="text" id="clientName" required placeholder="Ej. Carlos Salvatierra">
         </div>
         <div class="field">
-          <label>Servicio o Consulta *</label>
-          <select id="clientService">
-            <option value="Tratamientos Faciales y Cosmetologia">Tratamientos Faciales y Cosmetologia</option><option value="Estilismo, Colorimetria y Maquillaje">Estilismo, Colorimetria y Maquillaje</option><option value="Cursos Tecnicos de Belleza">Cursos Tecnicos de Belleza</option>
+          <label>Servicio o Producto Requerido *</label>
+          <select id="clientService" onchange="updateBudget()">
+            <option value="Limpieza Facial Profunda + Hidratacion Dermo-Cosmetica" data-price="180">Limpieza Facial Profunda + Hidratacion Dermo-Cosmetica (Ref: 180 Bs)</option><option value="Alisado Profesional, Colorimetria y Nutricion Capilar" data-price="280">Alisado Profesional, Colorimetria y Nutricion Capilar (Ref: 280 Bs)</option><option value="Curso Practico de Cosmetologia y Belleza Integral" data-price="350">Curso Practico de Cosmetologia y Belleza Integral (Ref: 350 Bs)</option>
           </select>
         </div>
         <div class="field">
-          <label>Dia o Turno Preferido *</label>
-          <select id="clientShift">
-            <option value="Hoy / Lo antes posible">Hoy / Lo antes posible</option>
-            <option value="Turno Manana (09:00 - 12:30)">Turno Manana (09:00 - 12:30)</option>
-            <option value="Turno Tarde (14:30 - 19:00)">Turno Tarde (14:30 - 19:00)</option>
-            <option value="Sabado por la Manana">Sabado por la Manana</option>
-          </select>
+          <label>Selecciona un Horario Disponible *</label>
+          <input type="hidden" id="selectedSlot" value="09:30 AM">
+          <div class="slots-grid">
+            <button type="button" class="slot-btn active" onclick="pickSlot(this, '09:30 AM')">09:30 AM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '11:00 AM')">11:00 AM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '15:30 PM')">15:30 PM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '17:30 PM')">17:30 PM</button>
+          </div>
         </div>
-        <button type="submit" class="submit-wa">Enviar Reserva a WhatsApp (+591 72173005)</button>
+        <button type="submit" class="submit-wa">Enviar Solicitud a WhatsApp (+591 72173005)</button>
       </form>
     </div>
   </section>
 
   <section class="section">
-    <h2>Nuestras Especialidades y Servicios</h2>
-    <p class="section-sub">Selecciona el servicio que deseas consultar en Centro e Instituto de Belleza y Cosmetologia Veronica:</p>
+    <h2>Catalogo Interactivo de Servicios y Especialidades</h2>
+    <p class="section-sub">Haz clic en cualquier tarjeta para calcular su presupuesto y pre-rellenar tu solicitud en Centro e Instituto de Belleza y Cosmetologia Veronica:</p>
     <div class="srv-grid">
       
-        <div class="srv-card">
+        <div class="srv-card" onclick="selectServiceAndCalc(0, 'Limpieza Facial Profunda + Hidratacion Dermo-Cosmetica', 180)">
           <div class="srv-top">
             <span class="srv-num">01</span>
-            <span class="srv-tag">Cita por WhatsApp</span>
+            <span class="srv-tag">Piel Radiante</span>
           </div>
-          <h3>Tratamientos Faciales y Cosmetologia</h3>
-          <p>Limpieza facial profunda, hidratacion, peeling y rejuvenecimiento con productos profesionales.</p>
-          <a href="#reservar" onclick="selectService('Tratamientos Faciales y Cosmetologia')" class="srv-btn">Agendar este servicio por WhatsApp &rarr;</a>
+          <h3>Limpieza Facial Profunda + Hidratacion Dermo-Cosmetica</h3>
+          <p>Extraccion de impurezas, punta de diamante y mascarilla tensora.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>180 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
         </div>
         
-        <div class="srv-card">
+        <div class="srv-card" onclick="selectServiceAndCalc(1, 'Alisado Profesional, Colorimetria y Nutricion Capilar', 280)">
           <div class="srv-top">
             <span class="srv-num">02</span>
-            <span class="srv-tag">Reserva tu Turno</span>
+            <span class="srv-tag">Estilismo</span>
           </div>
-          <h3>Estilismo, Colorimetria y Maquillaje</h3>
-          <p>Acabados de salon para eventos, alisados, nutricion capilar y diseno de cejas.</p>
-          <a href="#reservar" onclick="selectService('Estilismo, Colorimetria y Maquillaje')" class="srv-btn">Agendar este servicio por WhatsApp &rarr;</a>
+          <h3>Alisado Profesional, Colorimetria y Nutricion Capilar</h3>
+          <p>Tratamientos capilares de salon con productos sellados.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>280 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
         </div>
         
-        <div class="srv-card">
+        <div class="srv-card" onclick="selectServiceAndCalc(2, 'Curso Practico de Cosmetologia y Belleza Integral', 350)">
           <div class="srv-top">
             <span class="srv-num">03</span>
-            <span class="srv-tag">Inscripciones Abiertas</span>
+            <span class="srv-tag">Mensualidad Curso</span>
           </div>
-          <h3>Cursos Tecnicos de Belleza</h3>
-          <p>Formacion practica con practica real en cosmetologia, peluqueria y estetica integral.</p>
-          <a href="#reservar" onclick="selectService('Cursos Tecnicos de Belleza')" class="srv-btn">Agendar este servicio por WhatsApp &rarr;</a>
+          <h3>Curso Practico de Cosmetologia y Belleza Integral</h3>
+          <p>Capacitacion con practica real para emprender tu propio salon en Santa Cruz.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>350 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
         </div>
         
     </div>
@@ -327,21 +405,38 @@
 
   <footer>
     <p><strong>Centro e Instituto de Belleza y Cosmetologia Veronica</strong> — Calle Vallegrande Nro. 291 esq. Pari (a 2 cuadras de 7 Calles), Santa Cruz</p>
-    <p style="margin-top:6px;">Linea directa de WhatsApp: +591 72173005 | Santa Cruz de la Sierra</p>
+    <p style="margin-top:6px;">WhatsApp Oficial: +591 72173005 | Santa Cruz de la Sierra</p>
   </footer>
 
   <script>
-    function selectService(title) {
+    function pickSlot(btn, slotText) {
+      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('selectedSlot').value = slotText;
+    }
+    function updateBudget() {
       const sel = document.getElementById('clientService');
-      if (sel) sel.value = title;
+      const opt = sel.options[sel.selectedIndex];
+      const basePrice = parseFloat(opt.getAttribute('data-price') || '180');
+      const qty = parseInt(document.getElementById('qtyRange').value || '1', 10);
+      document.getElementById('qtyVal').textContent = qty;
+      const total = Math.round(basePrice * qty);
+      document.getElementById('budgetTotal').textContent = total.toLocaleString('es-BO') + ' Bs';
+    }
+    function selectServiceAndCalc(idx, title, price) {
+      const sel = document.getElementById('clientService');
+      if (sel) sel.selectedIndex = idx;
+      updateBudget();
       document.getElementById('clientName').focus();
     }
     function sendBooking(e) {
       e.preventDefault();
       const name = document.getElementById('clientName').value.trim();
       const srv = document.getElementById('clientService').value;
-      const shift = document.getElementById('clientShift').value;
-      const msg = `Hola equipo de Centro e Instituto de Belleza y Cosmetologia Veronica, mi nombre es ${name}. Vi su pagina web y deseo agendar: ${srv} en horario: ${shift}. Quedo atento(a) a su confirmacion.`;
+      const slot = document.getElementById('selectedSlot').value;
+      const qty = document.getElementById('qtyRange').value;
+      const est = document.getElementById('budgetTotal').textContent;
+      const msg = `Hola equipo de Centro e Instituto de Belleza y Cosmetologia Veronica, soy ${name}. Usando su sistema web cotice: ${srv} (Cantidad: ${qty} Servicios / Modulos — Estimado: ${est}) y deseo agendar atencion para el horario ${slot}. Quedo atento(a).`;
       window.open(`https://wa.me/59172173005?text=${encodeURIComponent(msg)}`, '_blank');
     }
   </script>
