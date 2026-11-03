@@ -1,10 +1,18 @@
 {
-  "updated_at_utc": "2026-11-03 03:39:33 UTC",
+  "updated_at_utc": "2026-11-03 04:03:45 UTC",
   "repository": "limitlessprojects/Go-Hybrid",
-  "total_prs": 9,
+  "total_prs": 10,
   "merged_count": 3,
-  "open_count": 6,
+  "open_count": 7,
   "prs": [
+    {
+      "createdAt": "2026-11-03T04:00:26Z",
+      "mergedAt": null,
+      "number": 3441,
+      "state": "OPEN",
+      "title": "fix(hy-check): resolve map key scalar widths across inferred bindings and expression bases",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3441"
+    },
     {
       "createdAt": "2026-11-03T03:26:09Z",
       "mergedAt": null,
