@@ -1,9 +1,9 @@
 {
-  "updated_at_utc": "2026-11-03 15:13:30 UTC",
+  "updated_at_utc": "2026-11-03 15:18:30 UTC",
   "repository": "limitlessprojects/Go-Hybrid",
   "total_prs": 10,
   "merged_count": 3,
-  "open_count": 6,
+  "open_count": 7,
   "prs": [
     {
       "createdAt": "2026-11-03T04:00:26Z",
@@ -17,7 +17,7 @@
       "createdAt": "2026-11-03T03:26:09Z",
       "mergedAt": null,
       "number": 3438,
-      "state": "CLOSED",
+      "state": "OPEN",
       "title": "fix(hy-check): validate elided slice literals in map entries and any slots (fixes #3437)",
       "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3438"
     },
