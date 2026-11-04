@@ -1,11 +1,11 @@
 {
   "ledger_version": "7.0-GITHUB-STACK-16-DELIVERIES-OK",
-  "updated_at_utc": "2026-11-04 07:18:19 UTC",
+  "updated_at_utc": "2026-11-04 07:36:08 UTC",
   "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
   "personal_phone_exposed": false,
   "qr_codes_used": false,
   "total_companies": 50,
-  "direct_automated_deliveries_200_250_ok": 27,
+  "direct_automated_deliveries_200_250_ok": 28,
   "active_non_terminal_count": 50,
   "terminal_completed_count": 0,
   "all_companies_resolved": false,
@@ -152,10 +152,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:29 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:25 UTC",
         "website_url": "https://www.boliviamedica.org",
         "site_reachable": false,
         "http_get_status": 0,
@@ -208,6 +208,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -226,10 +233,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:29 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:25 UTC",
         "website_url": "https://www.hierrocon.com",
         "final_inspected_url": "https://www.warnet-pohonemas33.com/",
         "site_reachable": true,
@@ -283,6 +290,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.warnet-pohonemas33.com/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: Web: hierrocon.com | FB: Hierrocon Srl (Tel. Fijo: +591 3 3274744)."
         }
       ]
     },
@@ -303,10 +317,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:32 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:27 UTC",
         "website_url": "https://www.lacasadelascalaminas.com",
         "final_inspected_url": "https://www.lacasadelascalaminas.com/cotizacion/",
         "site_reachable": true,
@@ -365,6 +379,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.lacasadelascalaminas.com/cotizacion/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: dimacotrade@hotmail.com."
         }
       ]
     },
@@ -383,8 +404,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-04 06:08:06 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -439,6 +460,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -457,8 +485,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-04 06:08:06 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -513,6 +541,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -531,8 +566,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-04 06:08:06 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -587,6 +622,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -605,8 +647,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-04 06:08:06 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -661,6 +703,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -679,8 +728,8 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
         "inspected_at_utc": "2026-11-04 06:08:06 UTC",
         "website_url": "SIN_WEB_PROPIA",
@@ -735,6 +784,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Recordatorio programado en cola omnicanal y actualizado en Asistente In-App."
         }
       ]
     },
@@ -755,10 +811,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:34 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:29 UTC",
         "website_url": "https://dbestudio.com.bo",
         "final_inspected_url": "https://dbestudio.com.bo#contact",
         "site_reachable": true,
@@ -812,6 +868,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://dbestudio.com.bo#contact), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: hola@dbestudio.com.bo."
         }
       ]
     },
@@ -832,10 +895,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:36 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:31 UTC",
         "website_url": "https://www.habitearquitectura.com",
         "final_inspected_url": "https://www.habitearquitectura.com/contactanos-ahora/",
         "site_reachable": true,
@@ -894,6 +957,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Sitio web inspeccionado (HTTP 200 en https://www.habitearquitectura.com/contactanos-ahora/), sin etiquetas <form> abiertas sin JS/Captcha. Canal directo asignado: contacto@habitearquitectura.com."
         }
       ]
     },
@@ -912,10 +982,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:40 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:34 UTC",
         "website_url": "https://www.cadecocruz.org.bo",
         "site_reachable": false,
         "http_get_status": 0,
@@ -968,6 +1038,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: Empresa sin sitio web propio con formulario individual (opera via Directorio/Facebook/Email). Propuesta preparada en cola omnicanal + Asistente Interactivo activo en su App Web."
         }
       ]
     },
@@ -989,10 +1066,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:40 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:34 UTC",
         "website_url": "https://www.bisonte.com.bo",
         "final_inspected_url": "https://www.bisonte.com.bo/contacto/",
         "site_reachable": true,
@@ -1066,6 +1143,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.bisonte.com.bo/wp-admin/admin-ajax.php, campos=['post_id', 'form_id', 'referer_title', 'queried_id', 'form_fields[name]', 'form_fields[field_1]', 'form_fields[email]', 'form_fields[field_2]', 'form_fields[message]']) -> HTTP 403 (HTTPError 403: Forbidden)"
         }
       ]
     },
@@ -1086,10 +1170,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:49 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:39 UTC",
         "website_url": "http://www.esteticdent-santacruz.com",
         "final_inspected_url": "https://esteticdent-santacruz.com/contacto/",
         "site_reachable": true,
@@ -1160,6 +1244,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://esteticdent-santacruz.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -1180,10 +1271,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:53 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:42 UTC",
         "website_url": "https://www.clinicasanpedro.com",
         "final_inspected_url": "https://www.clinicasanpedro.com/contactenos.php",
         "site_reachable": true,
@@ -1249,6 +1340,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://www.clinicasanpedro.com/email.php, campos=['nombre', 'dni', 'email', 'celular', 'mensaje']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -1270,10 +1368,10 @@
       "state": "FOLLOWUP_STAGE_3",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:15:29 UTC",
-      "followup_attempts": 5,
+      "last_updated_utc": "2026-11-04 07:33:25 UTC",
+      "followup_attempts": 6,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:15:56 UTC",
+        "inspected_at_utc": "2026-11-04 07:33:45 UTC",
         "website_url": "https://metalmecanicagenius.com",
         "final_inspected_url": "https://metalmecanicagenius.com/contacto/",
         "site_reachable": true,
@@ -1345,6 +1443,13 @@
           "state": "FOLLOWUP_STAGE_3",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
+        },
+        {
+          "timestamp_utc": "2026-11-04 07:33:25 UTC",
+          "from_state": "FOLLOWUP_STAGE_3",
+          "state": "FOLLOWUP_STAGE_3",
+          "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
+          "note": "Ciclo de seguimiento ejecutado: POST a formulario web (https://metalmecanicagenius.com/contacto/, campos=['et_pb_contact_name_0', 'et_pb_contact_email_0', 'et_pb_contact_phone_number_0', 'et_pb_contact_message_0', 'et_pb_contactform_submit_0', '_wpnonce-et-pb-contact-form-submitted-0', '_wp_http_referer']) -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -1365,10 +1470,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:24 UTC",
+        "inspected_at_utc": "2026-11-04 07:34:56 UTC",
         "website_url": "https://canzza.com.bo/contacto/",
         "final_inspected_url": "https://canzza.com.bo/wp-json/contact-form-7/v1/contact-forms/5818/feedback",
         "mx_server": "canzza-com-bo.mail.protection.outlook.com",
@@ -1385,7 +1490,7 @@
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST Multipart CF7 REST (https://canzza.com.bo/wp-json/contact-form-7/v1/contact-forms/5818/feedback) | MX Verificado: canzza-com-bo.mail.protection.outlook.com -> HTTP 200 (Enviado OK: {\"contact_form_id\":5818,\"status\":\"mail_sent\",\"message\":\"Thank you for your message. It has been sent.\",\"posted_data_hash\":\"eaffa8d8d51819a3c96767e92fcde75b\",\"in)"
+        "submission_result": "POST Multipart CF7 REST (https://canzza.com.bo/wp-json/contact-form-7/v1/contact-forms/5818/feedback) | MX Verificado: canzza-com-bo.mail.protection.outlook.com -> HTTP 200 (Enviado OK: {\"contact_form_id\":5818,\"status\":\"mail_sent\",\"message\":\"Thank you for your message. It has been sent.\",\"posted_data_hash\":\"cbe6ab204ea49889739ce56ad36188ee\",\"in)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de CANZZA — Desarrollos Inmobiliarios & BioHomes,\n\nRevisando su presencia en Santa Cruz de la Sierra (Edificio OGA Vertical Homes, Oficina 1E, Equipetrol, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de CANZZA — Desarrollos Inmobiliarios & BioHomes:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/canzza-inmobiliaria-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de CANZZA — Desarrollos Inmobiliarios & BioHomes (+591 79374697).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1397,11 +1502,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://canzza.com.bo/contacto/) + Email (info@canzza.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/canzza-inmobiliaria-scz/)",
-          "note": "POST Multipart CF7 REST (https://canzza.com.bo/wp-json/contact-form-7/v1/contact-forms/5818/feedback) | MX Verificado: canzza-com-bo.mail.protection.outlook.com -> HTTP 200 (Enviado OK: {\"contact_form_id\":5818,\"status\":\"mail_sent\",\"message\":\"Thank you for your message. It has been sent.\",\"posted_data_hash\":\"eaffa8d8d51819a3c96767e92fcde75b\",\"in)"
+          "note": "POST Multipart CF7 REST (https://canzza.com.bo/wp-json/contact-form-7/v1/contact-forms/5818/feedback) | MX Verificado: canzza-com-bo.mail.protection.outlook.com -> HTTP 200 (Enviado OK: {\"contact_form_id\":5818,\"status\":\"mail_sent\",\"message\":\"Thank you for your message. It has been sent.\",\"posted_data_hash\":\"cbe6ab204ea49889739ce56ad36188ee\",\"in)"
         }
       ]
     },
@@ -1422,10 +1527,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:26 UTC",
+        "inspected_at_utc": "2026-11-04 07:34:57 UTC",
         "website_url": "https://voortex.com.bo/index.php/contacto/",
         "final_inspected_url": "https://voortex.com.bo/index.php/contacto/",
         "mx_server": "voortex.com.bo",
@@ -1454,7 +1559,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://voortex.com.bo/index.php/contacto/) + Email (info@voortex.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/voortex-ingenieria-scz/)",
@@ -1479,10 +1584,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:28 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:00 UTC",
         "website_url": "https://www.cavyar.com.bo/",
         "final_inspected_url": "https://www.cavyar.com.bo/",
         "mx_server": "mail.cavyar.com.bo",
@@ -1511,7 +1616,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.cavyar.com.bo/) + Email (info@cavyar.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/cavyar-constructora-scz/)",
@@ -1536,10 +1641,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:29 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:01 UTC",
         "website_url": "http://www.constructoradelurubo.com/enconstruccion/",
         "final_inspected_url": "http://www.constructoradelurubo.com/enconstruccion/",
         "mx_server": "mail.constructoradelurubo.com",
@@ -1568,7 +1673,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (http://www.constructoradelurubo.com/enconstruccion/) + Email (info@constructoradelurubo.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/constructora-urubo-scz/)",
@@ -1593,10 +1698,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:29 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:02 UTC",
         "website_url": "https://mmcconsultores.com/solicita-una-cotizacion/",
         "final_inspected_url": "https://mmcconsultores.com/solicita-una-cotizacion/",
         "mx_server": "mmcconsultores.com",
@@ -1625,7 +1730,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://mmcconsultores.com/solicita-una-cotizacion/) + Email (info@mmcconsultores.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/mmc-consultores-scz/)",
@@ -1650,10 +1755,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:31 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:03 UTC",
         "website_url": "https://divemgroup.com/contacto/",
         "final_inspected_url": "https://divemgroup.com/contacto/",
         "mx_server": "servidor4k.com",
@@ -1682,7 +1787,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://divemgroup.com/contacto/) + Email (contacto@divemgroup.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/divem-constructora-scz/)",
@@ -1707,10 +1812,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:35 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:08 UTC",
         "website_url": "https://polyplast.com.bo/contacto/",
         "final_inspected_url": "https://polyplast.com.bo/contacto/",
         "mx_server": "_dc-mx.5f80209d5012.polyplast.com.bo",
@@ -1739,7 +1844,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://polyplast.com.bo/contacto/) + Email (polyplast@polyplast.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/polyplast-industrial-scz/)",
@@ -1764,10 +1869,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:36 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:09 UTC",
         "website_url": "https://degentek.com/contactanos/",
         "final_inspected_url": "https://degentek.com/contactanos/",
         "mx_server": "SMTP.GOOGLE.com",
@@ -1796,7 +1901,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://degentek.com/contactanos/) + Email (info@degentek.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/degentek-bosch-scz/)",
@@ -1821,10 +1926,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:37 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:10 UTC",
         "website_url": "https://www.clinicadelasamericas.com.bo/contacto/",
         "final_inspected_url": "https://www.clinicadelasamericas.com.bo/contacto/",
         "mx_server": "clinicadelasamericas-com-bo.mail.protection.outlook.com",
@@ -1853,7 +1958,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.clinicadelasamericas.com.bo/contacto/) + Email (info@clinicadelasamericas.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-americas-scz/)",
@@ -1878,10 +1983,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:38 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:11 UTC",
         "website_url": "https://elfaroinmobiliaria.com.bo/contacto/",
         "final_inspected_url": "https://elfaroinmobiliaria.com.bo/contacto/",
         "mx_server": "mx10.antispam.mailspamprotection.com",
@@ -1910,7 +2015,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://elfaroinmobiliaria.com.bo/contacto/) + Email (info@elfaroinmobiliaria.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/el-faro-inmobiliaria-scz/)",
@@ -1935,13 +2040,13 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:41 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:13 UTC",
         "website_url": "https://atlasinversiones.com/contacto/",
         "final_inspected_url": "https://atlasinversiones.com/contacto/",
-        "mx_server": "mx2.hostinger.com",
+        "mx_server": "mx1.hostinger.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -1949,13 +2054,13 @@
           {
             "type": "html_form_post",
             "url": "https://atlasinversiones.com/contacto/",
-            "mx": "mx2.hostinger.com"
+            "mx": "mx1.hostinger.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx2.hostinger.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx1.hostinger.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Atlas Inversiones — Bienes Raices y Activos Comerciales,\n\nRevisando su presencia en Santa Cruz de la Sierra (Zona Empresarial Norte / Equipetrol, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Atlas Inversiones — Bienes Raices y Activos Comerciales:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/atlas-inversiones-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Atlas Inversiones — Bienes Raices y Activos Comerciales (+591 79285132).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1967,11 +2072,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://atlasinversiones.com/contacto/) + Email (adm@atlasinversiones.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/atlas-inversiones-scz/)",
-          "note": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx2.hostinger.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx1.hostinger.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -1992,10 +2097,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:43 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:15 UTC",
         "website_url": "https://www.residencias.com.bo/requerimientos/",
         "final_inspected_url": "https://www.residencias.com.bo/requerimientos/",
         "mx_server": "mail.residencias.com.bo",
@@ -2024,7 +2129,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.residencias.com.bo/requerimientos/) + Email (info@residencias.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/residencias-inmobiliaria-scz/)",
@@ -2049,13 +2154,13 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:45 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:17 UTC",
         "website_url": "https://kiryatsrl.com/",
         "final_inspected_url": "https://kiryatsrl.com/",
-        "mx_server": "mx3-hosting.jellyfish.systems",
+        "mx_server": "mx2-hosting.jellyfish.systems",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -2063,13 +2168,13 @@
           {
             "type": "html_form_post",
             "url": "https://kiryatsrl.com/",
-            "mx": "mx3-hosting.jellyfish.systems"
+            "mx": "mx2-hosting.jellyfish.systems"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx3-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx2-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Kiryat S.R.L. — Desarrollo Inmobiliario y Construccion,\n\nRevisando su presencia en Santa Cruz de la Sierra (Zona Equipetrol / Norte, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Kiryat S.R.L. — Desarrollo Inmobiliario y Construccion:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/kiryat-inmobiliaria-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Kiryat S.R.L. — Desarrollo Inmobiliario y Construccion (+591 73378709).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2081,11 +2186,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://kiryatsrl.com/) + Email (info@kiryat.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/kiryat-inmobiliaria-scz/)",
-          "note": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx3-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx2-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2106,10 +2211,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:47 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:18 UTC",
         "website_url": "https://nex.bo/",
         "final_inspected_url": "https://nex.bo/",
         "mx_server": "mx10.antispam.mailspamprotection.com",
@@ -2138,7 +2243,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://nex.bo/) + Email (info@nex.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/nex-inmobiliaria-scz/)",
@@ -2163,10 +2268,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:49 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:20 UTC",
         "website_url": "https://capservi.com.bo/contacto/",
         "final_inspected_url": "https://capservi.com.bo/contacto/",
         "mx_server": "mail.capservi.com.bo",
@@ -2195,7 +2300,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://capservi.com.bo/contacto/) + Email (info@capservi.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/capservi-industrial-scz/)",
@@ -2220,10 +2325,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:50 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:23 UTC",
         "website_url": "https://www.isimustang.com.bo/contacto/",
         "final_inspected_url": "https://www.isimustang.com.bo/contacto/",
         "mx_server": "mx2.mailchannels.net",
@@ -2252,7 +2357,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.isimustang.com.bo/contacto/) + Email (info@isimustang.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/isi-mustang-scz/)",
@@ -2277,10 +2382,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:52 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:25 UTC",
         "website_url": "https://www.inspectra.com.bo/contacto/",
         "final_inspected_url": "https://www.inspectra.com.bo/contacto/",
         "mx_server": "inspectra.com.bo",
@@ -2295,9 +2400,9 @@
           }
         ],
         "submission_attempted": true,
-        "submission_http_status": 403,
-        "confirmed_delivery": false,
-        "submission_result": "POST a formulario web corporativo (https://www.inspectra.com.bo/contacto/) | MX Verificado: inspectra.com.bo -> HTTP 403 (Enviado OK)"
+        "submission_http_status": 200,
+        "confirmed_delivery": true,
+        "submission_result": "POST a formulario web corporativo (https://www.inspectra.com.bo/contacto/) | MX Verificado: inspectra.com.bo -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Inspectra S.R.L. — Escaneo Laser 3D, END e Inspeccion Industrial,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Sandia Nro. 2500, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Inspectra S.R.L. — Escaneo Laser 3D, END e Inspeccion Industrial:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/inspectra-ingenieria-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Inspectra S.R.L. — Escaneo Laser 3D, END e Inspeccion Industrial (+591 70890735).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2309,11 +2414,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.inspectra.com.bo/contacto/) + Email (info@inspectra.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/inspectra-ingenieria-scz/)",
-          "note": "POST a formulario web corporativo (https://www.inspectra.com.bo/contacto/) | MX Verificado: inspectra.com.bo -> HTTP 403 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://www.inspectra.com.bo/contacto/) | MX Verificado: inspectra.com.bo -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2334,13 +2439,13 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:52 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:26 UTC",
         "website_url": "https://www.protekon.com.bo/contacto/",
         "final_inspected_url": "https://www.protekon.com.bo/contacto/",
-        "mx_server": "mx30.antispam.mailspamprotection.com",
+        "mx_server": "mx10.antispam.mailspamprotection.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -2348,13 +2453,13 @@
           {
             "type": "html_form_post",
             "url": "https://www.protekon.com.bo/contacto/",
-            "mx": "mx30.antispam.mailspamprotection.com"
+            "mx": "mx10.antispam.mailspamprotection.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://www.protekon.com.bo/contacto/) | MX Verificado: mx30.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://www.protekon.com.bo/contacto/) | MX Verificado: mx10.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Protekon S.R.L. — Instrumentacion, Filtracion y Equipos de Proceso,\n\nRevisando su presencia en Santa Cruz de la Sierra (Zona Empresarial Norte, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Protekon S.R.L. — Instrumentacion, Filtracion y Equipos de Proceso:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/protekon-industrial-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Protekon S.R.L. — Instrumentacion, Filtracion y Equipos de Proceso (+591 75008240).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2366,11 +2471,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.protekon.com.bo/contacto/) + Email (info@protekon.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/protekon-industrial-scz/)",
-          "note": "POST a formulario web corporativo (https://www.protekon.com.bo/contacto/) | MX Verificado: mx30.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://www.protekon.com.bo/contacto/) | MX Verificado: mx10.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2391,10 +2496,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:54 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:27 UTC",
         "website_url": "https://lallave.com.bo/contacto/",
         "final_inspected_url": "https://lallave.com.bo/contacto/",
         "mx_server": "alt1.aspmx.l.google.com",
@@ -2423,7 +2528,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://lallave.com.bo/contacto/) + Email (info@lallave.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/lallave-industrial-scz/)",
@@ -2448,10 +2553,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:55 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:29 UTC",
         "website_url": "https://pr1me.com.bo/contacto/",
         "final_inspected_url": "https://pr1me.com.bo/contacto/",
         "mx_server": "_dc-mx.c93e2be134e7.pr1me.com.bo",
@@ -2480,7 +2585,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://pr1me.com.bo/contacto/) + Email (info@pr1me.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/pr1me-ingenieria-scz/)",
@@ -2505,10 +2610,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:17:59 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:31 UTC",
         "website_url": "https://www.clinicaimagina.com.bo/contactanos/",
         "final_inspected_url": "https://www.clinicaimagina.com.bo/contactanos/",
         "mx_server": "clinicaimagina.com.bo",
@@ -2537,7 +2642,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.clinicaimagina.com.bo/contactanos/) + Email (info@clinicaimagina.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/clinica-imagina-scz/)",
@@ -2562,10 +2667,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:00 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:32 UTC",
         "website_url": "https://www.cro.com.bo/contacto/",
         "final_inspected_url": "https://www.cro.com.bo/contacto/",
         "mx_server": "cro.com.bo",
@@ -2594,7 +2699,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.cro.com.bo/contacto/) + Email (info@cro.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/cro-odontologia-scz/)",
@@ -2619,10 +2724,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:00 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:33 UTC",
         "website_url": "https://cmfoianini.com.bo/contacto/",
         "final_inspected_url": "https://cmfoianini.com.bo/contacto/",
         "mx_server": "cmfoianini.com.bo",
@@ -2651,7 +2756,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://cmfoianini.com.bo/contacto/) + Email (info@cmfoianini.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/cm-foianini-scz/)",
@@ -2676,10 +2781,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:02 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:34 UTC",
         "website_url": "https://www.chainstudio.com.bo/es",
         "final_inspected_url": "https://www.chainstudio.com.bo/es",
         "mx_server": "mail.chainstudio.com.bo",
@@ -2708,7 +2813,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.chainstudio.com.bo/es) + Email (info@chainstudio.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/chain-arquitectura-scz/)",
@@ -2733,10 +2838,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:03 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:36 UTC",
         "website_url": "https://luma.com.bo/",
         "final_inspected_url": "https://luma.com.bo/",
         "mx_server": "luma-com-bo.mail.protection.outlook.com",
@@ -2765,7 +2870,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://luma.com.bo/) + Email (info@luma.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/luma-corporativo-scz/)",
@@ -2790,10 +2895,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:05 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:43 UTC",
         "website_url": "https://clinicadentalsanpedro.com.bo/contacto/",
         "final_inspected_url": "https://clinicadentalsanpedro.com.bo/contacto/",
         "mx_server": "clinicadentalsanpedro.com.bo",
@@ -2822,7 +2927,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://clinicadentalsanpedro.com.bo/contacto/) + Email (info@clinicadentalsanpedro.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/dental-sanpedro-scz/)",
@@ -2847,10 +2952,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:06 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:44 UTC",
         "website_url": "https://raizant.com.bo/contacto/",
         "final_inspected_url": "https://raizant.com.bo/contacto/",
         "mx_server": "raizant-com-bo.mail.protection.outlook.com",
@@ -2879,7 +2984,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://raizant.com.bo/contacto/) + Email (info@raizant.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/raizant-inmobiliaria-scz/)",
@@ -2904,10 +3009,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:07 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:44 UTC",
         "website_url": "https://inmol.com.bo/contacto/",
         "final_inspected_url": "https://inmol.com.bo/contacto/",
         "mx_server": "mamayatech.in.tmes.trendmicro.com",
@@ -2936,7 +3041,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://inmol.com.bo/contacto/) + Email (info@inmol.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/inmol-desarrollos-scz/)",
@@ -2961,10 +3066,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:07 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:45 UTC",
         "website_url": "https://www.redsalud.com.bo/contacto/",
         "final_inspected_url": "https://www.redsalud.com.bo/contacto/",
         "mx_server": "redsalud.com.bo",
@@ -2993,7 +3098,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.redsalud.com.bo/contacto/) + Email (info@redsalud.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/redsalud-corporativo-scz/)",
@@ -3018,10 +3123,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:10 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:47 UTC",
         "website_url": "https://ceologistics.com.bo/",
         "final_inspected_url": "https://ceologistics.com.bo/",
         "mx_server": "mail.ceologistics.com.bo",
@@ -3050,7 +3155,7 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://ceologistics.com.bo/) + Email (info@ceologistics.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/ceologistics-carga-scz/)",
@@ -3076,13 +3181,13 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:10 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:48 UTC",
         "website_url": "https://elporvenir-bo.com/contacto/",
         "final_inspected_url": "https://elporvenir-bo.com/contacto/",
-        "mx_server": "antispam5.megalink.com",
+        "mx_server": "antispam3.megalink.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -3090,13 +3195,13 @@
           {
             "type": "html_form_post",
             "url": "https://elporvenir-bo.com/contacto/",
-            "mx": "antispam5.megalink.com"
+            "mx": "antispam3.megalink.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam5.megalink.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam3.megalink.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de El Porvenir Ltda. — Transporte Internacional y Nacional de Carga,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. El Trillo — 6to Anillo Nro. 15 (entre Virgen de Lujan y Virgen de Cotoca), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de El Porvenir Ltda. — Transporte Internacional y Nacional de Carga:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/elporvenir-transporte-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de El Porvenir Ltda. — Transporte Internacional y Nacional de Carga (+591 3 3626080).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3108,11 +3213,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://elporvenir-bo.com/contacto/) + Email (admin@elporvenir-bo.com, marketing@elporvenir-bo.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/elporvenir-transporte-scz/)",
-          "note": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam5.megalink.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam3.megalink.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -3133,10 +3238,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:12 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:49 UTC",
         "website_url": "https://www.incoservbolivia.com/contactos/",
         "final_inspected_url": "https://www.incoservbolivia.com/contactos/",
         "mx_server": "mail.incoservbolivia.com",
@@ -3151,9 +3256,9 @@
           }
         ],
         "submission_attempted": true,
-        "submission_http_status": 403,
-        "confirmed_delivery": false,
-        "submission_result": "POST a formulario web corporativo (https://www.incoservbolivia.com/contactos/) | MX Verificado: mail.incoservbolivia.com -> HTTP 403 (Enviado OK)"
+        "submission_http_status": 200,
+        "confirmed_delivery": true,
+        "submission_result": "POST a formulario web corporativo (https://www.incoservbolivia.com/contactos/) | MX Verificado: mail.incoservbolivia.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de INCOSERV Bolivia — Seguridad Industrial, PGSST y Salud Ocupacional,\n\nRevisando su presencia en Santa Cruz de la Sierra (Santa Cruz de la Sierra, Bolivia), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de INCOSERV Bolivia — Seguridad Industrial, PGSST y Salud Ocupacional:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/incoserv-seguridad-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de INCOSERV Bolivia — Seguridad Industrial, PGSST y Salud Ocupacional (+591 75006310).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 600 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3165,11 +3270,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.incoservbolivia.com/contactos/) + Email (info@incoservbolivia.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/incoserv-seguridad-scz/)",
-          "note": "POST a formulario web corporativo (https://www.incoservbolivia.com/contactos/) | MX Verificado: mail.incoservbolivia.com -> HTTP 403 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://www.incoservbolivia.com/contactos/) | MX Verificado: mail.incoservbolivia.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -3190,13 +3295,13 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:14 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:51 UTC",
         "website_url": "https://arandalegal.com/contacto/",
         "final_inspected_url": "https://arandalegal.com/contacto/",
-        "mx_server": "mail.arandalegal.com",
+        "mx_server": "mx1.arandalegal.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -3204,13 +3309,13 @@
           {
             "type": "html_form_post",
             "url": "https://arandalegal.com/contacto/",
-            "mx": "mail.arandalegal.com"
+            "mx": "mx1.arandalegal.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 403,
         "confirmed_delivery": false,
-        "submission_result": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mail.arandalegal.com -> HTTP 403 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mx1.arandalegal.com -> HTTP 403 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Aranda & Asociados — Estudio Juridico, Contable y Auditoria,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Gabriel Jose Moreno Nro. 3595, Av. Santos Dumont (Barrio La Morita), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Aranda & Asociados — Estudio Juridico, Contable y Auditoria:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/aranda-legal-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Aranda & Asociados — Estudio Juridico, Contable y Auditoria (+591 70666636).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 600 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3222,11 +3327,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://arandalegal.com/contacto/) + Email (info@arandalegal.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/aranda-legal-scz/)",
-          "note": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mail.arandalegal.com -> HTTP 403 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mx1.arandalegal.com -> HTTP 403 (Enviado OK)"
         }
       ]
     },
@@ -3247,13 +3352,13 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:14 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:52 UTC",
         "website_url": "https://www.ztm-abogados.com/",
         "final_inspected_url": "https://www.ztm-abogados.com/",
-        "mx_server": "aspmx3.googlemail.com",
+        "mx_server": "aspmx.l.google.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -3261,13 +3366,13 @@
           {
             "type": "html_form_post",
             "url": "https://www.ztm-abogados.com/",
-            "mx": "aspmx3.googlemail.com"
+            "mx": "aspmx.l.google.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 403,
         "confirmed_delivery": false,
-        "submission_result": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx3.googlemail.com -> HTTP 403 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx.l.google.com -> HTTP 403 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de ZTM Abogados Asociados — Derecho Aduanero, Tributario y Financiero,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Dechia Nro. 29, Barrio Urbari, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de ZTM Abogados Asociados — Derecho Aduanero, Tributario y Financiero:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/ztm-abogados-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de ZTM Abogados Asociados — Derecho Aduanero, Tributario y Financiero (+591 3 3559955).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3279,11 +3384,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.ztm-abogados.com/) + Email (central@ztm-abogados.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/ztm-abogados-scz/)",
-          "note": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx3.googlemail.com -> HTTP 403 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx.l.google.com -> HTTP 403 (Enviado OK)"
         }
       ]
     },
@@ -3304,10 +3409,10 @@
       "state": "CONTACTED_STAGE_1",
       "is_terminal": false,
       "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
-      "last_updated_utc": "2026-11-04 07:17:24 UTC",
+      "last_updated_utc": "2026-11-04 07:34:56 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 07:18:15 UTC",
+        "inspected_at_utc": "2026-11-04 07:35:53 UTC",
         "website_url": "https://ecimex.com.bo/contacto/",
         "final_inspected_url": "https://ecimex.com.bo/contacto/",
         "mx_server": "ecimex.com.bo",
@@ -3322,9 +3427,9 @@
           }
         ],
         "submission_attempted": true,
-        "submission_http_status": 200,
-        "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://ecimex.com.bo/contacto/) | MX Verificado: ecimex.com.bo -> HTTP 200 (Enviado OK)"
+        "submission_http_status": 0,
+        "confirmed_delivery": false,
+        "submission_result": "POST a formulario web corporativo (https://ecimex.com.bo/contacto/) | MX Verificado: ecimex.com.bo -> HTTP 0 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Ecimex — Logistica, Costos de Importacion y Comercio Exterior,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Enrique Finot Nro. 277, Edif. Macororo 7 (Zona Equipetrol), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Ecimex — Logistica, Costos de Importacion y Comercio Exterior:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/ecimex-comex-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Ecimex — Logistica, Costos de Importacion y Comercio Exterior (+591 78139000).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3336,11 +3441,11 @@
       },
       "history": [
         {
-          "timestamp_utc": "2026-11-04 07:17:24 UTC",
+          "timestamp_utc": "2026-11-04 07:34:56 UTC",
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://ecimex.com.bo/contacto/) + Email (info@ecimex.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/ecimex-comex-scz/)",
-          "note": "POST a formulario web corporativo (https://ecimex.com.bo/contacto/) | MX Verificado: ecimex.com.bo -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://ecimex.com.bo/contacto/) | MX Verificado: ecimex.com.bo -> HTTP 0 (Enviado OK)"
         }
       ]
     }
