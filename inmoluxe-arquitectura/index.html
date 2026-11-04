@@ -149,6 +149,21 @@
             display: none; margin-top: 18px; padding: 16px; background: rgba(16, 185, 129, 0.1);
             border: 1px solid var(--success); color: var(--text); border-radius: 6px; font-size: 0.88rem;
         }
+        .lang-switch {
+            display: inline-flex; gap: 4px; background: var(--surface-2); border: 1px solid var(--border);
+            padding: 4px; border-radius: 6px; align-items: center;
+        }
+        .lang-btn {
+            background: transparent; color: var(--muted); border: none; padding: 6px 10px;
+            font-size: 0.75rem; font-weight: 700; cursor: pointer; border-radius: 4px; letter-spacing: 0.5px;
+        }
+        .lang-btn.active { background: var(--gold); color: #000; }
+        .morabito-banner {
+            display: none; background: linear-gradient(90deg, rgba(212, 175, 55, 0.18), rgba(20, 22, 25, 0.96));
+            border-bottom: 1px solid var(--gold); padding: 10px 5%; font-size: 0.82rem;
+            color: var(--text); justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .morabito-banner strong { color: var(--gold); letter-spacing: 0.5px; }
         footer {
             border-top: 1px solid var(--border); padding: 40px 5%; text-align: center;
             color: var(--muted); font-size: 0.85rem;
@@ -161,37 +176,46 @@
 </head>
 <body>
 
+<div id="morabito-banner" class="morabito-banner">
+    <div><strong>BESPOKE SHOWCASE FOR THE MORABITO REAL ESTATE GROUP</strong> — Interactive Luxury Branding, 1:100 Architectural CAD Floorplan & Yield Engine</div>
+    <div style="font-family:monospace; font-size:0.75rem; color:var(--gold);">CONTRA HIGH-TICKET DEMO | READY FOR PRODUCTION</div>
+</div>
+
 <header>
-    <a href="#" class="brand">AURA<span>LUXE</span> ARQUITECTOS</a>
+    <a href="#" class="brand" id="ui-brand">AURA<span>LUXE</span> ARQUITECTOS</a>
     <nav>
-        <a href="#propiedades">Propiedades</a>
-        <a href="#planos">Planos CAD</a>
-        <a href="#simulador">Simulador ROI</a>
-        <a href="#agendar" class="btn-gold">Agendar Dossier Web</a>
+        <a href="#propiedades" id="nav-props">Propiedades</a>
+        <a href="#planos" id="nav-cad">Planos CAD</a>
+        <a href="#simulador" id="nav-sim">Simulador ROI</a>
+        <div class="lang-switch" role="group" aria-label="Language Selector">
+            <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN (Morabito Luxury)</button>
+            <button type="button" class="lang-btn active" id="btn-lang-es" onclick="setLanguage('es')">ES</button>
+        </div>
+        <a href="#agendar" class="btn-gold" id="nav-cta">Agendar Dossier Web</a>
     </nav>
 </header>
 
 <section class="hero" id="planos">
     <div>
-        <span class="tag">Arquitectura Contemporanea & Inversion Inmobiliaria</span>
-        <h1>Espacios de Autor Disenados para Alta Plusvalia</h1>
-        <p>Desarrollamos residencias minimalistas, penthouses y complejos corporativos con certificacion energetica, trazabilidad estructural y retorno de inversion proyectado.</p>
-        <div style="display:flex; gap:16px; margin-bottom:36px;">
-            <a href="#propiedades" class="btn-gold">Explorar Catalogo Activo</a>
-            <a href="#simulador" style="padding:10px 22px; border:1px solid var(--border); color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:700; text-transform:uppercase; border-radius:4px;">Calcular Hipoteca / ROI</a>
+        <span class="tag" id="hero-tag">Arquitectura Contemporanea & Inversion Inmobiliaria</span>
+        <h1 id="hero-title">Espacios de Autor Disenados para Alta Plusvalia</h1>
+        <p id="hero-desc">Desarrollamos residencias minimalistas, penthouses y complejos corporativos con certificacion energetica, trazabilidad estructural y retorno de inversion proyectado.</p>
+        <div style="display:flex; gap:16px; margin-bottom:36px; flex-wrap:wrap;">
+            <a href="#propiedades" class="btn-gold" id="hero-btn-primary">Explorar Catalogo Activo</a>
+            <a href="#simulador" id="hero-btn-secondary" style="padding:10px 22px; border:1px solid var(--border); color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:700; text-transform:uppercase; border-radius:4px;">Calcular Hipoteca / ROI</a>
         </div>
         <div class="stats-bar">
             <div>
-                <div class="stat-num">42,000 m2</div>
-                <div class="stat-label">Construidos y Entregados</div>
+                <div class="stat-num" id="stat-1-num">42,000 m2</div>
+                <div class="stat-label" id="stat-1-label">Construidos y Entregados</div>
             </div>
             <div>
-                <div class="stat-num">11.4%</div>
-                <div class="stat-label">Plusvalia Anual Media</div>
+                <div class="stat-num" id="stat-2-num">11.4%</div>
+                <div class="stat-label" id="stat-2-label">Plusvalia Anual Media</div>
             </div>
             <div>
-                <div class="stat-num">ISO 9001</div>
-                <div class="stat-label">Certificacion Estructural</div>
+                <div class="stat-num" id="stat-3-num">ISO 9001</div>
+                <div class="stat-label" id="stat-3-label">Certificacion Estructural</div>
             </div>
         </div>
     </div>
@@ -199,10 +223,10 @@
     <div class="blueprint-card">
         <div class="blueprint-header">
             <div>
-                <strong style="font-size:0.95rem; display:block;">VISOR TECNICO DE DISTRIBUCION</strong>
+                <strong style="font-size:0.95rem; display:block;" id="bp-title">VISOR TECNICO DE DISTRIBUCION</strong>
                 <span style="font-size:0.78rem; color:var(--muted);" id="bp-subtitle">Nivel 1: Planta Social & Terraza Perimetral (245 m2)</span>
             </div>
-            <span style="font-family:monospace; font-size:0.75rem; color:var(--gold);">ESCALA 1:100</span>
+            <span style="font-family:monospace; font-size:0.75rem; color:var(--gold);" id="bp-scale">ESCALA 1:100</span>
         </div>
         <div class="blueprint-stage">
             <div class="grid-blueprint" id="bp-grid">
@@ -213,9 +237,9 @@
             </div>
         </div>
         <div class="floor-tabs">
-            <button class="floor-btn active" onclick="setBlueprint(1, this)">Planta Nivel 1 (Social)</button>
-            <button class="floor-btn" onclick="setBlueprint(2, this)">Planta Nivel 2 (Suites)</button>
-            <button class="floor-btn" onclick="setBlueprint(3, this)">Rooftop & Solarium</button>
+            <button class="floor-btn active" id="tab-floor-1" onclick="setBlueprint(1, this)">Planta Nivel 1 (Social)</button>
+            <button class="floor-btn" id="tab-floor-2" onclick="setBlueprint(2, this)">Planta Nivel 2 (Suites)</button>
+            <button class="floor-btn" id="tab-floor-3" onclick="setBlueprint(3, this)">Rooftop & Solarium</button>
         </div>
     </div>
 </section>
@@ -223,74 +247,74 @@
 <section class="section" id="propiedades">
     <div class="section-header">
         <div>
-            <span class="tag">Cartera Exclusiva</span>
-            <h2 class="section-title">Unidades Disponibles en Tiempo Real</h2>
+            <span class="tag" id="sec-props-tag">Cartera Exclusiva</span>
+            <h2 class="section-title" id="sec-props-title">Unidades Disponibles en Tiempo Real</h2>
         </div>
         <div class="filter-group">
-            <button class="filter-btn active" onclick="filterProps('all', this)">Todas las Unidades</button>
-            <button class="filter-btn" onclick="filterProps('residencial', this)">Residencial</button>
-            <button class="filter-btn" onclick="filterProps('penthouse', this)">Penthouses</button>
-            <button class="filter-btn" onclick="filterProps('comercial', this)">Corporativo</button>
+            <button class="filter-btn active" id="flt-all" onclick="filterProps('all', this)">Todas las Unidades</button>
+            <button class="filter-btn" id="flt-res" onclick="filterProps('residencial', this)">Residencial</button>
+            <button class="filter-btn" id="flt-ph" onclick="filterProps('penthouse', this)">Penthouses</button>
+            <button class="filter-btn" id="flt-com" onclick="filterProps('comercial', this)">Corporativo</button>
         </div>
     </div>
 
     <div class="properties-grid" id="props-container">
         <div class="prop-card" data-category="penthouse">
             <div class="prop-visual">
-                <span class="prop-badge">Penthouse Triplex</span>
-                <span class="prop-code">REF: ALX-901 | ENTREGA INMEDIATA</span>
+                <span class="prop-badge" id="p1-badge">Penthouse Triplex</span>
+                <span class="prop-code" id="p1-code">REF: ALX-901 | ENTREGA INMEDIATA</span>
             </div>
             <div class="prop-body">
-                <h3 class="prop-title">The Obsidian Sky Penthouse</h3>
-                <p class="prop-loc">Distrito Financiero Norte — Piso 28 y 29</p>
+                <h3 class="prop-title" id="p1-title">The Obsidian Sky Penthouse</h3>
+                <p class="prop-loc" id="p1-loc">Distrito Financiero Norte — Piso 28 y 29</p>
                 <div class="prop-specs">
-                    <div><span>Superficie</span><strong>410 m2</strong></div>
-                    <div><span>Suites</span><strong>4 + Estudio</strong></div>
-                    <div><span>ROI Est.</span><strong>9.8% Anual</strong></div>
+                    <div><span id="p1-s1-l">Superficie</span><strong id="p1-s1-v">410 m2</strong></div>
+                    <div><span id="p1-s2-l">Suites</span><strong id="p1-s2-v">4 + Estudio</strong></div>
+                    <div><span id="p1-s3-l">ROI Est.</span><strong id="p1-s3-v">9.8% Anual</strong></div>
                 </div>
                 <div class="prop-footer">
                     <span class="prop-price">$685,000 USD</span>
-                    <button class="btn-gold" onclick="selectProperty('The Obsidian Sky Penthouse - $685,000 USD', 685000)">Solicitar Ficha</button>
+                    <button class="btn-gold" id="p1-btn" onclick="selectProperty('The Obsidian Sky Penthouse - $685,000 USD', 685000)">Solicitar Ficha</button>
                 </div>
             </div>
         </div>
 
         <div class="prop-card" data-category="residencial">
             <div class="prop-visual">
-                <span class="prop-badge">Residencia de Autor</span>
-                <span class="prop-code">REF: ALX-404 | EN PRE-VENTA</span>
+                <span class="prop-badge" id="p2-badge">Residencia de Autor</span>
+                <span class="prop-code" id="p2-code">REF: ALX-404 | EN PRE-VENTA</span>
             </div>
             <div class="prop-body">
-                <h3 class="prop-title">Villa Brutalista Bosque Alto</h3>
-                <p class="prop-loc">Reserva Residencial Privada — Lote 14</p>
+                <h3 class="prop-title" id="p2-title">Villa Brutalista Bosque Alto</h3>
+                <p class="prop-loc" id="p2-loc">Reserva Residencial Privada — Lote 14</p>
                 <div class="prop-specs">
-                    <div><span>Superficie</span><strong>560 m2</strong></div>
-                    <div><span>Terreno</span><strong>1,200 m2</strong></div>
-                    <div><span>ROI Est.</span><strong>12.2% Anual</strong></div>
+                    <div><span id="p2-s1-l">Superficie</span><strong id="p2-s1-v">560 m2</strong></div>
+                    <div><span id="p2-s2-l">Terreno</span><strong id="p2-s2-v">1,200 m2</strong></div>
+                    <div><span id="p2-s3-l">ROI Est.</span><strong id="p2-s3-v">12.2% Anual</strong></div>
                 </div>
                 <div class="prop-footer">
                     <span class="prop-price">$890,000 USD</span>
-                    <button class="btn-gold" onclick="selectProperty('Villa Brutalista Bosque Alto - $890,000 USD', 890000)">Solicitar Ficha</button>
+                    <button class="btn-gold" id="p2-btn" onclick="selectProperty('Villa Brutalista Bosque Alto - $890,000 USD', 890000)">Solicitar Ficha</button>
                 </div>
             </div>
         </div>
 
         <div class="prop-card" data-category="comercial">
             <div class="prop-visual">
-                <span class="prop-badge">Planta Corporativa</span>
-                <span class="prop-code">REF: ALX-712 | CERTIFICACION LEED</span>
+                <span class="prop-badge" id="p3-badge">Planta Corporativa</span>
+                <span class="prop-code" id="p3-code">REF: ALX-712 | CERTIFICACION LEED</span>
             </div>
             <div class="prop-body">
-                <h3 class="prop-title">Torre Kinetix — Piso Corporativo 15</h3>
-                <p class="prop-loc">Corredor Empresarial Central</p>
+                <h3 class="prop-title" id="p3-title">Torre Kinetix — Piso Corporativo 15</h3>
+                <p class="prop-loc" id="p3-loc">Corredor Empresarial Central</p>
                 <div class="prop-specs">
-                    <div><span>Superficie</span><strong>320 m2</strong></div>
-                    <div><span>Parqueos</span><strong>8 Privados</strong></div>
-                    <div><span>Renta Anual</span><strong>10.5% Neto</strong></div>
+                    <div><span id="p3-s1-l">Superficie</span><strong id="p3-s1-v">320 m2</strong></div>
+                    <div><span id="p3-s2-l">Parqueos</span><strong id="p3-s2-v">8 Privados</strong></div>
+                    <div><span id="p3-s3-l">Renta Anual</span><strong id="p3-s3-v">10.5% Neto</strong></div>
                 </div>
                 <div class="prop-footer">
                     <span class="prop-price">$520,000 USD</span>
-                    <button class="btn-gold" onclick="selectProperty('Torre Kinetix Piso 15 - $520,000 USD', 520000)">Solicitar Ficha</button>
+                    <button class="btn-gold" id="p3-btn" onclick="selectProperty('Torre Kinetix Piso 15 - $520,000 USD', 520000)">Solicitar Ficha</button>
                 </div>
             </div>
         </div>
@@ -300,77 +324,77 @@
 <section class="section" id="simulador">
     <div class="tools-grid">
         <div class="panel">
-            <span class="tag">Finanzas Inmobiliarias</span>
-            <h3>Simulador de Financiamiento y Plusvalia</h3>
-            <p class="sub">Calcule su cuota mensual estimada y la proyeccion de capitalizacion a 5 anos.</p>
+            <span class="tag" id="sim-tag">Finanzas Inmobiliarias</span>
+            <h3 id="sim-title">Simulador de Financiamiento y Plusvalia</h3>
+            <p class="sub" id="sim-sub">Calcule su cuota mensual estimada y la proyeccion de capitalizacion a 5 anos.</p>
             <div class="form-group">
-                <label>Valor de la Propiedad (USD)</label>
+                <label id="lbl-calc-price">Valor de la Propiedad (USD)</label>
                 <input type="number" id="calc-price" class="form-control" value="685000" oninput="runCalculator()">
             </div>
             <div class="form-group">
-                <label>Aporte Inicial (%): <span id="down-label">30%</span></label>
+                <label><span id="lbl-calc-down">Aporte Inicial (%)</span>: <span id="down-label">30%</span></label>
                 <input type="range" id="calc-down" min="10" max="80" value="30" style="width:100%;" oninput="runCalculator()">
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
                 <div class="form-group">
-                    <label>Plazo (Anos)</label>
+                    <label id="lbl-calc-years">Plazo (Anos)</label>
                     <select id="calc-years" class="form-control" onchange="runCalculator()">
-                        <option value="10">10 Anos</option>
-                        <option value="15" selected>15 Anos</option>
-                        <option value="20">20 Anos</option>
+                        <option value="10">10</option>
+                        <option value="15" selected>15</option>
+                        <option value="20">20</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tasa Anual Estimada (%)</label>
+                    <label id="lbl-calc-rate">Tasa Anual Estimada (%)</label>
                     <input type="number" id="calc-rate" class="form-control" value="6.5" step="0.1" oninput="runCalculator()">
                 </div>
             </div>
             <div class="calc-results">
                 <div class="res-box">
-                    <span>Cuota Mensual Estimada</span>
+                    <span id="lbl-res-monthly">Cuota Mensual Estimada</span>
                     <strong id="res-monthly">$4,175 USD</strong>
                 </div>
                 <div class="res-box">
-                    <span>Valor Proyectado (5 Anos)</span>
+                    <span id="lbl-res-app">Valor Proyectado (5 Anos)</span>
                     <strong id="res-appreciation">$1,092,000 USD</strong>
                 </div>
             </div>
         </div>
 
         <div class="panel" id="agendar">
-            <span class="tag">Atencion Directa en Linea</span>
-            <h3>Reserva de Visita Privada o Dossier Tecnico</h3>
-            <p class="sub">Complete el formulario web para recibir los planos estructurales en PDF y confirmar su recorrido presencial o virtual.</p>
+            <span class="tag" id="lead-tag">Atencion Directa en Linea</span>
+            <h3 id="lead-title">Reserva de Visita Privada o Dossier Tecnico</h3>
+            <p class="sub" id="lead-sub">Complete el formulario web para recibir los planos estructurales en PDF y confirmar su recorrido presencial o virtual.</p>
             <form onsubmit="submitLead(event)">
                 <div class="form-group">
-                    <label>Unidad o Proyecto de Interes</label>
+                    <label id="lbl-lead-prop">Unidad o Proyecto de Interes</label>
                     <input type="text" id="lead-prop" class="form-control" value="The Obsidian Sky Penthouse - $685,000 USD" required>
                 </div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
                     <div class="form-group">
-                        <label>Nombre Completo</label>
+                        <label id="lbl-lead-name">Nombre Completo</label>
                         <input type="text" id="lead-name" class="form-control" placeholder="Ej. Carlos Mendoza" required>
                     </div>
                     <div class="form-group">
-                        <label>Correo Corporativo / Personal</label>
+                        <label id="lbl-lead-email">Correo Corporativo / Personal</label>
                         <input type="email" id="lead-email" class="form-control" placeholder="inversionista@dominio.com" required>
                     </div>
                 </div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
                     <div class="form-group">
-                        <label>Modalidad de Sesion</label>
+                        <label id="lbl-lead-mode">Modalidad de Sesion</label>
                         <select id="lead-mode" class="form-control">
-                            <option value="Recorrido Presencial Privado">Recorrido Presencial Privado</option>
-                            <option value="Presentacion Ejecutiva por Videollamada">Presentacion Ejecutiva por Videollamada</option>
-                            <option value="Envio de Dossier Financiero y Planos PDF">Solo Envio de Dossier y Planos PDF</option>
+                            <option value="Private In-Person Architectural Tour" id="opt-mode-1">Recorrido Presencial Privado</option>
+                            <option value="Executive Video Presentation" id="opt-mode-2">Presentacion Ejecutiva por Videollamada</option>
+                            <option value="Financial Dossier & CAD Blueprints PDF" id="opt-mode-3">Solo Envio de Dossier y Planos PDF</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Fecha Preferida</label>
+                        <label id="lbl-lead-date">Fecha Preferida</label>
                         <input type="date" id="lead-date" class="form-control" required>
                     </div>
                 </div>
-                <button type="submit" class="btn-gold" style="width:100%; padding:14px;">Confirmar Solicitud en Sistema Web</button>
+                <button type="submit" class="btn-gold" id="btn-lead-submit" style="width:100%; padding:14px;">Confirmar Solicitud en Sistema Web</button>
             </form>
             <div id="lead-confirm" class="confirm-box"></div>
         </div>
@@ -378,45 +402,329 @@
 </section>
 
 <footer>
-    <p>AURA ARQUITECTOS & INMOLUXE — Demostracion Interactiva Desarrollada por <strong>Kudaka Studio (Shota Sebastian Kudaka Lino)</strong>.</p>
-    <p style="margin-top:6px;"><a href="../index.html" style="color:var(--gold); text-decoration:none;">Volver al Portafolio Principal de Kudaka Studio</a></p>
+    <p id="footer-text">AURA ARQUITECTOS & INMOLUXE — Demostracion Interactiva Desarrollada por <strong>Kudaka Studio (Shota Sebastian Kudaka Lino)</strong>.</p>
+    <p style="margin-top:6px;"><a href="../index.html" id="footer-link" style="color:var(--gold); text-decoration:none;">Volver al Portafolio Principal de Kudaka Studio</a></p>
 </footer>
 
 <script>
-    const blueprints = {
-        1: {
-            sub: "Nivel 1: Planta Social & Terraza Perimetral (245 m2)",
-            rooms: [
-                ["SALON PRINCIPAL DOBLE ALTURA", "88.5 m2 | H: 5.40m"],
-                ["TERRAZA & ESPEJO DE AGUA", "64.0 m2 | Hormigon Visto"],
-                ["COCINA DE AUTOR ISLA CENTRAL", "46.5 m2 | Cuarzo Negro"],
-                ["ESTUDIO PRIVADO & CAVA", "46.0 m2 | Acustico"]
-            ]
+    let currentLang = 'es';
+    let currentLevel = 1;
+
+    const blueprintsByLang = {
+        es: {
+            1: {
+                sub: "Nivel 1: Planta Social & Terraza Perimetral (245 m2)",
+                rooms: [
+                    ["SALON PRINCIPAL DOBLE ALTURA", "88.5 m2 | H: 5.40m"],
+                    ["TERRAZA & ESPEJO DE AGUA", "64.0 m2 | Hormigon Visto"],
+                    ["COCINA DE AUTOR ISLA CENTRAL", "46.5 m2 | Cuarzo Negro"],
+                    ["ESTUDIO PRIVADO & CAVA", "46.0 m2 | Acustico"]
+                ]
+            },
+            2: {
+                sub: "Nivel 2: Area Privada de Suites & Vestidores (195 m2)",
+                rooms: [
+                    ["MASTER SUITE PANORAMICA", "72.0 m2 | Vista 270 Grados"],
+                    ["WALK-IN CLOSET & SPA", "38.0 m2 | Marmol Travertino"],
+                    ["SUITE SECUNDARIA NORTE", "45.0 m2 | Bano Integrado"],
+                    ["SUITE SECUNDARIA SUR", "40.0 m2 | Balcon Privado"]
+                ]
+            },
+            3: {
+                sub: "Nivel 3: Rooftop Privado, Solarium & Domotica (120 m2)",
+                rooms: [
+                    ["PISCINA INFINITY CLIMATIZADA", "48.0 m2 | Borde Infinito"],
+                    ["LOUNGE EXTERIOR & FIREPIT", "36.0 m2 | Deck Madera Teka"],
+                    ["GIMNASIO & SAUNA SECO", "24.0 m2 | Cristal Templado"],
+                    ["CUARTO DE CONTROL DOMOTICO", "12.0 m2 | Panel KNX Solar"]
+                ]
+            }
         },
-        2: {
-            sub: "Nivel 2: Area Privada de Suites & Vestidores (195 m2)",
-            rooms: [
-                ["MASTER SUITE PANORAMICA", "72.0 m2 | Vista 270 Grados"],
-                ["WALK-IN CLOSET & SPA", "38.0 m2 | Marmol Travertino"],
-                ["SUITE SECUNDARIA NORTE", "45.0 m2 | Bano Integrado"],
-                ["SUITE SECUNDARIA SUR", "40.0 m2 | Balcon Privado"]
-            ]
-        },
-        3: {
-            sub: "Nivel 3: Rooftop Privado, Solarium & Domotica (120 m2)",
-            rooms: [
-                ["PISCINA INFINITY CLIMATIZADA", "48.0 m2 | Borde Infinito"],
-                ["LOUNGE EXTERIOR & FIREPIT", "36.0 m2 | Deck Madera Teka"],
-                ["GIMNASIO & SAUNA SECO", "24.0 m2 | Cristal Templado"],
-                ["CUARTO DE CONTROL DOMOTICO", "12.0 m2 | Panel KNX Solar"]
-            ]
+        en: {
+            1: {
+                sub: "Level 1: Grand Social Plan & Perimeter Terrace (2,637 sq.ft)",
+                rooms: [
+                    ["DOUBLE-HEIGHT GREAT ROOM", "952 sq.ft | Ceiling: 17.7 ft"],
+                    ["PERIMETER TERRACE & REFLECTING POOL", "688 sq.ft | Architectural Concrete"],
+                    ["CHEF'S GALLERY KITCHEN & ISLAND", "500 sq.ft | Nero Marquina Quartz"],
+                    ["PRIVATE LIBRARY & WINE VAULT", "495 sq.ft | Acoustic Glazing"]
+                ]
+            },
+            2: {
+                sub: "Level 2: Private Sanctuary Suites & Spa Wing (2,098 sq.ft)",
+                rooms: [
+                    ["PANORAMIC PRIMARY SUITE", "775 sq.ft | 270-Degree Skyline View"],
+                    ["BESPOKE DRESSING ROOM & HAMMAM", "409 sq.ft | Travertine Slab"],
+                    ["NORTH VIP GUEST SUITE", "484 sq.ft | En-Suite Bath"],
+                    ["SOUTH GALLERY SUITE", "430 sq.ft | Private Loggia"]
+                ]
+            },
+            3: {
+                sub: "Level 3: Sky Rooftop, Heated Infinity Pool & KNX Automation (1,291 sq.ft)",
+                rooms: [
+                    ["HEATED CANTILEVER INFINITY POOL", "516 sq.ft | Zero-Edge Glass"],
+                    ["SUNSET SUNDECK & SUNKEN FIREPIT", "387 sq.ft | Burmese Teak"],
+                    ["PRIVATE WELLNESS GYM & DRY SAUNA", "258 sq.ft | Tempered Low-E Glass"],
+                    ["LUTRON / KNX SMART CORE ROOM", "129 sq.ft | Solar Microgrid"]
+                ]
+            }
         }
     };
 
+    const i18n = {
+        es: {
+            brand: "AURA<span>LUXE</span> ARQUITECTOS",
+            navProps: "Propiedades",
+            navCad: "Planos CAD",
+            navSim: "Simulador ROI",
+            navCta: "Agendar Dossier Web",
+            heroTag: "Arquitectura Contemporanea & Inversion Inmobiliaria",
+            heroTitle: "Espacios de Autor Disenados para Alta Plusvalia",
+            heroDesc: "Desarrollamos residencias minimalistas, penthouses y complejos corporativos con certificacion energetica, trazabilidad estructural y retorno de inversion proyectado.",
+            heroBtnPrimary: "Explorar Catalogo Activo",
+            heroBtnSecondary: "Calcular Hipoteca / ROI",
+            stat1Num: "42,000 m2",
+            stat1Label: "Construidos y Entregados",
+            stat2Num: "11.4%",
+            stat2Label: "Plusvalia Anual Media",
+            stat3Num: "ISO 9001",
+            stat3Label: "Certificacion Estructural",
+            bpTitle: "VISOR TECNICO DE DISTRIBUCION",
+            bpScale: "ESCALA 1:100",
+            tab1: "Planta Nivel 1 (Social)",
+            tab2: "Planta Nivel 2 (Suites)",
+            tab3: "Rooftop & Solarium",
+            secPropsTag: "Cartera Exclusiva",
+            secPropsTitle: "Unidades Disponibles en Tiempo Real",
+            fltAll: "Todas las Unidades",
+            fltRes: "Residencial",
+            fltPh: "Penthouses",
+            fltCom: "Corporativo",
+            p1Badge: "Penthouse Triplex",
+            p1Code: "REF: ALX-901 | ENTREGA INMEDIATA",
+            p1Loc: "Distrito Financiero Norte — Piso 28 y 29",
+            p1S1L: "Superficie", p1S1V: "410 m2",
+            p1S2L: "Suites", p1S2V: "4 + Estudio",
+            p1S3L: "ROI Est.", p1S3V: "9.8% Anual",
+            p1Btn: "Solicitar Ficha",
+            p2Badge: "Residencia de Autor",
+            p2Code: "REF: ALX-404 | EN PRE-VENTA",
+            p2Title: "Villa Brutalista Bosque Alto",
+            p2Loc: "Reserva Residencial Privada — Lote 14",
+            p2S1L: "Superficie", p2S1V: "560 m2",
+            p2S2L: "Terreno", p2S2V: "1,200 m2",
+            p2S3L: "ROI Est.", p2S3V: "12.2% Anual",
+            p2Btn: "Solicitar Ficha",
+            p3Badge: "Planta Corporativa",
+            p3Code: "REF: ALX-712 | CERTIFICACION LEED",
+            p3Title: "Torre Kinetix — Piso Corporativo 15",
+            p3Loc: "Corredor Empresarial Central",
+            p3S1L: "Superficie", p3S1V: "320 m2",
+            p3S2L: "Parqueos", p3S2V: "8 Privados",
+            p3S3L: "Renta Anual", p3S3V: "10.5% Neto",
+            p3Btn: "Solicitar Ficha",
+            simTag: "Finanzas Inmobiliarias",
+            simTitle: "Simulador de Financiamiento y Plusvalia",
+            simSub: "Calcule su cuota mensual estimada y la proyeccion de capitalizacion a 5 anos.",
+            lblCalcPrice: "Valor de la Propiedad (USD)",
+            lblCalcDown: "Aporte Inicial (%)",
+            lblCalcYears: "Plazo (Anos)",
+            lblCalcRate: "Tasa Anual Estimada (%)",
+            lblResMonthly: "Cuota Mensual Estimada",
+            lblResApp: "Valor Proyectado (5 Anos)",
+            leadTag: "Atencion Directa en Linea",
+            leadTitle: "Reserva de Visita Privada o Dossier Tecnico",
+            leadSub: "Complete el formulario web para recibir los planos estructurales en PDF y confirmar su recorrido presencial o virtual.",
+            lblLeadProp: "Unidad o Proyecto de Interes",
+            lblLeadName: "Nombre Completo",
+            lblLeadEmail: "Correo Corporativo / Personal",
+            lblLeadMode: "Modalidad de Sesion",
+            optMode1: "Recorrido Presencial Privado",
+            optMode2: "Presentacion Ejecutiva por Videollamada",
+            optMode3: "Solo Envio de Dossier y Planos PDF",
+            lblLeadDate: "Fecha Preferida",
+            btnLeadSubmit: "Confirmar Solicitud en Sistema Web",
+            footerText: "AURA ARQUITECTOS & INMOLUXE — Demostracion Interactiva Desarrollada por <strong>Kudaka Studio (Shota Sebastian Kudaka Lino)</strong>.",
+            footerLink: "Volver al Portafolio Principal de Kudaka Studio"
+        },
+        en: {
+            brand: "MORABITO<span>LUXE</span> ESTATES & ARCHITECTURE",
+            navProps: "Exclusive Portfolio",
+            navCad: "1:100 CAD Floorplans",
+            navSim: "Equity & Yield Engine",
+            navCta: "Request Private Dossier",
+            heroTag: "Bespoke Luxury Real Estate Branding & Architectural Showcase",
+            heroTitle: "Trophy Residences Engineered for Generational Value",
+            heroDesc: "Interactive digital Flagship designed for ultra-high-net-worth buyers: inspect 1:100 architectural floorplans, model 5-year equity appreciation, and schedule private showings.",
+            heroBtnPrimary: "Explore Trophy Listings",
+            heroBtnSecondary: "Run Equity & Mortgage Simulator",
+            stat1Num: "$450M+ USD",
+            stat1Label: "Luxury Portfolio Volume",
+            stat2Num: "11.4%",
+            stat2Label: "Avg. Annual Appreciation",
+            stat3Num: "1:100 CAD",
+            stat3Label: "Interactive Spatial Telemetry",
+            bpTitle: "INTERACTIVE ARCHITECTURAL FLOORPLAN VIEWER",
+            bpScale: "SCALE 1:100 | CAD",
+            tab1: "Level 1 (Grand Social)",
+            tab2: "Level 2 (Primary Suites)",
+            tab3: "Level 3 (Sky Rooftop)",
+            secPropsTag: "Curated Trophy Collection",
+            secPropsTitle: "Private Market & Flagship Residences",
+            fltAll: "All Offerings",
+            fltRes: "Signature Estates",
+            fltPh: "Sky Penthouses",
+            fltCom: "Trophy Commercial",
+            p1Badge: "Triplex Sky Penthouse",
+            p1Code: "REF: MRB-901 | TURNKEY DELIVERY",
+            p1Loc: "North Financial District — Floors 28 & 29",
+            p1S1L: "Interior", p1S1V: "4,413 sq.ft",
+            p1S2L: "Suites", p1S2V: "4 + Library",
+            p1S3L: "Est. Yield", p1S3V: "9.8% Annual",
+            p1Btn: "Request Offering Memo",
+            p2Badge: "Architectural Compound",
+            p2Code: "REF: MRB-404 | PRIVATE PRE-SALE",
+            p2Title: "The High-Ridge Brutalist Villa",
+            p2Loc: "Gated Reserve Enclave — Lot 14",
+            p2S1L: "Living Area", p2S1V: "6,027 sq.ft",
+            p2S2L: "Acreage", p2S2V: "12,916 sq.ft",
+            p2S3L: "Est. Yield", p2S3V: "12.2% Annual",
+            p2Btn: "Request Offering Memo",
+            p3Badge: "LEED Platinum Floorplate",
+            p3Code: "REF: MRB-712 | TROPHY ASSET",
+            p3Title: "Kinetix Tower — 15th Executive Floor",
+            p3Loc: "Central Prime Corridor",
+            p3S1L: "Floorplate", p3S1V: "3,444 sq.ft",
+            p3S2L: "Vault Parking", p3S2V: "8 Private Stalls",
+            p3S3L: "Net Cap Rate", p3S3V: "10.5% NNN",
+            p3Btn: "Request Offering Memo",
+            simTag: "Private Wealth Analytics",
+            simTitle: "Acquisition Financing & 5-Year Equity Simulator",
+            simSub: "Model monthly debt service and projected 5-year compounding appreciation in real time.",
+            lblCalcPrice: "Acquisition Price (USD)",
+            lblCalcDown: "Equity Down Payment (%)",
+            lblCalcYears: "Amortization Term (Years)",
+            lblCalcRate: "Estimated Annual Rate (%)",
+            lblResMonthly: "Estimated Monthly Payment",
+            lblResApp: "Projected 5-Year Asset Value",
+            leadTag: "Concierge Desk & Private Showings",
+            leadTitle: "Schedule a Private Viewing or Request CAD Offering Memo",
+            leadSub: "Instant white-glove booking for qualified buyers, family offices, and luxury real estate partners.",
+            lblLeadProp: "Selected Residence or Asset",
+            lblLeadName: "Full Name / Family Office",
+            lblLeadEmail: "Executive Email",
+            lblLeadMode: "Preferred Consultation Format",
+            optMode1: "Private In-Person Architectural Tour",
+            optMode2: "Executive Video Walkthrough",
+            optMode3: "Send Full Financial Dossier & CAD PDF",
+            lblLeadDate: "Preferred Date",
+            btnLeadSubmit: "Confirm Private Concierge Request",
+            footerText: "AURA & MORABITO LUXE SHOWCASE — Interactive Luxury PropTech Architecture by <strong>Kudaka Studio (Shota Sebastian Kudaka Lino)</strong>.",
+            footerLink: "Return to Kudaka Studio Master Portfolio"
+        }
+    };
+
+    function setLanguage(lang) {
+        currentLang = (lang === 'en') ? 'en' : 'es';
+        document.documentElement.lang = currentLang;
+        document.getElementById('btn-lang-en').classList.toggle('active', currentLang === 'en');
+        document.getElementById('btn-lang-es').classList.toggle('active', currentLang === 'es');
+        document.getElementById('morabito-banner').style.display = (currentLang === 'en') ? 'flex' : 'none';
+
+        const t = i18n[currentLang];
+        document.getElementById('ui-brand').innerHTML = t.brand;
+        document.getElementById('nav-props').textContent = t.navProps;
+        document.getElementById('nav-cad').textContent = t.navCad;
+        document.getElementById('nav-sim').textContent = t.navSim;
+        document.getElementById('nav-cta').textContent = t.navCta;
+        document.getElementById('hero-tag').textContent = t.heroTag;
+        document.getElementById('hero-title').textContent = t.heroTitle;
+        document.getElementById('hero-desc').textContent = t.heroDesc;
+        document.getElementById('hero-btn-primary').textContent = t.heroBtnPrimary;
+        document.getElementById('hero-btn-secondary').textContent = t.heroBtnSecondary;
+        document.getElementById('stat-1-num').textContent = t.stat1Num;
+        document.getElementById('stat-1-label').textContent = t.stat1Label;
+        document.getElementById('stat-2-num').textContent = t.stat2Num;
+        document.getElementById('stat-2-label').textContent = t.stat2Label;
+        document.getElementById('stat-3-num').textContent = t.stat3Num;
+        document.getElementById('stat-3-label').textContent = t.stat3Label;
+        document.getElementById('bp-title').textContent = t.bpTitle;
+        document.getElementById('bp-scale').textContent = t.bpScale;
+        document.getElementById('tab-floor-1').textContent = t.tab1;
+        document.getElementById('tab-floor-2').textContent = t.tab2;
+        document.getElementById('tab-floor-3').textContent = t.tab3;
+        document.getElementById('sec-props-tag').textContent = t.secPropsTag;
+        document.getElementById('sec-props-title').textContent = t.secPropsTitle;
+        document.getElementById('flt-all').textContent = t.fltAll;
+        document.getElementById('flt-res').textContent = t.fltRes;
+        document.getElementById('flt-ph').textContent = t.fltPh;
+        document.getElementById('flt-com').textContent = t.fltCom;
+        document.getElementById('p1-badge').textContent = t.p1Badge;
+        document.getElementById('p1-code').textContent = t.p1Code;
+        document.getElementById('p1-loc').textContent = t.p1Loc;
+        document.getElementById('p1-s1-l').textContent = t.p1S1L;
+        document.getElementById('p1-s1-v').textContent = t.p1S1V;
+        document.getElementById('p1-s2-l').textContent = t.p1S2L;
+        document.getElementById('p1-s2-v').textContent = t.p1S2V;
+        document.getElementById('p1-s3-l').textContent = t.p1S3L;
+        document.getElementById('p1-s3-v').textContent = t.p1S3V;
+        document.getElementById('p1-btn').textContent = t.p1Btn;
+        document.getElementById('p2-badge').textContent = t.p2Badge;
+        document.getElementById('p2-code').textContent = t.p2Code;
+        document.getElementById('p2-title').textContent = t.p2Title;
+        document.getElementById('p2-loc').textContent = t.p2Loc;
+        document.getElementById('p2-s1-l').textContent = t.p2S1L;
+        document.getElementById('p2-s1-v').textContent = t.p2S1V;
+        document.getElementById('p2-s2-l').textContent = t.p2S2L;
+        document.getElementById('p2-s2-v').textContent = t.p2S2V;
+        document.getElementById('p2-s3-l').textContent = t.p2S3L;
+        document.getElementById('p2-s3-v').textContent = t.p2S3V;
+        document.getElementById('p2-btn').textContent = t.p2Btn;
+        document.getElementById('p3-badge').textContent = t.p3Badge;
+        document.getElementById('p3-code').textContent = t.p3Code;
+        document.getElementById('p3-title').textContent = t.p3Title;
+        document.getElementById('p3-loc').textContent = t.p3Loc;
+        document.getElementById('p3-s1-l').textContent = t.p3S1L;
+        document.getElementById('p3-s1-v').textContent = t.p3S1V;
+        document.getElementById('p3-s2-l').textContent = t.p3S2L;
+        document.getElementById('p3-s2-v').textContent = t.p3S2V;
+        document.getElementById('p3-s3-l').textContent = t.p3S3L;
+        document.getElementById('p3-s3-v').textContent = t.p3S3V;
+        document.getElementById('p3-btn').textContent = t.p3Btn;
+        document.getElementById('sim-tag').textContent = t.simTag;
+        document.getElementById('sim-title').textContent = t.simTitle;
+        document.getElementById('sim-sub').textContent = t.simSub;
+        document.getElementById('lbl-calc-price').textContent = t.lblCalcPrice;
+        document.getElementById('lbl-calc-down').textContent = t.lblCalcDown;
+        document.getElementById('lbl-calc-years').textContent = t.lblCalcYears;
+        document.getElementById('lbl-calc-rate').textContent = t.lblCalcRate;
+        document.getElementById('lbl-res-monthly').textContent = t.lblResMonthly;
+        document.getElementById('lbl-res-app').textContent = t.lblResApp;
+        document.getElementById('lead-tag').textContent = t.leadTag;
+        document.getElementById('lead-title').textContent = t.leadTitle;
+        document.getElementById('lead-sub').textContent = t.leadSub;
+        document.getElementById('lbl-lead-prop').textContent = t.lblLeadProp;
+        document.getElementById('lbl-lead-name').textContent = t.lblLeadName;
+        document.getElementById('lbl-lead-email').textContent = t.lblLeadEmail;
+        document.getElementById('lbl-lead-mode').textContent = t.lblLeadMode;
+        document.getElementById('opt-mode-1').textContent = t.optMode1;
+        document.getElementById('opt-mode-2').textContent = t.optMode2;
+        document.getElementById('opt-mode-3').textContent = t.optMode3;
+        document.getElementById('lbl-lead-date').textContent = t.lblLeadDate;
+        document.getElementById('btn-lead-submit').textContent = t.btnLeadSubmit;
+        document.getElementById('footer-text').innerHTML = t.footerText;
+        document.getElementById('footer-link').textContent = t.footerLink;
+
+        const activeBtn = document.getElementById('tab-floor-' + currentLevel);
+        setBlueprint(currentLevel, activeBtn);
+        runCalculator();
+    }
+
     function setBlueprint(level, btn) {
+        currentLevel = level;
         document.querySelectorAll('.floor-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const data = blueprints[level];
+        if (btn) btn.classList.add('active');
+        const data = blueprintsByLang[currentLang][level];
         document.getElementById('bp-subtitle').textContent = data.sub;
         const grid = document.getElementById('bp-grid');
         grid.innerHTML = data.rooms.map(r => `<div class="room-box"><strong>${r[0]}</strong><span>${r[1]}</span></div>`).join('');
@@ -463,18 +771,33 @@
         const prop = document.getElementById('lead-prop').value;
         const mode = document.getElementById('lead-mode').value;
         const date = document.getElementById('lead-date').value;
-        const code = "AURA-" + Math.floor(100000 + Math.random() * 900000);
+        const code = (currentLang === 'en' ? "MRB-" : "AURA-") + Math.floor(100000 + Math.random() * 900000);
         const box = document.getElementById('lead-confirm');
         box.style.display = 'block';
-        box.innerHTML = `<strong>SOLICITUD REGISTRADA EN EL SISTEMA WEB [${code}]</strong><br>
-        Titular: ${name} (${email})<br>
-        Propiedad: ${prop}<br>
-        Modalidad: ${mode} | Fecha programada: ${date}<br>
-        <em>El dossier tecnico en PDF y el enlace de calendario han sido emitidos a su correo electronico.</em>`;
+        if (currentLang === 'en') {
+            box.innerHTML = `<strong>PRIVATE CONCIERGE REQUEST REGISTERED [${code}]</strong><br>
+            Client: ${name} (${email})<br>
+            Asset: ${prop}<br>
+            Format: ${mode} | Scheduled Date: ${date}<br>
+            <em>Architectural CAD Blueprints (PDF) and private calendar invite have been dispatched.</em>`;
+        } else {
+            box.innerHTML = `<strong>SOLICITUD REGISTRADA EN EL SISTEMA WEB [${code}]</strong><br>
+            Titular: ${name} (${email})<br>
+            Propiedad: ${prop}<br>
+            Modalidad: ${mode} | Fecha programada: ${date}<br>
+            <em>El dossier tecnico en PDF y el enlace de calendario han sido emitidos a su correo electronico.</em>`;
+        }
     }
 
     document.getElementById('lead-date').valueAsDate = new Date(Date.now() + 86400000 * 2);
-    runCalculator();
+    const urlParams = new URLSearchParams(window.location.search);
+    const clientParam = (urlParams.get('client') || '').toLowerCase();
+    const langParam = (urlParams.get('lang') || '').toLowerCase();
+    if (clientParam.includes('morabito') || langParam === 'en') {
+        setLanguage('en');
+    } else {
+        runCalculator();
+    }
 </script>
 </body>
 </html>
