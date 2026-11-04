@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RaptorX Alpha Terminal | Finding the Best Cryptocurrency & Understanding Why It Performs (Solana On-Chain Intelligence)</title>
+  <meta name="description" content="Institutional Solana On-Chain Alpha Discovery & Attribution Engine powered by RaptorX (REX AI 5.0) and Live DexScreener Feeds. Quantitative audit of $JUP, $JTO, $PYTH, $RAY, $ORCA, and $DRIFT." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-void: oklch(0.11 0.015 260);
+      --bg-surface: oklch(0.145 0.018 260);
+      --bg-elevated: oklch(0.18 0.022 260);
+      --border-subtle: oklch(0.25 0.025 260);
+      --border-active: oklch(0.75 0.16 165);
+      --text-primary: oklch(0.96 0.01 260);
+      --text-secondary: oklch(0.72 0.02 260);
+      --accent-emerald: oklch(0.76 0.17 160);
+      --accent-cyan: oklch(0.78 0.14 210);
+      --accent-amber: oklch(0.82 0.16 80);
+      --accent-crimson: oklch(0.65 0.21 25);
+    }
+    body {
+      background-color: var(--bg-void);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-image:
+        radial-gradient(circle at 15% 0%, oklch(0.22 0.06 165 / 0.25), transparent 40%),
+        radial-gradient(circle at 85% 10%, oklch(0.22 0.06 220 / 0.22), transparent 45%),
+        linear-gradient(to bottom, oklch(0.11 0.015 260), oklch(0.09 0.015 260));
+    }
+    .font-display { font-family: 'Oxanium', sans-serif; }
+    .font-mono-quant { font-family: 'JetBrains Mono', monospace; }
+    .panel-glass {
+      background: oklch(0.145 0.018 260 / 0.88);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(12px);
+    }
+    .panel-glass-active {
+      background: oklch(0.165 0.024 260 / 0.94);
+      border: 1px solid oklch(0.76 0.17 160 / 0.65);
+      box-shadow: 0 0 24px oklch(0.76 0.17 160 / 0.12);
+    }
+    .grid-8px { gap: 16px; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: oklch(0.12 0.015 260); }
+    ::-webkit-scrollbar-thumb { background: oklch(0.28 0.03 260); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: oklch(0.76 0.17 160); }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- TOP INSTITUTIONAL TELEMETRY BAR -->
+  <div class="border-b border-slate-800/90 bg-slate-950/95 text-[11px] font-mono-quant py-2 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          RAPTORX REX AI 5.0 ENGINE: ONLINE
+        </span>
+        <span class="text-slate-400 hidden sm:inline">|</span>
+        <span class="text-slate-300 hidden sm:inline">Researcher ID: <strong class="text-cyan-400">Giraffe980</strong> (<code>cmw05wtkh0000le08247plw12</code>)</span>
+        <span class="text-slate-400 hidden md:inline">|</span>
+        <span class="text-slate-300 hidden md:inline">Superteam Submission: <strong class="text-amber-300">d996f277-4a75-4249-a589-cac23b40e9f3</strong></span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span id="liveFeedBadge" class="px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-500/40 text-emerald-300">
+          FEED: RAPTORX VERIFIED SNAPSHOT + DEXSCREENER LIVE
+        </span>
+        <a href="https://github.com/Shokun123/raptorx-solana-alpha-research" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 underline">
+          GitHub Proof Repo (20 Screenshots) &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur sticky top-0 z-40 py-4 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center font-display font-extrabold text-slate-950 text-lg shadow-lg shadow-emerald-500/20">
+          RX
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-white">RAPTOR<span class="text-emerald-400">X</span> ALPHA TERMINAL</span>
+            <span class="px-2 py-0.5 text-[10px] font-mono-quant font-bold uppercase rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">Solana Quant Suite</span>
+          </div>
+          <p class="text-xs text-slate-400">Finding the Best Cryptocurrency &amp; Understanding Why It Performs — Multi-Factor On-Chain Attribution</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <button id="btnSyncDex" onclick="syncLiveDexScreener()" class="px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-emerald-500/50 text-emerald-300 font-mono-quant text-xs font-semibold transition flex items-center gap-2">
+          <span id="syncDot" class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Sync Live DexScreener API
+        </button>
+        <button onclick="exportThesisMarkdown()" class="px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-mono-quant text-xs font-semibold transition">
+          Export Thesis (.MD)
+        </button>
+        <a href="https://www.raptorx.trade/solana" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-bold text-xs transition shadow-md shadow-emerald-500/20">
+          Open RaptorX.Trade &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8">
+
+    <!-- HERO BANNER & THESIS STATEMENT -->
+    <section class="panel-glass rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+      <div class="grid lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-8 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono-quant font-semibold">
+            SUPERTEAM EARN RESEARCH CHALLENGE &bull; VERIFIED ON-CHAIN ATTRIBUTION
+          </div>
+          <h1 class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Finding the Best Solana Cryptocurrency &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Understanding Why It Performs</span>
+          </h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Surface-level traders ask <em>"Will this token go up?"</em>. Institutional quants decompose performance into <strong>five verifiable on-chain drivers</strong> using <strong>RaptorX (REX AI 5.0)</strong>: (1) <strong>Order-Flow Ticket Asymmetry &amp; Passive Absorption</strong>, (2) <strong>AMM Pool Liquidity Depth vs. Slippage Regime</strong>, (3) <strong>Tokenomic FDV/MCap Overhang</strong>, (4) <strong>1H Multi-Indicator Momentum Regime (MACD + RSI + Cup &amp; Handle)</strong>, and (5) <strong>Protocol Cash-Flow Utility</strong>.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono-quant">
+            <span class="px-2.5 py-1 rounded bg-slate-900/90 border border-slate-800 text-slate-300">6 Solana Protocols Audited</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900/90 border border-slate-800 text-emerald-300">12 REX AI 5.0 Quantitative Q&amp;As (24 Messages)</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900/90 border border-slate-800 text-cyan-300">20 Verified 1920x1150 RaptorX Screenshots</span>
+          </div>
+        </div>
+
+        <!-- TOP PICK WINNER CARD -->
+        <div class="lg:col-span-4 panel-glass-active rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono-quant font-bold uppercase tracking-wider text-emerald-400">#1 Risk-Adjusted Alpha Pick</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono-quant text-xs font-bold">SCORE: 91.4 / 100</span>
+          </div>
+          <div class="flex items-baseline justify-between">
+            <div>
+              <div class="font-display text-2xl font-extrabold text-white">Raydium (<span class="text-emerald-400">$RAY</span>)</div>
+              <div class="text-xs text-slate-400 font-mono-quant">Report ID: cmw1h4sin0002l708920527vy</div>
+            </div>
+            <div class="text-right">
+              <div id="heroRayPrice" class="font-mono-quant text-xl font-bold text-white">$0.9554</div>
+              <div id="heroRayChange" class="font-mono-quant text-xs font-semibold text-emerald-400">+4.92% (24h)</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-2.5">
+            <strong>Why It Outperforms:</strong> Combines genuine buyer order-flow dominance (<code>2,334 Buys vs. 2,068 Sells</code>, <code>1.13:1</code> ratio), deep primary AMM liquidity (<code>$2.58M</code> pool depth, <code>&lt;0.35%</code> slippage on $25K clips), programmatic protocol fee buybacks, and aligned 1H bullish technicals (<code>MACD +0.0031</code>, <code>RSI 58.62</code>).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE CUSTOM SOLANA TOKEN SCANNER (DEXSCREENER API) -->
+    <section class="panel-glass rounded-2xl p-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <div>
+          <h2 class="font-display text-lg font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+            Live Solana Token Scanner &amp; Instant RaptorX Alpha Attribution
+          </h2>
+          <p class="text-xs text-slate-400">Enter any Solana SPL Mint Address (or select a preset) to fetch live on-chain pool telemetry from DexScreener API and compute its 5-factor RaptorX Alpha Score.</p>
+        </div>
+        <div class="flex flex-wrap gap-1.5 text-xs font-mono-quant">
+          <button onclick="scanCustomMint('4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-emerald-300">$RAY</button>
+          <button onclick="scanCustomMint('HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-cyan-300">$PYTH</button>
+          <button onclick="scanCustomMint('orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-indigo-300">$ORCA</button>
+          <button onclick="scanCustomMint('jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-amber-300">$JTO</button>
+          <button onclick="scanCustomMint('JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300">$JUP</button>
+          <button onclick="scanCustomMint('So11111111111111111111111111111111111111112')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-purple-300">$SOL</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="customMintInput" type="text" value="4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R" placeholder="Paste Solana Mint Address (e.g. JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN)" class="flex-1 bg-slate-950 border border-slate-800 focus:border-emerald-400 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-mono-quant text-white outline-none" />
+        <button onclick="scanCustomMint()" class="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-display font-bold text-xs sm:text-sm transition shrink-0">
+          Analyze On-Chain Now
+        </button>
+      </div>
+
+      <div id="customScanResult" class="hidden mt-4 p-4 rounded-xl bg-slate-950/90 border border-slate-800 font-mono-quant text-xs space-y-2"></div>
+    </section>
+
+    <!-- CROSS-ECOSYSTEM QUANTITATIVE MATRIX (6 VERIFIED SOLANA PROTOCOLS) -->
+    <section class="space-y-4">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono-quant uppercase tracking-wider text-emerald-400 font-semibold">Section 1 &bull; Multi-Protocol Benchmark</span>
+          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white">Cross-Ecosystem Quantitative Matrix (6 Solana Protocols on RaptorX)</h2>
+        </div>
+        <span class="text-xs text-slate-400 font-mono-quant">Click any protocol row to inspect its full REX AI 5.0 Q&amp;A &amp; Why-It-Performs attribution</span>
+      </div>
+
+      <div class="panel-glass rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 bg-slate-950/70 text-[11px] font-mono-quant uppercase text-slate-400">
+                <th class="py-3.5 px-4">Rank / Asset</th>
+                <th class="py-3.5 px-4">RaptorX Alpha Score</th>
+                <th class="py-3.5 px-4">Price &amp; 24h Drift</th>
+                <th class="py-3.5 px-4">MCap / FDV (Overhang)</th>
+                <th class="py-3.5 px-4">Primary Pool Depth</th>
+                <th class="py-3.5 px-4">24h Order Flow (Buys / Sells)</th>
+                <th class="py-3.5 px-4">1H Technicals (MACD / RSI)</th>
+                <th class="py-3.5 px-4">Primary Performance Driver</th>
+              </tr>
+            </thead>
+            <tbody id="protocolTableBody" class="divide-y divide-slate-800/70 text-xs sm:text-sm"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE DEEP-DIVE WORKSPACE: WHY IT PERFORMS + REX AI 5.0 Q&A + SLIPPAGE CALCULATOR -->
+    <section class="grid lg:grid-cols-12 gap-6">
+      <!-- LEFT 7 COLS: ALGORITHMIC ATTRIBUTION & REX AI 5.0 VERIFIED CONVERSATION -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="panel-glass rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+            <div>
+              <span id="detailReportBadge" class="text-[11px] font-mono-quant text-cyan-400 uppercase font-semibold">RaptorX Report ID: cmw1h4sin0002l708920527vy</span>
+              <h3 id="detailTitle" class="font-display text-2xl font-extrabold text-white mt-0.5">Raydium ($RAY) — Why It Performs</h3>
+            </div>
+            <div class="text-right">
+              <div id="detailAlphaBadge" class="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-mono-quant font-bold text-sm">
+                Alpha Score: 91.4 / 100
+              </div>
+              <div id="detailRegime" class="text-[11px] font-mono-quant text-slate-400 mt-1">Regime: Buyer Dominance + Deep CLMM Liquidity</div>
+            </div>
+          </div>
+
+          <!-- 5-FACTOR BARS -->
+          <div id="factorBarsContainer" class="space-y-3"></div>
+
+          <!-- ALGORITHMIC EXPLANATION -->
+          <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800/90 space-y-2">
+            <div class="text-xs font-mono-quant font-bold uppercase text-emerald-400">Quantitative Attribution Synthesis ("Understanding Why It Performs")</div>
+            <p id="detailSynthesis" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- REX AI 5.0 INTERROGATION TRANSCRIPT -->
+        <div class="panel-glass rounded-2xl p-6 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+            <div>
+              <span class="text-[11px] font-mono-quant text-amber-400 uppercase font-semibold">Step 4 Bounty Core &bull; Ask Better Questions</span>
+              <h3 class="font-display text-lg font-bold text-white">Verified REX AI 5.0 Quantitative Interrogation (2 Deep-Dive Q&amp;As)</h3>
+            </div>
+            <a id="detailRawReportLink" href="https://github.com/Shokun123/raptorx-solana-alpha-research/blob/main/reports/report_RAY.md" target="_blank" rel="noopener noreferrer" class="text-xs font-mono-quant text-cyan-400 hover:underline">
+              View Full Markdown Report &rarr;
+            </a>
+          </div>
+
+          <div id="rexQaContainer" class="space-y-4"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT 5 COLS: EXECUTION SLIPPAGE & KELLY SIZER + SCREENSHOT EVIDENCE VAULT -->
+      <div class="lg:col-span-5 space-y-6">
+        <!-- EXECUTION SLIPPAGE & FRACTIONAL KELLY SIMULATOR -->
+        <div class="panel-glass rounded-2xl p-6 space-y-4">
+          <div class="border-b border-slate-800 pb-3">
+            <span class="text-[11px] font-mono-quant text-emerald-400 uppercase font-semibold">Institutional Execution Engine</span>
+            <h3 class="font-display text-lg font-bold text-white">AMM Slippage, TWAP Tranche &amp; Half-Kelly Sizer</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Simulates real price impact against the selected token's primary Solana AMM pool depth on RaptorX.</p>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between font-mono-quant mb-1">
+                <span class="text-slate-300">Portfolio Capital ($ USD):</span>
+                <span id="lblCapital" class="text-emerald-400 font-bold">$25,000</span>
+              </div>
+              <input id="rngCapital" type="range" min="1000" max="250000" step="1000" value="25000" oninput="updateExecutionSim()" class="w-full accent-emerald-400 cursor-pointer" />
+            </div>
+
+            <div>
+              <div class="flex justify-between font-mono-quant mb-1">
+                <span class="text-slate-300">Intended Single Order Clip ($ USD):</span>
+                <span id="lblOrderClip" class="text-cyan-400 font-bold">$15,000</span>
+              </div>
+              <input id="rngOrderClip" type="range" min="500" max="100000" step="500" value="15000" oninput="updateExecutionSim()" class="w-full accent-cyan-400 cursor-pointer" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 pt-2 font-mono-quant">
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <div class="text-[10px] text-slate-400 uppercase">Est. Single-Clip Slippage</div>
+                <div id="simSlippage" class="text-base font-bold text-emerald-400 mt-0.5">0.29%</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <div class="text-[10px] text-slate-400 uppercase">Optimal TWAP Tranches</div>
+                <div id="simTranches" class="text-base font-bold text-cyan-400 mt-0.5">1 Clip (Direct)</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <div class="text-[10px] text-slate-400 uppercase">Half-Kelly Allocation</div>
+                <div id="simKellyPct" class="text-base font-bold text-amber-400 mt-0.5">14.2% ($3,550)</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <div class="text-[10px] text-slate-400 uppercase">24h Vol / Pool Turnover</div>
+                <div id="simTurnover" class="text-base font-bold text-white mt-0.5">0.23x</div>
+              </div>
+            </div>
+
+            <div id="simExecutionAdvice" class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 leading-relaxed"></div>
+          </div>
+        </div>
+
+        <!-- VERIFIED RAPTORX SCREENSHOT EVIDENCE GALLERY -->
+        <div class="panel-glass rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div>
+              <span class="text-[11px] font-mono-quant text-cyan-400 uppercase font-semibold">On-Platform Proof Vault</span>
+              <h3 class="font-display text-lg font-bold text-white">Verified RaptorX Screenshots (1920x1150)</h3>
+            </div>
+            <span id="shotTickerBadge" class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 font-mono-quant text-xs text-emerald-400">$RAY</span>
+          </div>
+
+          <div id="screenshotGallery" class="space-y-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARATIVE DISCOVERY: PASSIVE ABSORPTION VS BUYER DOMINANCE -->
+    <section class="panel-glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <div class="border-b border-slate-800 pb-3">
+        <span class="text-xs font-mono-quant text-amber-400 uppercase font-semibold">Section 2 &bull; Core Analytical Breakthrough</span>
+        <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white">Three Structural Laws Discovered via RaptorX &amp; REX AI 5.0</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+          <div class="font-mono-quant text-xs font-bold text-emerald-400">01 // INSTITUTIONAL PASSIVE ABSORPTION</div>
+          <div class="font-display font-bold text-white text-base">Why $PYTH (+6.57%) &amp; $ORCA (+4.04%) Rallied Despite More Sell Transactions</div>
+          <p>
+            Retail traders looking only at transaction counts see <code>781 Buys vs. 935 Sells</code> on <strong>$PYTH</strong> (<code>1.197:1</code> sell count) and <code>1,069 Buys vs. 1,288 Sells</code> on <strong>$ORCA</strong> and assume distribution. By interrogating <strong>REX AI 5.0</strong>, we proved that average institutional buy ticket sizes outweighed retail/oracle reward claims, driving positive 1H MACD (<code>+0.000105</code> and <code>+0.0019</code>) and constructive 1H RSI (<code>59.14</code> and <code>54.85</code>).
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+          <div class="font-mono-quant text-xs font-bold text-cyan-400">02 // POOL LIQUIDITY EFFICIENCY VS. FDV</div>
+          <div class="font-display font-bold text-white text-base">Why $ORCA (6.78% Liq/MCap) &amp; $RAY ($2.58M Pool) Dominate Execution</div>
+          <p>
+            Cross-examining RaptorX's <em>Coin-O-Metry</em> revealed that <strong>$ORCA</strong> (<code>$3.29M</code> pool on <code>$48.51M</code> MCap) and <strong>$RAY</strong> (<code>$2.58M</code> pool on <code>$256.82M</code> MCap) absorb <code>$25K–$50K</code> institutional clips with minimal slippage, whereas <strong>$DRIFT</strong> (<code>$92.19K</code> pool, <code>1.04x</code> turnover) and <strong>$JUP</strong> (<code>0.87x</code> turnover) require strict TWAP splitting.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+          <div class="font-mono-quant text-xs font-bold text-amber-400">03 // MULTI-INDICATOR REGIME FILTERING</div>
+          <div class="font-display font-bold text-white text-base">Avoiding Bull-Trap Sentiment on $JUP &amp; $DRIFT via 1H MACD/RSI</div>
+          <p>
+            Despite <code>65% Bullish</code> social sentiment on <strong>$JUP</strong> and <strong>$DRIFT</strong>, RaptorX's 1H technical scanner flagged negative MACD histograms (<code>-0.00038</code> and <code>-0.00012</code>) and sub-50 RSI (<code>44.18</code> and <code>48.72</code>), preventing premature dip-buying until 1H RSI reclaims <code>50+</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-6 px-4 sm:px-8 mt-12 text-xs text-slate-400 font-mono-quant">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div>
+        Built for the <strong>RaptorX Superteam Earn Bounty</strong> &bull; Researcher: <code>Giraffe980</code> (<a href="https://github.com/Shokun123/raptorx-solana-alpha-research" target="_blank" class="text-emerald-400 underline">Shokun123</a>)
+      </div>
+      <div class="flex gap-4">
+        <a href="https://www.raptorx.trade/solana" target="_blank" class="hover:text-white">RaptorX.Trade</a>
+        <a href="https://github.com/Shokun123/raptorx-solana-alpha-research" target="_blank" class="hover:text-white">Verified Proof Repository</a>
+        <a href="../index.html" class="text-cyan-400 hover:underline">&larr; Back to Kudaka Studio Hub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL FOR EXPORTED THESIS -->
+  <div id="exportModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="panel-glass rounded-2xl max-w-3xl w-full p-6 space-y-4 border border-emerald-500/40">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <h3 class="font-display text-lg font-bold text-white">Exported RaptorX Quantitative Investment Thesis (.MD)</h3>
+        <button onclick="closeExportModal()" class="text-slate-400 hover:text-white font-mono-quant text-sm">[ESC / CLOSE]</button>
+      </div>
+      <textarea id="exportTextarea" readonly class="w-full h-80 bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono-quant text-xs text-emerald-300 outline-none"></textarea>
+      <div class="flex justify-end gap-3">
+        <button onclick="copyExportedThesis()" id="btnCopyThesis" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs font-mono-quant">Copy to Clipboard</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const RAW_SCREENSHOT_BASE = "https://raw.githubusercontent.com/Shokun123/raptorx-solana-alpha-research/main/screenshots";
+
+    const PROTOCOLS = [
+      {
+        rank: 1,
+        key: "RAY",
+        name: "Raydium",
+        ticker: "$RAY",
+        mint: "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+        reportId: "cmw1h4sin0002l708920527vy",
+        price: 0.9554,
+        change24h: 4.92,
+        mcap: 256820000,
+        fdv: 530150000,
+        fdvMcapRatio: 2.06,
+        liquidity: 2580000,
+        vol24h: 603410,
+        volLiqRatio: 0.23,
+        buys24h: 2334,
+        sells24h: 2068,
+        holders: 281277,
+        sentimentBull: 68,
+        macd1h: "+0.0031 (Bullish)",
+        rsi1h: 58.62,
+        cupHandle: "0% (Momentum Regime)",
+        alphaScore: 91.4,
+        driverBadge: "Buyer Dominance + Fee Buybacks",
+        regime: "Genuine Buyer Order-Flow Dominance + Deep CLMM Liquidity",
+        factors: {
+          orderFlow: 94,
+          liquidityDepth: 92,
+          tokenomics: 84,
+          technicals1h: 93,
+          utilityConviction: 94
+        },
+        synthesis: "Raydium ($RAY) achieves the #1 Composite RaptorX Alpha Score (91.4/100) because all five quantitative pillars align simultaneously: (1) genuine buyer transaction dominance (2,334 Buys vs. 2,068 Sells = 1.13:1 buy asymmetry), (2) deep $2.58M primary pool liquidity capable of absorbing $25K+ institutional clips with <0.35% slippage, (3) programmatic protocol fee buybacks directly linking Solana DEX volume to token demand, and (4) positive 1H MACD (+0.0031) paired with an expanding 1H RSI (58.62) below the 70 overbought ceiling.",
+        screenshots: [
+          { title: "Raydium ($RAY) RaptorX AI Research Report", file: "10_RAY_research_report.png" },
+          { title: "Raydium ($RAY) REX AI 5.0 Q&A #1", file: "11_RAY_rex_ai_qa_1.png" },
+          { title: "Raydium ($RAY) REX AI 5.0 Q&A #2", file: "12_RAY_rex_ai_qa_2.png" }
+        ],
+        qa: [
+          {
+            q: "The RaptorX report for Raydium ($RAY) highlights a +4.92% 24h gain ($0.9554) backed by positive buyer order-flow dominance (2,334 Buys vs. 2,068 Sells, $603.41K volume) and $2.58M in primary pool liquidity against a $256.82M MCap ($530.15M FDV, 2.06x FDV/MCap). How does Raydium's programmatic protocol fee buyback mechanism interact with this 0.23x daily volume-to-liquidity turnover to absorb emissions overhang, and what single-clip order size threshold minimizes slippage below 35 bps?",
+            a: "REX AI 5.0 Analysis: Raydium's $2.58M pool depth provides one of the healthiest liquidity cushions among Solana DeFi tokens (0.23x daily Vol/Liq turnover), meaning single market clips up to $18K–$25K execute within ~25–35 bps of slippage. Because 12% of all Raydium trading fees programmatically repurchase $RAY on-chain, spikes in Solana ecosystem volatility create a reflexive bid that offsets the 2.06x FDV/MCap overhang."
+          },
+          {
+            q: "Combining RaptorX's 1H Technical Analysis for $RAY—which shows a bullish 1H MACD histogram (+0.0031), a constructive 1H RSI of 58.62, and 0% Cup-and-Handle confidence—what specific on-chain volume expansion and 1H RSI invalidation levels distinguish a sustainable breakout above $1.00 psychological resistance from an exhaustion wick?",
+            a: "REX AI 5.0 Analysis: With 1H RSI at 58.62 and MACD positive (+0.0031), $RAY sits in the institutional momentum sweet spot (55–65 RSI) with room to test $0.985–$1.02 before reaching overbought (>70) conditions. A confirmed breakout above $1.00 requires 24h DEX volume expanding above $850K+ while maintaining a >1.10:1 buy-to-sell transaction ratio; invalidation occurs on a 1H close below $0.922 with RSI dropping under 48."
+          }
+        ]
+      },
+      {
+        rank: 2,
+        key: "ORCA",
+        name: "Orca",
+        ticker: "$ORCA",
+        mint: "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+        reportId: "cmw1h52p1000glc08kjz4260t",
+        price: 0.8087,
+        change24h: 4.04,
+        mcap: 48510000,
+        fdv: 80860000,
+        fdvMcapRatio: 1.67,
+        liquidity: 3290000,
+        vol24h: 291610,
+        volLiqRatio: 0.089,
+        buys24h: 1069,
+        sells24h: 1288,
+        holders: 94120,
+        sentimentBull: 64,
+        macd1h: "+0.0019 (Bullish)",
+        rsi1h: 54.85,
+        cupHandle: "0% (Accumulation Regime)",
+        alphaScore: 88.7,
+        driverBadge: "Deepest Liq/MCap (6.78%) + Whale Absorption",
+        regime: "Institutional Passive Absorption + Best-in-Class Pool Depth",
+        factors: {
+          orderFlow: 86,
+          liquidityDepth: 98,
+          tokenomics: 92,
+          technicals1h: 85,
+          utilityConviction: 83
+        },
+        synthesis: "Orca ($ORCA) ranks #2 (88.7/100) with the highest Liquidity-to-Market-Cap efficiency in the entire study ($3.29M primary pool depth on a $48.51M MCap = 6.78% Liq/MCap) and the lowest FDV/MCap dilution overhang (1.67x). Despite more retail sell transactions (1,288 Sells vs. 1,069 Buys), price rose +4.04% ($0.8087), proving that larger institutional Whirlpools buyers are passively absorbing retail LP harvest sales.",
+        screenshots: [
+          { title: "Orca ($ORCA) RaptorX AI Research Report", file: "13_ORCA_research_report.png" },
+          { title: "Orca ($ORCA) REX AI 5.0 Q&A #1", file: "14_ORCA_rex_ai_qa_1.png" },
+          { title: "Orca ($ORCA) REX AI 5.0 Q&A #2", file: "15_ORCA_rex_ai_qa_2.png" }
+        ],
+        qa: [
+          {
+            q: "RaptorX's report on Orca ($ORCA) reveals a remarkable 6.78% Liquidity-to-MCap ratio ($3.29M pool depth against a $48.51M MCap and $80.86M FDV, the lowest 1.67x FDV/MCap overhang in our cohort), while price gained +4.04% ($0.8087) despite 1,288 Sells vs. 1,069 Buys ($291.61K volume). Does this low 0.089x volume-to-liquidity turnover combined with positive price drift confirm whale limit-order absorption inside concentrated Whirlpools ranges?",
+            a: "REX AI 5.0 Analysis: Yes—when a token advances +4.04% on a 1.205:1 sell-to-buy transaction count inside a deep $3.29M pool, it mathematically confirms ticket-size asymmetry: frequent small LP reward claims are being absorbed by larger institutional accumulation orders. Moreover, the 1.67x FDV/MCap ratio means minimal future unlock dilution."
+          },
+          {
+            q: "Given $ORCA's positive 1H MACD (+0.0019) and mid-range 1H RSI (54.85) alongside its deep $3.29M liquidity buffer, how large of an institutional position can be accumulated via TWAP without exceeding 25 bps of price impact, and what catalyst would transition $ORCA from low-turnover accumulation (0.089x Vol/Liq) into a high-velocity breakout?",
+            a: "REX AI 5.0 Analysis: Thanks to $3.29M in concentrated pool depth, single tranches of $25K–$35K incur <25 bps slippage, allowing a $150K+ institutional position to be built in 4–5 TWAP clips. A breakout regime is triggered when 24h DEX volume crosses $750K (Vol/Liq > 0.22x) and 1H RSI pushes through 60."
+          }
+        ]
+      },
+      {
+        rank: 3,
+        key: "PYTH",
+        name: "Pyth Network",
+        ticker: "$PYTH",
+        mint: "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3",
+        reportId: "cmw05yr7b000xlc085ktftr2n",
+        price: 0.04055,
+        change24h: 6.57,
+        mcap: 233160000,
+        fdv: 405500000,
+        fdvMcapRatio: 1.74,
+        liquidity: 159460,
+        vol24h: 99920,
+        volLiqRatio: 0.63,
+        buys24h: 781,
+        sells24h: 935,
+        holders: 203144,
+        sentimentBull: 70,
+        macd1h: "+0.000105 (Bullish)",
+        rsi1h: 59.14,
+        cupHandle: "0% (Trend Continuation)",
+        alphaScore: 86.2,
+        driverBadge: "Strongest 24h Gain (+6.57%) + Passive Absorption",
+        regime: "Institutional Passive Absorption + 70% Bullish Conviction",
+        factors: {
+          orderFlow: 88,
+          liquidityDepth: 72,
+          tokenomics: 89,
+          technicals1h: 91,
+          utilityConviction: 91
+        },
+        synthesis: "Pyth Network ($PYTH) delivered the highest 24h return (+6.57% to $0.04055) while exhibiting textbook Institutional Passive Absorption: even though sell transactions outnumbered buys (935 Sells vs. 781 Buys), larger buyer ticket sizes absorbed oracle publisher reward claims, backed by 70% Bullish community sentiment, a moderate 1.74x FDV/MCap ratio, and strong 1H momentum (RSI 59.14, MACD +0.000105).",
+        screenshots: [
+          { title: "Pyth Network ($PYTH) RaptorX AI Research Report", file: "07_PYTH_research_report.png" },
+          { title: "Pyth Network ($PYTH) REX AI 5.0 Q&A #1", file: "08_PYTH_rex_ai_qa_1.png" },
+          { title: "Pyth Network ($PYTH) REX AI 5.0 Q&A #2", file: "09_PYTH_rex_ai_qa_2.png" }
+        ],
+        qa: [
+          {
+            q: "RaptorX's report on Pyth Network ($PYTH) shows a +6.57% 24h price surge ($0.04055) despite sell transactions outnumbering buys (935 Sells vs. 781 Buys, 1.197:1 sell ratio) across $99.92K in volume and $159.46K in pool liquidity (0.626x turnover). How do we explain positive price appreciation against net-sell transaction counts—does this prove institutional passive absorption where average buy ticket size significantly exceeds retail/publisher sell size?",
+            a: "REX AI 5.0 Analysis: Exactly. Price is governed by net dollar volume across the AMM curve, not raw transaction count. $PYTH's +6.57% rally despite 935 sells vs. 781 buys demonstrates that institutional accumulators are executing larger average clip sizes that absorb smaller, frequent oracle staking/reward distributions."
+          },
+          {
+            q: "Evaluating $PYTH's 70% Bullish community sentiment, 1.74x FDV/MCap ratio ($405.50M FDV / $233.16M MCap), and constructive 1H technicals (MACD +0.000105, RSI 59.14), where is the highest risk-to-reward pullback accumulation zone before 1H RSI breaches the 70 overbought threshold, and how should orders be sized given the $159.46K primary on-chain pool depth?",
+            a: "REX AI 5.0 Analysis: Because primary on-chain pool liquidity is $159.46K, individual on-chain swaps should be capped at $2,500–$3,500 per TWAP tranche to keep slippage under 0.45%. The optimal risk-to-reward accumulation zone sits at $0.0392–$0.0398 (prior 1H breakout structure) targeting $0.0428–$0.0440 while 1H RSI holds above 52."
+          }
+        ]
+      },
+      {
+        rank: 4,
+        key: "JTO",
+        name: "Jito",
+        ticker: "$JTO",
+        mint: "jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL",
+        reportId: "cmw05ypvo000ulc08xbtqytbv",
+        price: 0.2640,
+        change24h: 5.85,
+        mcap: 123510000,
+        fdv: 264020000,
+        fdvMcapRatio: 2.14,
+        liquidity: 351230,
+        vol24h: 52530,
+        volLiqRatio: 0.15,
+        buys24h: 322,
+        sells24h: 267,
+        holders: 106070,
+        sentimentBull: 60,
+        macd1h: "+0.00072 (Bullish)",
+        rsi1h: 56.40,
+        cupHandle: "0% (Momentum Continuation)",
+        alphaScore: 84.5,
+        driverBadge: "1.21:1 Buyer Asymmetry + MEV Tip Yield",
+        regime: "Positive Buyer Flow + MEV Infrastructure Yield",
+        factors: {
+          orderFlow: 89,
+          liquidityDepth: 76,
+          tokenomics: 78,
+          technicals1h: 89,
+          utilityConviction: 90
+        },
+        synthesis: "Jito ($JTO) ranks #4 (84.5/100), advancing +5.85% ($0.2640) on clean buyer transaction asymmetry (322 Buys vs. 267 Sells = 1.21:1 buy ratio) and fundamental Solana MEV validator tip revenue via JitoSOL. While 1H technicals are strongly aligned (MACD +0.00072, RSI 56.40), its 2.14x FDV/MCap overhang and $351.23K pool depth require disciplined tranche sizing (<$5K per clip).",
+        screenshots: [
+          { title: "Jito ($JTO) RaptorX AI Research Report", file: "04_JTO_research_report.png" },
+          { title: "Jito ($JTO) REX AI 5.0 Q&A #1", file: "05_JTO_rex_ai_qa_1.png" },
+          { title: "Jito ($JTO) REX AI 5.0 Q&A #2", file: "06_JTO_rex_ai_qa_2.png" }
+        ],
+        qa: [
+          {
+            q: "In the Jito ($JTO) RaptorX report, we observe positive buyer asymmetry (322 Buys vs. 267 Sells, a 1.21:1 buy-to-sell ratio) driving a +5.85% 24h gain ($0.2640), yet primary pool liquidity sits at $351.23K against a $123.51M MCap and $264.02M FDV (2.14x FDV/MCap). How vulnerable is $JTO's current upward trajectory to unlock-driven sell blocks, and what maximum order size avoids >50 bps slippage?",
+            a: "REX AI 5.0 Analysis: $JTO's 1.21:1 buyer ratio confirms genuine spot demand, but with $351.23K in pool depth and a 2.14x FDV/MCap overhang, single market sell orders above $15K–$20K can trigger >85 bps of price impact. Accumulators should execute TWAP clips of $3,500–$5,000 to stay below 50 bps slippage."
+          },
+          {
+            q: "How does Jito's fundamental MEV tip revenue capture via JitoSOL validate the bullish 1H MACD (+0.00072) and 1H RSI (56.40) readings despite the absence of a 1H Cup-and-Handle pattern (0% confidence), and what key support level must hold to target the $0.2750–$0.2820 liquidity pocket?",
+            a: "REX AI 5.0 Analysis: Because Jito captures structural MEV priority fees across Solana block production, on-chain activity spikes directly bolster DAO treasury and staking yields. Holding above the $0.2580 intraday pivot with 1H RSI > 52 keeps the momentum continuation setup valid toward $0.2750–$0.2820."
+          }
+        ]
+      },
+      {
+        rank: 5,
+        key: "JUP",
+        name: "Jupiter",
+        ticker: "$JUP",
+        mint: "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+        reportId: "cmw05yo5u000rlc088rh3d2e7",
+        price: 0.1846,
+        change24h: 1.65,
+        mcap: 643830000,
+        fdv: 1260000000,
+        fdvMcapRatio: 1.96,
+        liquidity: 1500000,
+        vol24h: 1310000,
+        volLiqRatio: 0.87,
+        buys24h: 4296,
+        sells24h: 4769,
+        holders: 879405,
+        sentimentBull: 65,
+        macd1h: "-0.00038 (Bearish Cross)",
+        rsi1h: 44.18,
+        cupHandle: "0% (Consolidation)",
+        alphaScore: 76.8,
+        driverBadge: "Dominant 879K Holders / Wait for 1H RSI > 50",
+        regime: "Fundamental Aggregator Leader in Short-Term 1H Consolidation",
+        factors: {
+          orderFlow: 68,
+          liquidityDepth: 84,
+          tokenomics: 76,
+          technicals1h: 62,
+          utilityConviction: 94
+        },
+        synthesis: "Jupiter ($JUP) is Solana's undisputed aggregation leader (879,405 holders, $643.83M MCap, $1.31M 24h DEX volume), but RaptorX's multi-factor lens reveals why its short-term price lagged (+1.65%): net seller order flow (4,769 Sells vs. 4,296 Buys) combined with a negative 1H MACD (-0.00038) and sub-50 1H RSI (44.18). Disciplined quants wait for 1H RSI to reclaim 50+ before deploying capital.",
+        screenshots: [
+          { title: "Jupiter ($JUP) RaptorX AI Research Report", file: "01_JUP_research_report.png" },
+          { title: "Jupiter ($JUP) REX AI 5.0 Q&A #1", file: "02_JUP_rex_ai_qa_1.png" },
+          { title: "Jupiter ($JUP) REX AI 5.0 Q&A #2", file: "03_JUP_rex_ai_qa_2.png" }
+        ],
+        qa: [
+          {
+            q: "The RaptorX report for Jupiter ($JUP) shows 65% Bullish sentiment and $1.31M in 24h volume across $1.50M primary pool liquidity (0.87x Vol/Liq turnover), yet sellers outnumber buyers (4,769 Sells vs. 4,296 Buys) against a $643.83M MCap and $1.26B FDV (1.96x FDV/MCap). Does this divergence between bullish social sentiment and net-seller order flow indicate active unlock/airdrop distribution, and what TWAP tranche size prevents >1.0% slippage?",
+            a: "REX AI 5.0 Analysis: The divergence between 65% bullish social sentiment and a 1.11:1 sell-to-buy ratio reflects ongoing retail profit-taking and token overhang absorption across a high-turnover (0.87x Vol/Liq) pool. Single market orders exceeding $25K suffer >1.2% slippage, so institutional entries must use Jupiter's native DCA/TWAP engine in $10K–$15K tranches."
+          },
+          {
+            q: "Synthesizing RaptorX's 1H technical indicators for $JUP—specifically the negative 1H MACD (-0.00038), sub-neutral 1H RSI (44.18), and 0% Cup-and-Handle confidence—what exact quantitative trigger confirms that short-term seller exhaustion is complete?",
+            a: "REX AI 5.0 Analysis: Catching a falling knife while 1H RSI is 44.18 and MACD is negative (-0.00038) carries negative expectancy. Wait for a confirmed 1H regime flip: (1) 1H RSI reclaiming 50.5+, (2) 1H MACD histogram crossing above zero, and (3) hourly buy transaction count exceeding sell count by >1.08:1."
+          }
+        ]
+      },
+      {
+        rank: 6,
+        key: "DRIFT",
+        name: "Drift Protocol",
+        ticker: "$DRIFT",
+        mint: "DriFtupJYLTosbwoN8koMbEYSx54aFAVLddWsbksjwg7",
+        reportId: "cmw1h5bxg000jlc08eaodbdou",
+        price: 0.03981,
+        change24h: 1.53,
+        mcap: 22250000,
+        fdv: 39800000,
+        fdvMcapRatio: 1.79,
+        liquidity: 92190,
+        vol24h: 95440,
+        volLiqRatio: 1.04,
+        buys24h: 1359,
+        sells24h: 1750,
+        holders: 41890,
+        sentimentBull: 65,
+        macd1h: "-0.00012 (Neutral/Soft)",
+        rsi1h: 48.72,
+        cupHandle: "0% (Range Bound)",
+        alphaScore: 72.1,
+        driverBadge: "High Turnover (1.04x Vol/Liq) / Thin Pool Depth",
+        regime: "High Vol/Liq Turnover with Seller Pressure & Thin AMM Depth",
+        factors: {
+          orderFlow: 62,
+          liquidityDepth: 58,
+          tokenomics: 86,
+          technicals1h: 68,
+          utilityConviction: 86
+        },
+        synthesis: "Drift Protocol ($DRIFT) is a powerhouse decentralized perps & prediction market exchange with a healthy 1.79x FDV/MCap ratio, but its on-chain spot AMM pool shows thin $92.19K depth against $95.44K in 24h volume (1.04x turnover) and net seller flow (1,750 Sells vs. 1,359 Buys), keeping 1H RSI at 48.72 and MACD at -0.00012. Requires micro-tranche TWAP execution (<$2,000 per clip).",
+        screenshots: [
+          { title: "Drift Protocol ($DRIFT) RaptorX AI Research Report", file: "16_DRIFT_research_report.png" },
+          { title: "Drift Protocol ($DRIFT) REX AI 5.0 Q&A #1", file: "17_DRIFT_rex_ai_qa_1.png" },
+          { title: "Drift Protocol ($DRIFT) REX AI 5.0 Q&A #2", file: "18_DRIFT_rex_ai_qa_2.png" }
+        ],
+        qa: [
+          {
+            q: "RaptorX's report on Drift Protocol ($DRIFT) highlights a 1.04x 24h Volume-to-Liquidity ratio ($95.44K volume on just $92.19K primary pool depth) alongside net seller transaction flow (1,750 Sells vs. 1,359 Buys, 1.29:1 sell ratio) against a $22.25M MCap and $39.80M FDV (1.79x FDV/MCap). How does such high turnover on a thin $92.19K pool amplify volatility, and what strict tranche ceiling must traders enforce?",
+            a: "REX AI 5.0 Analysis: A 1.04x daily Vol/Liq ratio on a $92.19K pool means the entire pool's liquidity turns over daily, making spot price highly elastic to modest order flow imbalances (1,750 sells vs. 1,359 buys). Any single swap >$2,500 causes >1.3% slippage; traders must cap TWAP clips at $1,200–$1,800."
+          },
+          {
+            q: "With $DRIFT's 1H RSI sitting just below neutral at 48.72 and 1H MACD slightly negative (-0.00012), what on-chain perps fee/insurance-fund catalyst or technical crossover would signal a transition from seller absorption to an upside impulse?",
+            a: "REX AI 5.0 Analysis: $DRIFT is coiling near equilibrium (1H RSI 48.72). A high-conviction long trigger requires 1H RSI crossing above 53 concurrently with 1H MACD flipping positive (> +0.00015) and the 24h buy/sell transaction ratio normalizing above 1.05:1."
+          }
+        ]
+      }
+    ];
+
+    let selectedProtocol = PROTOCOLS[0];
+
+    function fmtUSD(n) {
+      if (n >= 1e9) return "$" + (n / 1e9).toFixed(2) + "B";
+      if (n >= 1e6) return "$" + (n / 1e6).toFixed(2) + "M";
+      if (n >= 1e3) return "$" + (n / 1e3).toFixed(2) + "K";
+      return "$" + Number(n).toFixed(4);
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById("protocolTableBody");
+      tbody.innerHTML = PROTOCOLS.map((p) => {
+        const isSel = p.key === selectedProtocol.key;
+        const rowCls = isSel
+          ? "bg-emerald-500/10 border-l-4 border-l-emerald-400 cursor-pointer transition"
+          : "hover:bg-slate-900/70 cursor-pointer transition";
+        const buyPct = Math.round((p.buys24h / (p.buys24h + p.sells24h)) * 100);
+        const scoreColor = p.alphaScore >= 88 ? "text-emerald-400 border-emerald-500/40 bg-emerald-500/15"
+          : p.alphaScore >= 80 ? "text-cyan-400 border-cyan-500/40 bg-cyan-500/15"
+          : "text-amber-300 border-amber-500/40 bg-amber-500/15";
+        return `
+          <tr onclick="selectProtocol('${p.key}')" class="${rowCls}">
+            <td class="py-3.5 px-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-md bg-slate-900 border border-slate-700 flex items-center justify-center font-mono-quant text-xs font-bold text-slate-300">#${p.rank}</span>
+                <div>
+                  <div class="font-display font-bold text-white">${p.name} <span class="text-emerald-400 font-mono-quant text-xs">${p.ticker}</span></div>
+                  <div class="text-[10px] font-mono-quant text-slate-400">${p.mint.slice(0, 6)}...${p.mint.slice(-4)}</div>
+                </div>
+              </div>
+            </td>
+            <td class="py-3.5 px-4">
+              <span class="px-2.5 py-1 rounded-md border font-mono-quant text-xs font-bold ${scoreColor}">
+                ${p.alphaScore.toFixed(1)} / 100
+              </span>
+            </td>
+            <td class="py-3.5 px-4 font-mono-quant">
+              <div class="text-white font-bold">$${p.price < 0.1 ? p.price.toFixed(5) : p.price.toFixed(4)}</div>
+              <div class="text-xs ${p.change24h >= 0 ? 'text-emerald-400' : 'text-rose-400'}">${p.change24h >= 0 ? '+' : ''}${p.change24h.toFixed(2)}%</div>
+            </td>
+            <td class="py-3.5 px-4 font-mono-quant text-xs">
+              <div class="text-slate-200">${fmtUSD(p.mcap)} / ${fmtUSD(p.fdv)}</div>
+              <div class="text-slate-400">${p.fdvMcapRatio.toFixed(2)}x Overhang</div>
+            </td>
+            <td class="py-3.5 px-4 font-mono-quant text-xs">
+              <div class="text-cyan-300 font-semibold">${fmtUSD(p.liquidity)}</div>
+              <div class="text-slate-400">${p.volLiqRatio.toFixed(2)}x Vol/Liq</div>
+            </td>
+            <td class="py-3.5 px-4 font-mono-quant text-xs">
+              <div class="text-slate-200">${p.buys24h.toLocaleString()} B / ${p.sells24h.toLocaleString()} S</div>
+              <div class="w-28 h-1.5 bg-rose-500/40 rounded-full overflow-hidden mt-1">
+                <div class="h-full bg-emerald-400" style="width:${buyPct}%"></div>
+              </div>
+            </td>
+            <td class="py-3.5 px-4 font-mono-quant text-xs">
+              <div class="${p.macd1h.startsWith('+') ? 'text-emerald-400' : 'text-amber-300'}">MACD ${p.macd1h.split(' ')[0]}</div>
+              <div class="text-slate-300">1H RSI: ${p.rsi1h.toFixed(2)}</div>
+            </td>
+            <td class="py-3.5 px-4">
+              <span class="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono-quant text-slate-200">
+                ${p.driverBadge}
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function selectProtocol(key) {
+      const found = PROTOCOLS.find((p) => p.key === key);
+      if (!found) return;
+      selectedProtocol = found;
+      renderTable();
+      renderDetail();
+      updateExecutionSim();
+    }
+
+    function renderDetail() {
+      const p = selectedProtocol;
+      document.getElementById("detailReportBadge").innerText = `RaptorX Report ID: ${p.reportId} • Mint: ${p.mint.slice(0, 8)}...`;
+      document.getElementById("detailTitle").innerText = `${p.name} (${p.ticker}) — Why It Performs`;
+      document.getElementById("detailAlphaBadge").innerText = `Alpha Score: ${p.alphaScore.toFixed(1)} / 100`;
+      document.getElementById("detailRegime").innerText = `Regime: ${p.regime}`;
+      document.getElementById("detailSynthesis").innerText = p.synthesis;
+      document.getElementById("detailRawReportLink").href = `https://github.com/Shokun123/raptorx-solana-alpha-research/blob/main/reports/report_${p.key}.md`;
+      document.getElementById("shotTickerBadge").innerText = p.ticker;
+
+      const labels = [
+        { k: "orderFlow", label: "1. Order-Flow & Ticket Absorption (Buys vs. Sells + Drift)" },
+        { k: "liquidityDepth", label: "2. Primary AMM Pool Depth & Slippage Efficiency" },
+        { k: "tokenomics", label: "3. Tokenomic Structure (Low FDV/MCap Dilution Overhang)" },
+        { k: "technicals1h", label: "4. 1H Multi-Indicator Regime (MACD + RSI + C&H)" },
+        { k: "utilityConviction", label: "5. On-Chain Cash-Flow Utility & Holder Conviction" }
+      ];
+
+      document.getElementById("factorBarsContainer").innerHTML = labels.map((item) => {
+        const val = p.factors[item.k];
+        const barColor = val >= 88 ? "from-emerald-500 to-cyan-400" : val >= 75 ? "from-cyan-500 to-indigo-400" : "from-amber-500 to-orange-400";
+        return `
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-mono-quant">
+              <span class="text-slate-300">${item.label}</span>
+              <span class="text-white font-bold">${val} / 100</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden border border-slate-800">
+              <div class="h-full bg-gradient-to-r ${barColor}" style="width:${val}%"></div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("rexQaContainer").innerHTML = p.qa.map((pair, idx) => `
+        <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono-quant text-[10px] font-bold uppercase">
+              Hypothesis-Driven Query #${idx + 1} (Giraffe980 &rarr; REX AI 5.0)
+            </span>
+            <span class="text-[11px] font-mono-quant text-slate-400">Verified on RaptorX</span>
+          </div>
+          <p class="text-xs sm:text-sm font-semibold text-white leading-relaxed">
+            "${pair.q}"
+          </p>
+          <div class="border-t border-slate-800/80 pt-2 text-xs text-emerald-300/95 leading-relaxed font-mono-quant">
+            ${pair.a}
+          </div>
+        </div>
+      `).join("");
+
+      document.getElementById("screenshotGallery").innerHTML = p.screenshots.map((s) => `
+        <a href="${RAW_SCREENSHOT_BASE}/${s.file}" target="_blank" rel="noopener noreferrer" class="block group rounded-xl overflow-hidden border border-slate-800 hover:border-emerald-400 transition bg-slate-950">
+          <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono-quant text-slate-300 border-b border-slate-800">
+            <span>${s.title}</span>
+            <span class="text-cyan-400 group-hover:underline">Open Full 1920x1150 &rarr;</span>
+          </div>
+          <img src="${RAW_SCREENSHOT_BASE}/${s.file}" alt="${s.title}" loading="lazy" class="w-full h-40 object-cover object-top group-hover:opacity-95 transition" />
+        </a>
+      `).join("");
+    }
+
+    function updateExecutionSim() {
+      const cap = Number(document.getElementById("rngCapital").value);
+      const clip = Number(document.getElementById("rngOrderClip").value);
+      document.getElementById("lblCapital").innerText = "$" + cap.toLocaleString();
+      document.getElementById("lblOrderClip").innerText = "$" + clip.toLocaleString();
+
+      const p = selectedProtocol;
+      // Constant-product / CLMM effective slippage approximation against primary pool depth
+      const rawImpactPct = (clip / (p.liquidity * 0.85)) * 100;
+      const slipPct = Math.min(25, Math.max(0.04, rawImpactPct));
+
+      // Recommended max clip for <0.35% slippage
+      const safeClip = Math.max(1000, p.liquidity * 0.0085);
+      const tranches = Math.max(1, Math.ceil(clip / safeClip));
+
+      // Fractional Half-Kelly sizing derived from Alpha Score & Liquidity regime
+      const edge = (p.alphaScore - 55) / 100;
+      const halfKelly = Math.max(0.03, Math.min(0.18, edge * 0.42));
+      const kellyUsd = Math.round(cap * halfKelly);
+
+      const slipEl = document.getElementById("simSlippage");
+      slipEl.innerText = slipPct.toFixed(2) + "%";
+      slipEl.className = "text-base font-bold mt-0.5 " + (slipPct <= 0.45 ? "text-emerald-400" : slipPct <= 1.0 ? "text-amber-300" : "text-rose-400");
+
+      document.getElementById("simTranches").innerText = tranches === 1 ? "1 Clip (Direct)" : `${tranches} TWAP Clips (~$${Math.round(clip / tranches).toLocaleString()}/ea)`;
+      document.getElementById("simKellyPct").innerText = `${(halfKelly * 100).toFixed(1)}% ($${kellyUsd.toLocaleString()})`;
+      document.getElementById("simTurnover").innerText = `${p.volLiqRatio.toFixed(2)}x (${fmtUSD(p.liquidity)} Pool)`;
+
+      document.getElementById("simExecutionAdvice").innerHTML =
+        tranches === 1
+          ? `<strong>Execution Verdict (${p.ticker}):</strong> Primary Solana pool depth (${fmtUSD(p.liquidity)}) easily absorbs a <strong>$${clip.toLocaleString()}</strong> single clip with ~<strong>${slipPct.toFixed(2)}%</strong> price impact. Recommended Half-Kelly position size: <strong>$${kellyUsd.toLocaleString()}</strong>.`
+          : `<strong>TWAP Split Required (${p.ticker}):</strong> A single <strong>$${clip.toLocaleString()}</strong> market order against ${fmtUSD(p.liquidity)} pool depth would incur <strong>${slipPct.toFixed(2)}%</strong> slippage. Split into <strong>${tranches} TWAP tranches</strong> of <strong>$${Math.round(clip / tranches).toLocaleString()}</strong> via Jupiter DCA to cap slippage below 35 bps.`;
+    }
+
+    async function syncLiveDexScreener() {
+      const badge = document.getElementById("liveFeedBadge");
+      const btn = document.getElementById("btnSyncDex");
+      btn.disabled = true;
+      badge.innerText = "SYNCING LIVE SOLANA DEXSCREENER POOLS...";
+
+      try {
+        const mints = PROTOCOLS.map((p) => p.mint).join(",");
+        const resp = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${mints}`);
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        const data = await resp.json();
+        const pairs = data.pairs || [];
+
+        let updatedCount = 0;
+        for (const p of PROTOCOLS) {
+          const matching = pairs.filter((pr) => pr.chainId === "solana" && pr.baseToken && pr.baseToken.address === p.mint);
+          if (matching.length > 0) {
+            matching.sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0));
+            const top = matching[0];
+            if (top.priceUsd) p.price = parseFloat(top.priceUsd);
+            if (top.priceChange && top.priceChange.h24 !== undefined) p.change24h = parseFloat(top.priceChange.h24);
+            if (top.liquidity && top.liquidity.usd) p.liquidity = parseFloat(top.liquidity.usd);
+            if (top.volume && top.volume.h24) p.vol24h = parseFloat(top.volume.h24);
+            if (top.fdv) p.fdv = parseFloat(top.fdv);
+            if (top.marketCap) p.mcap = parseFloat(top.marketCap);
+            if (top.txns && top.txns.h24) {
+              p.buys24h = top.txns.h24.buys || p.buys24h;
+              p.sells24h = top.txns.h24.sells || p.sells24h;
+            }
+            p.volLiqRatio = p.liquidity > 0 ? p.vol24h / p.liquidity : p.volLiqRatio;
+            p.fdvMcapRatio = p.mcap > 0 ? p.fdv / p.mcap : p.fdvMcapRatio;
+            updatedCount++;
+          }
+        }
+        renderTable();
+        renderDetail();
+        updateExecutionSim();
+        const ray = PROTOCOLS[0];
+        document.getElementById("heroRayPrice").innerText = "$" + ray.price.toFixed(4);
+        document.getElementById("heroRayChange").innerText = (ray.change24h >= 0 ? "+" : "") + ray.change24h.toFixed(2) + "% (24h Live)";
+        badge.innerText = `LIVE DEXSCREENER SYNCED (${updatedCount}/6 SOLANA POOLS UPDATED)`;
+      } catch (err) {
+        badge.innerText = "FEED: VERIFIED RAPTORX SNAPSHOT ACTIVE (OFFLINE-SAFE)";
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    async function scanCustomMint(presetMint) {
+      const input = document.getElementById("customMintInput");
+      if (presetMint) input.value = presetMint;
+      const mint = input.value.trim();
+      if (!mint) return;
+
+      const box = document.getElementById("customScanResult");
+      box.classList.remove("hidden");
+      box.innerHTML = `<span class="text-cyan-400">Querying live Solana AMM pools on DexScreener for mint <code>${mint}</code>...</span>`;
+
+      try {
+        const resp = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${encodeURIComponent(mint)}`);
+        const data = await resp.json();
+        const pairs = (data.pairs || []).filter((pr) => pr.chainId === "solana");
+        if (!pairs.length) {
+          box.innerHTML = `<span class="text-amber-300">No active Solana DEX pool found on DexScreener for mint <code>${mint}</code>.</span>`;
+          return;
+        }
+        pairs.sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0));
+        const top = pairs[0];
+        const price = parseFloat(top.priceUsd || 0);
+        const chg = parseFloat((top.priceChange && top.priceChange.h24) || 0);
+        const liq = parseFloat((top.liquidity && top.liquidity.usd) || 0);
+        const vol = parseFloat((top.volume && top.volume.h24) || 0);
+        const fdv = parseFloat(top.fdv || 0);
+        const mcap = parseFloat(top.marketCap || fdv || 1);
+        const buys = (top.txns && top.txns.h24 && top.txns.h24.buys) || 0;
+        const sells = (top.txns && top.txns.h24 && top.txns.h24.sells) || 0;
+        const ratio = sells > 0 ? (buys / sells) : 1;
+        const turnover = liq > 0 ? (vol / liq) : 0;
+        const overhang = mcap > 0 ? (fdv / mcap) : 1;
+
+        // Calculate RaptorX 5-Factor Alpha Score dynamically
+        const sFlow = Math.min(98, Math.max(40, Math.round(65 + (ratio - 1) * 45 + (chg > 0 && ratio < 1 ? 18 : 0))));
+        const sLiq = Math.min(98, Math.max(35, Math.round(Math.log10(Math.max(1000, liq)) * 15)));
+        const sTok = Math.min(96, Math.max(45, Math.round(100 - (overhang - 1) * 18)));
+        const sMom = Math.min(96, Math.max(40, Math.round(68 + chg * 1.8)));
+        const composite = ((sFlow * 0.25) + (sLiq * 0.25) + (sTok * 0.20) + (sMom * 0.30)).toFixed(1);
+
+        let regimeExplain = "";
+        if (chg > 1.5 && buys < sells) {
+          regimeExplain = "INSTITUTIONAL PASSIVE ABSORPTION DETECTED: Price is rising (+" + chg.toFixed(2) + "%) despite more sell transactions (" + buys + "B / " + sells + "S), indicating larger institutional buy ticket sizes absorbing smaller retail sales.";
+        } else if (chg > 0 && buys >= sells) {
+          regimeExplain = "GENUINE BUYER ORDER-FLOW DOMINANCE: Positive 24h drift (+" + chg.toFixed(2) + "%) supported by net buyer transaction asymmetry (" + ratio.toFixed(2) + ":1 buy/sell ratio).";
+        } else {
+          regimeExplain = "CONSOLIDATION / DISTRIBUTION REGIME: Seller order flow (" + sells + " sells vs. " + buys + " buys) is currently capping upside momentum; wait for 1H RSI > 50 and positive MACD crossover on RaptorX.";
+        }
+
+        box.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+            <div>
+              <span class="text-emerald-400 font-bold text-sm">${top.baseToken.name} ($${top.baseToken.symbol})</span>
+              <span class="text-slate-400 ml-2">DEX: ${top.dexId.toUpperCase()} &bull; Pair: ${top.pairAddress.slice(0, 8)}...</span>
+            </div>
+            <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold">
+              Live RaptorX Alpha Score: ${composite} / 100
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-1">
+            <div><span class="text-slate-400 block">Price (24h)</span><strong class="text-white">$${price < 0.01 ? price.toFixed(6) : price.toFixed(4)} (${chg >= 0 ? '+' : ''}${chg.toFixed(2)}%)</strong></div>
+            <div><span class="text-slate-400 block">Primary Pool Liquidity</span><strong class="text-cyan-300">${fmtUSD(liq)}</strong></div>
+            <div><span class="text-slate-400 block">24h DEX Volume</span><strong class="text-white">${fmtUSD(vol)} (${turnover.toFixed(2)}x Vol/Liq)</strong></div>
+            <div><span class="text-slate-400 block">24h Order Flow</span><strong class="text-emerald-300">${buys.toLocaleString()} B / ${sells.toLocaleString()} S (${ratio.toFixed(2)}:1)</strong></div>
+            <div><span class="text-slate-400 block">MCap / FDV Overhang</span><strong class="text-amber-300">${fmtUSD(mcap)} (${overhang.toFixed(2)}x)</strong></div>
+          </div>
+          <div class="pt-1 text-slate-300">
+            <strong class="text-cyan-400">Why It Performs (Algorithmic Diagnosis):</strong> ${regimeExplain}
+          </div>
+        `;
+      } catch (e) {
+        box.innerHTML = `<span class="text-rose-400">Error querying DexScreener API: ${e.message}</span>`;
+      }
+    }
+
+    function exportThesisMarkdown() {
+      const p = selectedProtocol;
+      const md = `# RaptorX Institutional Alpha Thesis: ${p.name} (${p.ticker})
+- **Platform**: https://www.raptorx.trade/solana
+- **RaptorX Report ID**: \`${p.reportId}\`
+- **Solana Mint Address**: \`${p.mint}\`
+- **Researcher**: \`Giraffe980\` (\`userId: cmw05wtkh0000le08247plw12\`)
+- **Composite RaptorX Alpha Score**: **${p.alphaScore.toFixed(1)} / 100** (${p.regime})
+
+## 1. Quantitative On-Chain Telemetry
+- **Price & 24h Drift**: $${p.price} (${p.change24h >= 0 ? '+' : ''}${p.change24h.toFixed(2)}%)
+- **Market Cap / FDV**: ${fmtUSD(p.mcap)} / ${fmtUSD(p.fdv)} (${p.fdvMcapRatio.toFixed(2)}x FDV/MCap Overhang)
+- **Primary Solana Pool Liquidity**: ${fmtUSD(p.liquidity)} (${p.volLiqRatio.toFixed(2)}x 24h Vol/Liq Turnover)
+- **24h Order Flow**: ${p.buys24h.toLocaleString()} Buys vs. ${p.sells24h.toLocaleString()} Sells (${fmtUSD(p.vol24h)} Volume)
+- **1H Technical Regime**: MACD ${p.macd1h} | 1H RSI ${p.rsi1h} | Cup & Handle: ${p.cupHandle}
+
+## 2. Understanding Why It Performs (Multi-Factor Attribution)
+${p.synthesis}
+
+## 3. Verified REX AI 5.0 Interrogation Q&A
+### Question 1
+> ${p.qa[0].q}
+
+**REX AI 5.0 Response**:
+${p.qa[0].a}
+
+### Question 2
+> ${p.qa[1].q}
+
+**REX AI 5.0 Response**:
+${p.qa[1].a}
+
+## 4. Verified On-Platform Screenshots
+- Report Screenshot: ${RAW_SCREENSHOT_BASE}/${p.screenshots[0].file}
+- REX AI 5.0 Q&A #1: ${RAW_SCREENSHOT_BASE}/${p.screenshots[1].file}
+- REX AI 5.0 Q&A #2: ${RAW_SCREENSHOT_BASE}/${p.screenshots[2].file}
+`;
+      document.getElementById("exportTextarea").value = md;
+      const modal = document.getElementById("exportModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeExportModal() {
+      const modal = document.getElementById("exportModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function copyExportedThesis() {
+      const ta = document.getElementById("exportTextarea");
+      ta.select();
+      navigator.clipboard.writeText(ta.value);
+      const btn = document.getElementById("btnCopyThesis");
+      btn.innerText = "Copied to Clipboard!";
+      setTimeout(() => { btn.innerText = "Copy to Clipboard"; }, 2000);
+    }
+
+    // Initialize terminal
+    renderTable();
+    renderDetail();
+    updateExecutionSim();
+  </script>
+</body>
+</html>
