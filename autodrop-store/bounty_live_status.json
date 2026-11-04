@@ -1,10 +1,18 @@
 {
-  "updated_at_utc": "2026-11-04 01:56:05 UTC",
+  "updated_at_utc": "2026-11-04 01:58:37 UTC",
   "repository": "limitlessprojects/Go-Hybrid",
-  "total_prs": 10,
+  "total_prs": 11,
   "merged_count": 3,
-  "open_count": 7,
+  "open_count": 8,
   "prs": [
+    {
+      "createdAt": "2026-11-04T01:57:12Z",
+      "mergedAt": null,
+      "number": 3570,
+      "state": "OPEN",
+      "title": "fix(hy-check): resolve channel element scalar widths across inferred bindings, expressions, and receives (fixes #3569)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3570"
+    },
     {
       "createdAt": "2026-11-03T04:00:26Z",
       "mergedAt": null,
