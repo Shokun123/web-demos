@@ -1,6 +1,6 @@
 {
   "ledger_version": "7.0-GITHUB-STACK-16-DELIVERIES-OK",
-  "updated_at_utc": "2026-11-04 14:21:23 UTC",
+  "updated_at_utc": "2026-11-04 14:21:25 UTC",
   "sender_identity": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
   "personal_phone_exposed": false,
   "qr_codes_used": false,
@@ -1674,7 +1674,7 @@
         "inspected_at_utc": "2026-11-04 14:20:31 UTC",
         "website_url": "https://elfaroinmobiliaria.com.bo/contacto/",
         "final_inspected_url": "https://elfaroinmobiliaria.com.bo/contacto/",
-        "mx_server": "mx30.antispam.mailspamprotection.com",
+        "mx_server": "mx20.antispam.mailspamprotection.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -1682,13 +1682,13 @@
           {
             "type": "html_form_post",
             "url": "https://elfaroinmobiliaria.com.bo/contacto/",
-            "mx": "mx30.antispam.mailspamprotection.com"
+            "mx": "mx20.antispam.mailspamprotection.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://elfaroinmobiliaria.com.bo/contacto/) | MX Verificado: mx30.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://elfaroinmobiliaria.com.bo/contacto/) | MX Verificado: mx20.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de El Faro Inmobiliaria — Gestion y Proyectos en Santa Cruz,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Guembe #2025, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de El Faro Inmobiliaria — Gestion y Proyectos en Santa Cruz:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/el-faro-inmobiliaria-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de El Faro Inmobiliaria — Gestion y Proyectos en Santa Cruz (+591 71035002).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 600 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1704,7 +1704,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://elfaroinmobiliaria.com.bo/contacto/) + Email (info@elfaroinmobiliaria.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/el-faro-inmobiliaria-scz/)",
-          "note": "POST a formulario web corporativo (https://elfaroinmobiliaria.com.bo/contacto/) | MX Verificado: mx30.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://elfaroinmobiliaria.com.bo/contacto/) | MX Verificado: mx20.antispam.mailspamprotection.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -1731,7 +1731,7 @@
         "inspected_at_utc": "2026-11-04 14:20:34 UTC",
         "website_url": "https://atlasinversiones.com/contacto/",
         "final_inspected_url": "https://atlasinversiones.com/contacto/",
-        "mx_server": "mx1.hostinger.com",
+        "mx_server": "mx2.hostinger.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -1739,13 +1739,13 @@
           {
             "type": "html_form_post",
             "url": "https://atlasinversiones.com/contacto/",
-            "mx": "mx1.hostinger.com"
+            "mx": "mx2.hostinger.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx1.hostinger.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx2.hostinger.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Atlas Inversiones — Bienes Raices y Activos Comerciales,\n\nRevisando su presencia en Santa Cruz de la Sierra (Zona Empresarial Norte / Equipetrol, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Atlas Inversiones — Bienes Raices y Activos Comerciales:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/atlas-inversiones-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Atlas Inversiones — Bienes Raices y Activos Comerciales (+591 79285132).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1761,7 +1761,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://atlasinversiones.com/contacto/) + Email (adm@atlasinversiones.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/atlas-inversiones-scz/)",
-          "note": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx1.hostinger.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://atlasinversiones.com/contacto/) | MX Verificado: mx2.hostinger.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -1842,10 +1842,10 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:38 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:37 UTC",
         "website_url": "https://kiryatsrl.com/",
         "final_inspected_url": "https://kiryatsrl.com/",
-        "mx_server": "mx1-hosting.jellyfish.systems",
+        "mx_server": "mx3-hosting.jellyfish.systems",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -1853,13 +1853,13 @@
           {
             "type": "html_form_post",
             "url": "https://kiryatsrl.com/",
-            "mx": "mx1-hosting.jellyfish.systems"
+            "mx": "mx3-hosting.jellyfish.systems"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx1-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx3-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Kiryat S.R.L. — Desarrollo Inmobiliario y Construccion,\n\nRevisando su presencia en Santa Cruz de la Sierra (Zona Equipetrol / Norte, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Kiryat S.R.L. — Desarrollo Inmobiliario y Construccion:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/kiryat-inmobiliaria-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Kiryat S.R.L. — Desarrollo Inmobiliario y Construccion (+591 73378709).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -1875,7 +1875,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://kiryatsrl.com/) + Email (info@kiryat.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/kiryat-inmobiliaria-scz/)",
-          "note": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx1-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://kiryatsrl.com/) | MX Verificado: mx3-hosting.jellyfish.systems -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2013,10 +2013,10 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:43 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:44 UTC",
         "website_url": "https://www.isimustang.com.bo/contacto/",
         "final_inspected_url": "https://www.isimustang.com.bo/contacto/",
-        "mx_server": "mx1.mailchannels.net",
+        "mx_server": "mx2.mailchannels.net",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -2024,13 +2024,13 @@
           {
             "type": "html_form_post",
             "url": "https://www.isimustang.com.bo/contacto/",
-            "mx": "mx1.mailchannels.net"
+            "mx": "mx2.mailchannels.net"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://www.isimustang.com.bo/contacto/) | MX Verificado: mx1.mailchannels.net -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://www.isimustang.com.bo/contacto/) | MX Verificado: mx2.mailchannels.net -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de ISI Mustang — Ingenieria, Automatizacion y Consultoria Ambiental,\n\nRevisando su presencia en Santa Cruz de la Sierra (Centro Empresarial Torre Link, 4to Anillo y Radial 21, Piso 1 Of. B, Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de ISI Mustang — Ingenieria, Automatizacion y Consultoria Ambiental:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/isi-mustang-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de ISI Mustang — Ingenieria, Automatizacion y Consultoria Ambiental (+591 3 3414252).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2046,7 +2046,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.isimustang.com.bo/contacto/) + Email (info@isimustang.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/isi-mustang-scz/)",
-          "note": "POST a formulario web corporativo (https://www.isimustang.com.bo/contacto/) | MX Verificado: mx1.mailchannels.net -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://www.isimustang.com.bo/contacto/) | MX Verificado: mx2.mailchannels.net -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2187,7 +2187,7 @@
         "inspected_at_utc": "2026-11-04 14:20:47 UTC",
         "website_url": "https://lallave.com.bo/contacto/",
         "final_inspected_url": "https://lallave.com.bo/contacto/",
-        "mx_server": "alt2.aspmx.l.google.com",
+        "mx_server": "alt4.aspmx.l.google.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -2195,13 +2195,13 @@
           {
             "type": "html_form_post",
             "url": "https://lallave.com.bo/contacto/",
-            "mx": "alt2.aspmx.l.google.com"
+            "mx": "alt4.aspmx.l.google.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://lallave.com.bo/contacto/) | MX Verificado: alt2.aspmx.l.google.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://lallave.com.bo/contacto/) | MX Verificado: alt4.aspmx.l.google.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de La Llave Bolivia — Automatizacion, Potencia y Eficiencia Industrial,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. Las Ramblas y 4to Anillo, Edif. El Cubo I, Piso 2 (Equipetrol), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de La Llave Bolivia — Automatizacion, Potencia y Eficiencia Industrial:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/lallave-industrial-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de La Llave Bolivia — Automatizacion, Potencia y Eficiencia Industrial (+591 3 3419575).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2217,7 +2217,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://lallave.com.bo/contacto/) + Email (info@lallave.com.bo) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/lallave-industrial-scz/)",
-          "note": "POST a formulario web corporativo (https://lallave.com.bo/contacto/) | MX Verificado: alt2.aspmx.l.google.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://lallave.com.bo/contacto/) | MX Verificado: alt4.aspmx.l.google.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2298,7 +2298,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:54 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:53 UTC",
         "website_url": "https://www.clinicaimagina.com.bo/contactanos/",
         "final_inspected_url": "https://www.clinicaimagina.com.bo/contactanos/",
         "mx_server": "clinicaimagina.com.bo",
@@ -2355,7 +2355,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:55 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:53 UTC",
         "website_url": "https://www.cro.com.bo/contacto/",
         "final_inspected_url": "https://www.cro.com.bo/contacto/",
         "mx_server": "cro.com.bo",
@@ -2412,7 +2412,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:56 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:54 UTC",
         "website_url": "https://cmfoianini.com.bo/contacto/",
         "final_inspected_url": "https://cmfoianini.com.bo/contacto/",
         "mx_server": "cmfoianini.com.bo",
@@ -2469,7 +2469,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:57 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:55 UTC",
         "website_url": "https://www.chainstudio.com.bo/es",
         "final_inspected_url": "https://www.chainstudio.com.bo/es",
         "mx_server": "mail.chainstudio.com.bo",
@@ -2526,7 +2526,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:20:58 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:56 UTC",
         "website_url": "https://luma.com.bo/",
         "final_inspected_url": "https://luma.com.bo/",
         "mx_server": "luma-com-bo.mail.protection.outlook.com",
@@ -2583,7 +2583,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:00 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:58 UTC",
         "website_url": "https://clinicadentalsanpedro.com.bo/contacto/",
         "final_inspected_url": "https://clinicadentalsanpedro.com.bo/contacto/",
         "mx_server": "clinicadentalsanpedro.com.bo",
@@ -2640,7 +2640,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:00 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:59 UTC",
         "website_url": "https://raizant.com.bo/contacto/",
         "final_inspected_url": "https://raizant.com.bo/contacto/",
         "mx_server": "raizant-com-bo.mail.protection.outlook.com",
@@ -2697,7 +2697,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:01 UTC",
+        "inspected_at_utc": "2026-11-04 14:20:59 UTC",
         "website_url": "https://inmol.com.bo/contacto/",
         "final_inspected_url": "https://inmol.com.bo/contacto/",
         "mx_server": "mamayatech.in.tmes.trendmicro.com",
@@ -2754,7 +2754,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:02 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:00 UTC",
         "website_url": "https://www.redsalud.com.bo/contacto/",
         "final_inspected_url": "https://www.redsalud.com.bo/contacto/",
         "mx_server": "redsalud.com.bo",
@@ -2811,7 +2811,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:04 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:03 UTC",
         "website_url": "https://ceologistics.com.bo/",
         "final_inspected_url": "https://ceologistics.com.bo/",
         "mx_server": "mail.ceologistics.com.bo",
@@ -2869,10 +2869,10 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:05 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:04 UTC",
         "website_url": "https://elporvenir-bo.com/contacto/",
         "final_inspected_url": "https://elporvenir-bo.com/contacto/",
-        "mx_server": "antispam4.MegaLink.com",
+        "mx_server": "antispam2.megalink.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -2880,13 +2880,13 @@
           {
             "type": "html_form_post",
             "url": "https://elporvenir-bo.com/contacto/",
-            "mx": "antispam4.MegaLink.com"
+            "mx": "antispam2.megalink.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam4.MegaLink.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam2.megalink.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de El Porvenir Ltda. — Transporte Internacional y Nacional de Carga,\n\nRevisando su presencia en Santa Cruz de la Sierra (Av. El Trillo — 6to Anillo Nro. 15 (entre Virgen de Lujan y Virgen de Cotoca), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de El Porvenir Ltda. — Transporte Internacional y Nacional de Carga:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/elporvenir-transporte-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de El Porvenir Ltda. — Transporte Internacional y Nacional de Carga (+591 3 3626080).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 700 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -2902,7 +2902,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://elporvenir-bo.com/contacto/) + Email (admin@elporvenir-bo.com, marketing@elporvenir-bo.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/elporvenir-transporte-scz/)",
-          "note": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam4.MegaLink.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://elporvenir-bo.com/contacto/) | MX Verificado: antispam2.megalink.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -2926,7 +2926,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:07 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:06 UTC",
         "website_url": "https://www.incoservbolivia.com/contactos/",
         "final_inspected_url": "https://www.incoservbolivia.com/contactos/",
         "mx_server": "mail.incoservbolivia.com",
@@ -2983,10 +2983,10 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:08 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:07 UTC",
         "website_url": "https://arandalegal.com/contacto/",
         "final_inspected_url": "https://arandalegal.com/contacto/",
-        "mx_server": "mail.arandalegal.com",
+        "mx_server": "mx1.arandalegal.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -2994,13 +2994,13 @@
           {
             "type": "html_form_post",
             "url": "https://arandalegal.com/contacto/",
-            "mx": "mail.arandalegal.com"
+            "mx": "mx1.arandalegal.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 403,
         "confirmed_delivery": false,
-        "submission_result": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mail.arandalegal.com -> HTTP 403 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mx1.arandalegal.com -> HTTP 403 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de Aranda & Asociados — Estudio Juridico, Contable y Auditoria,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Gabriel Jose Moreno Nro. 3595, Av. Santos Dumont (Barrio La Morita), Santa Cruz), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de Aranda & Asociados — Estudio Juridico, Contable y Auditoria:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/aranda-legal-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de Aranda & Asociados — Estudio Juridico, Contable y Auditoria (+591 70666636).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 600 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3016,7 +3016,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://arandalegal.com/contacto/) + Email (info@arandalegal.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/aranda-legal-scz/)",
-          "note": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mail.arandalegal.com -> HTTP 403 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://arandalegal.com/contacto/) | MX Verificado: mx1.arandalegal.com -> HTTP 403 (Enviado OK)"
         }
       ]
     },
@@ -3040,10 +3040,10 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:09 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:08 UTC",
         "website_url": "https://www.ztm-abogados.com/",
         "final_inspected_url": "https://www.ztm-abogados.com/",
-        "mx_server": "aspmx2.googlemail.com",
+        "mx_server": "aspmx.l.google.com",
         "site_reachable": true,
         "http_get_status": 200,
         "forms_detected_count": 1,
@@ -3051,13 +3051,13 @@
           {
             "type": "html_form_post",
             "url": "https://www.ztm-abogados.com/",
-            "mx": "aspmx2.googlemail.com"
+            "mx": "aspmx.l.google.com"
           }
         ],
         "submission_attempted": true,
         "submission_http_status": 200,
         "confirmed_delivery": true,
-        "submission_result": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx2.googlemail.com -> HTTP 200 (Enviado OK)"
+        "submission_result": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx.l.google.com -> HTTP 200 (Enviado OK)"
       },
       "stage_messages": {
         "CONTACTED_STAGE_1": "Estimada direccion de ZTM Abogados Asociados — Derecho Aduanero, Tributario y Financiero,\n\nRevisando su presencia en Santa Cruz de la Sierra (Calle Dechia Nro. 29, Barrio Urbari, Santa Cruz de la Sierra), nuestro equipo de ingenieria desarrollo y dejo operativa una aplicacion web interactiva pre-rellenada especificamente con los servicios, horarios y linea de atencion de ZTM Abogados Asociados — Derecho Aduanero, Tributario y Financiero:\n\nhttps://shokun123.github.io/web-demos/autodrop-store/scz-demos/ztm-abogados-scz/\n\nEl sistema incluye:\n1. Simulador interactivo de presupuesto en Bolivianos (Bs) adaptado a sus especialidades.\n2. Selector de horarios y cotizaciones conectado directo al WhatsApp oficial de ZTM Abogados Asociados — Derecho Aduanero, Tributario y Financiero (+591 3 3559955).\n3. Cero costo mensual de servidor o mantenimiento ($0/mes).\n\nEl costo unico por dejarla 100% personalizada con su logotipo oficial y catalogo completo es de 650 Bs (pago unico contra entrega funcionando). Pueden probar su aplicacion en el enlace y confirmar su activacion desde el Asistente Automatico integrado al final de la pagina o respondiendo a ingenieria.kudakastudio@gmail.com.\n\nAtentamente,\nKudaka Studio — Ingenieria de Software\nContacto directo: ingenieria.kudakastudio@gmail.com",
@@ -3073,7 +3073,7 @@
           "state": "CONTACTED_STAGE_1",
           "sender": "Kudaka Studio — Ingenieria de Software <ingenieria.kudakastudio@gmail.com>",
           "channel": "Web Form / MX (https://www.ztm-abogados.com/) + Email (central@ztm-abogados.com) + In-App Closer (https://shokun123.github.io/web-demos/autodrop-store/scz-demos/ztm-abogados-scz/)",
-          "note": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx2.googlemail.com -> HTTP 200 (Enviado OK)"
+          "note": "POST a formulario web corporativo (https://www.ztm-abogados.com/) | MX Verificado: aspmx.l.google.com -> HTTP 200 (Enviado OK)"
         }
       ]
     },
@@ -3097,7 +3097,7 @@
       "last_updated_utc": "2026-11-04 14:20:14 UTC",
       "followup_attempts": 1,
       "web_form_audit": {
-        "inspected_at_utc": "2026-11-04 14:21:20 UTC",
+        "inspected_at_utc": "2026-11-04 14:21:22 UTC",
         "website_url": "https://ecimex.com.bo/contacto/",
         "final_inspected_url": "https://ecimex.com.bo/contacto/",
         "mx_server": "ecimex.com.bo",
