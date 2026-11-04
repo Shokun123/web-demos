@@ -683,7 +683,9 @@
           `<li>Personalizacion de su logotipo oficial y ajuste de su catalogo completo en menos de 24 horas.</li>` +
           `<li>Costo mensual de servidor: <strong>$0/mes</strong> (infraestructura web estatica de alta velocidad).</li>` +
           `<li>Pago unico de <strong>700 Bs</strong> unicamente contra entrega conformada, una vez que usted verifique su sistema funcionando al 100%.</li>` +
+          `<li><strong>Liquidacion Corporativa / Internacional (USDT o USDC en Texto):</strong> Si prefiere abonar en USDT/USDC una vez entregada su aplicacion, la direccion oficial de deposito en Binance (Red Base / BSC BEP-20 / ERC-20) es: <code style="color:#6ee7b7;word-break:break-all;">0xc1184f2c85d3158c14dc8f10d9727128ad5fb9f3</code> y envie el comprobante a <strong>ingenieria.kudakastudio@gmail.com</strong>.</li>` +
           `</ol>` +
+          `<div style="margin:10px 0;"><button type="button" onclick="copyBinanceAddress()" style="background:#0f172a;color:#6ee7b7;border:1px solid #10b981;padding:8px 12px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer;">[ Copiar Direccion USDT/USDC Binance ]</button><span id="binanceCopyMsg" style="display:none;margin-left:8px;font-size:11px;color:#34d399;font-weight:700;">Direccion copiada</span></div>` +
           `<p style="color:#6ee7b7;font-weight:700;">Complete su nombre a la derecha y presione "Enviar Confirmacion Directa a Ingenieria" para recibir su enlace final hoy mismo.</p>`;
       } else if (actionType === 'FAQ_QUERY') {
         localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'REPLIED_INTERESTED');
@@ -735,6 +737,12 @@
         const fb = document.getElementById('ownerCopyFeedback');
         fb.style.display = 'block';
         fb.textContent = 'Confirmacion copiada al portapapeles. Puede enviarla a ingenieria.kudakastudio@gmail.com';
+      });
+    }
+    function copyBinanceAddress() {
+      navigator.clipboard.writeText('0xc1184f2c85d3158c14dc8f10d9727128ad5fb9f3').then(() => {
+        const el = document.getElementById('binanceCopyMsg');
+        if (el) el.style.display = 'inline';
       });
     }
   </script>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aranda & Asociados — Estudio Juridico, Contable y Auditoria | Santa Cruz de la Sierra</title>
+  <meta name="description" content="Simula el costo de outsourcing contable, auditoria externa o defensa tributaria en Bolivianos con Aranda & Asociados.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Aranda & Asociados — Estudio Juridico, Contable y Auditoria",
+    "address": "Calle Gabriel Jose Moreno Nro. 3595, Av. Santos Dumont (Barrio La Morita), Santa Cruz",
+    "telephone": "+591 70666636"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #2563eb;
+      --bg: #0c0f14;
+      --surface: #151921;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: #262d3d;
+      --input-bg: #0f131a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .demo-banner {
+      background: #090d16;
+      color: #f8fafc;
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .demo-banner span { color: var(--accent); font-weight: 800; }
+    .activate-top-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 20px;
+    }
+    .nav-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text);
+    }
+    .brand small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .wa-top-btn {
+      background: #16a34a;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .hero {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 44px 20px 32px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding: 28px 20px; }
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.12);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      border: 1px solid var(--accent);
+    }
+    h1 {
+      font-size: clamp(27px, 3.8vw, 42px);
+      line-height: 1.14;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 15.5px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .info-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .calc-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .calc-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .calc-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .calc-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .form-card {
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.25);
+    }
+    .form-card h2 {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .form-card p {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 13.5px;
+      background: var(--input-bg);
+      color: var(--text);
+    }
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .slot-btn {
+      padding: 8px 4px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .slot-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .submit-wa {
+      width: 100%;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14.5px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .submit-wa:hover { background: #15803d; }
+    .section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+    .section h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .section-sub { color: var(--muted); font-size: 13.5px; margin-bottom: 20px; }
+    .srv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+    .srv-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .srv-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .srv-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .srv-num { font-weight: 800; font-size: 13px; color: var(--accent); }
+    .srv-tag {
+      background: var(--input-bg);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .srv-card h3 { font-size: 17px; font-weight: 800; }
+    .srv-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+    .srv-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+    .srv-btn { color: var(--accent); font-weight: 800; }
+    .owner-activation-section {
+      max-width: 1140px;
+      margin: 12px auto 32px;
+      padding: 0 20px;
+    }
+    .owner-card {
+      background: #090d16;
+      color: #f8fafc;
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .owner-card { grid-template-columns: 1fr; }
+    }
+    .owner-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .owner-card p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+    .owner-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .owner-form-box {
+      background: #111827;
+      border: 1px solid #1f2937;
+      padding: 18px;
+      border-radius: 14px;
+    }
+    .owner-form-box label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+    }
+    .owner-form-box input, .owner-form-box select {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #0b0f19;
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .owner-btn-primary {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .owner-btn-secondary {
+      width: 100%;
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .closer-assistant-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #1f2937;
+    }
+    .closer-assistant-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .closer-quick-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .closer-qbtn-buy {
+      width: 100%;
+      background: #10b981;
+      color: #052e16;
+      border: none;
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      text-align: left;
+    }
+    .closer-qbtn-faq {
+      width: 100%;
+      background: #1e293b;
+      color: #93c5fd;
+      border: 1px solid #3b82f6;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+    }
+    .closer-qbtn-optout {
+      width: 100%;
+      background: #111827;
+      color: #9ca3af;
+      border: 1px solid #374151;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+    }
+    .closer-live-response {
+      display: none;
+      margin-top: 12px;
+      background: #0b0f19;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12.5px;
+      color: #e2e8f0;
+      line-height: 1.55;
+    }
+    .closer-state-pill {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+    }
+    footer {
+      background: #090d16;
+      color: #cbd5e1;
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 12.5px;
+      margin-top: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">
+    <div>
+      SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>ARANDA & ASOCIADOS — ESTUDIO JURIDICO, CONTABLE Y AUDITORIA</span> (Motor V5.0: inmoluxe-arquitectura + commercial_b2b_pack)
+    </div>
+    <button type="button" class="activate-top-btn" onclick="document.getElementById('activar-oficialmente').scrollIntoView({behavior:'smooth'})">
+      Activar esta App Oficialmente para Aranda & Asociados — Estudio Juridico, Contable y Auditoria (600 Bs Pago Unico)
+    </button>
+  </div>
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        Aranda & Asociados — Estudio Juridico, Contable y Auditoria
+        <small>Asesoramiento Tributario, Auditoria Financiera, Contabilidad y Derecho Corporativo</small>
+      </div>
+      <a class="wa-top-btn" href="https://wa.me/59170666636?text=Hola%2C%20vi%20su%20sistema%20web%20y%20deseo%20hacer%20una%20consulta%20en%20Aranda & Asociados — Estudio Juridico, Contable y Auditoria" target="_blank">
+        WhatsApp: +591 70666636
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="badge">Av. Santos Dumont C. Gabriel Jose Moreno #3595 — Santa Cruz</span>
+      <h1>Soluciones Integrales en Auditoria, Contabilidad, Tributacion y Derecho Empresarial</h1>
+      <p class="subtitle">Simula el costo de outsourcing contable, auditoria externa o defensa tributaria en Bolivianos con Aranda & Asociados.</p>
+      <div class="info-pills">
+        <div><strong>Ubicacion Oficial:</strong> Calle Gabriel Jose Moreno Nro. 3595, Av. Santos Dumont (Barrio La Morita), Santa Cruz</div>
+        <div><strong>Horarios de Atencion:</strong> Lunes a Viernes: 08:30 a 18:30 | Sabados: 09:00 a 12:30</div>
+        <div><strong>Linea Directa WhatsApp:</strong> +591 70666636 (Santa Cruz de la Sierra)</div>
+      </div>
+
+      <div class="calc-box">
+        <h3>Simulador Rapido de Presupuesto en Bolivianos (Bs)</h3>
+        <div class="field" style="margin-top:8px;">
+          <label>Meses de gestion o modulos de auditoria/asesoria: <span id="qtyVal">1</span> modulos</label>
+          <input type="range" id="qtyRange" min="1" max="50" value="1" oninput="updateBudget()">
+        </div>
+        <div class="calc-row">
+          <span style="font-size:12.5px;color:var(--muted);">Presupuesto referencial estimado:</span>
+          <span class="calc-total" id="budgetTotal">1350 Bs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card" id="reservar">
+      <h2>Reserva / Cotizacion Instantanea a WhatsApp</h2>
+      <p>Selecciona el servicio y horario; los datos se auto-rellenan hacia el WhatsApp de Aranda & Asociados — Estudio Juridico, Contable y Auditoria.</p>
+      <form onsubmit="sendBooking(event)">
+        <div class="field">
+          <label>Tu Nombre o Empresa *</label>
+          <input type="text" id="clientName" required placeholder="Ej. Carlos Salvatierra">
+        </div>
+        <div class="field">
+          <label>Servicio o Producto Requerido *</label>
+          <select id="clientService" onchange="updateBudget()">
+            <option value="Contabilidad General, Gerencial y Planificacion Tributaria SIN" data-price="1350">Contabilidad General, Gerencial y Planificacion Tributaria SIN (Ref: 1350 Bs)</option><option value="Auditoria Externa de Estados Financieros, Tributaria y Especial" data-price="2900">Auditoria Externa de Estados Financieros, Tributaria y Especial (Ref: 2900 Bs)</option><option value="Asesoramiento Legal Corporativo, Laboral y Contencioso Tributario" data-price="1600">Asesoramiento Legal Corporativo, Laboral y Contencioso Tributario (Ref: 1600 Bs)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Selecciona un Horario Disponible *</label>
+          <input type="hidden" id="selectedSlot" value="09:30 AM">
+          <div class="slots-grid">
+            <button type="button" class="slot-btn active" onclick="pickSlot(this, '09:30 AM')">09:30 AM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '11:00 AM')">11:00 AM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '15:30 PM')">15:30 PM</button>
+            <button type="button" class="slot-btn" onclick="pickSlot(this, '17:30 PM')">17:30 PM</button>
+          </div>
+        </div>
+        <button type="submit" class="submit-wa">Enviar Solicitud a WhatsApp (+591 70666636)</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Catalogo Interactivo de Servicios y Especialidades</h2>
+    <p class="section-sub">Haz clic en cualquier tarjeta para calcular su presupuesto y pre-rellenar tu solicitud en Aranda & Asociados — Estudio Juridico, Contable y Auditoria:</p>
+    <div class="srv-grid">
+      
+        <div class="srv-card" onclick="selectServiceAndCalc(0, 'Contabilidad General, Gerencial y Planificacion Tributaria SIN', 1350)">
+          <div class="srv-top">
+            <span class="srv-num">01</span>
+            <span class="srv-tag">Contable y Fiscal</span>
+          </div>
+          <h3>Contabilidad General, Gerencial y Planificacion Tributaria SIN</h3>
+          <p>Liquidacion de impuestos, estados financieros y cumplimiento SIAT en linea.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>1350 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
+        </div>
+        
+        <div class="srv-card" onclick="selectServiceAndCalc(1, 'Auditoria Externa de Estados Financieros, Tributaria y Especial', 2900)">
+          <div class="srv-top">
+            <span class="srv-num">02</span>
+            <span class="srv-tag">Auditoria</span>
+          </div>
+          <h3>Auditoria Externa de Estados Financieros, Tributaria y Especial</h3>
+          <p>Dictamenes independientes para empresas comerciales, industriales y de servicios.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>2900 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
+        </div>
+        
+        <div class="srv-card" onclick="selectServiceAndCalc(2, 'Asesoramiento Legal Corporativo, Laboral y Contencioso Tributario', 1600)">
+          <div class="srv-top">
+            <span class="srv-num">03</span>
+            <span class="srv-tag">Juridico B2B</span>
+          </div>
+          <h3>Asesoramiento Legal Corporativo, Laboral y Contencioso Tributario</h3>
+          <p>Constitucion de sociedades, contratos mercantiles y recursos ante AIT.</p>
+          <div class="srv-price-row">
+            <span>Referencia base: <strong>1600 Bs</strong></span>
+            <span class="srv-btn">Cotizar y Agendar &rarr;</span>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <section class="owner-activation-section" id="activar-oficialmente">
+    <div class="owner-card">
+      <div>
+        <span class="badge" style="margin-bottom:10px;">ASISTENTE AUTOMATICO DE CIERRE Y RESPUESTA INMEDIATA</span>
+        <h3>Activar esta App Oficialmente para Aranda & Asociados — Estudio Juridico, Contable y Auditoria</h3>
+        <p>Si usted es propietario o encargado de <strong>Aranda & Asociados — Estudio Juridico, Contable y Auditoria</strong>, esta aplicacion ya fue programada con sus datos reales y esta lista para conectarse con su logotipo oficial y su catalogo completo.</p>
+        <ul class="owner-list">
+          <li>1. Pago unico de entrega: <strong>600 Bs</strong> (se abona unicamente al entregarse 100% personalizada y funcionando).</li>
+          <li>2. Cero mensualidades de servidor: hospedaje web de alta disponibilidad incluido sin costo mensual ($0/mes).</li>
+          <li>3. Todos los clientes que usen el simulador llegan directo al WhatsApp oficial de su empresa (+591 70666636).</li>
+        </ul>
+
+        <div class="closer-assistant-box">
+          <div class="closer-assistant-title">Seleccione una opcion para recibir respuesta automatica instantanea:</div>
+          <div class="closer-quick-btns">
+            <button type="button" class="closer-qbtn-buy" onclick="triggerInstantCloserAction('ACTIVATE_APP')">
+              [ Quiero activar esta App para mi empresa (600 Bs pago unico) ]
+            </button>
+            <button type="button" class="closer-qbtn-faq" onclick="triggerInstantCloserAction('FAQ_QUERY')">
+              [ Tengo una consulta sobre como funciona ]
+            </button>
+            <button type="button" class="closer-qbtn-optout" onclick="triggerInstantCloserAction('OPT_OUT')">
+              [ No necesitamos el sistema por ahora ]
+            </button>
+          </div>
+          <div id="closerLiveResponse" class="closer-live-response"></div>
+        </div>
+      </div>
+      <div class="owner-form-box">
+        <form onsubmit="requestOfficialActivation(event)">
+          <label>Nombre del Encargado / Direccion de Aranda & Asociados — Estudio Juridico, Contable y Auditoria *</label>
+          <input type="text" id="ownerContactName" required placeholder="Ej. Gerencia / Direccion">
+          <label>Correo o Telefono de Respuesta de la Empresa *</label>
+          <input type="text" id="ownerContactReply" required placeholder="Ej. gerencia@empresa.com o +591 70666636">
+          <label>Decision o Personalizacion Deseada *</label>
+          <select id="ownerCustomOption">
+            <option value="SOLD_CLOSED: Activar con nuestro logotipo oficial y mantener precios actuales (600 Bs)">Activar con nuestro logotipo oficial y precios actuales (600 Bs)</option>
+            <option value="SOLD_CLOSED: Activar y actualizar tabla de precios / servicios (600 Bs)">Activar y actualizar tabla de precios / servicios (600 Bs)</option>
+            <option value="REPLIED_INTERESTED: Solicitar revision tecnica de detalles antes de activar">Solicitar revision tecnica de detalles antes de activar</option>
+            <option value="OPTED_OUT_NO_NEED: No necesitamos el sistema por ahora">No necesitamos el sistema por ahora (Dar de baja)</option>
+          </select>
+          <button type="submit" class="owner-btn-primary">Enviar Confirmacion Directa a Ingenieria (ingenieria.kudakastudio@gmail.com)</button>
+          <button type="button" class="owner-btn-secondary" onclick="copyActivationTicket()">Copiar Confirmacion (Para enviar por Correo / Facebook)</button>
+          <div id="ownerCopyFeedback" style="display:none;margin-top:8px;font-size:11.5px;color:#34d399;font-weight:700;text-align:center;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Aranda & Asociados — Estudio Juridico, Contable y Auditoria</strong> — Calle Gabriel Jose Moreno Nro. 3595, Av. Santos Dumont (Barrio La Morita), Santa Cruz</p>
+    <p style="margin-top:6px;">WhatsApp Oficial: +591 70666636 | Santa Cruz de la Sierra | Kudaka Studio — Ingenieria de Software: ingenieria.kudakastudio@gmail.com</p>
+  </footer>
+
+  <script>
+    const CLIENT_SLUG = "aranda-legal-scz";
+    function pickSlot(btn, slotText) {
+      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('selectedSlot').value = slotText;
+    }
+    function updateBudget() {
+      const sel = document.getElementById('clientService');
+      const opt = sel.options[sel.selectedIndex];
+      const basePrice = parseFloat(opt.getAttribute('data-price') || '1350');
+      const qty = parseInt(document.getElementById('qtyRange').value || '1', 10);
+      document.getElementById('qtyVal').textContent = qty;
+      const total = Math.round(basePrice * qty);
+      document.getElementById('budgetTotal').textContent = total.toLocaleString('es-BO') + ' Bs';
+    }
+    function selectServiceAndCalc(idx, title, price) {
+      const sel = document.getElementById('clientService');
+      if (sel) sel.selectedIndex = idx;
+      updateBudget();
+      document.getElementById('clientName').focus();
+    }
+    function sendBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const srv = document.getElementById('clientService').value;
+      const slot = document.getElementById('selectedSlot').value;
+      const qty = document.getElementById('qtyRange').value;
+      const est = document.getElementById('budgetTotal').textContent;
+      const msg = `Hola equipo de Aranda & Asociados — Estudio Juridico, Contable y Auditoria, soy ${name}. Usando su sistema web cotice: ${srv} (Cantidad: ${qty} modulos — Estimado: ${est}) y deseo agendar atencion para el horario ${slot}. Quedo atento(a).`;
+      window.open(`https://wa.me/59170666636?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    function triggerInstantCloserAction(actionType) {
+      const box = document.getElementById('closerLiveResponse');
+      const sel = document.getElementById('ownerCustomOption');
+      box.style.display = 'block';
+
+      if (actionType === 'ACTIVATE_APP') {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'SOLD_CLOSED');
+        if (sel) sel.selectedIndex = 0;
+        box.innerHTML =
+          `<span class="closer-state-pill">ESTADO REGISTRADO: SOLD_CLOSED / REPLIED_INTERESTED</span>` +
+          `<div><strong>Respuesta Automatica de Ingenieria (Kudaka Studio):</strong></div>` +
+          `<p style="margin-top:6px;">Excelente decision para <strong>Aranda & Asociados — Estudio Juridico, Contable y Auditoria</strong>. El proceso de entrega es inmediato y sin pagos por adelantado:</p>` +
+          `<ol style="margin:8px 0 10px 18px;color:#cbd5e1;">` +
+          `<li>Personalizacion de su logotipo oficial y ajuste de su catalogo completo en menos de 24 horas.</li>` +
+          `<li>Costo mensual de servidor: <strong>$0/mes</strong> (infraestructura web estatica de alta velocidad).</li>` +
+          `<li>Pago unico de <strong>600 Bs</strong> unicamente contra entrega conformada, una vez que usted verifique su sistema funcionando al 100%.</li>` +
+          `<li><strong>Liquidacion Corporativa / Internacional (USDT o USDC en Texto):</strong> Si prefiere abonar en USDT/USDC una vez entregada su aplicacion, la direccion oficial de deposito en Binance (Red Base / BSC BEP-20 / ERC-20) es: <code style="color:#6ee7b7;word-break:break-all;">0xc1184f2c85d3158c14dc8f10d9727128ad5fb9f3</code> y envie el comprobante a <strong>ingenieria.kudakastudio@gmail.com</strong>.</li>` +
+          `</ol>` +
+          `<div style="margin:10px 0;"><button type="button" onclick="copyBinanceAddress()" style="background:#0f172a;color:#6ee7b7;border:1px solid #10b981;padding:8px 12px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer;">[ Copiar Direccion USDT/USDC Binance ]</button><span id="binanceCopyMsg" style="display:none;margin-left:8px;font-size:11px;color:#34d399;font-weight:700;">Direccion copiada</span></div>` +
+          `<p style="color:#6ee7b7;font-weight:700;">Complete su nombre a la derecha y presione "Enviar Confirmacion Directa a Ingenieria" para recibir su enlace final hoy mismo.</p>`;
+      } else if (actionType === 'FAQ_QUERY') {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'REPLIED_INTERESTED');
+        if (sel) sel.selectedIndex = 2;
+        box.innerHTML =
+          `<span class="closer-state-pill" style="background:rgba(59,130,246,0.2);color:#93c5fd;">RESPUESTA AUTOMATICA A CONSULTAS FRECUENTES</span>` +
+          `<ul style="margin:6px 0 6px 16px;color:#cbd5e1;display:flex;flex-direction:column;gap:6px;">` +
+          `<li><strong>¿Hay algun pago mensual?</strong> No, $0/mes. No existen cobros recurrentes ni suscripciones.</li>` +
+          `<li><strong>¿Puedo cambiar precios en Bs, servicios y horarios?</strong> Si, todo queda 100% editable y adaptado a sus horarios (Lunes a Viernes: 08:30 a 18:30 | Sabados: 09:00 a 12:30) y conectado a su WhatsApp actual (+591 70666636).</li>` +
+          `<li><strong>¿Como y cuando se paga?</strong> El monto unico de <strong>600 Bs</strong> se abona solo una vez entregada y probada la aplicacion con su logotipo oficial.</li>` +
+          `</ul>`;
+      } else if (actionType === 'OPT_OUT') {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'OPTED_OUT_NO_NEED');
+        if (sel) sel.selectedIndex = 3;
+        box.innerHTML =
+          `<span class="closer-state-pill" style="background:rgba(239,68,68,0.2);color:#fca5a5;">ESTADO TERMINAL: OPTED_OUT_NO_NEED (BAJA REGISTRADA)</span>` +
+          `<p style="margin-top:4px;color:#cbd5e1;">Hemos registrado que <strong>Aranda & Asociados — Estudio Juridico, Contable y Auditoria</strong> no necesita el sistema web por ahora. Su empresa ha sido marcada en estado terminal <code>OPTED_OUT_NO_NEED</code> y no recibira mas avisos de seguimiento.</p>`;
+      }
+    }
+    function buildOwnerTicketText() {
+      const ownerName = (document.getElementById('ownerContactName').value || 'Direccion').trim();
+      const ownerReply = (document.getElementById('ownerContactReply').value || '+591 70666636').trim();
+      const customOpt = document.getElementById('ownerCustomOption').value;
+      const savedState = localStorage.getItem('scz_crm_state_' + CLIENT_SLUG) || 'REPLIED_INTERESTED';
+      return `RESPUESTA OFICIAL DE EMPRESA — SISTEMA WEB B2B\n` +
+             `Empresa: Aranda & Asociados — Estudio Juridico, Contable y Auditoria (Santa Cruz de la Sierra)\n` +
+             `Slug CRM: ${CLIENT_SLUG}\n` +
+             `Estado CRM disparado: ${savedState}\n` +
+             `Encargado: ${ownerName}\n` +
+             `Canal de respuesta de la empresa: ${ownerReply}\n` +
+             `Decision seleccionada: ${customOpt}\n` +
+             `URL Demo Pre-Rellenada: ${window.location.href}`;
+    }
+    function requestOfficialActivation(e) {
+      e.preventDefault();
+      const customOpt = document.getElementById('ownerCustomOption').value;
+      if (customOpt.startsWith('OPTED_OUT')) {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'OPTED_OUT_NO_NEED');
+      } else {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'SOLD_CLOSED');
+      }
+      const subject = `Respuesta Oficial CRM [${CLIENT_SLUG}] — Aranda & Asociados — Estudio Juridico, Contable y Auditoria`;
+      const body = buildOwnerTicketText();
+      window.location.href = `mailto:ingenieria.kudakastudio@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+    function copyActivationTicket() {
+      const text = buildOwnerTicketText();
+      navigator.clipboard.writeText(text).then(() => {
+        const fb = document.getElementById('ownerCopyFeedback');
+        fb.style.display = 'block';
+        fb.textContent = 'Confirmacion copiada al portapapeles. Puede enviarla a ingenieria.kudakastudio@gmail.com';
+      });
+    }
+    function copyBinanceAddress() {
+      navigator.clipboard.writeText('0xc1184f2c85d3158c14dc8f10d9727128ad5fb9f3').then(() => {
+        const el = document.getElementById('binanceCopyMsg');
+        if (el) el.style.display = 'inline';
+      });
+    }
+  </script>
+</body>
+</html>
