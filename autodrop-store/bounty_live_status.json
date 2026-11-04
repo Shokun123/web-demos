@@ -1,10 +1,18 @@
 {
-  "updated_at_utc": "2026-11-04 02:16:02 UTC",
+  "updated_at_utc": "2026-11-04 02:25:10 UTC",
   "repository": "limitlessprojects/Go-Hybrid",
-  "total_prs": 11,
+  "total_prs": 12,
   "merged_count": 3,
-  "open_count": 8,
+  "open_count": 9,
   "prs": [
+    {
+      "createdAt": "2026-11-04T02:19:21Z",
+      "mergedAt": null,
+      "number": 3574,
+      "state": "OPEN",
+      "title": "fix(hy-check): enforce numeric scalar widths on set[T], option[T], and method calls (fixes #3573)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3574"
+    },
     {
       "createdAt": "2026-11-04T01:57:12Z",
       "mergedAt": null,
