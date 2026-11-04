@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krypton Ecomm AI Studio | Photorealistic Product Imagery & Short-Form AI Video Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: oklch(0.11 0.015 265);
+      --bg-surface: oklch(0.15 0.018 265);
+      --bg-elevated: oklch(0.19 0.022 265);
+      --bg-glass: oklch(0.16 0.02 265 / 0.84);
+      --border-subtle: oklch(0.26 0.025 265);
+      --border-focus: oklch(0.74 0.16 65);
+      --text-primary: oklch(0.97 0.01 265);
+      --text-secondary: oklch(0.75 0.02 265);
+      --text-muted: oklch(0.56 0.02 265);
+      --accent-gold: oklch(0.78 0.15 70);
+      --accent-emerald: oklch(0.76 0.17 155);
+      --accent-cyan: oklch(0.75 0.14 215);
+      --accent-coral: oklch(0.68 0.19 30);
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 40px;
+      --space-6: 48px;
+      --space-8: 64px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --font-display: 'Syne', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 12% 10%, oklch(0.78 0.15 70 / 0.08), transparent 36%),
+        radial-gradient(circle at 88% 18%, oklch(0.75 0.14 215 / 0.08), transparent 38%);
+    }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: var(--space-2) var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-coral));
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: oklch(0.12 0.02 265);
+      font-size: 14px;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-gold);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .client-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: oklch(0.78 0.15 70 / 0.12);
+      border: 1px solid oklch(0.78 0.15 70 / 0.4);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-gold);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+    }
+
+    .btn {
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.18s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent-gold);
+      color: oklch(0.12 0.02 265);
+      border-color: var(--accent-gold);
+    }
+
+    .btn-primary:hover {
+      background: oklch(0.83 0.15 70);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(145deg, var(--bg-surface), oklch(0.13 0.02 265));
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: var(--space-4);
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-gold);
+      margin-bottom: var(--space-1);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--space-2);
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      max-width: 68ch;
+      margin-bottom: var(--space-3);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2);
+    }
+
+    .kpi-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-2);
+    }
+
+    .kpi-val {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+
+    .kpi-lbl {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* Studio Grid: Left Macro Texture Inspector, Right 9:16 Video Ad Sequencer */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: var(--space-4);
+    }
+
+    @media (max-width: 1080px) {
+      .studio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .panel-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .panel-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: oklch(0.75 0.14 215 / 0.14);
+      color: var(--accent-cyan);
+      border: 1px solid oklch(0.75 0.14 215 / 0.35);
+    }
+
+    /* SKU Selector Tabs */
+    .sku-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    @media (max-width: 680px) {
+      .sku-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .sku-tab {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+
+    .sku-tab.active {
+      border-color: var(--accent-gold);
+      background: oklch(0.78 0.15 70 / 0.12);
+      color: var(--text-primary);
+    }
+
+    .sku-tab strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    /* Macro Canvas Stage */
+    .canvas-stage {
+      position: relative;
+      width: 100%;
+      height: 390px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #0b0c10;
+    }
+
+    .canvas-stage canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: crosshair;
+    }
+
+    .stage-overlay-left,
+    .stage-overlay-right {
+      position: absolute;
+      top: 12px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      pointer-events: none;
+      background: oklch(0.11 0.015 265 / 0.85);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .stage-overlay-left {
+      left: 12px;
+      color: var(--text-secondary);
+    }
+
+    .stage-overlay-right {
+      right: 12px;
+      color: var(--accent-gold);
+      border-color: oklch(0.78 0.15 70 / 0.45);
+    }
+
+    /* Controls Grid */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2);
+      background: var(--bg-base);
+      padding: var(--space-2);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .control-label span:last-child {
+      color: var(--accent-gold);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent-gold);
+      cursor: pointer;
+    }
+
+    /* Right Panel: 9:16 Short-Form Video Ad Player */
+    .video-studio-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: var(--space-2);
+      align-items: start;
+    }
+
+    @media (max-width: 640px) {
+      .video-studio-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .phone-frame {
+      width: 240px;
+      height: 426px;
+      margin: 0 auto;
+      border-radius: 24px;
+      border: 3px solid oklch(0.32 0.03 265);
+      background: #08090c;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .phone-frame canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .scene-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .scene-item {
+      cursor: pointer;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.15s ease;
+    }
+
+    .scene-item.active {
+      border-color: var(--accent-emerald);
+      background: oklch(0.76 0.17 155 / 0.1);
+    }
+
+    .scene-time {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-emerald);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .scene-name {
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .scene-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* Pipeline & 8-Week Roadmap */
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-2);
+    }
+
+    @media (max-width: 960px) {
+      .pipeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pipeline-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .node-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-2);
+      position: relative;
+    }
+
+    .node-step {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+    }
+
+    .node-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .node-meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 6, 10, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      place-items: center;
+      padding: var(--space-3);
+    }
+
+    .modal-backdrop.open {
+      display: grid;
+    }
+
+    .modal-box {
+      max-width: 720px;
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--accent-gold);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .code-block {
+      background: #090a0f;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: var(--space-2);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-emerald);
+      max-height: 320px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">AI</div>
+      <div>
+        <div class="brand-title">KRYPTON ECOMM AI STUDIO</div>
+        <div class="brand-sub">COMFYUI + FLUX.1-DEV LORA + KLING 1.6 PRO + CAPCUT PIPELINE</div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="client-pill">
+        <span class="status-dot"></span>
+        <span id="clientBannerText">CUSTOM SHOWCASE FOR ASHLY YP. ($8K-$9K • 8-WEEK DELIVERY)</span>
+      </div>
+      <button class="btn" id="exportWorkflowBtn">Export ComfyUI Workflow JSON</button>
+      <a class="btn btn-primary" href="../index.html">All Live Systems</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div>
+        <div class="hero-eyebrow">ZERO-HALLUCINATION PRODUCT CONSISTENCY ENGINE</div>
+        <h1 id="heroTitle">Photorealistic E-Commerce Imagery & Scroll-Stopping AI Video Ads</h1>
+        <p id="heroDesc">
+          Engineered specifically for high-converting DTC brands requiring 100% SKU geometry, grain, stitching, and label fidelity across studio PDP stills and 9:16 short-form video ads. Powered by custom Flux.1-Dev SKU LoRAs, ControlNet Canny/Depth locks, Kling AI 1.6 Pro camera control, and Photoshop/CapCut finishing.
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="document.getElementById('macroSection').scrollIntoView({behavior:'smooth'})">
+            Inspect 4K Macro Texture Lock
+          </button>
+          <button class="btn" onclick="document.getElementById('videoSection').scrollIntoView({behavior:'smooth'})">
+            Test 9:16 Video Ad Sequencer
+          </button>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-val">99.4%</div>
+          <div class="kpi-lbl">Stitch, Hardware & Label Fidelity (ControlNet + SKU LoRA)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">60+ Stills</div>
+          <div class="kpi-lbl">4K Studio PDP, Macro & Lifestyle Renders (16-Bit TIFF/PNG)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">24 Videos</div>
+          <div class="kpi-lbl">9:16 & 4:5 Ad Variations with 3x Pattern-Interrupt Hooks</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">8 Weeks</div>
+          <div class="kpi-lbl">Structured Weekly Sprints + Full ComfyUI/PSD/CapCut Handoff</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Studio Grid -->
+    <section class="studio-grid">
+      <!-- Left: 4K Macro Texture & Stitch Consistency Inspector -->
+      <div class="panel" id="macroSection">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">1. Macro Texture, Grain & Stitch Consistency Inspector</div>
+            <div style="font-size:12px; color:var(--text-secondary);">Drag split slider or hover to inspect 4K micro-pore & saddle-stitch lock</div>
+          </div>
+          <span class="panel-badge">FLUX.1-DEV + CONTROLNET TILE 4K</span>
+        </div>
+
+        <div class="sku-tabs" id="skuTabs">
+          <button class="sku-tab active" data-sku="leather">
+            <strong>SKU-01: Leather Goods</strong>
+            Saddle Stitch & Brass Lock
+          </button>
+          <button class="sku-tab" data-sku="cosmetics">
+            <strong>SKU-02: Botanical Serum</strong>
+            Glass Caustics & Label Lock
+          </button>
+          <button class="sku-tab" data-sku="watch">
+            <strong>SKU-03: Chrono Watch</strong>
+            Brushed Titanium & Bezel
+          </button>
+          <button class="sku-tab" data-sku="snack">
+            <strong>SKU-04: Snack Packaging</strong>
+            Matte Foil & Crunch Physics
+          </button>
+        </div>
+
+        <div class="canvas-stage">
+          <canvas id="macroCanvas" width="760" height="390"></canvas>
+          <div class="stage-overlay-left">LEFT: Raw CAD / Flat Phone Input</div>
+          <div class="stage-overlay-right">RIGHT: ComfyUI + Custom SKU LoRA + Photoshop 4K</div>
+        </div>
+
+        <div class="controls-grid">
+          <div class="control-group">
+            <div class="control-label">
+              <span>Before / After Split Wipe</span>
+              <span id="splitValLabel">52%</span>
+            </div>
+            <input type="range" id="splitSlider" min="5" max="95" value="52" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Studio Key-Light Azimuth</span>
+              <span id="lightValLabel">135°</span>
+            </div>
+            <input type="range" id="lightSlider" min="0" max="360" value="135" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Micro-Grain & Pore Detail (Tile Upscaler)</span>
+              <span id="grainValLabel">88%</span>
+            </div>
+            <input type="range" id="grainSlider" min="20" max="100" value="88" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>ControlNet Geometry & Stitch Lock</span>
+              <span id="lockValLabel">0.94 Weight</span>
+            </div>
+            <input type="range" id="lockSlider" min="50" max="100" value="94" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: 9:16 AI Video Ad Sequencer -->
+      <div class="panel" id="videoSection">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">2. 9:16 AI Video Ad Sequencer (TikTok / Reels / Meta)</div>
+            <div style="font-size:12px; color:var(--text-secondary);">Kling AI 1.6 Pro I2V + Motion Brush + CapCut Kinetic Captions</div>
+          </div>
+          <span class="panel-badge">KLING 1.6 PRO + CAPCUT MASTER</span>
+        </div>
+
+        <div class="video-studio-layout">
+          <div class="phone-frame">
+            <canvas id="videoCanvas" width="240" height="426"></canvas>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div class="scene-list" id="sceneList">
+              <div class="scene-item active" data-scene="0">
+                <div class="scene-time"><span>SCENE 01 • 0.0s - 2.5s</span><span>HOOK RATE: 46.2%</span></div>
+                <div class="scene-name">Macro Stitch & Hardware Dolly-In</div>
+                <div class="scene-desc">Kling 1.6 Camera Zoom + Specular Rim Sweep along locked saddle-stitching.</div>
+              </div>
+              <div class="scene-item" data-scene="1">
+                <div class="scene-time"><span>SCENE 02 • 2.5s - 6.5s</span><span>HOLD RATE: 34.8%</span></div>
+                <div class="scene-name">Tactile Physics & Water-Bead Stress Test</div>
+                <div class="scene-desc">Zero-morphing droplet physics & natural hand interaction via IP-Adapter lock.</div>
+              </div>
+              <div class="scene-item" data-scene="2">
+                <div class="scene-time"><span>SCENE 03 • 6.5s - 11.5s</span><span>CTR: 3.92%</span></div>
+                <div class="scene-name">360° Studio Turntable + Value Callouts</div>
+                <div class="scene-desc">CapCut keyframed spec callouts + dynamic lighting transition to lifestyle scene.</div>
+              </div>
+              <div class="scene-item" data-scene="3">
+                <div class="scene-time"><span>SCENE 04 • 11.5s - 15.0s</span><span>ROAS: +3.8x</span></div>
+                <div class="scene-name">High-Converting Bundle Offer & CTA Card</div>
+                <div class="scene-desc">Direct-response offer lockup with multi-ratio export (9:16, 4:5, 16:9).</div>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-base); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:12px;">
+              <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent-gold); margin-bottom:6px;">
+                ACTIVE HOOK VARIANT SELECTOR
+              </div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <button class="btn hook-btn" data-hook="Craftsmanship ASMR: 0% Plastic, 100% Full-Grain">Hook A: Macro ASMR</button>
+                <button class="btn hook-btn" data-hook="Why $900 Designer Bags Fail This Stitch Test">Hook B: Stitch Stress-Test</button>
+                <button class="btn hook-btn" data-hook="3 Details You Only Notice At 4K Macro Zoom">Hook C: 4K Detail Reveal</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8-Week Production Roadmap & ComfyUI Node Architecture -->
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">3. End-to-End 8-Week Production Roadmap & Deliverable Architecture</div>
+          <div style="font-size:12px; color:var(--text-secondary);">Deterministic execution schedule designed for zero brand-drift and predictable weekly creative drops</div>
+        </div>
+        <span class="panel-badge">8-WEEK MILESTONE GUARANTEE</span>
+      </div>
+
+      <div class="pipeline-grid">
+        <div class="node-card">
+          <div class="node-step">WEEKS 01 - 02 • FOUNDATION</div>
+          <div class="node-title">Custom SKU LoRA & Texture Bible</div>
+          <div class="node-meta">
+            Training dedicated Flux.1-Dev SKU LoRA (Rank 64) on your exact product references. Locking ControlNet Canny/Depth rigs so stitching, logos, and hardware never hallucinate.
+          </div>
+        </div>
+        <div class="node-card">
+          <div class="node-step">WEEKS 03 - 04 • STILL ASSETS</div>
+          <div class="node-title">60+ 4K PDP & Lifestyle Stills</div>
+          <div class="node-meta">
+            Batch generation via ComfyUI + UltimateSDUpscale 4K Tile, followed by Adobe Photoshop retouching, frequency separation, and exact Pantone/HEX color grading.
+          </div>
+        </div>
+        <div class="node-card">
+          <div class="node-step">WEEKS 05 - 06 • AI VIDEO ADS</div>
+          <div class="node-title">24 Short-Form Video Ads (Kling 1.6)</div>
+          <div class="node-meta">
+            Animating verified 4K keyframe plates in Kling AI 1.6 Pro & Runway Gen-3 Alpha Turbo. Editing in CapCut Pro with 3x scroll-stopping hooks per concept, SFX, and captions.
+          </div>
+        </div>
+        <div class="node-card">
+          <div class="node-step">WEEKS 07 - 08 • SCALE & HANDOFF</div>
+          <div class="node-title">ROAS Iteration & Full Source Handoff</div>
+          <div class="node-meta">
+             winning hook variations, multi-ratio exports (9:16 TikTok/Reels, 4:5 Meta, 16:9 PDP), plus complete delivery of reusable ComfyUI JSON workflows, PSDs, and CapCut projects.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ComfyUI Workflow Modal -->
+  <div class="modal-backdrop" id="workflowModal">
+    <div class="modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="font-family:var(--font-display); font-weight:700; font-size:18px;">ComfyUI Production Pipeline Specification (JSON)</div>
+        <button class="btn" id="closeModalBtn">Close</button>
+      </div>
+      <pre class="code-block" id="workflowJsonCode">{
+  "pipeline_name": "Krypton_Ecomm_SKU_Consistency_v4.2",
+  "target_client": "Ashly YP. | E-Commerce Product Imagery & Video Suite",
+  "nodes": [
+    { "id": 1, "type": "LoadImage", "label": "Raw_SKU_Reference_Input" },
+    { "id": 2, "type": "FluxLoraLoader", "lora_name": "custom_sku_ grain_stitch_r64.safetensors", "strength_model": 0.96 },
+    { "id": 3, "type": "ControlNetApplyAdvanced", "control_net": "flux-canny-depth-hybrid.safetensors", "strength": 0.94, "start_percent": 0.0, "end_percent": 0.88 },
+    { "id": 4, "type": "IPAdapterFlux", "weight": 0.92, "noise": 0.05 },
+    { "id": 5, "type": "UltimateSDUpscale", "upscale_by": 2.0, "tile_width": 1024, "tile_height": 1024, "denoise": 0.22 },
+    { "id": 6, "type": "KlingAI_1_6_Pro_I2V", "mode": "Professional_1080p_60fps", "camera_control": "Macro_Dolly_In", "duration_sec": 5 }
+  ],
+  "deliverables": {
+    "stills_4k": 60,
+    "video_ads_multi_ratio": 24,
+    "hook_variants_per_ad": 3,
+    "source_files": ["ComfyUI_Workflow.json", "Layered_16bit.psd", "CapCut_Master_Package"]
+  }
+}</pre>
+    </div>
+  </div>
+
+  <script>
+    // URL Parameter Client Personalization
+    const params = new URLSearchParams(window.location.search);
+    const clientParam = (params.get('client') || '').toLowerCase();
+    if (clientParam.includes('julia')) {
+      document.getElementById('clientBannerText').textContent = 'CUSTOM SHOWCASE FOR JULIA MEYER (SNACK BRAND SOCIAL & REELS ENGINE)';
+      document.getElementById('heroTitle').textContent = 'High-Converting Snack Brand Reels, TikToks & Visual Content Engine';
+    } else if (clientParam.includes('stealth')) {
+      document.getElementById('clientBannerText').textContent = 'CUSTOM SHOWCASE FOR STEALTH (VISUAL IDENTITY & PRODUCT UI PARTNERSHIP)';
+    }
+
+    // Macro Canvas Interactive Renderer
+    const macroCanvas = document.getElementById('macroCanvas');
+    const mCtx = macroCanvas.getContext('2d');
+    let currentSku = 'leather';
+    let splitPct = 0.52;
+    let lightAngle = 135;
+    let grainDetail = 0.88;
+    let stitchLock = 0.94;
+    let mousePos = { x: 480, y: 195, active: false };
+
+    const skuConfigs = {
+      leather: {
+        name: 'Full-Grain Italian Saddle Leather Weekender',
+        baseHue: 28,
+        stitchColor: '#f5d08a',
+        hardwareColor: '#e8b959',
+        specText: 'PORE DEPTH: 0.42mm | SADDLE STITCH: 3.85mm SPI | BRASS: ANISOTROPIC'
+      },
+      cosmetics: {
+        name: 'Botanical Amber Glass Serum Dropper 30ml',
+        baseHue: 36,
+        stitchColor: '#88f0c8',
+        hardwareColor: '#d8e6f2',
+        specText: 'CAUSTIC IOR: 1.52 | LABEL KERNING LOCK: 100% | DROPLET VISCOSITY: HIGH'
+      },
+      watch: {
+        name: 'Grade-5 Brushed Titanium Chronograph',
+        baseHue: 215,
+        stitchColor: '#72d6ff',
+        hardwareColor: '#ff9852',
+        specText: 'RADIAL BRUSH: 0.08um | SAPPHIRE AR COATING | BEZEL TACHYMETER LOCK'
+      },
+      snack: {
+        name: 'Artisanal Protein Snack Pouch & Crunch Macro',
+        baseHue: 14,
+        stitchColor: '#ffdf6b',
+        hardwareColor: '#69f0ae',
+        specText: 'MATTE FOIL SPECULARITY | CRISP TYPOGRAPHY | DYNAMIC INGREDIENT MOTION'
+      }
+    };
+
+    function drawMacroStage() {
+      const w = macroCanvas.width;
+      const h = macroCanvas.height;
+      const splitX = Math.round(w * splitPct);
+      const cfg = skuConfigs[currentSku];
+      const rad = (lightAngle * Math.PI) / 180;
+      const lx = Math.cos(rad);
+      const ly = Math.sin(rad);
+
+      mCtx.clearRect(0, 0, w, h);
+
+      // LEFT SIDE: Raw Flat Input / Unprocessed CAD Wireframe
+      mCtx.save();
+      mCtx.beginPath();
+      mCtx.rect(0, 0, splitX, h);
+      mCtx.clip();
+
+      mCtx.fillStyle = '#141720';
+      mCtx.fillRect(0, 0, w, h);
+
+      // Grid lines
+      mCtx.strokeStyle = 'rgba(255,255,255,0.06)';
+      mCtx.lineWidth = 1;
+      for (let x = 0; x < w; x += 28) {
+        mCtx.beginPath(); mCtx.moveTo(x, 0); mCtx.lineTo(x, h); mCtx.stroke();
+      }
+      for (let y = 0; y < h; y += 28) {
+        mCtx.beginPath(); mCtx.moveTo(0, y); mCtx.lineTo(w, y); mCtx.stroke();
+      }
+
+      // Flat CAD Silhouette
+      mCtx.fillStyle = '#252936';
+      mCtx.strokeStyle = '#6272a4';
+      mCtx.lineWidth = 2;
+      mCtx.beginPath();
+      mCtx.roundRect(140, 65, 480, 260, 28);
+      mCtx.fill();
+      mCtx.stroke();
+
+      // Raw Canny ControlNet Stitch Guide Lines
+      mCtx.setLineDash([10, 8]);
+      mCtx.strokeStyle = 'rgba(114, 214, 255, 0.65)';
+      mCtx.beginPath();
+      mCtx.roundRect(162, 87, 436, 216, 18);
+      mCtx.stroke();
+      mCtx.setLineDash([]);
+
+      mCtx.fillStyle = 'rgba(255,255,255,0.45)';
+      mCtx.font = '12px "JetBrains Mono", monospace';
+      mCtx.fillText('CONTROLNET CANNY + DEPTH LOCK INPUT', 180, 355);
+      mCtx.restore();
+
+      // RIGHT SIDE: Photorealistic 4K ComfyUI + Flux LoRA Output
+      mCtx.save();
+      mCtx.beginPath();
+      mCtx.rect(splitX, 0, w - splitX, h);
+      mCtx.clip();
+
+      const bgGrad = mCtx.createRadialGradient(
+        w * 0.5 + lx * 140,
+        h * 0.45 + ly * 90,
+        20,
+        w * 0.5,
+        h * 0.5,
+        w * 0.65
+      );
+      bgGrad.addColorStop(0, `hsl(${cfg.baseHue}, 38%, 22%)`);
+      bgGrad.addColorStop(1, '#090a0f');
+      mCtx.fillStyle = bgGrad;
+      mCtx.fillRect(0, 0, w, h);
+
+      // Photorealistic Product Surface with Directional Lighting
+      const surfGrad = mCtx.createLinearGradient(
+        140 + lx * 90,
+        65 + ly * 90,
+        620 - lx * 90,
+        325 - ly * 90
+      );
+      if (currentSku === 'leather') {
+        surfGrad.addColorStop(0, '#7c4324');
+        surfGrad.addColorStop(0.48, '#4e2712');
+        surfGrad.addColorStop(1, '#261106');
+      } else if (currentSku === 'cosmetics') {
+        surfGrad.addColorStop(0, '#965a1e');
+        surfGrad.addColorStop(0.5, '#4f2908');
+        surfGrad.addColorStop(1, '#1c0e03');
+      } else if (currentSku === 'watch') {
+        surfGrad.addColorStop(0, '#5a6878');
+        surfGrad.addColorStop(0.5, '#2b333d');
+        surfGrad.addColorStop(1, '#13171c');
+      } else {
+        surfGrad.addColorStop(0, '#a3321f');
+        surfGrad.addColorStop(0.5, '#59160c');
+        surfGrad.addColorStop(1, '#240703');
+      }
+
+      mCtx.shadowColor = 'rgba(0,0,0,0.75)';
+      mCtx.shadowBlur = 35;
+      mCtx.fillStyle = surfGrad;
+      mCtx.beginPath();
+      mCtx.roundRect(140, 65, 480, 260, 28);
+      mCtx.fill();
+      mCtx.shadowBlur = 0;
+
+      // Procedural Micro-Grain / Cellular Leather Pores
+      const density = Math.floor(420 * grainDetail);
+      for (let i = 0; i < density; i++) {
+        const px = 148 + ((i * 97) % 464);
+        const py = 73 + ((i * 53 + Math.floor(i / 12) * 19) % 244);
+        const lum = ((px * lx + py * ly) % 25);
+        mCtx.fillStyle = lum > 0 ? 'rgba(255,235,205,0.09)' : 'rgba(0,0,0,0.24)';
+        mCtx.beginPath();
+        mCtx.arc(px, py, 1.35, 0, Math.PI * 2);
+        mCtx.fill();
+      }
+
+      // Precision Saddle Stitching (Locked to Canny Geometry)
+      mCtx.strokeStyle = cfg.stitchColor;
+      mCtx.lineWidth = 2.6;
+      const sx0 = 162, sy0 = 87, sw = 436, sh = 216;
+      for (let x = sx0 + 16; x < sx0 + sw - 16; x += 14) {
+        mCtx.beginPath();
+        mCtx.moveTo(x, sy0);
+        mCtx.lineTo(x + 8, sy0 + 2);
+        mCtx.stroke();
+
+        mCtx.beginPath();
+        mCtx.moveTo(x, sy0 + sh);
+        mCtx.lineTo(x + 8, sy0 + sh - 2);
+        mCtx.stroke();
+      }
+      for (let y = sy0 + 16; y < sy0 + sh - 16; y += 14) {
+        mCtx.beginPath();
+        mCtx.moveTo(sx0, y);
+        mCtx.lineTo(sx0 + 2, y + 8);
+        mCtx.stroke();
+
+        mCtx.beginPath();
+        mCtx.moveTo(sx0 + sw, y);
+        mCtx.lineTo(sx0 + sw - 2, y + 8);
+        mCtx.stroke();
+      }
+
+      // Central Brushed Hardware / Brand Plate with Specular Highlight
+      const hwGrad = mCtx.createLinearGradient(290 + lx * 30, 150 + ly * 30, 470, 240);
+      hwGrad.addColorStop(0, '#fff3c4');
+      hwGrad.addColorStop(0.5, cfg.hardwareColor);
+      hwGrad.addColorStop(1, '#5e4314');
+      mCtx.fillStyle = hwGrad;
+      mCtx.beginPath();
+      mCtx.roundRect(285, 152, 190, 86, 10);
+      mCtx.fill();
+
+      mCtx.fillStyle = '#161209';
+      mCtx.font = 'bold 13px "Syne", sans-serif';
+      mCtx.textAlign = 'center';
+      mCtx.fillText('ASHLY YP. STUDIO', 380, 192);
+      mCtx.font = '10px "JetBrains Mono", monospace';
+      mCtx.fillText(`LOCK: ${(stitchLock * 100).toFixed(1)}% FIDELITY`, 380, 212);
+      mCtx.textAlign = 'left';
+
+      mCtx.fillStyle = '#f5d08a';
+      mCtx.font = '11px "JetBrains Mono", monospace';
+      mCtx.fillText(cfg.specText, 165, 355);
+      mCtx.restore();
+
+      // Split Divider Handle
+      mCtx.strokeStyle = '#f5d08a';
+      mCtx.lineWidth = 2;
+      mCtx.beginPath();
+      mCtx.moveTo(splitX, 0);
+      mCtx.lineTo(splitX, h);
+      mCtx.stroke();
+
+      mCtx.fillStyle = '#f5d08a';
+      mCtx.beginPath();
+      mCtx.arc(splitX, h / 2, 14, 0, Math.PI * 2);
+      mCtx.fill();
+      mCtx.fillStyle = '#111';
+      mCtx.font = 'bold 11px "JetBrains Mono", monospace';
+      mCtx.textAlign = 'center';
+      mCtx.fillText('<>', splitX, h / 2 + 4);
+      mCtx.textAlign = 'left';
+
+      // 4K Loupe Magnifier on Hover
+      if (mousePos.active) {
+        mCtx.save();
+        mCtx.beginPath();
+        mCtx.arc(mousePos.x, mousePos.y, 48, 0, Math.PI * 2);
+        mCtx.strokeStyle = '#72d6ff';
+        mCtx.lineWidth = 2.5;
+        mCtx.stroke();
+        mCtx.fillStyle = 'rgba(114, 214, 255, 0.12)';
+        mCtx.fill();
+        mCtx.fillStyle = '#fff';
+        mCtx.font = '10px "JetBrains Mono", monospace';
+        mCtx.fillText('4K MACRO LOUPE (2.0x)', mousePos.x - 54, mousePos.y - 56);
+        mCtx.restore();
+      }
+    }
+
+    // Event Listeners for Macro Controls
+    document.getElementById('splitSlider').addEventListener('input', (e) => {
+      splitPct = Number(e.target.value) / 100;
+      document.getElementById('splitValLabel').textContent = `${e.target.value}%`;
+      drawMacroStage();
+    });
+    document.getElementById('lightSlider').addEventListener('input', (e) => {
+      lightAngle = Number(e.target.value);
+      document.getElementById('lightValLabel').textContent = `${e.target.value}°`;
+      drawMacroStage();
+    });
+    document.getElementById('grainSlider').addEventListener('input', (e) => {
+      grainDetail = Number(e.target.value) / 100;
+      document.getElementById('grainValLabel').textContent = `${e.target.value}%`;
+      drawMacroStage();
+    });
+    document.getElementById('lockSlider').addEventListener('input', (e) => {
+      stitchLock = Number(e.target.value) / 100;
+      document.getElementById('lockValLabel').textContent = `${stitchLock.toFixed(2)} Weight`;
+      drawMacroStage();
+    });
+
+    macroCanvas.addEventListener('mousemove', (e) => {
+      const r = macroCanvas.getBoundingClientRect();
+      mousePos.x = ((e.clientX - r.left) / r.width) * macroCanvas.width;
+      mousePos.y = ((e.clientY - r.top) / r.height) * macroCanvas.height;
+      mousePos.active = true;
+      if (e.buttons === 1) {
+        splitPct = Math.min(0.95, Math.max(0.05, mousePos.x / macroCanvas.width));
+        document.getElementById('splitSlider').value = Math.round(splitPct * 100);
+        document.getElementById('splitValLabel').textContent = `${Math.round(splitPct * 100)}%`;
+      }
+      drawMacroStage();
+    });
+    macroCanvas.addEventListener('mouseleave', () => {
+      mousePos.active = false;
+      drawMacroStage();
+    });
+
+    document.querySelectorAll('.sku-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sku-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSku = btn.dataset.sku;
+        drawMacroStage();
+      });
+    });
+
+    // 9:16 Video Sequencer Animation Loop
+    const vCanvas = document.getElementById('videoCanvas');
+    const vCtx = vCanvas.getContext('2d');
+    let activeScene = 0;
+    let activeHookText = 'Craftsmanship ASMR: 0% Plastic, 100% Full-Grain';
+    let tick = 0;
+
+    document.querySelectorAll('.scene-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.scene-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        activeScene = Number(item.dataset.scene);
+      });
+    });
+
+    document.querySelectorAll('.hook-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeHookText = btn.dataset.hook;
+      });
+    });
+
+    function renderVideoFrame() {
+      tick += 0.035;
+      const w = vCanvas.width;
+      const h = vCanvas.height;
+
+      const grad = vCtx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#181210');
+      grad.addColorStop(0.6, '#2b1b12');
+      grad.addColorStop(1, '#090a0f');
+      vCtx.fillStyle = grad;
+      vCtx.fillRect(0, 0, w, h);
+
+      // Animated Camera Zoom / Turntable Simulation
+      const zoom = 1 + Math.sin(tick) * 0.08;
+      vCtx.save();
+      vCtx.translate(w / 2, h * 0.46);
+      vCtx.scale(zoom, zoom);
+
+      // Product Hero Block in 9:16
+      vCtx.fillStyle = '#633318';
+      vCtx.strokeStyle = '#f5d08a';
+      vCtx.lineWidth = 2;
+      vCtx.beginPath();
+      vCtx.roundRect(-72, -68, 144, 136, 18);
+      vCtx.fill();
+      vCtx.stroke();
+
+      // Moving Light Sweep
+      const sweepX = Math.sin(tick * 1.4) * 55;
+      const sweepGrad = vCtx.createLinearGradient(sweepX - 30, -68, sweepX + 30, 68);
+      sweepGrad.addColorStop(0, 'rgba(255,255,255,0)');
+      sweepGrad.addColorStop(0.5, 'rgba(255,235,190,0.28)');
+      sweepGrad.addColorStop(1, 'rgba(255,255,255,0)');
+      vCtx.fillStyle = sweepGrad;
+      vCtx.fillRect(-70, -66, 140, 132);
+
+      // Hardware badge
+      vCtx.fillStyle = '#e8b959';
+      vCtx.fillRect(-38, -16, 76, 32);
+      vCtx.fillStyle = '#111';
+      vCtx.font = 'bold 9px "JetBrains Mono", monospace';
+      vCtx.textAlign = 'center';
+      vCtx.fillText(`SCENE 0${activeScene + 1}`, 0, 3);
+      vCtx.restore();
+
+      // Top Hook Banner (TikTok / Reels Safe Zone)
+      vCtx.fillStyle = 'rgba(12, 14, 20, 0.88)';
+      vCtx.beginPath();
+      vCtx.roundRect(14, 22, w - 28, 54, 10);
+      vCtx.fill();
+      vCtx.strokeStyle = '#f5d08a';
+      vCtx.lineWidth = 1.2;
+      vCtx.stroke();
+
+      vCtx.fillStyle = '#ffffff';
+      vCtx.font = 'bold 10px "Plus Jakarta Sans", sans-serif';
+      vCtx.textAlign = 'center';
+      vCtx.fillText(activeHookText.slice(0, 28), w / 2, 44);
+      vCtx.fillStyle = '#f5d08a';
+      vCtx.fillText(activeHookText.slice(28), w / 2, 60);
+
+      // Bottom Kinetic Captions & CTA Bar
+      vCtx.fillStyle = 'rgba(12, 14, 20, 0.9)';
+      vCtx.fillRect(0, h - 88, w, 88);
+      vCtx.fillStyle = '#58f0a8';
+      vCtx.font = '10px "JetBrains Mono", monospace';
+      vCtx.fillText('KLING 1.6 PRO • 60FPS • ZERO MORPH', w / 2, h - 62);
+
+      vCtx.fillStyle = '#e8b959';
+      vCtx.beginPath();
+      vCtx.roundRect(24, h - 46, w - 48, 30, 8);
+      vCtx.fill();
+      vCtx.fillStyle = '#111';
+      vCtx.font = 'bold 11px "Syne", sans-serif';
+      vCtx.fillText('SHOP 4K STUDIO COLLECTION ->', w / 2, h - 27);
+      vCtx.textAlign = 'left';
+
+      requestAnimationFrame(renderVideoFrame);
+    }
+
+    // Modal Controls
+    document.getElementById('exportWorkflowBtn').addEventListener('click', () => {
+      document.getElementById('workflowModal').classList.add('open');
+    });
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+      document.getElementById('workflowModal').classList.remove('open');
+    });
+
+    drawMacroStage();
+    renderVideoFrame();
+  </script>
+</body>
+</html>
