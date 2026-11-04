@@ -37,13 +37,27 @@
     .demo-banner {
       background: #090d16;
       color: #f8fafc;
-      text-align: center;
-      padding: 10px 16px;
+      padding: 10px 18px;
       font-size: 12px;
       font-weight: 600;
       border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .demo-banner span { color: var(--accent); font-weight: 800; }
+    .activate-top-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 800;
+      cursor: pointer;
+    }
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -178,7 +192,7 @@
       font-weight: 700;
       margin-bottom: 5px;
     }
-    .field input, .field select {
+    .field input, .field select, .field textarea {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid var(--border);
@@ -277,6 +291,165 @@
       font-size: 12.5px;
     }
     .srv-btn { color: var(--accent); font-weight: 800; }
+    .owner-activation-section {
+      max-width: 1140px;
+      margin: 12px auto 32px;
+      padding: 0 20px;
+    }
+    .owner-card {
+      background: #090d16;
+      color: #f8fafc;
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .owner-card { grid-template-columns: 1fr; }
+    }
+    .owner-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .owner-card p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+    .owner-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .owner-form-box {
+      background: #111827;
+      border: 1px solid #1f2937;
+      padding: 18px;
+      border-radius: 14px;
+    }
+    .owner-form-box label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+    }
+    .owner-form-box input, .owner-form-box select {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #0b0f19;
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .owner-btn-primary {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .owner-btn-secondary {
+      width: 100%;
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .closer-assistant-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #1f2937;
+    }
+    .closer-assistant-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .closer-quick-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .closer-qbtn-buy {
+      width: 100%;
+      background: #10b981;
+      color: #052e16;
+      border: none;
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      text-align: left;
+    }
+    .closer-qbtn-faq {
+      width: 100%;
+      background: #1e293b;
+      color: #93c5fd;
+      border: 1px solid #3b82f6;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+    }
+    .closer-qbtn-optout {
+      width: 100%;
+      background: #111827;
+      color: #9ca3af;
+      border: 1px solid #374151;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+    }
+    .closer-live-response {
+      display: none;
+      margin-top: 12px;
+      background: #0b0f19;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12.5px;
+      color: #e2e8f0;
+      line-height: 1.55;
+    }
+    .closer-state-pill {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+    }
     footer {
       background: #090d16;
       color: #cbd5e1;
@@ -289,7 +462,12 @@
 </head>
 <body>
   <div class="demo-banner">
-    SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>ESTETIC DENT — CLINICA DENTAL Y ARMONIZACION FACIAL</span> (Motor: clinica-nova + ui-ux-pro-max)
+    <div>
+      SISTEMA INTERACTIVO PRE-RELLENADO PARA: <span>ESTETIC DENT — CLINICA DENTAL Y ARMONIZACION FACIAL</span> (Motor V5.0: clinica-nova + ui-ux-pro-max)
+    </div>
+    <button type="button" class="activate-top-btn" onclick="document.getElementById('activar-oficialmente').scrollIntoView({behavior:'smooth'})">
+      Activar esta App Oficialmente para Estetic Dent — Clinica Dental y Armonizacion Facial (500 Bs Pago Unico)
+    </button>
   </div>
   <header>
     <div class="nav-wrap">
@@ -403,12 +581,62 @@
     </div>
   </section>
 
+  <section class="owner-activation-section" id="activar-oficialmente">
+    <div class="owner-card">
+      <div>
+        <span class="badge" style="margin-bottom:10px;">ASISTENTE AUTOMATICO DE CIERRE Y RESPUESTA INMEDIATA</span>
+        <h3>Activar esta App Oficialmente para Estetic Dent — Clinica Dental y Armonizacion Facial</h3>
+        <p>Si usted es propietario o encargado de <strong>Estetic Dent — Clinica Dental y Armonizacion Facial</strong>, esta aplicacion ya fue programada con sus datos reales y esta lista para conectarse con su logotipo oficial y su catalogo completo.</p>
+        <ul class="owner-list">
+          <li>1. Pago unico de entrega: <strong>500 Bs</strong> (se abona unicamente al entregarse 100% personalizada y funcionando).</li>
+          <li>2. Cero mensualidades de servidor: hospedaje web de alta disponibilidad incluido sin costo mensual ($0/mes).</li>
+          <li>3. Todos los clientes que usen el simulador llegan directo al WhatsApp oficial de su empresa (+591 76337570).</li>
+        </ul>
+
+        <div class="closer-assistant-box">
+          <div class="closer-assistant-title">Seleccione una opcion para recibir respuesta automatica instantanea:</div>
+          <div class="closer-quick-btns">
+            <button type="button" class="closer-qbtn-buy" onclick="triggerInstantCloserAction('ACTIVATE_APP')">
+              [ Quiero activar esta App para mi empresa (500 Bs pago unico) ]
+            </button>
+            <button type="button" class="closer-qbtn-faq" onclick="triggerInstantCloserAction('FAQ_QUERY')">
+              [ Tengo una consulta sobre como funciona ]
+            </button>
+            <button type="button" class="closer-qbtn-optout" onclick="triggerInstantCloserAction('OPT_OUT')">
+              [ No necesitamos el sistema por ahora ]
+            </button>
+          </div>
+          <div id="closerLiveResponse" class="closer-live-response"></div>
+        </div>
+      </div>
+      <div class="owner-form-box">
+        <form onsubmit="requestOfficialActivation(event)">
+          <label>Nombre del Encargado / Direccion de Estetic Dent — Clinica Dental y Armonizacion Facial *</label>
+          <input type="text" id="ownerContactName" required placeholder="Ej. Gerencia / Direccion">
+          <label>Correo o Telefono de Respuesta de la Empresa *</label>
+          <input type="text" id="ownerContactReply" required placeholder="Ej. gerencia@empresa.com o +591 76337570">
+          <label>Decision o Personalizacion Deseada *</label>
+          <select id="ownerCustomOption">
+            <option value="SOLD_CLOSED: Activar con nuestro logotipo oficial y mantener precios actuales (500 Bs)">Activar con nuestro logotipo oficial y precios actuales (500 Bs)</option>
+            <option value="SOLD_CLOSED: Activar y actualizar tabla de precios / servicios (500 Bs)">Activar y actualizar tabla de precios / servicios (500 Bs)</option>
+            <option value="REPLIED_INTERESTED: Solicitar revision tecnica de detalles antes de activar">Solicitar revision tecnica de detalles antes de activar</option>
+            <option value="OPTED_OUT_NO_NEED: No necesitamos el sistema por ahora">No necesitamos el sistema por ahora (Dar de baja)</option>
+          </select>
+          <button type="submit" class="owner-btn-primary">Enviar Confirmacion Directa a Ingenieria (ingenieria.kudakastudio@gmail.com)</button>
+          <button type="button" class="owner-btn-secondary" onclick="copyActivationTicket()">Copiar Confirmacion (Para enviar por Correo / Facebook)</button>
+          <div id="ownerCopyFeedback" style="display:none;margin-top:8px;font-size:11.5px;color:#34d399;font-weight:700;text-align:center;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p><strong>Estetic Dent — Clinica Dental y Armonizacion Facial</strong> — Calle Moldes esq. Chuquisaca Nro. 597, Santa Cruz de la Sierra</p>
-    <p style="margin-top:6px;">WhatsApp Oficial: +591 76337570 | Santa Cruz de la Sierra</p>
+    <p style="margin-top:6px;">WhatsApp Oficial: +591 76337570 | Santa Cruz de la Sierra | Kudaka Studio — Ingenieria de Software: ingenieria.kudakastudio@gmail.com</p>
   </footer>
 
   <script>
+    const CLIENT_SLUG = "estetic-dent-scz";
     function pickSlot(btn, slotText) {
       document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -438,6 +666,76 @@
       const est = document.getElementById('budgetTotal').textContent;
       const msg = `Hola equipo de Estetic Dent — Clinica Dental y Armonizacion Facial, soy ${name}. Usando su sistema web cotice: ${srv} (Cantidad: ${qty} Piezas / Sesiones — Estimado: ${est}) y deseo agendar atencion para el horario ${slot}. Quedo atento(a).`;
       window.open(`https://wa.me/59176337570?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    function triggerInstantCloserAction(actionType) {
+      const box = document.getElementById('closerLiveResponse');
+      const sel = document.getElementById('ownerCustomOption');
+      box.style.display = 'block';
+
+      if (actionType === 'ACTIVATE_APP') {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'SOLD_CLOSED');
+        if (sel) sel.selectedIndex = 0;
+        box.innerHTML =
+          `<span class="closer-state-pill">ESTADO REGISTRADO: SOLD_CLOSED / REPLIED_INTERESTED</span>` +
+          `<div><strong>Respuesta Automatica de Ingenieria (Kudaka Studio):</strong></div>` +
+          `<p style="margin-top:6px;">Excelente decision para <strong>Estetic Dent — Clinica Dental y Armonizacion Facial</strong>. El proceso de entrega es inmediato y sin pagos por adelantado:</p>` +
+          `<ol style="margin:8px 0 10px 18px;color:#cbd5e1;">` +
+          `<li>Personalizacion de su logotipo oficial y ajuste de su catalogo completo en menos de 24 horas.</li>` +
+          `<li>Costo mensual de servidor: <strong>$0/mes</strong> (infraestructura web estatica de alta velocidad).</li>` +
+          `<li>Pago unico de <strong>500 Bs</strong> unicamente contra entrega conformada, una vez que usted verifique su sistema funcionando al 100%.</li>` +
+          `</ol>` +
+          `<p style="color:#6ee7b7;font-weight:700;">Complete su nombre a la derecha y presione "Enviar Confirmacion Directa a Ingenieria" para recibir su enlace final hoy mismo.</p>`;
+      } else if (actionType === 'FAQ_QUERY') {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'REPLIED_INTERESTED');
+        if (sel) sel.selectedIndex = 2;
+        box.innerHTML =
+          `<span class="closer-state-pill" style="background:rgba(59,130,246,0.2);color:#93c5fd;">RESPUESTA AUTOMATICA A CONSULTAS FRECUENTES</span>` +
+          `<ul style="margin:6px 0 6px 16px;color:#cbd5e1;display:flex;flex-direction:column;gap:6px;">` +
+          `<li><strong>¿Hay algun pago mensual?</strong> No, $0/mes. No existen cobros recurrentes ni suscripciones.</li>` +
+          `<li><strong>¿Puedo cambiar precios en Bs, servicios y horarios?</strong> Si, todo queda 100% editable y adaptado a sus horarios (Lunes a Viernes: 09:00 a 19:30 | Sabados: 09:00 a 13:30) y conectado a su WhatsApp actual (+591 76337570).</li>` +
+          `<li><strong>¿Como y cuando se paga?</strong> El monto unico de <strong>500 Bs</strong> se abona solo una vez entregada y probada la aplicacion con su logotipo oficial.</li>` +
+          `</ul>`;
+      } else if (actionType === 'OPT_OUT') {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'OPTED_OUT_NO_NEED');
+        if (sel) sel.selectedIndex = 3;
+        box.innerHTML =
+          `<span class="closer-state-pill" style="background:rgba(239,68,68,0.2);color:#fca5a5;">ESTADO TERMINAL: OPTED_OUT_NO_NEED (BAJA REGISTRADA)</span>` +
+          `<p style="margin-top:4px;color:#cbd5e1;">Hemos registrado que <strong>Estetic Dent — Clinica Dental y Armonizacion Facial</strong> no necesita el sistema web por ahora. Su empresa ha sido marcada en estado terminal <code>OPTED_OUT_NO_NEED</code> y no recibira mas avisos de seguimiento.</p>`;
+      }
+    }
+    function buildOwnerTicketText() {
+      const ownerName = (document.getElementById('ownerContactName').value || 'Direccion').trim();
+      const ownerReply = (document.getElementById('ownerContactReply').value || '+591 76337570').trim();
+      const customOpt = document.getElementById('ownerCustomOption').value;
+      const savedState = localStorage.getItem('scz_crm_state_' + CLIENT_SLUG) || 'REPLIED_INTERESTED';
+      return `RESPUESTA OFICIAL DE EMPRESA — SISTEMA WEB B2B\n` +
+             `Empresa: Estetic Dent — Clinica Dental y Armonizacion Facial (Santa Cruz de la Sierra)\n` +
+             `Slug CRM: ${CLIENT_SLUG}\n` +
+             `Estado CRM disparado: ${savedState}\n` +
+             `Encargado: ${ownerName}\n` +
+             `Canal de respuesta de la empresa: ${ownerReply}\n` +
+             `Decision seleccionada: ${customOpt}\n` +
+             `URL Demo Pre-Rellenada: ${window.location.href}`;
+    }
+    function requestOfficialActivation(e) {
+      e.preventDefault();
+      const customOpt = document.getElementById('ownerCustomOption').value;
+      if (customOpt.startsWith('OPTED_OUT')) {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'OPTED_OUT_NO_NEED');
+      } else {
+        localStorage.setItem('scz_crm_state_' + CLIENT_SLUG, 'SOLD_CLOSED');
+      }
+      const subject = `Respuesta Oficial CRM [${CLIENT_SLUG}] — Estetic Dent — Clinica Dental y Armonizacion Facial`;
+      const body = buildOwnerTicketText();
+      window.location.href = `mailto:ingenieria.kudakastudio@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+    function copyActivationTicket() {
+      const text = buildOwnerTicketText();
+      navigator.clipboard.writeText(text).then(() => {
+        const fb = document.getElementById('ownerCopyFeedback');
+        fb.style.display = 'block';
+        fb.textContent = 'Confirmacion copiada al portapapeles. Puede enviarla a ingenieria.kudakastudio@gmail.com';
+      });
     }
   </script>
 </body>
