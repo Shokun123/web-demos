@@ -1,9 +1,9 @@
 {
-  "updated_at_utc": "2026-11-04 16:19:02 UTC",
+  "updated_at_utc": "2026-11-04 16:27:35 UTC",
   "repository": "limitlessprojects/Go-Hybrid",
   "total_prs": 13,
-  "merged_count": 3,
-  "open_count": 10,
+  "merged_count": 4,
+  "open_count": 9,
   "prs": [
     {
       "createdAt": "2026-11-04T03:31:00Z",
@@ -55,9 +55,9 @@
     },
     {
       "createdAt": "2026-11-02T22:04:39Z",
-      "mergedAt": null,
+      "mergedAt": "2026-11-04T16:27:30Z",
       "number": 3389,
-      "state": "OPEN",
+      "state": "MERGED",
       "title": "runtime/go/hybench: fix minVal sentinel, NaN guard, and bucket upper-bound clamping in Histogram (fixes #3388)",
       "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3389"
     },
