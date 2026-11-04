@@ -1,10 +1,18 @@
 {
-  "updated_at_utc": "2026-11-04 03:27:01 UTC",
+  "updated_at_utc": "2026-11-04 03:37:08 UTC",
   "repository": "limitlessprojects/Go-Hybrid",
-  "total_prs": 12,
+  "total_prs": 13,
   "merged_count": 3,
-  "open_count": 9,
+  "open_count": 10,
   "prs": [
+    {
+      "createdAt": "2026-11-04T03:31:00Z",
+      "mergedAt": null,
+      "number": 3583,
+      "state": "OPEN",
+      "title": "fix(hy-check): reject E4/E6/E11 try propagation under shadowed http, writer, error, or hyErr (fixes #3582)",
+      "url": "https://github.com/limitlessprojects/Go-Hybrid/pull/3583"
+    },
     {
       "createdAt": "2026-11-04T02:19:21Z",
       "mergedAt": null,
